@@ -1413,8 +1413,31 @@ body {
   background: #ff3366 !important;
   box-shadow: none !important;
 }
-.cid-qTkA127IK8 {
+.cid-rBduUqnC8O {
   background-image: url("../../../assets/images/fazjl1h-1680x1050.jpg");
+}
+.cid-rBduUqnC8O .icons-media-container {
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 4rem;
+}
+.cid-rBduUqnC8O .icons-media-container .mbr-iconfont {
+  font-size: 96px;
+  color: #ffffff;
+}
+.cid-rBduUqnC8O .icons-media-container .icon-block {
+  padding-bottom: 1rem;
+}
+.cid-rBduUqnC8O .mbr-text {
+  color: #ffffff;
+}
+.cid-rBduUqnC8O .card {
+  padding-bottom: 1.5rem;
 }
 .cid-rBaNaWb3E6 {
   padding-top: 90px;
@@ -1449,6 +1472,13 @@ body {
   .cid-rBaPd3oQcu .mbr-text {
     text-align: center;
   }
+}
+.cid-rBdsPLvLic H1 {
+  text-align: left;
+}
+.cid-rBdsPLvLic .mbr-text,
+.cid-rBdsPLvLic .mbr-section-btn {
+  text-align: left;
 }
 .cid-rBaOspyMHr {
   padding-top: 45px;
