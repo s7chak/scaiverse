@@ -1473,6 +1473,9 @@ body {
     text-align: center;
   }
 }
+.cid-rBdsPLvLic {
+  background-image: url("../../../assets/images/computer-wallpapers-1920x1080.jpg");
+}
 .cid-rBdsPLvLic H1 {
   text-align: left;
 }
@@ -1483,13 +1486,19 @@ body {
 .cid-rBaOspyMHr {
   padding-top: 45px;
   padding-bottom: 45px;
-  background-color: #ffffff;
+  background-image: url("../../../assets/images/762061-widescreen-techy-background-2000x1250.jpg");
 }
 .cid-rBaOspyMHr .mbr-text {
-  color: #767676;
+  color: #ffffff;
   margin: 0;
   padding-top: 1.5rem;
 }
 .cid-rBaOspyMHr div.b {
   padding-top: 2rem;
+}
+.cid-rBaOspyMHr H5 {
+  color: #ffffff;
+}
+.cid-rBaOspyMHr H2 {
+  color: #ffffff;
 }
