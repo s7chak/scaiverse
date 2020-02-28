@@ -892,12 +892,8 @@ section.lazy-placeholder:after {
     text-align: center;
   }
 }
-.cid-rQUKq8xf2L {
-  background-image: url("../../../assets/images/award-1-2000x1333.jpg");
-}
-.cid-rQUKq8xf2L .mbr-text,
-.cid-rQUKq8xf2L .mbr-section-btn {
-  text-align: left;
+.cid-rRJH1h2dAg {
+  background-image: url("../../../assets/images/award-2-2000x1333.jpg");
 }
 .cid-rQUKq8RbkI {
   background-image: url("../../../assets/images/computer-wallpapers-1920x1080.jpg");
@@ -908,25 +904,6 @@ section.lazy-placeholder:after {
 .cid-rQUKq8RbkI .mbr-text,
 .cid-rQUKq8RbkI .mbr-section-btn {
   text-align: left;
-}
-.cid-rQUKq99BXX {
-  padding-top: 45px;
-  padding-bottom: 45px;
-  background-image: url("../../../assets/images/762061-widescreen-techy-background-2000x1250.jpg");
-}
-.cid-rQUKq99BXX .mbr-text {
-  color: #ffffff;
-  margin: 0;
-  padding-top: 1.5rem;
-}
-.cid-rQUKq99BXX div.b {
-  padding-top: 2rem;
-}
-.cid-rQUKq99BXX H5 {
-  color: #ffffff;
-}
-.cid-rQUKq99BXX H2 {
-  color: #ffffff;
 }
 .cid-rQUKu7d18H {
   background-image: url("../../../assets/images/fazjl1h-1680x1050.jpg");
@@ -959,7 +936,7 @@ section.lazy-placeholder:after {
   color: #d7fff6;
 }
 .cid-rQUM5C96ER {
-  background-image: url("../../../assets/images/screen-shot-2020-02-18-at-9.55.41-pm-2000x373.png");
+  background-color: #140f31;
 }
 .cid-rQUM5C96ER h1 {
   color: #616161;
@@ -981,4 +958,18 @@ section.lazy-placeholder:after {
 .cid-rQUM5C96ER .mbr-text,
 .cid-rQUM5C96ER .mbr-section-btn {
   color: #ffffff;
+}
+.cid-rRQ74DNH5r {
+  background-color: #272149;
+}
+.cid-rRQ74DNH5r .mbr-section-subtitle {
+  letter-spacing: .2rem;
+}
+.cid-rRQ74DNH5r .media-container-column {
+  background-color: #140f31;
+}
+@media (max-width: 767px) {
+  .cid-rRQ74DNH5r .media-container-column {
+    padding: 1rem !important;
+  }
 }
