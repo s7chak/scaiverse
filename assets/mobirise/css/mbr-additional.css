@@ -936,7 +936,7 @@ section.lazy-placeholder:after {
   color: #d7fff6;
 }
 .cid-rQUM5C96ER {
-  background-color: #140f31;
+  background-image: url("../../../assets/images/screen-shot-2020-03-17-at-8.21.48-pm-2000x1080.png");
 }
 .cid-rQUM5C96ER h1 {
   color: #616161;
@@ -960,7 +960,7 @@ section.lazy-placeholder:after {
   color: #ffffff;
 }
 .cid-rRQ74DNH5r {
-  background-color: #272149;
+  background-image: url("../../../assets/images/iu-2-1125x750.jpg");
 }
 .cid-rRQ74DNH5r .mbr-section-subtitle {
   letter-spacing: .2rem;
@@ -972,4 +972,34 @@ section.lazy-placeholder:after {
   .cid-rRQ74DNH5r .media-container-column {
     padding: 1rem !important;
   }
+}
+.cid-rTxI6HNPda {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-image: url("../../../assets/images/videoblocks-fire-sparks-from-campfire-over-dark-background-loop-rmygdhchg-thumbnail-full01-1920x1080.png");
+}
+.cid-rTxI6HNPda .mbr-text,
+.cid-rTxI6HNPda .mbr-section-btn {
+  text-align: left;
+}
+.cid-rTxWoylZUK {
+  background-image: url("../../../assets/images/hyxlbwggak1x-1920x1080.png");
+}
+.cid-rTxWoylZUK .mbr-section-subtitle {
+  letter-spacing: .2rem;
+}
+.cid-rTxWoylZUK .media-container-column {
+  background-color: #041b16;
+}
+@media (max-width: 767px) {
+  .cid-rTxWoylZUK .media-container-column {
+    padding: 1rem !important;
+  }
+}
+.cid-rTxWoylZUK .mbr-text,
+.cid-rTxWoylZUK .mbr-section-btn {
+  text-align: left;
+}
+.cid-rTxWoylZUK H1 {
+  text-align: center;
 }
