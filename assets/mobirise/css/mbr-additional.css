@@ -825,86 +825,6 @@ section.lazy-placeholder:after {
 .cid-rC52NC5jxw .mbr-text {
   color: #ffffff;
 }
-.cid-rQUKq6XEnu {
-  background-image: url("../../../assets/images/fazjl1h-1680x1050.jpg");
-}
-.cid-rQUKq6XEnu .icons-media-container {
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding-top: 4rem;
-}
-.cid-rQUKq6XEnu .icons-media-container .mbr-iconfont {
-  font-size: 96px;
-  color: #ffffff;
-}
-.cid-rQUKq6XEnu .icons-media-container .icon-block {
-  padding-bottom: 1rem;
-}
-.cid-rQUKq6XEnu .mbr-text {
-  color: #ffffff;
-}
-.cid-rQUKq6XEnu .card {
-  padding-bottom: 1.5rem;
-}
-.cid-rQUKq6XEnu H1 {
-  text-align: center;
-  color: #d7fff6;
-}
-.cid-rQUKq8das4 {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  background-image: url("../../../assets/images/bg-all-1-2000x1069.jpg");
-}
-.cid-rQUKq8das4 H2 {
-  text-align: center;
-}
-.cid-rQUKq8das4 DIV {
-  text-align: left;
-}
-.cid-rQUKq7Nj4S {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  background-image: url("../../../assets/images/762061-widescreen-techy-background-2000x1250.jpg");
-}
-.cid-rQUKq7Nj4S .media-container-row {
-  flex-direction: row-reverse;
-  -webkit-flex-direction: row-reverse;
-}
-@media (min-width: 992px) {
-  .cid-rQUKq7Nj4S .mbr-figure {
-    padding-right: 4rem;
-    padding-right: 0;
-    padding-left: 4rem;
-  }
-}
-@media (max-width: 991px) {
-  .cid-rQUKq7Nj4S .mbr-figure {
-    padding-bottom: 3rem;
-  }
-}
-@media (max-width: 767px) {
-  .cid-rQUKq7Nj4S .mbr-text {
-    text-align: center;
-  }
-}
-.cid-rRJH1h2dAg {
-  background-image: url("../../../assets/images/award-2-2000x1333.jpg");
-}
-.cid-rQUKq8RbkI {
-  background-image: url("../../../assets/images/computer-wallpapers-1920x1080.jpg");
-}
-.cid-rQUKq8RbkI H1 {
-  text-align: left;
-}
-.cid-rQUKq8RbkI .mbr-text,
-.cid-rQUKq8RbkI .mbr-section-btn {
-  text-align: left;
-}
 .cid-rQUKu7d18H {
   background-image: url("../../../assets/images/fazjl1h-1680x1050.jpg");
 }
@@ -1002,4 +922,84 @@ section.lazy-placeholder:after {
 }
 .cid-rTxWoylZUK H1 {
   text-align: center;
+}
+.cid-rQUKq6XEnu {
+  background-image: url("../../../assets/images/fazjl1h-1680x1050.jpg");
+}
+.cid-rQUKq6XEnu .icons-media-container {
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 4rem;
+}
+.cid-rQUKq6XEnu .icons-media-container .mbr-iconfont {
+  font-size: 96px;
+  color: #ffffff;
+}
+.cid-rQUKq6XEnu .icons-media-container .icon-block {
+  padding-bottom: 1rem;
+}
+.cid-rQUKq6XEnu .mbr-text {
+  color: #ffffff;
+}
+.cid-rQUKq6XEnu .card {
+  padding-bottom: 1.5rem;
+}
+.cid-rQUKq6XEnu H1 {
+  text-align: center;
+  color: #d7fff6;
+}
+.cid-rQUKq8das4 {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-image: url("../../../assets/images/bg-all-1-2000x1069.jpg");
+}
+.cid-rQUKq8das4 H2 {
+  text-align: center;
+}
+.cid-rQUKq8das4 DIV {
+  text-align: left;
+}
+.cid-rQUKq7Nj4S {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-image: url("../../../assets/images/762061-widescreen-techy-background-2000x1250.jpg");
+}
+.cid-rQUKq7Nj4S .media-container-row {
+  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+}
+@media (min-width: 992px) {
+  .cid-rQUKq7Nj4S .mbr-figure {
+    padding-right: 4rem;
+    padding-right: 0;
+    padding-left: 4rem;
+  }
+}
+@media (max-width: 991px) {
+  .cid-rQUKq7Nj4S .mbr-figure {
+    padding-bottom: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-rQUKq7Nj4S .mbr-text {
+    text-align: center;
+  }
+}
+.cid-rRJH1h2dAg {
+  background-image: url("../../../assets/images/award-2-2000x1333.jpg");
+}
+.cid-rQUKq8RbkI {
+  background-image: url("../../../assets/images/computer-wallpapers-1920x1080.jpg");
+}
+.cid-rQUKq8RbkI H1 {
+  text-align: left;
+}
+.cid-rQUKq8RbkI .mbr-text,
+.cid-rQUKq8RbkI .mbr-section-btn {
+  text-align: left;
 }
