@@ -2,7 +2,7 @@ body {
   font-family: Rubik;
 }
 .display-1 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 4.25rem;
   font-display: swap;
 }
@@ -10,7 +10,7 @@ body {
   font-size: 6.8rem;
 }
 .display-2 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 3rem;
   font-display: swap;
 }
@@ -18,7 +18,7 @@ body {
   font-size: 4.8rem;
 }
 .display-4 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 1rem;
   font-display: swap;
 }
@@ -26,20 +26,20 @@ body {
   font-size: 1.6rem;
 }
 .display-5 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
   font-display: swap;
 }
 .display-5 > .mbr-iconfont {
-  font-size: 2.4rem;
+  font-size: 1.92rem;
 }
 .display-7 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1rem;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.4rem;
   font-display: swap;
 }
 .display-7 > .mbr-iconfont {
-  font-size: 1.6rem;
+  font-size: 2.24rem;
 }
 /* ---- Fluid typography for mobile devices ---- */
 /* 1.4 - font scale ratio ( bootstrap == 1.42857 ) */
@@ -63,9 +63,9 @@ body {
     line-height: calc( 1.4 * (1rem + (1 - 1) * ((100vw - 20rem) / (48 - 20))));
   }
   .display-5 {
-    font-size: 1.2rem;
-    font-size: calc( 1.175rem + (1.5 - 1.175) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.4 * (1.175rem + (1.5 - 1.175) * ((100vw - 20rem) / (48 - 20))));
+    font-size: 0.96rem;
+    font-size: calc( 1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20)));
+    line-height: calc( 1.4 * (1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20))));
   }
 }
 /* Buttons */
@@ -540,12 +540,12 @@ a:hover {
   border-radius: 100px;
 }
 .form-control {
-  font-family: 'Rubik', sans-serif;
-  font-size: 1rem;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.4rem;
   font-display: swap;
 }
 .form-control > .mbr-iconfont {
-  font-size: 1.6rem;
+  font-size: 2.24rem;
 }
 blockquote {
   border-color: #149dcc;
@@ -678,6 +678,9 @@ iframe.lazy-placeholder,
 section.lazy-placeholder:after {
   opacity: 0.3;
 }
+.cid-rQVMPLH01N {
+  background-image: url("../../../assets/images/new-1-1024x787.webp");
+}
 .cid-rQVMPLH01N .icons-media-container {
   display: flex;
   -webkit-justify-content: center;
@@ -729,25 +732,6 @@ section.lazy-placeholder:after {
   .cid-rC4YuJiXrZ .inner-container {
     width: 100% !important;
   }
-}
-.cid-rQVRXVbDY4 {
-  padding-top: 45px;
-  padding-bottom: 45px;
-  background-color: #232323;
-}
-.cid-rQVRXVbDY4 .mbr-text {
-  color: #ffffff;
-  margin: 0;
-  padding-top: 1.5rem;
-}
-.cid-rQVRXVbDY4 div.b {
-  padding-top: 2rem;
-}
-.cid-rQVRXVbDY4 H5 {
-  color: #ffffff;
-}
-.cid-rQVRXVbDY4 H2 {
-  color: #ffffff;
 }
 .cid-rC52sQlU1s {
   padding-top: 60px;
@@ -989,6 +973,10 @@ section.lazy-placeholder:after {
   padding-top: 90px;
   padding-bottom: 90px;
   background-image: url("../../../assets/images/award-2-2000x1333.webp");
+}
+.cid-rRJH1h2dAg .mbr-text,
+.cid-rRJH1h2dAg .mbr-section-btn {
+  text-align: left;
 }
 .cid-rQUKq8RbkI {
   background-image: url("../../../assets/images/computer-wallpapers-1920x1080.webp");
