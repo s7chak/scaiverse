@@ -1,5 +1,3 @@
 # s7chak.github.io
 
-Code is art and this is my canvas.
-
-A landing area to redirect to my academic, side and passion projects on github.
+A portfolio for side projects involving research into new technologies and libraries in the ML and software world.
