@@ -19,38 +19,42 @@ Prerequisites
 Node.js and npm should be installed on your machine.
 Installation
 Clone the repository:
-shell
-Copy code
+```
 $ git clone https://github.com/s7chak/s7chak.github.io.git
-Navigate to the project directory:
-shell
-Copy code
+```
+
+  Navigate to the project directory:
+```
 $ cd portfolio-website
-Install dependencies:
-shell
-Copy code
+  ```
+
+  Install dependencies:
+```
 $ npm install
-Development & Build
-Development Mode
+  ```
+  
+  
+  Development & Build
+
+  Development Mode
 
 To start the development server with hot module replacement and automatically open the browser, run:
 
-shell
-Copy code
-$ npm start
-Production Build
+```
+$ npm run start
+  ```
 
-To build the project in production mode for improved load time, including minified bundles and lighter weight source maps, run:
+  ##
+  # Production Build
 
-shell
-Copy code
+  To build the project in production mode for improved load time, including minified bundles and lighter weight source maps, run:
+
+```
 $ npm run build
+  ```
+  
 Linting
 To check for lint errors in the src directory, run:
 
-shell
-Copy code
-$ npm run lint
-Credits
 
 For more details on this setup, you can refer to the accompanying Medium post here.
