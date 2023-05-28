@@ -1,6 +1,6 @@
 import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
-import { FaLinkedin, FaGithub, FaPaperPlane, FaCloudDownloadAlt } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaPaperPlane, FaCloudDownloadAlt, FaRobot } from 'react-icons/fa';
 // import ResumeFile from "./Resume_Subhayu_Chakravarty_02-21.pdf" ;
 
 export const Introduction = () => {
@@ -62,7 +62,7 @@ export const Introduction = () => {
 										{/* <Link to="https://github.com/s7chak"> */}
 										<div className="button" style={{"width":"150px"}}>
 										<FaGithub size={20} style={{ marginRight: '8px' }} />
-										<a href="https://github.com/s7chak" target="_blank" rel="noopener noreferrer">
+										<a href="https://github.com/s7chak" rel="noopener noreferrer">
 											GitHub
 										</a>
 										</div>
@@ -70,8 +70,8 @@ export const Introduction = () => {
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 									<div className="button" style={{"width":"150px"}}>
-										<a href="/blogs" rel="noopener noreferrer">
-										<FaPaperPlane size={20} style={{ marginRight: '8px' }} />
+										<a href="/publications" rel="noopener noreferrer">
+										<FaRobot size={20} style={{ marginRight: '8px' }} />
 											Blog
 										</a>
 										</div>

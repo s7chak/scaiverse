@@ -25,7 +25,7 @@ $ git clone https://github.com/s7chak/s7chak.github.io.git
 
   Navigate to the project directory:
 ```
-$ cd portfolio-website
+$ cd s7chak.github.io
   ```
 
   Install dependencies:

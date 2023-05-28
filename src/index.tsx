@@ -7,13 +7,13 @@ import App from "./pages/App";
 // CSS
 import "bulma/css/bulma.css";
 import "./styles/index.scss";
-import Blogs from "./pages/Blog";
+import Publications from "./pages/Publications";
 
 ReactDOM.render(
 	<Router>
 		<Routes>
 			<Route path="/" element={<App />} />
-			<Route path="/publications" element={<Blogs />} />
+			<Route path="/publications" element={<Publications />} />
 		</Routes>
 	</Router>,
 	document.getElementById("root")

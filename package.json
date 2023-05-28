@@ -1,7 +1,7 @@
 {
   "name": "s7chak-portfolio",
   "version": "1.0.0",
-  "homepage": "https://s7chak.github.io/",
+  "homepage": "https://s7chak.github.io",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
