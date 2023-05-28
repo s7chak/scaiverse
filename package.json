@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "format": "prettier --write src",
     "format:check": "prettier --check src",
     "start": "react-scripts start"
