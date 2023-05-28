@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import BlogCard from "./BlogCard";
+import Navbar from "../components/Navbar";
+import BlogCard from "../components/BlogCard";
 import ScrollAnimation from "react-animate-on-scroll";
 
 export const Blogs = () => {
@@ -7,12 +7,12 @@ export const Blogs = () => {
 		<div className="blogs">
 		<section id="blogging" className="blogging section is-medium">
 			<div className="blogging-container">
-				<ScrollAnimation animateIn="animate__slideInDown" delay={3} animateOnce={true}>
+				<ScrollAnimation animateIn="animate__slideInDown" animateOnce={true}>
 				<h1>s7chak Blogs</h1>
 				</ScrollAnimation>
 				<br/>
 				<p className="description"><b>
-				A collection of my thoughts on technology, optimizations and the world of finance.
+				A collection of my thoughts on science, technology, AI and the world of finance.
 				</b></p><br/>
 				<div style={{ display: 'flex', justifyContent: 'center', width: '60vw' }}>
 					<div style={{ display: 'flex', alignItems: 'center' }}>
@@ -31,7 +31,7 @@ export const Blogs = () => {
 				</div><br/><br/><br/><br/>
 				<div className="columns">
 					<div className="column is-multiline is-6">
-					<ScrollAnimation animateIn="animate__slideInUp" delay={5} animateOnce={true}>
+					<ScrollAnimation animateIn="animate__slideInUp" animateOnce={true}>
 						<BlogCard id="Wildfire_Prediction"/><br/><br/>
 						<BlogCard id="Adversarial_Attack"/><br/><br/>
 					</ScrollAnimation>
