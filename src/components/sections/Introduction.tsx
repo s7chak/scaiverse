@@ -17,41 +17,41 @@ export const Introduction = () => {
 								</ScrollAnimation>
 								<br/>
 								<ScrollAnimation animateIn="animate__slideInUp" animateOnce={true}>
-									<p className="description"><b>Hi, my name is Subhayu </b><br/> </p>
+									<p className="description"><b>Hi, my name is Subhayu </b><br/><br/></p>
 									And this is a repository of some of my projects, their source code, how it works, how they were built<br/>
 									<p>and the story behind them.</p>
 								</ScrollAnimation>
-								<br/><br/><br/>
+								<br/><br/>
 								<div style={{ display: 'flex', justifyContent: 'center' }}>
 									<div style={{ display: 'inline-block', margin: '0 8px' }}>
 									<Link to="software" style={{ textDecoration: 'none' }}> 
-										<button style={{fontSize: "15px", width: '300px', background: 'none', color:"#fff", border: '2px solid #111', padding: '8px 16px', borderRadius: '4px' }}>
-										<p className="description">Software Engineering</p>
-										</button>
+										<div className="button">
+											<p className="reg-text">Software Engineering</p>
+										</div>
 										</Link>
 									</div>
 									<div style={{ display: 'inline-block', margin: '0 8px' }}>
 									<Link to="machine-learning" style={{ textDecoration: 'none' }}> 
-										<button style={{ fontSize: "15px" ,width: '300px', background: 'none', color:"#fff", border: '2px solid #111', padding: '8px 16px', borderRadius: '4px' }}>
-										<p className="description">Machine Learning</p>
-										</button>
+										<div className="button">
+											<p className="reg-text">Machine Learning</p>
+										</div>
 									</Link>	
 									</div>
 								</div>
-								<br/>
-								<br/>
+								<br/><br/>
+								<br/><br/>
 								<div style={{ display: 'flex', justifyContent: 'center' }}>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
-										<div className="button">
+										<div className="button" style={{"width":"150px"}}>
 										<a href="./Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
-										<FaCloudDownloadAlt size={20} style={{ marginRight: '8px' }} /> Résumé
+										<FaCloudDownloadAlt size={20} style={{ marginRight: '8px'}} /> Résumé
 										</a>
 										</div>
 									</div>
 									
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										{/* <Link to="https://www.linkedin.com/subhayu.chakravarty"> */}
-										<div className="button">
+										<div className="button" style={{"width":"150px"}}>
 										<FaLinkedin size={20} style={{ marginRight: '8px' }} />
 										<a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" rel="noopener noreferrer"> LinkedIn
 										</a>
@@ -60,7 +60,7 @@ export const Introduction = () => {
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										{/* <Link to="https://github.com/s7chak"> */}
-										<div className="button">
+										<div className="button" style={{"width":"150px"}}>
 										<FaGithub size={20} style={{ marginRight: '8px' }} />
 										<a href="https://github.com/s7chak" target="_blank" rel="noopener noreferrer">
 											GitHub
@@ -69,7 +69,7 @@ export const Introduction = () => {
 										{/* </Link> */}
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
-									<div className="button">
+									<div className="button" style={{"width":"150px"}}>
 										<a href="/blogs" rel="noopener noreferrer">
 										<FaPaperPlane size={20} style={{ marginRight: '8px' }} />
 											Blog

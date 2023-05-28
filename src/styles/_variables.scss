@@ -10,16 +10,20 @@
 	// --background-secondary-alt: #21262e;
 	// --foreground-primary: #b6beca;
 
-	--accent: #576dcb;
+	--accent: #6484cd;
 	--background-primary: #101012;
 	--background-secondary: #141417;
-	--background-secondary-alt: #1b2240;
+	--background-secondary-alt: #101012;
 	--foreground-primary: #a8b5c3;
 }
 
 .blue-text {
 	font-weight: bold;
 	color: var(--accent);
+}
+
+.reg-text {
+	color: #a8b5c3;
 }
 
 .hyperlink {

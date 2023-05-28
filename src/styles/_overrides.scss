@@ -164,3 +164,29 @@ ol {
 		font-size: 16px;
 	}
 }
+
+
+.blog-card {
+	color: var(--foreground-primary);
+	background-color: var(--background-primary);
+	border-radius: 6px;
+
+	margin: 1rem 0.3rem;
+	width: 85vw;
+
+	@include breakpoint(extra_small_devices) {
+		width: 340px !important;
+	}
+	// animation: fade-in 1.9s cubic-bezier(0.1, 0.9, 1.0, 0.1);
+
+	.blog-card-content {
+		padding: 10 10 10 10;
+		.blog-title {
+			font-weight: bold;
+		}
+
+		.blog-description {
+			font-size: 16px;
+		}
+	}
+}
