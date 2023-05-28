@@ -25,22 +25,22 @@ export const Introduction = () => {
 								<div style={{ display: 'flex', justifyContent: 'center' }}>
 									<div style={{ display: 'inline-block', margin: '0 8px' }}>
 									<Link to="software" style={{ textDecoration: 'none' }}> 
-										<button style={{fontSize: "15px", width: '300px', background: 'none', color:"#fff", border: '2px solid #111', padding: '8px 16px', borderRadius: '4px' }}>
-										<p className="description">Software Engineering</p>
+										<button style={{fontSize: "15px", width: '300px', background: 'none', color:"#fefefe", border: '2px solid #111', padding: '8px 16px', borderRadius: '4px' }}>
+										<p className="reg-text">Software Engineering</p>
 										</button>
 										</Link>
 									</div>
 									<div style={{ display: 'inline-block', margin: '0 8px' }}>
 									<Link to="machine-learning" style={{ textDecoration: 'none' }}> 
 										<button style={{ fontSize: "15px" ,width: '300px', background: 'none', color:"#fff", border: '2px solid #111', padding: '8px 16px', borderRadius: '4px' }}>
-										<p className="description">Machine Learning</p>
+										<p className="reg-text">Machine Learning</p>
 										</button>
 									</Link>	
 									</div>
 								</div>
-								<br/>
-								<br/>
-								<div style={{ display: 'flex', justifyContent: 'center' }}>
+								<br/><br/>
+								<br/><br/>
+								<div style={{ display: 'flex', justifyContent: 'center'}}>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										<div className="button">
 										<a href="./Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
@@ -50,23 +50,19 @@ export const Introduction = () => {
 									</div>
 									
 									<div style={{ display: 'flex', alignItems: 'center' }}>
-										{/* <Link to="https://www.linkedin.com/subhayu.chakravarty"> */}
 										<div className="button">
 										<FaLinkedin size={20} style={{ marginRight: '8px' }} />
-										<a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" rel="noopener noreferrer"> LinkedIn
+										<a href="https://www.linkedin.com/in/subhayuchakravarty" rel="noopener noreferrer"> LinkedIn
 										</a>
 										</div>
-										{/* </Link> */}
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
-										{/* <Link to="https://github.com/s7chak"> */}
 										<div className="button">
 										<FaGithub size={20} style={{ marginRight: '8px' }} />
-										<a href="https://github.com/s7chak" target="_blank" rel="noopener noreferrer">
+										<a href="https://github.com/s7chak" rel="noopener noreferrer">
 											GitHub
 										</a>
 										</div>
-										{/* </Link> */}
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 									<div className="button">
@@ -77,12 +73,8 @@ export const Introduction = () => {
 										</div>
 									</div>
 								</div>
-								{/* <Link to="about" smooth={true} className="button">
-									<span>Go</span>
-								</Link> */}
 								<br/><br/><br/><br/><br/><br/><br/>
 							</div>
-						
 					</div>
 				</div>
 			</div>
