@@ -1,6 +1,8 @@
 import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub, FaPaperPlane, FaCloudDownloadAlt, FaRobot } from 'react-icons/fa';
+import { Route } from "react-router";
+import Publications from "../../pages/Publications";
 // import ResumeFile from "./Resume_Subhayu_Chakravarty_02-21.pdf" ;
 
 export const Introduction = () => {
@@ -71,11 +73,14 @@ export const Introduction = () => {
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 									<div className="button" style={{"width":"150px"}}>
 										<a href="/publications" rel="noopener noreferrer">
+										{/* <Link to='/publications'> */}
 										<FaRobot size={20} style={{ marginRight: '8px' }} />
 											Blog
+										{/* </Link> */}
 										</a>
 										</div>
 									</div>
+									{/* <Route path="/publications" element={<Publications />} /> */}
 								</div>
 								{/* <Link to="about" smooth={true} className="button">
 									<span>Go</span>
