@@ -18,9 +18,9 @@ export const BlogCard = ({ id }: { id: string; }) => {
 
 	if (loading)
 		return (
-			<div className="card">
-				<div className="card-content">
-					<div className="repo-description">
+			<div className="blog-card">
+				<div className="blog-card-content">
+					<div className="blog-description">
 						<p>Loading...</p>
 					</div>
 				</div>

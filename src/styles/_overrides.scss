@@ -1,14 +1,14 @@
 @import "./variables";
 
 .app {
-	font-family: "Poppins", sans-serif !important;
+	font-family: "Rajdhani", sans-serif !important;
 	font-weight: 300;
 	background-color: var(--background-primary) !important;
 	color: var(--foreground-primary) !important;
 }
 
 .blogging {
-	font-family: "Poppins", sans-serif !important;
+	font-family: "Rajdhani", sans-serif !important;
 	font-weight: 300;
 	background-color: var(--background-secondary-alt) !important;
 	color: var(--foreground-primary) !important;
@@ -92,13 +92,13 @@ ol {
 	border-radius: 6px;
 
 	margin: 1rem 0.3rem;
-	width: 85vw;
+	width: 500px;
 
 	@include breakpoint(extra_small_devices) {
 		width: 340px !important;
 	}
 
-	animation: scale-in 0.7s cubic-bezier(0.4, 0.46, 0.45, 0.90) both;
+	animation: scale-in 1.8s cubic-bezier(0.1, 0.5, 0.65, 0.1) both;
 
 	.blog-card-content {
 		.blog-title {
@@ -107,6 +107,7 @@ ol {
 
 		.blog-description {
 			font-size: 16px;
+			white-space: pre-wrap;
 		}
 	}
 }

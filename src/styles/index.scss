@@ -121,22 +121,18 @@
 	}
 
 	.publications {
-		background-color: white !important;
+		width: 90vw;;
 	}
 
 	#blogging {
-		background-color: var(--background-secondary);
+		background-color: var(--background-secondary-alt);
 		padding: 6rem 1.5rem;
-
-		transform: skewY(2deg);
 
 		.blogging-container {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-
-			transform: skewY(-2deg);
 
 			h1 {
 				color: inherit !important;

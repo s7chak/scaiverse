@@ -33,6 +33,9 @@ export const Navbar = () => {
 					<Link to="projects" smooth={true} className="navbar-item">
 						Projects
 					</Link>
+					<Link to="publications" smooth={true} className="navbar-item">
+						Publications
+					</Link>
 				</div>
 			</div>
 		</nav>

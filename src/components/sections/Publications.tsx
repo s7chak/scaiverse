@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar";
-import BlogCard from "../components/BlogCard";
+import Navbar from "../Navbar";
+import BlogCard from "../BlogCard";
 import ScrollAnimation from "react-animate-on-scroll";
-import Footer from "../components/sections/Footer";
+import Footer from "./Footer";
 
 export const Publications = () => {
 	return (
@@ -18,13 +18,7 @@ export const Publications = () => {
 					<div style={{ display: 'flex', justifyContent: 'center', width: '60vw' }}>
 						<div style={{ display: 'flex', alignItems: 'center' }}>
 							<div className="button">
-							<a href="/" rel="noopener noreferrer"> Home
-							</a>
-							</div>
-						</div>
-						<div style={{ display: 'flex', alignItems: 'center' }}>
-							<div className="button">
-							<a href="https://medium.com/@subhayuchakravarty7" rel="noreferrer"> Medium
+							<a href="https://medium.com/@subhayuchakravarty7" rel="noreferrer"> Medium Blogs
 							</a>
 							</div>
 						</div>

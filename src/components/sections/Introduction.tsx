@@ -2,10 +2,14 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub, FaPaperPlane, FaCloudDownloadAlt, FaRobot } from 'react-icons/fa';
 import { Route } from "react-router";
-import Publications from "../../pages/Publications";
+import Publications from "./Publications";
 // import ResumeFile from "./Resume_Subhayu_Chakravarty_02-21.pdf" ;
 
 export const Introduction = () => {
+	console.log(process.env);
+	let baseURL = process.env.NODE_ENV=="development"?"/":"/canvas/";
+	let publicationURL = "/publications";
+	console.log(publicationURL);
 	return (
 		<section id="introduction" className="introduction section is-medium">
 			<div className="introduction-container container">
@@ -45,7 +49,7 @@ export const Introduction = () => {
 								<div style={{ display: 'flex', justifyContent: 'center' }}>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										<div className="button" style={{"width":"150px"}}>
-										<a href="./Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
+										<a href="./files/Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
 										<FaCloudDownloadAlt size={20} style={{ marginRight: '8px'}} /> Résumé
 										</a>
 										</div>
@@ -70,17 +74,17 @@ export const Introduction = () => {
 										</div>
 										{/* </Link> */}
 									</div>
-									<div style={{ display: 'flex', alignItems: 'center' }}>
+									{/* <div style={{ display: 'flex', alignItems: 'center' }}>
 									<div className="button" style={{"width":"150px"}}>
-										<a href="/publications" rel="noopener noreferrer">
-										{/* <Link to='/publications'> */}
+										<a href={publicationURL} rel="noopener noreferrer">
+										<Link to='/publications'>
 										<FaRobot size={20} style={{ marginRight: '8px' }} />
 											Blog
-										{/* </Link> */}
+										</Link>
 										</a>
 										</div>
-									</div>
-									{/* <Route path="/publications" element={<Publications />} /> */}
+									</div> */}
+
 								</div>
 								{/* <Link to="about" smooth={true} className="button">
 									<span>Go</span>
