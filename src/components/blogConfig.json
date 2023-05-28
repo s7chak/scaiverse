@@ -1,0 +1,16 @@
+{
+    "Wildfire_Prediction": {
+        "title": "US Wildfires — Hell on Earth",
+        "description": "The analysis as a whole helped us jot down the helpful facts about the widely spread and concerning mishap during the recent years across the states. We could find the ‘Debris Burning’ as the top contributor to the huge number of wildfires.",
+        "url":"https://medium.com/@vrinda.sharma/us-wildfires-hell-on-earth-6602e709f43d"
+    },
+    "Adversarial_Attack": {
+        "title": "False signals: Robust Physical Adversarial Attack on Faster R-CNN Object Detector",
+        "description": "An adversarial attack comprises of subtly modifying an image in such a way that the changes are almost undetectable to the human eye. The altered image is called an adversarial image, and when submitted to a classifier is misclassified, while the original one is correctly classified. ‘Deep Neural Networks’ (DNN) robust arrival in computer vision does not mean they are safe from this vulnerability. By adding indistinguishable adversarial perturbations, the accuracy of a DNN image classifier can be brought down to almost zero percent. The existence of adversarial examples not only reveals intriguing theoretical properties of DNN but also raises serious practical concerns on its deployment in security and safety-critical systems.",
+        "url":"https://medium.com/@k4rd4k/falsesignals-robust-physical-adversarial-attack-on-faster-r-cnn-object-detector-d94dfc2b8d15"
+    }
+
+
+
+
+}
