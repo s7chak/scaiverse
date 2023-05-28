@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/s7chak.github.io/static/css/main.83895a40.css",
-    "main.js": "/s7chak.github.io/static/js/main.e965c3d4.js",
-    "index.html": "/s7chak.github.io/index.html",
-    "main.83895a40.css.map": "/s7chak.github.io/static/css/main.83895a40.css.map",
-    "main.e965c3d4.js.map": "/s7chak.github.io/static/js/main.e965c3d4.js.map"
+    "main.css": "/canvas/static/css/main.83895a40.css",
+    "main.js": "/canvas/static/js/main.d25f5808.js",
+    "index.html": "/canvas/index.html",
+    "main.83895a40.css.map": "/canvas/static/css/main.83895a40.css.map",
+    "main.d25f5808.js.map": "/canvas/static/js/main.d25f5808.js.map"
   },
   "entrypoints": [
     "static/css/main.83895a40.css",
-    "static/js/main.e965c3d4.js"
+    "static/js/main.d25f5808.js"
   ]
 }
