@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "canvas",
   "version": "1.0.0",
-  "homepage": ".",
+  "homepage": "https://s7chak.github.io/canvas",
   "private": false,
   "scripts": {
     "build": "react-scripts build",

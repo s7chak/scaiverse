@@ -17,7 +17,7 @@ console.log(env);
 console.log(baseURL?.toString());
 
 ReactDOM.render(
-	<Router>
+	<Router basename={baseURL}>
 		<Routes>
 			<Route path="/" element={<App />}  />
 			<Route path="*" element={<NoMatch />} />
