@@ -1,4 +1,5 @@
 import { RepoIcon, StarFillIcon, QuestionIcon } from "@primer/octicons-react";
+import React from "react";
 import { useEffect, useState } from "react";
 
 const getRepository = (username: string, repository: string): any => {

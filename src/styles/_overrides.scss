@@ -65,15 +65,15 @@ ol {
 	color: var(--foreground-primary);
 	background-color: var(--background-primary);
 	border-radius: 6px;
+	width: 400px;
 
 	margin: 1rem 0.3rem;
-	width: 700px;
 
 	@include breakpoint(extra_small_devices) {
 		width: 340px !important;
 	}
 
-	animation: scale-in 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: scale-in 0.7s cubic-bezier(0.2, 0.46, 0.45, 0.3) both;
 
 	.card-content {
 		.repo-title {
@@ -92,13 +92,13 @@ ol {
 	border-radius: 6px;
 
 	margin: 1rem 0.3rem;
-	width: 500px;
+	width: 700px;
 
 	@include breakpoint(extra_small_devices) {
 		width: 340px !important;
 	}
 
-	animation: scale-in 1.8s cubic-bezier(0.1, 0.5, 0.65, 0.1) both;
+	// animation: scale-in 1.8s cubic-bezier(0.1, 0.5, 0.65, 0.1) both;
 
 	.blog-card-content {
 		.blog-title {
@@ -163,31 +163,5 @@ ol {
 
 	p {
 		font-size: 16px;
-	}
-}
-
-
-.blog-card {
-	color: var(--foreground-primary);
-	background-color: var(--background-primary);
-	border-radius: 6px;
-
-	margin: 1rem 0.3rem;
-	width: 85vw;
-
-	@include breakpoint(extra_small_devices) {
-		width: 340px !important;
-	}
-	// animation: fade-in 1.9s cubic-bezier(0.1, 0.9, 1.0, 0.1);
-
-	.blog-card-content {
-		padding: 10 10 10 10;
-		.blog-title {
-			font-weight: bold;
-		}
-
-		.blog-description {
-			font-size: 16px;
-		}
 	}
 }

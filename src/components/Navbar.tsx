@@ -1,9 +1,10 @@
+import { motion } from "framer-motion"
 import { useState } from "react";
 import { Link } from "react-scroll";
 
 export const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);
-
+	const delays = [2,3.5,5.5,6];
 	return (
 		<nav className="navbar is-fixed-top" role="navigation">
 			<div className="navbar-brand">
@@ -22,7 +23,8 @@ export const Navbar = () => {
 					<span aria-hidden="true"></span>
 				</a>
 			</div>
-			<div id="navbar-menu" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+			<motion.div id="navbar-menu" className={`navbar-menu ${isActive ? "is-active" : ""}`}
+			initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1.2, delay: delays[3]}}>
 				<div className="navbar-start">
 					<Link to="introduction" smooth={true} className="navbar-item">
 						Home
@@ -33,11 +35,11 @@ export const Navbar = () => {
 					<Link to="projects" smooth={true} className="navbar-item">
 						Projects
 					</Link>
-					<Link to="publications" smooth={true} className="navbar-item">
+					<Link to="blogging" smooth={true} className="navbar-item">
 						Publications
 					</Link>
 				</div>
-			</div>
+			</motion.div>
 		</nav>
 	);
 };

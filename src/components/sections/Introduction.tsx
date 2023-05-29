@@ -1,34 +1,35 @@
 import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
-import { FaLinkedin, FaGithub, FaPaperPlane, FaCloudDownloadAlt, FaRobot } from 'react-icons/fa';
-import { Route } from "react-router";
-import Publications from "./Publications";
-// import ResumeFile from "./Resume_Subhayu_Chakravarty_02-21.pdf" ;
+import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from 'react-icons/fa';
+import { motion, useMotionValue, useTransform } from "framer-motion"
 
 export const Introduction = () => {
-	console.log(process.env);
-	let baseURL = process.env.NODE_ENV=="development"?"/":"/canvas/";
-	let publicationURL = "/publications";
-	console.log(publicationURL);
+	// const x = useMotionValue(0)
+	// const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0])
+	const delays = [2,3.5,5.5,6];
 	return (
 		<section id="introduction" className="introduction section is-medium">
 			<div className="introduction-container container">
 				<div className="columns">
 					<div className="column is-12">
 							<div className="content" style={{ textAlign: "center" }}>
-								<ScrollAnimation animateIn="animate__slideInDown" animateOnce={true}>
+								<motion.div initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }} transition={{ease: "linear", duration: delays[0]}}
+									whileHover={{scale: 1.2, transition: { duration: 2 },}}>
 								<h1 className="title">
 									<span className="blue-text"><b>Code Canvas</b></span>
 								</h1>
-								</ScrollAnimation>
+								</motion.div>
 								<br/>
-								<ScrollAnimation animateIn="animate__slideInUp" animateOnce={true}>
-									<p className="description"><b>Hi, my name is Subhayu </b><br/><br/></p>
+								<motion.div initial={{ opacity: 0, y: 10}} animate={{ opacity: 1, y: 0 }} transition={{ease: "linear", duration: delays[1] - delays[0], delay: delays[0]}}>
+									<p className="name-description"><b>Hi, my name is <span className="blue-text">Subhayu</span></b><br/><br/></p>
+								</motion.div>
+								<motion.div initial={{ opacity: 0, y: 10}} animate={{ opacity: 1, y: 0}} transition={{ease: "linear", duration: delays[2] - delays[1], delay: delays[1]}}>
 									And this is a repository of some of my projects, their source code, how it works, how they were built<br/>
 									<p>and the story behind them.</p>
-								</ScrollAnimation>
-								<br/><br/>
-								<div style={{ display: 'flex', justifyContent: 'center' }}>
+								</motion.div>
+								<br/><br/><br/><br/>
+								<motion.div style={{ display: 'flex', justifyContent: 'center' }}
+									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}>
 									<div style={{ display: 'inline-block', margin: '0 8px' }}>
 									<Link to="software" style={{ textDecoration: 'none' }}> 
 										<div className="button">
@@ -43,10 +44,10 @@ export const Introduction = () => {
 										</div>
 									</Link>	
 									</div>
-								</div>
+								</motion.div>
 								<br/><br/>
-								<br/><br/>
-								<div style={{ display: 'flex', justifyContent: 'center' }}>
+								<motion.div style={{ display: 'flex', justifyContent: 'center' }}
+									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										<div className="button" style={{"width":"150px"}}>
 										<a href="./files/Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
@@ -85,7 +86,7 @@ export const Introduction = () => {
 										</div>
 									</div> */}
 
-								</div>
+								</motion.div>
 								{/* <Link to="about" smooth={true} className="button">
 									<span>Go</span>
 								</Link> */}

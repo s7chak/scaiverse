@@ -1,6 +1,6 @@
 import { RepoIcon, StarFillIcon, QuestionIcon } from "@primer/octicons-react";
-import { useEffect, useState } from "react";
 import blogConfigData from "./blogConfig.json";
+import React from "react";
 
 const getBlogData = (blog_id: string): any => {
 	let blog = blogConfigData[blog_id];
@@ -34,7 +34,7 @@ export const BlogCard = ({ id }: { id: string; }) => {
 					<a href={blog.url} target="_blank">
 						{blog.title}
 					</a>
-				</div>
+				</div><br/>
 				<div className="blog-description">
 					<p>{blog.description}</p>
 					<br />

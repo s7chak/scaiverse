@@ -4,6 +4,7 @@ import Projects from "../components/sections/Projects";
 import AboutMe from "../components/sections/AboutMe";
 import Footer from "../components/sections/Footer";
 import Publications from "../components/sections/Publications";
+import React from "react";
 
 export const App = () => {
 	return (
