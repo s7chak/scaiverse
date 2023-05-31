@@ -19,9 +19,9 @@ console.log(env);
 console.log(baseURL?.toString());
 
 ReactDOM.render(
-	<Router>
+	<Router basename={baseURL}>
 		<Routes>
-			<Route path="/canvas" element={<App />}  />
+			<Route path="/" element={<App />}  />
 			<Route path="*" element={<NoMatch />} />
 		</Routes>
 	</Router>,
@@ -33,6 +33,8 @@ function NoMatch() {
 	const mountainCount = 19;
 	const mountains = Array.from({ length: mountainCount }, (_, index) => (
 		<div key={index} className="mountain" />
+
+
 	));
 	console.log(mountains.length.toString());
 	return (

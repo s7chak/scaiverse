@@ -120,7 +120,7 @@ ol {
 	.navbar-menu,
 	.navbar-burger,
 	.navbar-item {
-		margin: 12px 8px;
+		margin: 10px 5px;
 		background-color: var(--background-primary);
 		color: var(--foreground-primary);
 	}
@@ -128,6 +128,28 @@ ol {
 	.navbar-start {
 		flex-grow: 1;
 		justify-content: center;
+
+		.btn-alt {
+			font-weight: bold;
+			background-color: transparent;
+			color: var(--foreground-primary);
+
+			@include breakpoint(extra_small_devices) {
+				border-radius: 4px;
+				background-color: var(--background-primary);
+			}
+
+			@include breakpoint(small_devices) {
+				border: none !important;
+				margin: 3px !important;
+			}
+
+			&:hover,
+			&:focus {
+				color: var(--foreground-primary);
+				transform: translateY(0.2rem);
+			}
+		}
 	}
 
 	.navbar-start,

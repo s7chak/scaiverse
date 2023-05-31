@@ -6,7 +6,6 @@
 #root {
 	#introduction {
 		flex-direction: unset;
-
 		.introduction-container {
 			.content {
 				margin: 3rem auto 2rem auto;
@@ -24,11 +23,14 @@
 
 	#about {
 		.about-container {
+			width: 80vw;
+			align-items: center;
 			.about-description {
 				color: var(--foreground-primary);
 				font-size: 18px;
 				font-weight: normal;
 				white-space: pre-wrap;
+				text-align: justify;
 			}
 
 			.tech-stack {
@@ -56,7 +58,7 @@
 			}
 
 			.columns {
-				padding: 12px 0px 12px 0px;
+				padding: 5px 0px 5px 0px;
 				h6 {
 					color: var(--accent);
 					text-align: center;
@@ -65,28 +67,6 @@
 				.column {
 					@include breakpoint(extra_small_devices) {
 						text-align: center;
-					}
-
-					.btn-alt {
-						font-weight: bold;
-						background-color: transparent;
-						color: var(--foreground-primary);
-
-						@include breakpoint(extra_small_devices) {
-							border-radius: 4px;
-							background-color: var(--background-primary);
-						}
-
-						@include breakpoint(small_devices) {
-							border: none !important;
-							margin: 3px !important;
-						}
-
-						&:hover,
-						&:focus {
-							color: var(--foreground-primary);
-							transform: translateX(0.5rem);
-						}
 					}
 				}
 			}
@@ -116,6 +96,14 @@
 			h1 {
 				color: inherit !important;
 				font-size: 36px;
+				font-weight: bold;
+
+				align-items: center;
+				margin-bottom: 1rem;
+			}
+			h2 {
+				color: inherit !important;
+				font-size: 24px;
 				font-weight: bold;
 
 				align-items: center;
@@ -162,4 +150,30 @@
 			margin-bottom: 1rem;
 		}
 	}
+
+	.playback {
+		background-color: var(--background-secondary-alt) !important;
+		height: 850px;
+		// padding: 6rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h1 {
+			color: #d0e3f9c4 !important;
+			font-size: 34px;
+			font-weight: bold;
+			align-items: center;
+			margin-bottom: 1rem;
+		}
+		h2 {
+			color: #d0e3f9c4 !important;
+			font-size: 30px;
+			font-weight: bold;
+
+			align-items: center;
+			margin-bottom: 1rem;
+		}
+	}
+
 }

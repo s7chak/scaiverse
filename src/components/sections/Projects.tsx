@@ -7,7 +7,7 @@ export const Projects = () => {
 				<h1>Projects</h1>
 				<div className="columns">
 				<section id="software" className="projects section is-medium">
-					<h2>Software Engineering</h2>
+					<div><h2>Software Engineering</h2></div>
 					<div className="column is-multiline is-20">
 						<ProjectCard username="s7chak" repository="s7chak.github.io" />
 						<ProjectCard username="s7chak" repository="soccerhours_phase2_flask" />
@@ -17,7 +17,7 @@ export const Projects = () => {
 					</div>
 				</section>
 				<section id="machine-learning" className="projects section is-medium">
-					<h2>Machine Learning</h2>
+					<div><h2>Machine Learning</h2></div>
 					<div className="column is-multiline is-20">
 						<ProjectCard username="s7chak" repository="4DByD" />
 						<ProjectCard username="s7chak" repository="vision-api-app" />

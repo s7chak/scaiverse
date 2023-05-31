@@ -13,12 +13,13 @@
 
 
 
-$n: 20;
+$n: 25;
 // $bgColor: rgb(204,207,209);
 $bgColor: var(--background-primary);
 $mountainColor: var(--accent);
 $animLength: 9;
-$mountainHeight: 12%; /* In percent */
+$mountainHeight: 10%; /* In percent */
+$start_scale: 0.4;
 
 .play-container {
   position: flex;
@@ -67,31 +68,32 @@ $mountainHeight: 12%; /* In percent */
   }
 }
 
+
 @keyframes mountain1 {
-  0% { transform: rotate(45deg) translate3d(-130%, 130%, -300px) scale(.5); }
+  0% { transform: rotate(45deg) translate3d(-130%, 130%, -300px) scale($start_scale); }
   100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
 }
 @keyframes mountain2 {
-  0% { transform: rotate(45deg) translate3d(120%, -120%, -300px) scale(.5); }
+  0% { transform: rotate(45deg) translate3d(120%, -120%, -300px) scale($start_scale); }
   100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
 }
 @keyframes mountain3 {
-  0% { transform: rotate(45deg) translate3d(-110%, 110%, -300px) scale(.5); }
+  0% { transform: rotate(45deg) translate3d(-110%, 110%, -300px) scale($start_scale); }
   100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
 }
 @keyframes mountain4 {
-  0% { transform: rotate(45deg) translate3d(110%, -110%, -300px) scale(.5); }
+  0% { transform: rotate(45deg) translate3d(110%, -110%, -300px) scale($start_scale); }
   100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
 }
 @keyframes mountain5 {
-  0% { transform: rotate(45deg) translate3d(-150%, 150%, -300px) scale(.5); }
+  0% { transform: rotate(45deg) translate3d(-150%, 150%, -300px) scale($start_scale); }
   100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
 }
 @keyframes mountain6 {
-  0% { transform: rotate(45deg) translate3d(150%, -150%, -300px) scale(.5); }
+  0% { transform: rotate(45deg) translate3d(150%, -150%, -300px) scale($start_scale); }
   100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
 }
 
 @keyframes opacity { 
-  80%, 100% { opacity: 0.5; } 
+  80%, 100% { opacity: 0.4; } 
 }
