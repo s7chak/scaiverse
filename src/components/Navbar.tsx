@@ -9,6 +9,17 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar is-fixed-top" role="navigation">
 			<div className="navbar-brand">
+				<motion.div 
+						initial={{ opacity: 0 }}
+						transition={{ duration: 2, delay: 2}}
+						onClick={() => setIsActive(!isActive)}
+						animate={{
+							opacity: 1,
+							rotate: !isActive ? 0 : 360
+						}}>
+						<img className='s7img main' src="/files/s2.png"></img>
+						<img className='s7img glow' src="/files/s2.png"></img>
+				</motion.div>
 				<a
 					onClick={() => {
 						setIsActive(!isActive);
@@ -17,16 +28,14 @@ export const Navbar = () => {
 					className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
 					aria-label="menu"
 					aria-expanded="false"
-					data-target="navbar-menu"
-				>
+					data-target="navbar-menu">
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 				</a>
 			</div>
-			<motion.div id="navbar-menu" className={`navbar-menu`}
-				initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1.2, delay: delays[3]}}>
-				<div className="navbar-start">
+			<div id="navbar-menu" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+				<motion.div className="navbar-start" initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1.5, delay: 3.5}}>
 					<Link to="introduction" smooth={true} className="navbar-item">
 						Home
 					</Link>
@@ -39,6 +48,20 @@ export const Navbar = () => {
 					<Link to="blogging" smooth={true} className="navbar-item">
 						Publications
 					</Link>
+				</motion.div>
+				<div className="navbar-right">
+					<motion.a href="mailto:s7chak@gmail.com" className="button btn-alt" 
+					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 4}}>
+						<FaEnvelope size={18} style={{ marginRight: '0' }} />
+					</motion.a>
+					<motion.a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" className="button btn-alt"
+					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 4.5}}>
+						<FaLinkedin size={18} style={{ margin: '0' }} />
+					</motion.a>
+					<motion.a href="https://github.com/s7chak" target="_blank" className="button btn-alt"
+					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 5}}>
+						<FaGithub size={18} style={{ marginRight: '0' }} />
+					</motion.a>
 				</div>
 				{/* <div style={{alignItems: "right"}}>
 					<motion.div className="row is-2"
@@ -54,7 +77,7 @@ export const Navbar = () => {
 						</a>
 					</motion.div>
 				</div> */}
-			</motion.div>
+			</div>
 		</nav>
 	);
 };

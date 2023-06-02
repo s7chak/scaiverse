@@ -28,7 +28,7 @@ export const AboutMe = () => {
 							</div>
 							<div className="column is-3">
 								<div className="box">
-									<img src="./files/java_logo.png" alt="" style={{'height':'40px'}}/>
+									<img src="./files/Java_logo.png" alt="" style={{'height':'40px'}}/>
 									<span>Java</span>
 								</div>
 							</div>

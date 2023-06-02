@@ -2,7 +2,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from 'react-icons/fa';
 import { motion, useMotionValue, useTransform } from "framer-motion"
-import React from "react";
+import React, { useState } from "react";
 
 export const Introduction = () => {
 	// const x = useMotionValue(0)
@@ -112,14 +112,14 @@ function Playback() {
 	const mountains = Array.from({ length: mountainCount }, (_, index) => (
 		<div key={index} className="mountain" />
 	));
-	const delays = [2, 3.5 , 5.5 , 6 ];
+	const [showDefinition, setShow] = useState(false);
 	return (
 	  <div className="playback">
-		<motion.div initial={{ opacity: 0, y: 680	}} animate={{ opacity: 0.95, y: 680	}} transition={{ease: "linear", duration: 3, delay: 0.4}}>
-			<h2>Welcome</h2>
+		<motion.div initial={{ opacity: 0, y: 680, }} animate={{ opacity: 0.95, y: 680	}} transition={{ease: "linear", duration: 3, delay: 0.4}}>
+			<h2 onClick={() => setShow(!showDefinition)}>Welcome</h2>
 		</motion.div>
-		<motion.div initial={{ opacity: 0, y: 760	}} animate={{ opacity: 0.9, y: 742	}} transition={{ease: "linear", duration: 2.5, delay: 3}}>
-			<h1>My name is <span className="blue-text">Subhayu</span></h1>
+		<motion.div initial={{ opacity: 0, y: 760	}} animate={{ opacity: 0.9, y: 700	}} transition={{ease: "linear", duration: 2.5, delay: 3}}>
+			<h1 onClick={() => setShow(!showDefinition)}>My name is <span className="blue-text">Subhayu</span></h1>
 		</motion.div>
 		<div className="play-container">
 			{mountains}
@@ -130,9 +130,35 @@ function Playback() {
 				<Link to="introduction" smooth={true} style={{ textDecoration: 'none' }}>Let's dive in.</Link>
 				</p>
 		</motion.div>
+		<div>
+			{ showDefinition ? <MyDefinition /> : null }
+		</div>
 	  </div>
 	);
   }
 
+  function FadeInWhenVisible({ children }) {
+	return (
+	  <motion.div
+		initial="hidden"
+		whileInView="visible"
+		viewport={{ once: true }}
+		transition={{ duration: 2 }}
+		variants={{
+		  visible: { opacity: 1, scale: 1 },
+		  hidden: { opacity: 0, scale: 1 }
+		}}
+	  >
+		{children}
+	  </motion.div>
+	);
+  }
+
+
+  function MyDefinition() {
+	return <FadeInWhenVisible>
+		<span className="definitions">I am a <span className="blue-text">coder</span></span>
+	</FadeInWhenVisible>
+  }
   
 export default Introduction;
