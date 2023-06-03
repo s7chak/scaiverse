@@ -13,12 +13,16 @@
 
 
 .definitions {
-  z-index: 50;
-
+  z-index: 2;
 }
 
 
-
+.play-intro-container {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 $n: 25;
 // $bgColor: rgb(204,207,209);
@@ -38,12 +42,12 @@ $start_scale: 0.4;
   z-index: 0;
   &::after {
     content: '';
-    height: 50%;
+    height: 10%;
     width: 100%;
     position: absolute;
     top: 50%;
     background: $bgColor;
-    opacity: 0.9;
+    opacity: 0.8;
 	  z-index: 0;
   }
 }

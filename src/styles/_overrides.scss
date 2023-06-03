@@ -15,20 +15,22 @@
 }
 
 .s7logo {
-	margin-top: 3px;
-	margin-right: 160px;
-	margin-bottom: 0;
+	visibility: visible;
 	margin-left: 5px;
-	height: 30px;
-	filter: drop-shadow(0 0 0.7rem var(--foreground-primary));
+}
+.s7logo.is-burger {
+	visibility: visible;
+	position: flex;
+	margin-top: 10px;
+	margin-left: 46%;
+	margin-bottom: 0;
 }
 
 .s7img {
 	position: absolute;
 	margin-top: 3px;
-	margin-right: 160px;
 	margin-bottom: 0;
-	margin-left: 5px;
+	margin-left: 0;
 	height: 35px;
 }
 
@@ -37,7 +39,6 @@
 }
 
 .s7img.glow {
-	position: absolute;
 	z-index:1;
 	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
@@ -71,7 +72,6 @@ ol {
 	}
 }
 
-/* BULMA OVERRIDES */
 .button {
 	color: var(--foreground-primary);
 	background-color: transparent;
@@ -110,7 +110,7 @@ ol {
 		width: 340px !important;
 	}
 
-	animation: scale-in 0.7s cubic-bezier(0.2, 0.46, 0.45, 0.3) both;
+	// animation: scale-in 0.7s cubic-bezier(0.2, 0.46, 0.45, 0.3) both;
 
 	.card-content {
 		.repo-title {
@@ -152,11 +152,17 @@ ol {
 
 .navbar {
 	background-color: var(--background-primary);
-	.navbar-brand,
+	
 	.navbar-menu,
 	.navbar-burger,
 	.navbar-item {
 		margin: 10px 5px;
+		background-color: var(--background-primary);
+		color: var(--foreground-primary);
+	}
+	.navbar-brand {
+		margin-top: 0;
+		width: 10vw;
 		background-color: var(--background-primary);
 		color: var(--foreground-primary);
 	}
@@ -190,6 +196,9 @@ ol {
 		flex-grow: 1;
 		justify-content: center;
 		margin-left: 160px;
+	}
+	.navbar-start.is-burger {
+		margin-left: 0px;
 	}
 
 	.navbar-start,

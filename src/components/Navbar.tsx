@@ -6,20 +6,14 @@ import { Link } from "react-scroll";
 export const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);
 	const delays = [2,3.5,5.5,7];
+	const [width, setWidth] = useState<number>(window.innerWidth);
+	const isMobile = width <= 768;
 	return (
 		<nav className="navbar is-fixed-top" role="navigation">
+			<div className={`s7logo ${isMobile ? "s7logo is-burger" : ""}`}>
+				<MyLogo />
+			</div>
 			<div className="navbar-brand">
-				<motion.div 
-						initial={{ opacity: 0 }}
-						transition={{ duration: 2, delay: 2}}
-						onClick={() => setIsActive(!isActive)}
-						animate={{
-							opacity: 1,
-							rotate: !isActive ? 0 : 360
-						}}>
-						<img className='s7img main' src="/files/s2.png"></img>
-						<img className='s7img glow' src="/files/s2.png"></img>
-				</motion.div>
 				<a
 					onClick={() => {
 						setIsActive(!isActive);
@@ -35,7 +29,7 @@ export const Navbar = () => {
 				</a>
 			</div>
 			<div id="navbar-menu" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
-				<motion.div className="navbar-start" initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1.5, delay: 3.5}}>
+				<motion.div className={`navbar-start ${isActive ? "navbar-start is-burger" : ""}`} initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 2, delay: 3}}>
 					<Link to="introduction" smooth={true} className="navbar-item">
 						Home
 					</Link>
@@ -81,5 +75,17 @@ export const Navbar = () => {
 		</nav>
 	);
 };
+
+function MyLogo() {
+	return (
+		<motion.div
+		initial={{ opacity: 0 }}
+		animate={{ opacity: 1 }}
+		transition={{ duration: 2, delay: 2}}>
+			<img className='s7img main' src="/files/s2.png"></img>
+			<img className='s7img glow' src="/files/s2.png"></img>
+		</motion.div>
+	);
+}
 
 export default Navbar;

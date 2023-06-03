@@ -25,7 +25,20 @@
 .reg-text {
 	align-items: center;
 	color: #a8b5c3;
+	.p {
+		z-index: 50 !important;
+	}
 }
+
+.name-text {
+	font-weight: bold;
+	color: var(--accent);
+	:hover {
+		filter: brightness(0) invert(1) blur(5px) !important;
+		-webkit-filter: brightness(0) invert(1) blur(5px);
+	}
+}
+
 
 .hyperlink {
 	font-weight: bold;

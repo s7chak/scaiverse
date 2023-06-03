@@ -114,26 +114,26 @@ function Playback() {
 	));
 	const [showDefinition, setShow] = useState(false);
 	return (
-	  <div className="playback">
-		<motion.div initial={{ opacity: 0, y: 680, }} animate={{ opacity: 0.95, y: 680	}} transition={{ease: "linear", duration: 3, delay: 0.4}}>
-			<h2 onClick={() => setShow(!showDefinition)}>Welcome</h2>
-		</motion.div>
-		<motion.div initial={{ opacity: 0, y: 760	}} animate={{ opacity: 0.9, y: 700	}} transition={{ease: "linear", duration: 2.5, delay: 3}}>
-			<h1 onClick={() => setShow(!showDefinition)}>My name is <span className="blue-text">Subhayu</span></h1>
-		</motion.div>
+	  <section className="playback" id="play_home">
+		<div className="play-intro-container">
+			<motion.div initial={{ opacity: 0, y: -100, }} animate={{ opacity: 1, y: -100	}} transition={{ease: "linear", duration: 3, delay: 0.4}}>
+				<h2 onClick={() => setShow(!showDefinition)}>Welcome</h2>
+			</motion.div>
+			<motion.div initial={{ opacity: 0, y: 0}} animate={{ opacity: 1, y: -30}} transition={{ease: "linear", duration: 2.5, delay: 2.5}}>
+				<h1 onClick={() => setShow(!showDefinition)}>My name is <span className="name-text">Subhayu</span></h1>
+			</motion.div>
+			<motion.div className="reg-text" initial={{ opacity: 0, y: 170	}} animate={{ opacity: 1, y: 170}} transition={{ease: "linear", duration: 2, delay: 6}}>
+				<p><Link to="introduction" smooth={true} style={{ textDecoration: 'none' }}>Let's dive in.</Link></p>
+			</motion.div>
+		</div>
 		<div className="play-container">
 			{mountains}
 		</div>
-		<br/><br/><br/><br/>
-		<motion.div className="reg-text" initial={{ opacity: 0, y: -800	}} animate={{ opacity: 1, y: -800}} transition={{ease: "linear", duration: 2, delay: 6}}>
-				<p>
-				<Link to="introduction" smooth={true} style={{ textDecoration: 'none' }}>Let's dive in.</Link>
-				</p>
-		</motion.div>
+		
 		<div>
 			{ showDefinition ? <MyDefinition /> : null }
 		</div>
-	  </div>
+	  </section>
 	);
   }
 
@@ -157,7 +157,11 @@ function Playback() {
 
   function MyDefinition() {
 	return <FadeInWhenVisible>
-		<span className="definitions">I am a <span className="blue-text">coder</span></span>
+		<motion.div
+		initial={{ y: 0	}} animate={{ y: 0}} 
+		transition={{ease: "linear", duration: 2}}>
+			<span className="definitions">I am a <span className="blue-text">coder</span></span>
+		</motion.div>
 	</FadeInWhenVisible>
   }
   
