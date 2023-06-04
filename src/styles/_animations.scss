@@ -13,7 +13,7 @@
 
 
 .definitions {
-  z-index: 2;
+  z-index: 3;
 }
 
 
@@ -48,7 +48,7 @@ $start_scale: 0.4;
     top: 50%;
     background: $bgColor;
     opacity: 0.8;
-	  z-index: 0;
+	  z-index: 2;
   }
 }
 .mountain {
