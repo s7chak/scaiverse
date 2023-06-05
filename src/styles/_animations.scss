@@ -12,8 +12,41 @@
 }
 
 
+.miniball {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 15px 5px #fff,  /* inner white */
+    0 0 20px 10px rgb(0, 119, 255), /* middle magenta */
+    0 0 30px 20px rgb(33, 76, 248); /* outer cyan */
+  filter: blur(2px);
+  offset-path: path("m 0 0 q 188 -137 369 0");
+  z-index: 5;
+}
+
+
+.ball {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 20px 8px #fff,  /* inner white */
+    0 0 30px 8px rgb(101, 35, 255), /* middle magenta */
+    0 0 40px 30px rgb(33, 76, 248); /* outer cyan */
+  filter: blur(3px);
+  z-index: 5;
+  offset-path: path("m 0 0 q 188 -137 369 0");
+  animation-iteration-count: infinite;
+}
+
+
 .definitions {
-  z-index: 3;
+  font-size: 20px;
 }
 
 
@@ -33,26 +66,25 @@ $mountainHeight: 10%; /* In percent */
 $start_scale: 0.4;
 
 .play-container {
-  position: flex;
+  position: absolute;
   width: 100%;
   height: 0;
   padding-top: 100%;
   overflow: hidden;
   perspective: 800px;
-  z-index: 0;
   &::after {
     content: '';
-    height: 10%;
+    height: 15%;
     width: 100%;
     position: absolute;
     top: 50%;
     background: $bgColor;
     opacity: 0.8;
-	  z-index: 2;
+    z-index:10;
   }
 }
 .mountain {
-  filter: blur(3px);
+  filter: blur(2.5px);
   background-color: $mountainColor;
   width: $mountainHeight;
   height: $mountainHeight;

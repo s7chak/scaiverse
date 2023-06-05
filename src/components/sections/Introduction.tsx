@@ -2,7 +2,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from 'react-icons/fa';
 import { motion, useMotionValue, useTransform } from "framer-motion"
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 export const Introduction = () => {
 	// const x = useMotionValue(0)
@@ -16,6 +16,7 @@ export const Introduction = () => {
 					<div className="columns">
 						<div className="column is-12">
 							<div className="content" style={{ textAlign: "center" }}>
+								<br/><br/><br/><br/>
 								<motion.div 
 									// initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }} 
 									transition={{ease: "linear", duration: delays[0]}}
@@ -54,17 +55,17 @@ export const Introduction = () => {
 								<motion.div style={{ display: 'flex', justifyContent: 'center' }}
 									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
-										<div className="button" style={{"width":"150px"}}>
+										<div className="button" style={{"width":"141px"}}>
 										<a href="./files/Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
-										<FaCloudDownloadAlt size={20} style={{ marginRight: '8px'}} /> Résumé
+										<FaCloudDownloadAlt size={20} style={{ marginRight: '7px'}} /> Résumé
 										</a>
 										</div>
 									</div>
 									
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										{/* <Link to="https://www.linkedin.com/subhayu.chakravarty"> */}
-										<div className="button" style={{"width":"150px"}}>
-										<FaLinkedin size={20} style={{ marginRight: '8px' }} />
+										<div className="button" style={{"width":"141px"}}>
+										<FaLinkedin size={20} style={{ marginRight: '7px' }} />
 										<a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" rel="noopener noreferrer"> LinkedIn
 										</a>
 										</div>
@@ -72,8 +73,8 @@ export const Introduction = () => {
 									</div>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										{/* <Link to="https://github.com/s7chak"> */}
-										<div className="button" style={{"width":"150px"}}>
-										<FaGithub size={20} style={{ marginRight: '8px' }} />
+										<div className="button" style={{"width":"142px"}}>
+										<FaGithub size={20} style={{ marginRight: '7px' }} />
 										<a href="https://github.com/s7chak" rel="noopener noreferrer">
 											GitHub
 										</a>
@@ -105,6 +106,14 @@ export const Introduction = () => {
 	);
 };
 
+function multiply(no: number) {
+	console.log(no.toString())
+	return <motion.div className="miniball"
+			animate={{ opacity:1, x: 0, y: 0, '--rotate': '60deg'} as any} 
+			transition={{ease: "linear", duration: 4, delay: 1}}
+			></motion.div>
+}
+
 
 function Playback() {
 	const [isActive, setIsActive] = React.useState(false);
@@ -113,23 +122,52 @@ function Playback() {
 		<div key={index} className="mountain" />
 	));
 	const [showDefinition, setShow] = useState(false);
+	const divestyle = {
+		zIndex: '5'
+		// :hover {
+		// 	filter: 'blur(1px)',
+		// }
+	};
+	const transition = { duration: 5, yoyo: Infinity, ease: "easeIn" };
+
 	return (
 	  <section className="playback" id="play_home">
-		<div className="play-intro-container">
-			<motion.div initial={{ opacity: 0, y: -100, }} animate={{ opacity: 1, y: -100	}} transition={{ease: "linear", duration: 3, delay: 0.4}}>
-				<h2 onClick={() => setShow(!showDefinition)}>Welcome</h2>
-			</motion.div>
-			<motion.div initial={{ opacity: 0, y: 0}} animate={{ opacity: 1, y: -30}} transition={{ease: "linear", duration: 2.5, delay: 2.5}}>
-				<h1 onClick={() => setShow(!showDefinition)}>My name is <span className="name-text">Subhayu</span></h1>
-			</motion.div>
-			<motion.div className="reg-text" initial={{ opacity: 0, y: 170	}} animate={{ opacity: 1, y: 170}} transition={{ease: "linear", duration: 2, delay: 6}}>
-				<p><Link to="introduction" smooth={true} style={{ textDecoration: 'none' }}>Let's dive in.</Link></p>
-			</motion.div>
-		</div>
 		<div className="play-container">
 			{mountains}
 		</div>
-		
+		<div className="play-intro-container">
+			<motion.div initial={{ opacity: 0, y: -100, }} animate={{ opacity: 1, y: -100	}} transition={{ease: "linear", duration: 3, delay: 0.5}}>
+				<h2 onClick={() => setShow(false)}>Welcome</h2>
+			</motion.div>
+			<motion.div initial={{ opacity: 0, y: -10}} animate={{ opacity: 1, y: -30}} transition={{ease: "linear", duration: 2.5, delay: 2.5}}>
+				<h1 onClick={() => setShow(true)}>My name is <span className="name-text">Subhayu</span></h1>
+			</motion.div>
+			<motion.div initial={{ opacity: 0, y: 60	}} animate={{ opacity: 1, y: 60}} transition={{ease: "linear", duration: 2, delay: 6}}>
+				<Link to="introduction" style={divestyle} smooth={true}>Let's dive in.</Link>
+			</motion.div>
+
+			<motion.div 
+				// initial={{ opacity: 0, x: -80, y: -100	}}
+				// animate={{ opacity:1, x: -80, y: -100, rotate: [0, 100, 200, 360, 420]}} 
+				// transition={{ease: "linear", duration: 4, delay: 1}}
+				initial={{ opacity: 0, x:-200, y: 0, offsetDistance: "0%" }}
+        		animate={{ opacity: 1, offsetDistance: "100%"}}
+				transition={transition}
+				drag
+				dragConstraints={{top: -50,left: -50,right: 50,bottom: 50,}}
+				className="ball"
+			/>
+
+
+		</div>
+		<div>{ showDefinition ? 
+		<motion.div
+				initial={{ opacity: 0, offsetDistance: "0%" }}
+        		animate={{ offsetDistance: "100%"}}
+				transition={transition}
+				drag
+				dragConstraints={{top: -50,left: -50,right: 50,bottom: 50,}}
+				className="miniball"/> : null }</div>
 		<div>
 			{ showDefinition ? <MyDefinition /> : null }
 		</div>
@@ -156,11 +194,25 @@ function Playback() {
 
 
   function MyDefinition() {
+	const roles = ['developer','engineer','problem solver','designer','coder','artist'];
+	const vowelRegex = '^[aieouAIEOU].*';
+	const [newName, setnewName] = useState("");
+    const shuffle = useCallback(() => {
+        const index = Math.floor(Math.random() * roles.length);
+		let prefix = roles[index].match(vowelRegex)?'an' : 'a';
+        setnewName(prefix+' '+roles[index]);
+    }, []);
+
+    useEffect(() => {
+        const intervalID = setInterval(shuffle, 3000);
+        return () => clearInterval(intervalID);
+    }, [shuffle])
+
+
+
 	return <FadeInWhenVisible>
-		<motion.div
-		initial={{ y: 0	}} animate={{ y: 0}} 
-		transition={{ease: "linear", duration: 2}}>
-			<span className="definitions">I am a <span className="blue-text">coder</span></span>
+		<motion.div initial={{y:240}} transition={{ease: "linear", duration: 2}}>
+			<div className="definitions">I am <span className="blue-text">{newName}</span></div>
 		</motion.div>
 	</FadeInWhenVisible>
   }
