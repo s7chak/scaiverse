@@ -33,8 +33,6 @@ function NoMatch() {
 	const mountainCount = 19;
 	const mountains = Array.from({ length: mountainCount }, (_, index) => (
 		<div key={index} className="mountain" />
-
-
 	));
 	console.log(mountains.length.toString());
 	return (

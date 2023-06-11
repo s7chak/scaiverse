@@ -4,12 +4,20 @@ import Projects from "../components/sections/Projects";
 import AboutMe from "../components/sections/AboutMe";
 import Footer from "../components/sections/Footer";
 import Publications from "../components/sections/Publications";
-import React from "react";
+import React, { createContext, useState } from "react";
+import ReactSwitch from "react-switch";
+import Sphere3d from "../components/things/3dPlay";
+
+export const ThemeContext = createContext(null);
 
 export const App = () => {
+	const [theme, setTheme] = useState("dark");
+	const toggleTheme = () => {
+		setTheme((curr) => (curr === "light" ? "dark" : "light"));
+	}
 	return (
-		<div className="app">
-			<Navbar />
+		<div className="app" id={theme}>
+			<Navbar changeTheme={toggleTheme}/>
 			<Introduction />
 			<AboutMe />
 			<Projects />

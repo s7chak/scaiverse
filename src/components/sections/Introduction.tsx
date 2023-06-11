@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from 'react-icons/fa';
 import { motion, useMotionValue, useTransform } from "framer-motion"
 import React, { useCallback, useEffect, useState } from "react";
+import Playthree from "../things/3dPlay";
 
 export const Introduction = () => {
 	// const x = useMotionValue(0)
@@ -11,6 +12,7 @@ export const Introduction = () => {
 	return (
 		<div>
 			<Playback />
+			{/* <Playthree /> */}
 			<section id="introduction" className="introduction section is-medium">
 				<div className="introduction-container container">
 					<div className="columns">
@@ -20,10 +22,10 @@ export const Introduction = () => {
 								<motion.div 
 									// initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }} 
 									transition={{ease: "linear", duration: delays[0]}}
-									whileHover={{scale: 1.3, transition: { duration: 2 },}}
+									whileHover={{scale: 1.1, transition: { duration: 2 },}}
 									initial="hidden"
-      								whileInView={{scale: 1.1, transition: { duration: 2 },}}
-      								viewport={{ once: true }}>
+      								whileInView={{scale: 1.07, transition: { duration: 2 },}}
+      								viewport={{ once: false }}>
 								<h2 className="title">
 									<span className="blue-text"><b>This is my digital canvas</b></span>
 								</h2>
@@ -56,7 +58,7 @@ export const Introduction = () => {
 									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}>
 									<div style={{ display: 'flex', alignItems: 'center' }}>
 										<div className="button" style={{"width":"141px"}}>
-										<a href="./files/Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
+										<a href="assets/files/Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
 										<FaCloudDownloadAlt size={20} style={{ marginRight: '7px'}} /> Résumé
 										</a>
 										</div>
@@ -122,36 +124,34 @@ function Playback() {
 		<div key={index} className="mountain" />
 	));
 	const [showDefinition, setShow] = useState(false);
-	const divestyle = {
-		zIndex: '5'
-		// :hover {
-		// 	filter: 'blur(1px)',
-		// }
-	};
-	const transition = { duration: 5, yoyo: Infinity, ease: "easeIn" };
-
+	const transition = { duration: 6, yoyo: Infinity, ease: "easeInOut" };
+	const miniTransition = { duration: 9, yoyo: Infinity, ease: "easeInOut" };
+	var date = new Date();
+	const percentDay = (date.getHours()*100 / 24).toString();
+	const [width, setWidth] = useState<number>(window.innerWidth);
+	const isMobile = width <= 768;
 	return (
 	  <section className="playback" id="play_home">
 		<div className="play-container">
 			{mountains}
 		</div>
 		<div className="play-intro-container">
-			<motion.div initial={{ opacity: 0, y: -100, }} animate={{ opacity: 1, y: -100	}} transition={{ease: "linear", duration: 3, delay: 0.5}}>
+			<motion.div initial={{ opacity: 0, y: -100, }} animate={{ opacity: 1, y: -100	}} transition={{ease: "linear", duration: 2, delay: 0.5}}>
 				<h2 onClick={() => setShow(false)}>Welcome</h2>
 			</motion.div>
-			<motion.div initial={{ opacity: 0, y: -10}} animate={{ opacity: 1, y: -30}} transition={{ease: "linear", duration: 2.5, delay: 2.5}}>
+			<motion.div initial={{ opacity: 0, y: -10}} animate={{ opacity: 1, y: -30}} transition={{ease: "linear", duration: 2, delay: 2}}>
 				<h1 onClick={() => setShow(true)}>My name is <span className="name-text">Subhayu</span></h1>
 			</motion.div>
-			<motion.div initial={{ opacity: 0, y: 60	}} animate={{ opacity: 1, y: 60}} transition={{ease: "linear", duration: 2, delay: 6}}>
-				<Link to="introduction" style={divestyle} smooth={true}>Let's dive in.</Link>
+			<motion.div initial={{ opacity: 0, y: 60	}} animate={{ opacity: 1, y: 60}} transition={{ease: "linear", duration: 2, delay: 3}}>
+				<div className={`divebox ${isMobile ? "divebox is-burger" : ""}`}><Link className="dive" to="introduction" smooth={true}>Let's dive in</Link></div>
 			</motion.div>
 
 			<motion.div 
 				// initial={{ opacity: 0, x: -80, y: -100	}}
 				// animate={{ opacity:1, x: -80, y: -100, rotate: [0, 100, 200, 360, 420]}} 
 				// transition={{ease: "linear", duration: 4, delay: 1}}
-				initial={{ opacity: 0, x:-200, y: 0, offsetDistance: "0%" }}
-        		animate={{ opacity: 1, offsetDistance: "100%"}}
+				initial={{ opacity: 0, x:0, y: 0, offsetDistance: "0%" }}
+        		animate={{ opacity: 1, offsetDistance: percentDay+"%"}}
 				transition={transition}
 				drag
 				dragConstraints={{top: -50,left: -50,right: 50,bottom: 50,}}
@@ -163,11 +163,11 @@ function Playback() {
 		<div>{ showDefinition ? 
 		<motion.div
 				initial={{ opacity: 0, offsetDistance: "0%" }}
-        		animate={{ offsetDistance: "100%"}}
-				transition={transition}
+        		animate={{ offsetDistance: "100%", opacity: 0.9}}
+				transition={miniTransition}
 				drag
 				dragConstraints={{top: -50,left: -50,right: 50,bottom: 50,}}
-				className="miniball"/> : null }</div>
+				className="miniball"/> : null}</div>
 		<div>
 			{ showDefinition ? <MyDefinition /> : null }
 		</div>

@@ -3,14 +3,15 @@ import { useState } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
 	const [isActive, setIsActive] = useState(false);
 	const delays = [2,3.5,5.5,7];
 	const [width, setWidth] = useState<number>(window.innerWidth);
 	const isMobile = width <= 768;
 	return (
 		<nav className="navbar is-fixed-top" role="navigation">
-			<div className={`s7logo ${isMobile ? "s7logo is-burger" : ""}`}>
+			<div className={`s7logo ${isMobile ? "s7logo is-burger" : ""}`}
+				onClick={props.changeTheme}>
 				<MyLogo />
 			</div>
 			<div className="navbar-brand">
@@ -82,8 +83,8 @@ function MyLogo() {
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
 		transition={{ duration: 2, delay: 2}}>
-			<img className='s7img main' src="/files/s2.png"></img>
-			<img className='s7img glow' src="/files/s2.png"></img>
+			<img className='s7img main' src="assets/files/s2.png"></img>
+			<img className='s7img glow' src="assets/files/s2.png"></img>
 		</motion.div>
 	);
 }

@@ -4,17 +4,25 @@
 @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css");
 
 :root {
-	// --accent: #a3b8ef;
-	// --background-primary: #13171b;
-	// --background-secondary: #171b20;
-	// --background-secondary-alt: #21262e;
-	// --foreground-primary: #b6beca;
-
-	--accent: #6484cd;
-	--background-primary: #101012;
-	--background-secondary: #1d1d25;
-	--background-secondary-alt: #101012;
-	--foreground-primary: #a8b5c3;
+	#dark {
+		--accent: #6484cd;
+		--background-primary: #101012;
+		--background-secondary: #1d1d25;
+		--background-secondary-alt: #101012;
+		--foreground-primary: #a8b5c3;	
+	}
+	#light {
+		--accent: #3b61fb;
+		--background-primary: #c5c5fa;
+		--background-secondary: #cbcbff;
+		--background-secondary-alt: #cacaff;
+		--foreground-primary: #6b8bdb;
+	}
+	// --accent: #6484cd;
+	// --background-primary: #101012;
+	// --background-secondary: #1d1d25;
+	// --background-secondary-alt: #101012;
+	// --foreground-primary: #a8b5c3;
 }
 
 .blue-text {
@@ -31,9 +39,63 @@
 .name-text {
 	font-weight: bold;
 	color: var(--accent);
-	:hover {
-		filter: brightness(0) invert(1) blur(5px) !important;
-		-webkit-filter: brightness(0) invert(1) blur(5px);
+	&:hover {
+		filter: brightness(0.6) invert(1)!important;
+		-webkit-filter: brightness(0.8) invert(1);
+	}
+}
+
+.divebox {
+	--border-size: 1.5px;
+	--border-angle: 0turn;
+	display: flex;
+	width: 180px;
+	height: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	align-items: center;
+	justify-content: center;
+	background-image: conic-gradient(
+		from var(--border-angle),
+		var(--background-primary),
+		var(--background-primary) 50%,
+		var(--background-primary),
+	  ),
+	  conic-gradient(from var(--border-angle), transparent 20%, (var(--accent)), rgb(68, 64, 178));
+	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	animation: bg-spin 5s linear infinite;
+	@keyframes bg-spin {
+	  to {
+		--border-angle: 1turn;
+	  }
+	}
+
+	&:hover {
+	  animation-play-state: paused;
+	}
+  }
+
+  .divebox.is-burger {
+	visibility: visible;
+	width: 80vw;
+	height: 5vh;
+	margin-bottom: 0;
+	align-items: center;
+	justify-content: center;
+  }
+
+  @property --border-angle {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0turn;
+  }
+
+.dive {
+	&:hover {
+		-webkit-filter:  blur(1px);
 	}
 }
 

@@ -43,11 +43,16 @@
 	-webkit-transform: scale(1.2);
 	filter: brightness(0) invert(1) blur(5px);
 	-webkit-filter: brightness(0) invert(1) blur(5px);
-	opacity:0;
+	#light {
+		opacity:0;
+	}
+	#dark {
+		opacity:1;
+	}
 	// filter: drop-shadow(0 0 0.8rem var(--foreground-primary));
 }
 .s7img.main:hover ~ .s7img.glow {
-	opacity:1;
+	opacity:0;
   }
 
 
