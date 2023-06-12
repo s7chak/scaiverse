@@ -11,7 +11,8 @@ export const Navbar = (props) => {
 	return (
 		<nav className="navbar is-fixed-top" role="navigation">
 			<div className={`s7logo ${isMobile ? "s7logo is-burger" : ""}`}
-				onClick={props.changeTheme}>
+				// onClick={props.changeTheme}
+				>
 				<MyLogo />
 			</div>
 			<div className="navbar-brand">

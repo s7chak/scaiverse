@@ -27,6 +27,8 @@
     "@primer/octicons-react": "^16.1.1",
     "bulma": "^0.9.4",
     "gh-pages": "^4.0.0",
+    "webpack": "^5.86.0",
+    "file-loader":"^6.2.0",
     "react": "^18.2.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-switch":"^7.0.0",
@@ -36,7 +38,7 @@
     "react-icons": "^4.8.0",
     "framer-motion": "^10.12.16",
     "react-ga": "^3.3.1",
-    "three": "^0.128.0",
+    "three": "^0.153.0",
     "@react-three/fiber": "^8.13.0",
     "@react-three/drei": "^9.74.8"
   },

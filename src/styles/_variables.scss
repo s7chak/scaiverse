@@ -40,8 +40,7 @@
 	font-weight: bold;
 	color: var(--accent);
 	&:hover {
-		filter: brightness(0.6) invert(1)!important;
-		-webkit-filter: brightness(0.8) invert(1);
+		filter: blur(1px);
 	}
 }
 
