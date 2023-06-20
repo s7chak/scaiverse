@@ -1,4 +1,4 @@
-import { FlyControls, Loader, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { FlyControls, Loader, OrbitControls, PerspectiveCamera, RoundedBox } from "@react-three/drei";
 import { Canvas, Color, Vector3, useFrame, useLoader, extend } from "@react-three/fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from 'three';
@@ -16,7 +16,7 @@ let techImages = {
   "Node.js": "assets/files/node.png",
   "TypeScript": "assets/files/ts.png",
   "React": "assets/files/react.png",
-  "MSSQL":  "assets/files/sql.png",
+  "MSSQL":  "assets/files/db.png",
   "PostgreSQL":  "assets/files/pgsql.png",
   "GoogleCloud": "assets/files/gcloud.png",
 };
@@ -57,24 +57,31 @@ const JustBox = ({ techname, position, xrad, zrad, rotationSpeed, leng}: TechImg
     ref.current.position.y = x;
     ref.current.position.z = z;
   });
-
-
+  let boxSize = leng*1.3;
   return (
       <mesh
           ref={ref}
           position={position}
-          scale={hovered? 1.2 : 1}
+          scale={hovered? 1.3 : 1}
           onClick={() => setClicked(!clicked)}
           onPointerOver={(event) => hover(true)}
           onPointerOut={(event) => hover(false)}
           castShadow={true}
       >
         {/* <boxGeometry attach="geometry" args={[leng/2]}/> */}
-        <boxGeometry attach="geometry" args={[leng, leng]} />
-        <meshBasicMaterial attach='material' 
-          map={texture}
+        {/* <boxGeometry attach="geometry" args={[leng, leng]} /> */}
+        <RoundedBox
+        rotation={[0, 0, 0]}
+        scale={[1, 1, 1]}
+        args={[boxSize, boxSize, boxSize]}
+        radius={0.1}
+        smoothness={2} key={techname}
+        position={undefined} attach={undefined} onUpdate={undefined} up={undefined} matrix={undefined} quaternion={undefined} layers={undefined} dispose={undefined} onClick={undefined} onContextMenu={undefined} onDoubleClick={undefined} onPointerUp={undefined} onPointerDown={undefined} onPointerOver={undefined} onPointerOut={undefined} onPointerEnter={undefined} onPointerLeave={undefined} onPointerMove={undefined} onPointerMissed={undefined} onPointerCancel={undefined} onWheel={undefined} visible={undefined} type={undefined} id={undefined} uuid={undefined} name={undefined} parent={undefined} modelViewMatrix={undefined} normalMatrix={undefined} matrixWorld={undefined} matrixAutoUpdate={undefined} matrixWorldAutoUpdate={undefined} matrixWorldNeedsUpdate={undefined} castShadow={undefined} receiveShadow={undefined} frustumCulled={undefined} renderOrder={undefined} animations={undefined} userData={undefined} customDepthMaterial={undefined} customDistanceMaterial={undefined} isObject3D={undefined} onBeforeRender={undefined} onAfterRender={undefined} applyMatrix4={undefined} applyQuaternion={undefined} setRotationFromAxisAngle={undefined} setRotationFromEuler={undefined} setRotationFromMatrix={undefined} setRotationFromQuaternion={undefined} rotateOnAxis={undefined} rotateOnWorldAxis={undefined} rotateX={undefined} rotateY={undefined} rotateZ={undefined} translateOnAxis={undefined} translateX={undefined} translateY={undefined} translateZ={undefined} localToWorld={undefined} worldToLocal={undefined} lookAt={undefined} add={undefined} remove={undefined} removeFromParent={undefined} clear={undefined} getObjectById={undefined} getObjectByName={undefined} getObjectByProperty={undefined} getObjectsByProperty={undefined} getWorldPosition={undefined} getWorldQuaternion={undefined} getWorldScale={undefined} getWorldDirection={undefined} raycast={undefined} traverse={undefined} traverseVisible={undefined} traverseAncestors={undefined} updateMatrix={undefined} updateMatrixWorld={undefined} updateWorldMatrix={undefined} toJSON={undefined} clone={undefined} copy={undefined} addEventListener={undefined} hasEventListener={undefined} removeEventListener={undefined} dispatchEvent={undefined} material={undefined} geometry={undefined} morphTargetInfluences={undefined} morphTargetDictionary={undefined} isMesh={undefined} updateMorphTargets={undefined} getVertexPosition={undefined}>
+          <meshBasicMaterial attach='material' 
+            map={texture}
           // color={'#6484cd'} metalness={clicked? 0.5+rotationSpeed : 0.6+rotationSpeed}
-        />
+          />
+        </RoundedBox>
         
       </mesh>
   );
@@ -182,15 +189,15 @@ export const RotatingTechs = () => {
       position: new THREE.Vector3(randomorbitpos(8)),
       xrad: 10,
       zrad: 8,
-      rotationSpeed: Math.min(Math.random()/3, 0.3),
+      // rotationSpeed: Math.min(Math.random()/3, 0.3),
+      rotationSpeed: 0.02*i,
       leng: 1
     })
   ));
   console.log(isMobile, width);
   let widthStack = isMobile?"90vw" : "80vw";
-  console.log(widthStack);
   return (
-      <div style={{height:'95vh', width: widthStack}}>
+      <div style={{height:'95vh', width: widthStack, marginLeft: 0}}>
         <Suspense fallback={<Loader />}>
           <Canvas camera={{ fov: 50, position: [15, 10, 25]}}>
               <OrbitControls target={[0,0,0]} 

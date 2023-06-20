@@ -5,6 +5,7 @@
 	font-weight: 300;
 	background-color: var(--background-primary) !important;
 	color: var(--foreground-primary) !important;
+	transition: background-color 2s ease;
 }
 
 .blogging {
@@ -12,6 +13,8 @@
 	font-weight: 300;
 	background-color: var(--background-secondary-alt) !important;
 	color: var(--foreground-primary) !important;
+	height: auto;
+	transition: background-color 2s ease;
 }
 
 .s7logo {
@@ -63,6 +66,7 @@ a {
 	&:hover,
 	&:focus {
 		color: var(--accent) !important;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
 	}
 }
 
@@ -92,6 +96,7 @@ ol {
 	&:focus {
 		border-color: var(--accent);
 		color: inherit;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
 	}
 }
 
@@ -107,7 +112,7 @@ ol {
 	background-color: var(--background-primary);
 	border-radius: 6px;
 	width: 400px;
-
+	transition: background-color 2s ease;
 	margin: 1rem 0.3rem;
 
 	@include breakpoint(extra_small_devices) {
@@ -131,7 +136,7 @@ ol {
 	color: var(--foreground-primary);
 	background-color: var(--background-primary);
 	border-radius: 6px;
-
+	transition: background-color 2s ease;
 	margin: 1rem 0.3rem;
 	width: 700px;
 
@@ -149,26 +154,44 @@ ol {
 		.blog-description {
 			font-size: 16px;
 			white-space: pre-wrap;
+			text-align: justify;
 		}
 	}
 }
 
-
+.navbar-phone-menu {
+	position: fixed;
+	display: flex;
+  	flex-direction: row;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 10vh;
+	overflow: hidden;
+	justify-content: flex-start;
+  	align-items: center;
+}
 .navbar {
 	background-color: var(--background-primary);
-	
+	transition: background-color 2s ease;
 	.navbar-menu,
 	.navbar-burger,
 	.navbar-item {
 		margin: 10px 5px;
 		background-color: var(--background-primary);
 		color: var(--foreground-primary);
+		transition: background-color 2s ease;
+		:hover {
+			cursor: url("../../public/assets/files/hand.svg"), pointer;
+		}
 	}
 	.navbar-brand {
 		margin-top: 0;
 		width: 10vw;
 		background-color: var(--background-primary);
 		color: var(--foreground-primary);
+		transition: background-color 2s ease;
+		z-index: 50;
 	}
 
 	.navbar-right {
@@ -202,7 +225,11 @@ ol {
 		margin-left: 30px;
 	}
 	.navbar-start.is-burger {
-		margin-left: 0px;
+		margin-left: 10px;
+		width: 90vw;
+		display: flex;
+		flex-direction: row;
+		z-index: 0;
 	}
 
 	.navbar-start,
@@ -210,10 +237,11 @@ ol {
 	.navbar-end {
 		.navbar-item {
 			background: none;
-			margin: 0px 12px;
+			margin: 0px 8px;
 			border-bottom: 3px solid transparent;
-
 			transition: 0.3s ease-in-out;
+			display: flex;
+			align-items: center;
 
 			&:hover,
 			&:focus {
@@ -235,8 +263,15 @@ ol {
 .footer {
 	background-color: var(--background-primary);
 	padding: 4rem !important;
-
+	transition: background-color 2s ease;
 	p {
 		font-size: 16px;
+	}
+}
+
+.footertext {
+	color: var(--accent);
+	:hover {
+		color: rgb(128, 185, 239);
 	}
 }

@@ -1,14 +1,17 @@
 import React, { RefObject } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import appConfig from "../appConfig.json";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import TechStack from "../things/TechStack";
+import TimeLineGraph from "../things/TimeLineGraph";
 
 export const AboutMe = () => {
 	let about_text = appConfig["About"]["text"];
 	return (
 		<section id="about" className="about section is-medium">
 			<div className="about-container container">
+			<br/><br/>
+				<TimeLineGraph /><br/>
 				<h1 className="title">About</h1>
 				{/* <div className="columns">
 					<div className="column is-10"> */}
@@ -19,7 +22,7 @@ export const AboutMe = () => {
 							<br />
 							<span>This is my current tech stack:</span>
 						</motion.div><br/>
-						<TechStack />
+						<TechStack />		
 						<br />
 			</div>
 		</section>

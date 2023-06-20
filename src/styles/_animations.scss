@@ -11,6 +11,136 @@
 	}
 }
 
+.typewriter {
+  font-family: "Roboto Mono", monospace;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid;
+  color: rgb(143, 163, 187);
+  animation: typing 1s steps(24), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+
+.glowball {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: screen;
+
+  width: 5px;
+  height: 5px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 20px 8px #fff,
+    0 0 30px 8px rgb(101, 35, 255),
+    0 0 40px 30px rgb(33, 76, 248);
+  filter: blur(3.5px);
+}
+
+.glowball more{
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 30px 10px #fff,
+    0 0 35px 10px rgb(101, 35, 255),
+    0 0 45px 35px rgb(33, 76, 248);
+  filter: blur(5px);
+}
+
+.milestone-container {
+  position: relative;
+}
+
+.mile-tooltip {
+  position: relative;
+  color: rgb(179, 207, 250);
+  background-color: var(--background-secondary);
+  border-radius: 3px;
+  border: 1px solid rgb(134, 180, 255);
+  padding: 5px;
+  width: 180px !important;
+}
+
+.milestone-label {
+  color: rgb(157, 196, 255);
+  font-size: 13;
+  font-weight: bold;
+  background-color: transparent;
+  // border-radius: 3px;
+  // border: 1px solid rgb(134, 180, 255);
+  padding: 5px;
+  width: auto;
+  :hover mile-tooltip {
+    opacity: 1;
+  }
+}
+
+.miledivebox {
+	--border-size: 1px;
+	--border-angle: 0turn;
+	display: flex;
+	width: auto;
+	height: auto;
+	align-items: center;
+	justify-content: center;
+	background-image: conic-gradient(
+		from var(--border-angle),
+		var(--background-primary),
+		var(--background-primary) 50%,
+		var(--background-primary),
+	  ),
+	  conic-gradient(from var(--border-angle), transparent 20%, (var(--accent)), rgb(68, 64, 178));
+	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: background-color 2s ease;
+	
+	animation: bg-spin 5s linear infinite;
+	@keyframes bg-spin {
+	  to {
+		--border-angle: 1turn;
+	  }
+	}
+
+	&:hover {
+	  animation-play-state: paused;
+	}
+  }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  align-items: left;
+  margin-top: 0;
+  margin-left: 0;
+}
+
 
 .techstack {
   position: relative;
@@ -73,6 +203,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  .header {
+    font-size: 48px;
+    word-spacing: 2px;
+  }
 }
 
 $n: 25;
@@ -99,6 +233,7 @@ $start_scale: 0.4;
     background: $bgColor;
     opacity: 0.7;
     z-index:10;
+    transition: background-color 2s ease;
   }
 }
 .mountain {

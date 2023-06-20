@@ -7,6 +7,7 @@ import Publications from "../components/sections/Publications";
 import React, { createContext, useState } from "react";
 import ReactSwitch from "react-switch";
 import Sphere3d from "../components/things/3dPlay";
+import ContactForm from "../components/sections/ContactMe";
 
 export const ThemeContext = createContext(null);
 
@@ -18,10 +19,12 @@ export const App = () => {
 	return (
 		<div className="app" id={theme}>
 			<Navbar changeTheme={toggleTheme}/>
+			<br/><br/><br/><br/>
 			<Introduction />
 			<AboutMe />
 			<Projects />
 			<Publications />
+			<ContactForm />
 			<Footer />
 		</div>
 	);

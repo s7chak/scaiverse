@@ -13,8 +13,8 @@
 	}
 	#light {
 		--accent: #3b61fb;
-		--background-primary: #c5c5fa;
-		--background-secondary: #cbcbff;
+		--background-primary: #848ca6;
+		--background-secondary: #848ca6;
 		--background-secondary-alt: #cacaff;
 		--foreground-primary: #6b8bdb;
 	}
@@ -23,6 +23,7 @@
 	// --background-secondary: #1d1d25;
 	// --background-secondary-alt: #101012;
 	// --foreground-primary: #a8b5c3;
+	transition: background-color 2s ease;
 }
 
 .blue-text {
@@ -40,7 +41,13 @@
 	font-weight: bold;
 	color: var(--accent);
 	&:hover {
-		filter: blur(1px);
+		// filter: blur(1px);
+		color:transparent;
+		// background: url("https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy.gif");
+		background: url("https://media.giphy.com/media/VPpkvgTIJ817dfQOXI/giphy.gif");
+		background-size: cover;
+		background-position: center;
+		-webkit-background-clip: text;
 	}
 }
 
@@ -48,8 +55,10 @@
 	--border-size: 1.5px;
 	--border-angle: 0turn;
 	display: flex;
-	width: 180px;
-	height: 30px;
+	width: auto;
+	height: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin-right: auto;
 	margin-left: auto;
 	align-items: center;
@@ -64,6 +73,7 @@
 	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	transition: background-color 2s ease;
 	
 	animation: bg-spin 5s linear infinite;
 	@keyframes bg-spin {
@@ -93,8 +103,12 @@
   }
 
 .dive {
+	color: rgb(218, 217, 255);
+	font-size: 18px;
+	-webkit-filter:  blur(0.5px);
 	&:hover {
-		-webkit-filter:  blur(1px);
+		-webkit-filter:  none;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
 	}
 }
 
@@ -106,6 +120,7 @@
 
 	&:hover {
 		transform: translateY(-0.5rem);
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
 	}
 }
 
@@ -124,3 +139,51 @@
 		padding: 8px;
 	}
 }
+
+.form-parent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+  	margin: 0 auto;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 40px;
+	background-color: transparent;
+	border-radius: 8px;
+	box-shadow: 0 0 5px rgba(120, 116, 116, 0.1);
+	
+  }
+  
+  .form input,
+  .form textarea {
+	width: 40%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid hsl(0, 0%, 80%);
+	border-radius: 4px;
+	box-sizing: border-box;
+  }
+  
+  .contactmessage {
+	font-family: Rajdhani;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 10px;
+	height: 20vh;
+	color: white;
+	background-color: var(--background-secondary-alt);
+  }
+
+  .popup {
+	display: flex;
+	align-items: center;
+	font-family: Rajdhani;
+	font-size: 25px;
+	padding: 10px;
+  }

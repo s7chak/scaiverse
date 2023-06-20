@@ -1,5 +1,6 @@
 import { RepoIcon, StarFillIcon, QuestionIcon } from "@primer/octicons-react";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 
 const getRepository = (username: string, repository: string): any => {
@@ -61,7 +62,6 @@ export const ProjectCard = ({ username, repository }: { username: string; reposi
 		);
 
 	const icon = getLanguageIcon(data.language);
-
 	return (
 		<div className="card">
 			<div className="card-content">

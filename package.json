@@ -38,9 +38,11 @@
     "react-icons": "^4.8.0",
     "framer-motion": "^10.12.16",
     "react-ga": "^3.3.1",
+    "react-intersection-observer":"9.5.0",
     "three": "^0.153.0",
     "@react-three/fiber": "^8.13.0",
-    "@react-three/drei": "^9.74.8"
+    "@react-three/drei": "^9.74.8",
+    "@emailjs/browser": "^3.11.0"
   },
   "devDependencies": {
     "@types/node": "^12.0.0",
