@@ -6,7 +6,6 @@ const Typewriter = ({ text }) => {
 
   useEffect(() => {
     let currentIndex = 0;
-
     const intervalId = setInterval(() => {
       if (currentIndex === text.length) {
         clearInterval(intervalId);
@@ -25,10 +24,9 @@ const Typewriter = ({ text }) => {
             setDisplayText((prevText) => text.slice(0, reverseIndex));
             reverseIndex--;
           }, 100);
-        }, 1500);
+        }, 5000);
         return;
       }
-
       setDisplayText((prevText) => prevText + text[currentIndex]);
       currentIndex++;
     }, 100);

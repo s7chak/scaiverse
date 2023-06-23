@@ -10,7 +10,6 @@ import "./styles/index.scss";
 import "./styles/_animations.scss";
 import React from "react";
 import { motion } from "framer-motion";
-import Navbar from "./components/Navbar";
 
 let env = process.env.NODE_ENV
 let baseURL = process.env.PUBLIC_URL;

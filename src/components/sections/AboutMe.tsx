@@ -12,9 +12,10 @@ export const AboutMe = () => {
 			<div className="about-container container">
 			<br/><br/>
 				<TimeLineGraph /><br/>
-				<h1 className="title">About</h1>
+				<div><span className="general-header">About</span></div>
 				{/* <div className="columns">
 					<div className="column is-10"> */}
+					<br/><br/>
 						<motion.div className="about-description"
 							initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration: 3}}>
 							<p>{about_text} </p>

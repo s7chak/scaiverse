@@ -1,7 +1,8 @@
 import { motion } from "framer-motion"
 import { Children, useRef, useState } from "react";
-import { FaBlog, FaCode, FaEnvelope, FaGithub, FaHome, FaLinkedin, FaMoon, FaPaperPlane, FaRobot, FaTree } from "react-icons/fa";
+import { FaBars, FaBlog, FaCode, FaEnvelope, FaGithub, FaHome, FaICursor, FaInfo, FaLinkedin, FaMoon, FaNewspaper, FaPaperPlane, FaRobot, FaTree } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { GrMenu } from 'react-icons/gr';
 
 export const Navbar = (props) => {
 	const [isActive, setIsActive] = useState(false);
@@ -13,7 +14,10 @@ export const Navbar = (props) => {
 			<div className={`s7logo ${isMobile ? "s7logo is-burger" : ""}`}>
 				<MyLogo />
 			</div>
-			<div className="navbar-brand">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 2, delay: 4}} className="navbar-brand">
 				<a
 					onClick={() => {
 						setIsActive(!isActive);
@@ -27,12 +31,12 @@ export const Navbar = (props) => {
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 				</a>
-			</div>
+			</motion.div>
 			{isMobile && isActive &&
 			<div id="navbar-phone-menu" className={`navbar-phone-menu ${isActive ? "is-active" : ""}`}>
 				<motion.div className="navbar-start is-burger"
-				initial={{ y: "-100%" }}
-				animate={{ y: 25 , z:10}}
+				initial={{ y: "50%", opacity: 0, z:0}}
+				animate={{ y: "50%" , opacity: 1}}
 				transition={{ ease: "linear", duration: 0.6 }}>
 					<Link to="introduction" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
 						<FaHome size={18} style={{ marginRight: '0' }}/>
@@ -41,56 +45,72 @@ export const Navbar = (props) => {
 						<FaMoon size={18} style={{ marginRight: '0' }} onClick={props.changeTheme}/>
 					</div> */}
 					<Link to="about" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
-						<FaRobot size={18} style={{ marginRight: '0' }}/>
+						<FaInfo size={18} style={{ marginRight: '0' }}/>
 					</Link>
-					<Link to="projects" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+					<Link to="projects" duration={1000} smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
 						<FaCode size={18} style={{ marginRight: '0' }}/>
 					</Link>
-					<Link to="blogging" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
-						<FaPaperPlane size={18} style={{ marginRight: '0' }}/>
-					</Link>
-					<Link to="mailto:s7chak@gmail.com" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
-						<FaEnvelope size={18} style={{ marginRight: '0' }} /></Link>
+					<Link to="blogging" smooth={true} duration={1500} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaNewspaper size={18} style={{ margin: '0' }} /></Link>
 					<Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item">
 						<FaLinkedin size={18} style={{ margin: '0' }} /></Link>
 					<Link to="https://github.com/s7chak" smooth={true} className="navbar-item">
 						<FaGithub size={18} style={{ marginRight: '0' }} /></Link>
+					<Link to="messaging" smooth={true} duration={2000} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaPaperPlane size={18} style={{ marginRight: '0' }}/>
+					</Link>
 				</motion.div>
 			</div>}
-			{!isActive && (
-			<div id="navbar-menu is-fixed-top" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
-				<motion.div className={`navbar-start ${isActive ? "navbar-start is-burger" : ""}`} initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 2, delay: 3}}>
+			{!isMobile && (
+			<div id="navbar-menu is-fixed-top" className={'navbar-menu'}>
+				<motion.div className={"navbar-start"} initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 3}}>
 					<Link to="introduction" smooth={true} className="navbar-item">
 						Home
 					</Link>
 					<Link to="about" smooth={true} className="navbar-item">
 						About
 					</Link>
-					<Link to="projects" smooth={true} className="navbar-item">
+					<Link to="projects" smooth={true} duration={1000} className="navbar-item">
 						Projects
 					</Link>
-					<Link to="blogging" smooth={true} className="navbar-item">
+					<Link to="blogging" smooth={true} duration={1500} className="navbar-item">
 						Articles
 					</Link>
 				</motion.div>
-				<div className="navbar-right">
-					{/* <motion.a  className="button btn-alt" 
-					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 1}}>
-						<FaTree size={18} style={{ marginRight: '0' }} onClick={props.changeTheme}/>
-					</motion.a> */}
-					<motion.a href="mailto:s7chak@gmail.com" className="button btn-alt" 
-					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 3}}>
-						<FaEnvelope size={18} style={{ marginRight: '0' }} />
-					</motion.a>
-					<motion.a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" className="button btn-alt"
-					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 3.5}}>
-						<FaLinkedin size={18} style={{ margin: '0' }} />
-					</motion.a>
-					<motion.a href="https://github.com/s7chak" target="_blank" className="button btn-alt"
-					initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 4}}>
-						<FaGithub size={18} style={{ marginRight: '0' }} />
-					</motion.a>
-				</div>
+				<motion.div className="navbar-right"
+					initial={{ y: "10%", opacity: 0}}
+					animate={{ y: 5, x: 2, opacity: 0.9}}
+					transition={{ ease: "linear", duration: 2, delay: 4  }}>
+					<FaBars style={{color: '#efefef'}} onClick={() => {
+							setIsActive(!isActive);}} data-target="navbar-my-menu">
+					</FaBars>
+				</motion.div>
+				<motion.div id="navbar-my-menu" className={`navbar-my-menu ${isActive ? "is-active" : ""}`}
+					initial={{ y: "5%", opacity: 0}}
+					animate={{ y: "5%" , opacity: isActive? 1 : 0}}
+					transition={{ ease: "linear", duration: 1.5 }}>
+					<Link to="introduction" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaHome size={18} style={{ marginRight: '0' }}/>
+					</Link>
+					<div>
+						<FaMoon size={18} style={{ marginRight: '0' }} onClick={props.changeTheme}/>
+					</div>
+					<Link to="about" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaInfo size={18} style={{ marginRight: '0' }}/>
+					</Link>
+					<Link to="projects" smooth={true} duration={1000} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaCode size={18} style={{ marginRight: '0' }}/>
+					</Link>
+					<Link to="blogging" duration={1500} smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaNewspaper size={18} style={{ margin: '0' }} /></Link>
+					<Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item">
+						<FaLinkedin size={18} style={{ margin: '0' }} /></Link>
+					<Link to="https://github.com/s7chak" smooth={true} className="navbar-item">
+						<FaGithub size={18} style={{ marginRight: '0' }} /></Link>
+					<Link to="messaging" duration={2000} smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+						<FaPaperPlane size={18} style={{ marginRight: '0' }}/>
+					</Link>
+				</motion.div>
 			</div>
 			)}
 		</nav>
@@ -116,7 +136,7 @@ function MyLogo() {
 		<motion.div
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
-		transition={{ duration: 2, delay: 2}}>
+		transition={{ duration: 2, delay: 4}}>
 			{isPlaying ? (
 				<audio
 				src="assets/storm-clouds-purpple-cat.mp3"
@@ -126,7 +146,7 @@ function MyLogo() {
 				/>
 			) : null}
 			<img className='s7img main' src="assets/files/s2.png" onClick={toggleAudio}></img>
-			<img className='s7img glow' src="assets/files/s2.png"></img>
+			<img className='s7img glow' src="assets/files/s2.png" onClick={toggleAudio}></img>
 		</motion.div>
 	);
 }

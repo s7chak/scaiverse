@@ -11,34 +11,78 @@
 	}
 }
 
+@font-face {
+  font-family: 'Consolas';
+  src: url('../../public/assets/Consolas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.typewriter-container {
+  position: absolute;
+  top: 0;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter-cursor {
+  position: relative;
+  top: 0;
+  left: 0;
+  animation: blinkCursor 1s infinite;
+  width: 10px;
+  height: 22px;
+  background-color: var(--accent);
+  margin-left: 3px;
+  opacity: 0.8;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+// .typewriter-cursor::after {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   animation: fadeOutCursor 2s forwards;
+//   animation-delay: calc(1s * 13);
+//   width: 10px;
+//   height: 22px;
+//   background-color: var(--accent);
+//   margin-left: 0;
+//   opacity: 0.6;
+// }
+
+@keyframes fadeOutCursor {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .typewriter {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Consolas", monospace;
   font-size: 24px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 1px solid;
   color: rgb(143, 163, 187);
-  animation: typing 1s steps(24), blink-caret 0.5s step-end infinite;
+  position: relative;
+  width: auto;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
+@keyframes blinkCursor {
+  0% {
+    opacity: 0;
   }
   50% {
-    border-color: orange;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
+
 
 
 .glowball {
@@ -97,38 +141,6 @@
     opacity: 1;
   }
 }
-
-.miledivebox {
-	--border-size: 1px;
-	--border-angle: 0turn;
-	display: flex;
-	width: auto;
-	height: auto;
-	align-items: center;
-	justify-content: center;
-	background-image: conic-gradient(
-		from var(--border-angle),
-		var(--background-primary),
-		var(--background-primary) 50%,
-		var(--background-primary),
-	  ),
-	  conic-gradient(from var(--border-angle), transparent 20%, (var(--accent)), rgb(68, 64, 178));
-	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	transition: background-color 2s ease;
-	
-	animation: bg-spin 5s linear infinite;
-	@keyframes bg-spin {
-	  to {
-		--border-angle: 1turn;
-	  }
-	}
-
-	&:hover {
-	  animation-play-state: paused;
-	}
-  }
 
 .timeline {
   display: flex;
@@ -192,20 +204,33 @@
   animation-iteration-count: infinite;
 }
 
+.introtext {
+  margin: 10px 10px;
+  font-size: 18px;
+  word-spacing: 2px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+
 
 .definitions {
-  font-size: 20px;
+  font-family: var(--main-font);
+  font-size: 24px;
 }
 
 
 .play-intro-container {
-  position: absolute;
+  position: relative;
   justify-content: center;
   align-items: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   .header {
-    font-size: 48px;
-    word-spacing: 2px;
+    position: inherit;
+    font-size: 38px;
+    word-spacing: 3px;
+    letter-spacing: 2px;
   }
 }
 

@@ -3,29 +3,31 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 @import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css");
 
+
 :root {
+	--main-font: 'Rajdhani';
 	#dark {
+		--lighter: #CBD6F0;
 		--accent: #6484cd;
-		--background-primary: #101012;
-		--background-secondary: #1d1d25;
-		--background-secondary-alt: #101012;
+		--background-primary: #0A0D14;
+		--background-secondary: #141A29;
+		--background-secondary-alt: #141A29;
 		--foreground-primary: #a8b5c3;	
 	}
 	#light {
-		--accent: #3b61fb;
-		--background-primary: #848ca6;
-		--background-secondary: #848ca6;
-		--background-secondary-alt: #cacaff;
-		--foreground-primary: #6b8bdb;
+		--lighter: #0A0D14;
+		--accent: #6484cd;
+		--background-primary: #CBD6F0;
+		--background-secondary: #CBD6F0;
+		--background-secondary-alt: #CBD6F0;
+		--foreground-primary: #141A29;
 	}
-	// --accent: #6484cd;
-	// --background-primary: #101012;
-	// --background-secondary: #1d1d25;
-	// --background-secondary-alt: #101012;
-	// --foreground-primary: #a8b5c3;
 	transition: background-color 2s ease;
 }
 
+.acc-text {
+	color: var(--accent);
+}
 .blue-text {
 	font-weight: bold;
 	color: var(--accent);
@@ -36,64 +38,110 @@
 	color: #a8b5c3;
 }
 
-
-.name-text {
+.general-header {
 	font-weight: bold;
-	color: var(--accent);
+	font-size: 38px;
+	letter-spacing: 2px;
+	color: var(--lighter);
 	&:hover {
-		// filter: blur(1px);
 		color:transparent;
-		// background: url("https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy.gif");
-		background: url("https://media.giphy.com/media/VPpkvgTIJ817dfQOXI/giphy.gif");
+		background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
 		background-size: cover;
 		background-position: center;
 		-webkit-background-clip: text;
 	}
 }
 
-.divebox {
-	--border-size: 1.5px;
-	--border-angle: 0turn;
+.name-text {
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: var(--accent);
+	&:hover {
+		color:transparent;
+		background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
+		// background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
+		// background: url("https://media.giphy.com/media/Qvp6Z2fidQR34IcwQ5/giphy.gif");
+		background-size: cover;
+		background-position: center;
+		-webkit-background-clip: text;
+	}
+}
+.name-text.colormode {
+	color:transparent;
+	// background: url("https://media.giphy.com/media/Qvp6Z2fidQR34IcwQ5/giphy.gif");
+	background: url("https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/giphy.gif");
+	background-size: cover;
+	background-position: center;
+	-webkit-background-clip: text;
+}
+
+.domain-container {
 	display: flex;
-	width: auto;
-	height: auto;
+	flex-direction: row;
+	align-items: center;
+	width: 80vw;
+}
+
+.divebox {
+	position: relative;
+	--border-size: 2.8px;
+	--border-angle: 0turn;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	margin-right: auto;
-	margin-left: auto;
-	align-items: center;
-	justify-content: center;
+	padding-left: 60px;
+	padding-right: 60px;
+	margin: 10px 10px 10px 10px;
 	background-image: conic-gradient(
 		from var(--border-angle),
 		var(--background-primary),
 		var(--background-primary) 50%,
 		var(--background-primary),
 	  ),
-	  conic-gradient(from var(--border-angle), transparent 20%, (var(--accent)), rgb(68, 64, 178));
+		conic-gradient(from var(--border-angle), transparent 20%, var(--accent), rgb(68, 64, 178));
 	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	transition: background-color 2s ease;
-	
+	border-radius: 2.5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	animation: bg-spin 5s linear infinite;
 	@keyframes bg-spin {
 	  to {
 		--border-angle: 1turn;
 	  }
 	}
-
 	&:hover {
 	  animation-play-state: paused;
+	  --border-size: 2px;
 	}
-  }
+}
 
   .divebox.is-burger {
 	visibility: visible;
-	width: 80vw;
-	height: 5vh;
-	margin-bottom: 0;
+	width: 60vw;
+	margin-bottom: 20px;
+	margin-top: 10px;
 	align-items: center;
 	justify-content: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+  }
+  .divebox.is-domain {
+	width: 300px;
+  }
+  .divebox.is-domain.is-burger {
+	height: 70px;
+	}
+  .divebox.is-mile {
+	width: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 0px 0 0 0 ;
   }
 
   @property --border-angle {
@@ -103,9 +151,9 @@
   }
 
 .dive {
-	color: rgb(218, 217, 255);
+	color: var(--accent);
 	font-size: 18px;
-	-webkit-filter:  blur(0.5px);
+	-webkit-filter:  blur(0.2px);
 	&:hover {
 		-webkit-filter:  none;
 		cursor: url("../../public/assets/files/hand.svg"), pointer;
@@ -165,25 +213,26 @@
 	width: 40%;
 	padding: 10px;
 	margin-bottom: 10px;
-	border: 1px solid hsl(0, 0%, 80%);
+	border: 1px solid hsl(219, 92%, 85%);
 	border-radius: 4px;
 	box-sizing: border-box;
   }
   
   .contactmessage {
-	font-family: Rajdhani;
-	font-size: 15px;
-	font-weight: bold;
+	font-size: 18px;
 	padding: 10px;
 	height: 20vh;
 	color: white;
-	background-color: var(--background-secondary-alt);
+	background-color: var(--background-primary);
+	letter-spacing: 2px;
+	:focus {
+		border-color: hsl(233, 100%, 84%);
+	}
   }
 
   .popup {
 	display: flex;
 	align-items: center;
-	font-family: Rajdhani;
-	font-size: 25px;
+	font-size: 20px;
 	padding: 10px;
   }

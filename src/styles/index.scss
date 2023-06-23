@@ -1,19 +1,16 @@
 @import "./animations";
 @import "./mixins";
-@import "./overrides";
 @import "./variables";
+@import "./overrides";
 
 #root {
-	// cursor: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' ...") 16 16, pointer;
-	// M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4 L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1 c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1 c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z
-	// cursor: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='32px' height='32px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E %3Cpath d='M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4 L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1 c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1 c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z'/%3E %3C/svg%3E"), pointer;
-	.drop{
-		color: white;
-	}
 	cursor: url("data:image/svg+xml,%3Csvg version='1.1' class='drop' id='normal_cursor' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='45px' height='45px' viewBox='0 0 512 512' style='color: blue;' xml:space='preserve'%3E %3Cpath d='M 0 0 L 55 170 A 1 1 0 0 0 168 62 L 0 0' stroke='blue' stroke-width='2px' fill='rgb(204,222,254)' /%3E %3C/svg%3E"), pointer;
+	body {
+		overflow: hidden;
+	}
 	#introduction {
 		flex-direction: column;
-		height: 120vh;
+		height: 100vh;
 		.introduction-container {
 			.content {
 				margin: 3rem auto 2rem auto;
@@ -31,7 +28,9 @@
 	#about {
 		.about-container {
 			width: 80vw;
+			display: block;
 			align-items: center;
+			justify-content: center;
 			.about-description {
 				color: var(--foreground-primary);
 				font-size: 18px;
@@ -63,27 +62,6 @@
 					width: 30px;
 					height: 36px;
 				}
-			}
-
-			.columns {
-				padding: 5px 0px 5px 0px;
-				h6 {
-					color: var(--accent);
-					text-align: center;
-				}
-
-				.column {
-					@include breakpoint(extra_small_devices) {
-						text-align: center;
-					}
-				}
-			}
-
-			h1 {
-				color: inherit !important;
-				font-size: 36px !important;
-				border-bottom: var(--accent) solid 4px;
-				display: inline-block;
 			}
 		}
 	}
@@ -121,7 +99,7 @@
 	}
 
 	#blogging {
-		background-color: var(--background-secondary-alt);
+		background-color: var(--background-primary);
 		padding: 6rem 1.5rem;
 
 		.blogging-container {
@@ -131,7 +109,7 @@
 			align-items: center;
 
 			h1 {
-				color: inherit !important;
+				color: var(--foreground-primary);
 				font-size: 36px;
 				font-weight: bold;
 
@@ -142,7 +120,7 @@
 	}
 
 	.nomatch {
-		background-color: var(--background-secondary-alt) !important;
+		background-color: var(--background-primary) !important;
 
 		// padding: 6rem 1.5rem;
 		display: flex;
@@ -160,8 +138,8 @@
 	}
 
 	.playback {
-		background-color: var(--background-secondary-alt) !important;
-		height: 800px;
+		background-color: var(--background-primary) !important;
+		height: 100vh;
 		// padding: 6rem 1.5rem;
 		display: flex;
 		flex-direction: column;
@@ -180,13 +158,13 @@
 			margin-bottom: 1rem;
 		}
 		#dark h1 {
-			color: #d0e3f9c4 !important;
+			color: #083d79 !important;
 		}
 		#light h1 {
 			color: #0049f4 !important;
 		}
 		#dark h2 {
-			color: #d0e3f9c4 !important;
+			color: #15447a !important;
 		}
 		#light h2 {
 			color: #0049f4 !important;

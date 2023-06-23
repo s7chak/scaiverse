@@ -19,7 +19,6 @@ export const App = () => {
 	return (
 		<div className="app" id={theme}>
 			<Navbar changeTheme={toggleTheme}/>
-			<br/><br/><br/><br/>
 			<Introduction />
 			<AboutMe />
 			<Projects />

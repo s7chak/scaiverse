@@ -27,7 +27,8 @@ export const Projects = () => {
 			<div className="projects-container">
 				<motion.div 
 				initial={{opacity:0}}
-				animate={{opacity:1}} transition={{ duration: 2 }}><h1>Projects</h1></motion.div>
+				animate={{opacity:1}} transition={{ duration: 2 }}>
+					<span className="general-header">Projects</span></motion.div>
 				<div className="columns">
 				<section id="software" className="projects section is-medium">
 					<FadeInWhenVisible><div><h2>Software Engineering</h2></div></FadeInWhenVisible>

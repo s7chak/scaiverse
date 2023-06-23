@@ -29,13 +29,12 @@ export const Publications = () => {
 			<section id="blogging" className="blogging section is-medium">
 				<div className="blogging-container">
 					<motion.div whileInView={{ opacity: 1}} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 1.5}}>
-						<h1>Articles</h1>
+						<span className="general-header">Articles</span>
 					</motion.div>
 					<br/>
 					<motion.div initial={{ opacity: 0, scale: 0.99}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 1.5}}>
-						<p className="description"><b>
-							A collection of my thoughts on science, technology, AI and the world of finance.
-						</b></p><br/>
+						<span>
+							A collection of my thoughts on science, technology, AI and the world of finance.</span><br/><br/>
 					</motion.div>
 					<div style={{ display: 'flex', justifyContent: 'center', width: '60vw' }}>
 						<motion.div style={{ display: 'flex', alignItems: 'center' }}

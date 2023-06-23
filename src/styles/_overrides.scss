@@ -4,15 +4,16 @@
 	font-family: "Rajdhani", sans-serif !important;
 	font-weight: 300;
 	background-color: var(--background-primary) !important;
-	color: var(--foreground-primary) !important;
+	color: var(--lighter) !important;
 	transition: background-color 2s ease;
+	overflow: hidden;
 }
 
 .blogging {
-	font-family: "Rajdhani", sans-serif !important;
+	// font-family: "Rajdhani", sans-serif !important;
 	font-weight: 300;
-	background-color: var(--background-secondary-alt) !important;
-	color: var(--foreground-primary) !important;
+	background-color: var(--background-primary) !important;
+	color: var(--lighter) !important;
 	height: auto;
 	transition: background-color 2s ease;
 }
@@ -34,33 +35,33 @@
 	margin-top: 3px;
 	margin-bottom: 0;
 	margin-left: 0;
-	height: 35px;
+	margin-right: 0;
+	height: 32px;
+	z-index: 100;
 }
 
-.s7img.main {
-	z-index:1;
-}
 
 .s7img.glow {
 	transform: scale(1.2);
 	-webkit-transform: scale(1.2);
 	filter: brightness(0) invert(1) blur(5px);
 	-webkit-filter: brightness(0) invert(1) blur(5px);
+	z-index: 100;
 	#light {
 		opacity:0;
 	}
 	#dark {
-		opacity:1;
+		opacity:0;
 	}
-	// filter: drop-shadow(0 0 0.8rem var(--foreground-primary));
+	// filter: drop-shadow(0 0 0.8rem var(--accent));
 }
 .s7img.main:hover ~ .s7img.glow {
-	opacity:0;
+	opacity:1;
   }
 
 
 a {
-	color: var(--accent);
+	color: var(--lighter);
 	transition: 0.3s ease-in-out;
 
 	&:hover,
@@ -81,7 +82,7 @@ ol {
 }
 
 .button {
-	color: var(--foreground-primary);
+	color: var(--lighter);
 	background-color: transparent;
 	border: 2px solid var(--background-secondary-alt);
 
@@ -103,22 +104,27 @@ ol {
 .content {
 	text-align: left;
 	font-size: 18px;
-
 	width: 100%;
 }
 
 .card {
-	color: var(--foreground-primary);
+	color: var(--lighter);
 	background-color: var(--background-primary);
+	border: 1px transparent;
 	border-radius: 6px;
 	width: 400px;
-	transition: background-color 2s ease;
+	transition: background-color 2s ease, box-shadow 0.3s ease, transform 1s ease;
 	margin: 1rem 0.3rem;
+	z-index: 1;
 
 	@include breakpoint(extra_small_devices) {
 		width: 340px !important;
 	}
 
+	&:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		transform: translateZ(30px);
+	  }
 	// animation: scale-in 0.7s cubic-bezier(0.2, 0.46, 0.45, 0.3) both;
 
 	.card-content {
@@ -133,7 +139,7 @@ ol {
 }
 
 .blog-card {
-	color: var(--foreground-primary);
+	color: var(--lighter);
 	background-color: var(--background-primary);
 	border-radius: 6px;
 	transition: background-color 2s ease;
@@ -159,27 +165,42 @@ ol {
 	}
 }
 
+.navbar-my-menu {
+	position: absolute;
+	display: flex;
+  	flex-direction: column;
+	top: 10%;
+	right: 22px;
+	width: 25px;
+	height: 100vh;
+	overflow: hidden;
+	justify-content: flex-start;
+  	align-items: center;
+}
+
 .navbar-phone-menu {
 	position: fixed;
 	display: flex;
   	flex-direction: row;
 	top: 0;
 	left: 0;
-	width: 100vw;
+	width: 95vw;
 	height: 10vh;
 	overflow: hidden;
 	justify-content: flex-start;
   	align-items: center;
+	z-index: 20;
 }
 .navbar {
 	background-color: var(--background-primary);
 	transition: background-color 2s ease;
+	width: 100%;
 	.navbar-menu,
 	.navbar-burger,
 	.navbar-item {
 		margin: 10px 5px;
 		background-color: var(--background-primary);
-		color: var(--foreground-primary);
+		color: var(--lighter);
 		transition: background-color 2s ease;
 		:hover {
 			cursor: url("../../public/assets/files/hand.svg"), pointer;
@@ -189,17 +210,18 @@ ol {
 		margin-top: 0;
 		width: 10vw;
 		background-color: var(--background-primary);
-		color: var(--foreground-primary);
+		color: var(--lighter);
 		transition: background-color 2s ease;
-		z-index: 50;
+		z-index: 25;
 	}
 
 	.navbar-right {
 		align-items: right;
+		margin-right: 22px;
 		.btn-alt {
 			font-weight: bold;
 			background-color: transparent;
-			color: var(--foreground-primary);
+			color: var(--lighter);
 
 			@include breakpoint(extra_small_devices) {
 				border-radius: 4px;
@@ -213,16 +235,15 @@ ol {
 
 			&:hover,
 			&:focus {
-				color: var(--foreground-primary);
+				color: var(--accent);
 				transform: translateY(-0.2rem);
 			}
 		}
 	}
 
 	.navbar-start {
-		flex-grow: 1;
+		flex-grow: 0.9;
 		justify-content: center;
-		margin-left: 30px;
 	}
 	.navbar-start.is-burger {
 		margin-left: 10px;
@@ -237,7 +258,7 @@ ol {
 	.navbar-end {
 		.navbar-item {
 			background: none;
-			margin: 0px 8px;
+			margin: 0px px;
 			border-bottom: 3px solid transparent;
 			transition: 0.3s ease-in-out;
 			display: flex;
@@ -245,7 +266,7 @@ ol {
 
 			&:hover,
 			&:focus {
-				color: var(--foreground-primary);
+				color: var(--accent);
 				border-color: var(--accent);
 			}
 		}
@@ -270,7 +291,7 @@ ol {
 }
 
 .footertext {
-	color: var(--accent);
+	color: var(--lighter);
 	:hover {
 		color: rgb(128, 185, 239);
 	}
