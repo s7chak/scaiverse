@@ -291,6 +291,7 @@ $start_scale: 0.4;
 $circleradius:120px;
 
 .circle {
+  will-change: opacity;
   position: absolute;
   width: $circleradius;
   height: $circleradius;
@@ -318,13 +319,13 @@ $circleradius:120px;
 }
 
 .glow {
+  will-change: opacity;
   position: absolute;
   width: $circleradius;
   height: $circleradius;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.3);
-  opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 

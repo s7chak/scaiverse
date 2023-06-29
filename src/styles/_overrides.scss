@@ -31,7 +31,7 @@
 }
 
 .s7img {
-	position: relative;
+	position: absolute;
 	margin-top: 3px;
 	margin-bottom: 0;
 	margin-left: 0;
@@ -42,11 +42,17 @@
 
 
 .s7img.glow {
-	transform: scale(1.2);
-	-webkit-transform: scale(1.2);
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	margin-left: 0;
+	margin-right: 0;
+	opacity: 0;
+	transform: scale(1);
+	-webkit-transform: scale(1);
 	filter: brightness(0) invert(1) blur(5px);
 	-webkit-filter: brightness(0) invert(1) blur(5px);
-	z-index: 100;
+	// z-index: 100;
 	#light {
 		opacity:0;
 	}
