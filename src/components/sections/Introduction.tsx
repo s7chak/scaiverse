@@ -6,6 +6,10 @@ import React, { useCallback, useEffect, useState } from "react";
 import Playthree from "../things/3dPlay";
 import GlowBall from "../things/GlowBall";
 import Typewriter from "../things/TypeWriting";
+import Octahedron from "../things/Octahedron";
+import RotatingBox from "../things/Octahedron";
+import McGuffin from "../things/Octahedron";
+import Particloid from "../things/Particloid";
 
 export const Introduction = () => {
 	// const x = useMotionValue(0)
@@ -28,20 +32,17 @@ export const Introduction = () => {
 								<motion.div 
 									// initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }} 
 									transition={{ease: "linear", duration: delays[0]}}
-									whileHover={{scale: 1.1, transition: { duration: 2 },}}
+									whileHover={{scale: 1.2, transition: { duration: 2 },}}
 									initial="hidden"
-      								whileInView={{scale: 1.07, transition: { duration: 2 },}}
+      								whileInView={{scale: 1.05, transition: { duration: 2 },}}
       								viewport={{ once: false }}>
-								<h2 className="title">
-									<span className={`name-text  ${isDove? "name-text colormode" : ""}`} onClick={() => setDove(!isDove)}>
+								<span className={`general-header name-text  ${isDove? "name-text colormode" : ""}`} onClick={() => setDove(!isDove)}>
 									This is my digital canvas</span>
-								</h2>
 								</motion.div>
 								<br/>
 								<motion.div initial={{ opacity: 0, y: 10}} animate={{ opacity: 1, y: 0}}>
 									<span>
-									A repository of some of my projects, their source code, how it works, how they were built
-									<p>and the story behind them.</p></span>
+									A repository of some of my projects, their source code, how it works, how they were built and the story behind them.</span>
 								</motion.div>
 								<br/><br/><br/><br/>
 								<motion.div style={{ display: 'inline-flex', justifyContent: 'center' }}
@@ -130,23 +131,27 @@ function Playback() {
 		{/* <div className="play-container">
 			{mountains}
 		</div> */}
+		<div className="mcguffin-container">
+			<McGuffin />
+		</div>
+		<br/>
 		<div className="play-intro-container">
 			<div className="typewriter-container">
-				<EraseTyping className="typewriter" eraseTimeout={2.5} eraseTill={6}>Hello World!</EraseTyping>
+				<EraseTyping className="typewriter" eraseTimeout={2} eraseTill={6}>Hello World!</EraseTyping>
 				<motion.div
 					className="typewriter-cursor"
 					onMouseEnter={() => setDove(true)}
 					></motion.div>
-			</div><br/>
+			</div>
 			<motion.div initial={{ opacity: 0, y: 50}} animate={{ opacity: 0.9, y: 40}} transition={{ease: "linear", duration: 2, delay: 4.2}}>
 				<span className="header">I am <span className={`name-text  ${isDove? "name-text colormode" : ""}`} onClick={() => setDove(!isDove)}>Subhayu</span></span>
 			</motion.div>
 			<br/><br/>
 			<IntroText />
-			<br/><br/><br/>
+			<br/>
 			{isMobile? <><br/><br/><br/></> : null}
 			<div style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
-				<motion.div initial={{ opacity: 0, }} animate={{ opacity: 1,}} transition={{ease: "linear", duration: 2, delay: 4.9}}>
+				<motion.div initial={{ opacity: 0, }} animate={{ opacity: 1,}} transition={{ease: "linear", duration: 2, delay: 5}}>
 					<div className={`divebox ${isMobile ? "divebox is-burger" : ""}`} style={{width: widthDive}}>
 						<Link className="dive" to="introduction" smooth={true} onClick={() => setDove(true)}>Let's dive in</Link></div>
 				</motion.div>
@@ -213,19 +218,24 @@ function Playback() {
 	useEffect(() => {
 	  let currentIndex = 0;
 	  let eraseTimer;
-	  const typeTimeout = setInterval(() => {
-		if (currentIndex < children.length) {
-		  setText((prevText) => prevText + children[currentIndex]);
-		  currentIndex++;
-		} else {
-		  clearInterval(typeTimeout);
-		  if (eraseTimeout) {
-			eraseTimer = setTimeout(() => {
-			  eraseText();
-			}, eraseTimeout * 1000);
-		  }
-		}
-	  }, 100);
+	  let typeTimeout;
+    
+      const startTyping = () => {
+		typeTimeout = setInterval(() => {
+			if (currentIndex < children.length) {
+			setText((prevText) => prevText + children[currentIndex]);
+			currentIndex++;
+			} else {
+			clearInterval(typeTimeout);
+			if (eraseTimeout) {
+				eraseTimer = setTimeout(() => {
+				eraseText();
+				}, eraseTimeout * 1000);
+			}
+			}
+		}, 100);
+		};
+
 	  const eraseText = () => {
 		clearInterval(eraseTimer);
 		let eraseIndex = eraseTill >= children.length ? children.length - 1 : eraseTill;
@@ -240,11 +250,16 @@ function Playback() {
 		}, 100);
 	  };
   
+	  const typingTimeout = setTimeout(() => {
+		startTyping();
+	  }, 4200);
+  
 	  return () => {
+		clearTimeout(typingTimeout);
 		clearInterval(typeTimeout);
 		clearTimeout(eraseTimer);
 	  };
-	},[children, eraseTimeout, eraseTill]);
+	}, [children, eraseTimeout, eraseTill]);
   
 	return <span className={className}>{text}</span>;
   };

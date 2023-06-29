@@ -106,7 +106,7 @@ function TimeLineGraph() {
   useEffect(() => {
     const handleScroll = () => {
       const containerElement = containerRef.current;
-      if (containerElement!=null) {
+      if (containerElement) {
         const scrollOffset = renderstart-containerElement.getBoundingClientRect().top;
         const containerHeight = containerElement.clientHeight;
         

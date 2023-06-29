@@ -8,7 +8,7 @@ export const Navbar = (props) => {
 	const [isActive, setIsActive] = useState(false);
 	const delays = [2,3.5,5.5,7];
 	const [width, setWidth] = useState<number>(window.innerWidth);
-	const isMobile = width <= 768;
+	const isMobile = width <= 825;
 	return (
 		<nav className={`navbar ${isMobile ? "mobile" : "is-fixed-top"}`} role="navigation">
 			<div className={`s7logo ${isMobile ? "s7logo is-burger" : ""}`}>
@@ -117,9 +117,9 @@ export const Navbar = (props) => {
 	);
 };
 
-function buttonLift({ children }) {
+function ButtonLift({ children }) {
 	return (
-	 <motion.div initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 3}}>
+	 <motion.div initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1}}>
 		{children}
 	 </motion.div>
 	)
@@ -136,7 +136,7 @@ function MyLogo() {
 		<motion.div
 		initial={{ opacity: 0 }}
 		animate={{ opacity: 1 }}
-		transition={{ duration: 2, delay: 4}}>
+		transition={{ duration: 2.5, delay: 5}}>
 			{isPlaying ? (
 				<audio
 				src="assets/storm-clouds-purpple-cat.mp3"

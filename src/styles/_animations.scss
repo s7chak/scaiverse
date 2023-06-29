@@ -18,9 +18,10 @@
   font-style: normal;
 }
 
+
 .typewriter-container {
   position: absolute;
-  top: 0;
+  top: 10px;
   width: auto;
   display: flex;
   align-items: center;
@@ -29,30 +30,20 @@
 
 .typewriter-cursor {
   position: relative;
-  top: 0;
+  top: -3px;
   left: 0;
   animation: blinkCursor 1s infinite;
+  // animation-iteration-count: 50;
   width: 10px;
-  height: 22px;
+  height: 20px;
   background-color: var(--accent);
   margin-left: 3px;
   opacity: 0.8;
-  &:hover {
-    animation-play-state: paused;
-  }
 }
-// .typewriter-cursor::after {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   animation: fadeOutCursor 2s forwards;
-//   animation-delay: calc(1s * 13);
-//   width: 10px;
-//   height: 22px;
-//   background-color: var(--accent);
-//   margin-left: 0;
-//   opacity: 0.6;
-// }
+
+.typewriter-cursor:hover {
+  animation-play-state: end;
+}
 
 @keyframes fadeOutCursor {
   0% {
@@ -210,6 +201,7 @@
   word-spacing: 2px;
   white-space: pre-wrap;
   text-align: justify;
+  padding: 10px;
 }
 
 
@@ -221,6 +213,7 @@
 
 .play-intro-container {
   position: relative;
+  top: 10%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -228,7 +221,7 @@
   flex-direction: column;
   .header {
     position: inherit;
-    font-size: 38px;
+    font-size: 42px;
     word-spacing: 3px;
     letter-spacing: 2px;
   }
@@ -242,25 +235,129 @@ $animLength: 9;
 $mountainHeight: 10%; /* In percent */
 $start_scale: 0.4;
 
-.play-container {
+// .old-play-container {
+//   position: absolute;
+//   width: 100%;
+//   height: 0;
+//   padding-top: 100%;
+//   overflow: hidden;
+//   perspective: 800px;
+//   &::after {
+//     content: '';
+//     height: 100%;
+//     width: 100%;
+//     position: absolute;
+//     top: 50%;
+//     background: $bgColor;
+//     opacity: 0.7;
+//     z-index:10;
+//     transition: background-color 2s ease;
+//   }
+// }
+
+
+.mcguffin-container {
   position: absolute;
-  width: 100%;
-  height: 0;
-  padding-top: 100%;
-  overflow: hidden;
-  perspective: 800px;
-  &::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    background: $bgColor;
-    opacity: 0.7;
-    z-index:10;
-    transition: background-color 2s ease;
-  }
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 }
+
+
+.mcguffin {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  margin-top: 0;
+  padding-top: 0;
+}
+.venn-diagram {
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1.2s ease-in;
+}
+.venn-diagram.hide {
+  opacity: 0;
+}
+
+$circleradius:120px;
+
+.circle {
+  position: absolute;
+  width: $circleradius;
+  height: $circleradius;
+  border-radius: 50%;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle-1 {
+  background-color: rgba(0, 100, 255);
+  // transform: translate(-100px, -200px);
+}
+
+.circle-2 {
+  background-color: rgba(0, 0, 200);
+  // transform: translate(100px, -200px);
+}
+
+.circle-3 {
+  background-color: rgb(80, 78, 246);
+  // transform: translate(0, 200px);
+}
+
+.glow {
+  position: absolute;
+  width: $circleradius;
+  height: $circleradius;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.3);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.circle:hover .glow {
+  opacity: 0.6;
+}
+
+.circle-text {
+  font-size: 12px;
+  color: var(--lighter);
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 0.5s ease-in-out;
+}
+
+.circle-text:hover {
+  color: white;
+}
+
+
+.play-container {
+  position: relative;
+  overflow: auto;
+  perspective: 400px;
+  width: 100%;
+  height: 100vh;
+  padding: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
 .mountain {
   filter: blur(2.5px);
   background-color: $mountainColor;

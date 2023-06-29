@@ -36,7 +36,7 @@ export const BlogCard = ({ id }: { id: string; }) => {
 					</a>
 				</div><br/>
 				<div className="blog-description">
-					<p>{blog.description}</p>
+					<article>{blog.description}</article>
 					<br />
 					<div style={{ display: "flex" }}>
 					</div>

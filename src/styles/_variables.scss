@@ -40,7 +40,7 @@
 
 .general-header {
 	font-weight: bold;
-	font-size: 38px;
+	font-size: 42px;
 	letter-spacing: 2px;
 	color: var(--lighter);
 	&:hover {
@@ -94,18 +94,19 @@
 	background-image: conic-gradient(
 		from var(--border-angle),
 		var(--background-primary),
-		var(--background-primary) 50%,
+		var(--background-primary) 100%,
 		var(--background-primary),
 	  ),
-		conic-gradient(from var(--border-angle), transparent 20%, var(--accent), rgb(68, 64, 178));
+		conic-gradient(from var(--border-angle), transparent 40%, var(--accent), rgb(68, 64, 178));
 	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	transition: background-color 2s ease;
-	border-radius: 2.5px;
+	border-radius: 2.9px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 0;
 
 	animation: bg-spin 5s linear infinite;
 	@keyframes bg-spin {

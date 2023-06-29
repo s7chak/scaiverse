@@ -34,7 +34,7 @@ export const Publications = () => {
 					<br/>
 					<motion.div initial={{ opacity: 0, scale: 0.99}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 1.5}}>
 						<span>
-							A collection of my thoughts on science, technology, AI and the world of finance.</span><br/><br/>
+							A collection of my thoughts on technology, design and their applications.</span><br/><br/>
 					</motion.div>
 					<div style={{ display: 'flex', justifyContent: 'center', width: '60vw' }}>
 						<motion.div style={{ display: 'flex', alignItems: 'center' }}

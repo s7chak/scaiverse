@@ -8,7 +8,7 @@ import TimeLineGraph from "../things/TimeLineGraph";
 export const AboutMe = () => {
 	let about_text = appConfig["About"]["text"];
 	return (
-		<section id="about" className="about section is-medium">
+		<section id="about" className="about section">
 			<div className="about-container container">
 			<br/><br/>
 				<TimeLineGraph /><br/>
@@ -31,6 +31,8 @@ export const AboutMe = () => {
 };
 
 export default AboutMe;
+
+
 
 
 // I am an Engineer at heart.<br/>
