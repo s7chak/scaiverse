@@ -7,31 +7,13 @@ const ContactForm = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [showPopup, setShowPopup] = useState(false);
-  
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const emailEndpoint = 's7chak@gmail.com';
-
-// 	const emailTo = 'your-email@example.com';
-//     const emailContent = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-//     const emailUrl = `mailto:${emailTo}?subject=s7chak.github.io : New Email Received&body=${encodeURIComponent(emailContent)}`;
-// 	window.open(emailUrl);
-
-//     // Reset the form fields
-//     setName('');
-//     setEmail('');
-//     setMessage('');
-// 	setShowPopup(true);
-
-//   };
 const form = useRef();
 const handleSubmit = (event) => {
 	event.preventDefault();
 	emailjs.sendForm('service_hkcxbx6', 'template_fz1wsou', '#messaging', 'YYQZE-GZHmh0jLEij')
       .then((result) => {
 		  setShowPopup(true);
-          console.log(result.text);
       }, (error) => {
           console.log(error.text);
       });
@@ -40,9 +22,20 @@ const handleSubmit = (event) => {
 	const isMobile = width <= 768;
   let widthStack = isMobile?"90vw" : "50vw";
   return (
-	<div className='form-parent' style={{width: widthStack}}>
+	<div id='contactform' className='form-parent' style={{width: widthStack}}>
 		<br/><br/>
     <form id='messaging' onSubmit={handleSubmit}>
+		<textarea
+          id="name"
+          name="name"
+          className="contactname"
+          placeholder=" Name (optional)"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          style={{width: widthStack}}
+        ></textarea>
+		<br/>
         <textarea
           id="message"
           name="message"
@@ -55,7 +48,9 @@ const handleSubmit = (event) => {
         ></textarea>
 	  <br/>
     <br/>
-      <div className='divebox'><span className="dive" onClick={handleSubmit}>Leave a message</span></div>
+	<div style={{display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center'}}>
+      <div className={`gbutton ${isMobile ? 'is-burger' : ''}`}><span className="dive" onClick={handleSubmit}>Leave a message</span></div>
+	
 	  <br/><br/><br/>
       {showPopup && (
         <>
@@ -63,6 +58,7 @@ const handleSubmit = (event) => {
         <br/><br/>
           </>
       )}
+	</div>
     </form><br/><br/><br/>
 	</div>
   );

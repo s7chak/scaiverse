@@ -13,6 +13,7 @@
 		--background-secondary: #141A29;
 		--background-secondary-alt: #141A29;
 		--foreground-primary: #a8b5c3;	
+		--purple: #492dd5ec;
 	}
 	#light {
 		--lighter: #0A0D14;
@@ -21,6 +22,7 @@
 		--background-secondary: #CBD6F0;
 		--background-secondary-alt: #CBD6F0;
 		--foreground-primary: #141A29;
+		--purple: #492dd5ec;
 	}
 	transition: background-color 2s ease;
 }
@@ -45,7 +47,9 @@
 	color: var(--lighter);
 	&:hover {
 		color:transparent;
-		background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
+		// background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
+		background: url("https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/giphy.gif");
+		// background: url("https://media.giphy.com/media/lKaeQAunM3hZaqsOpj/giphy.gif?cid=ecf05e47xuf9z7vq1a8iarlescw065qcad2bri7zfgzgemzh&ep=v1_gifs_search&rid=giphy.gif&ct=g");
 		background-size: cover;
 		background-position: center;
 		-webkit-background-clip: text;
@@ -58,7 +62,9 @@
 	color: var(--accent);
 	&:hover {
 		color:transparent;
-		background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
+		// background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
+		background: url("https://media.giphy.com/media/9JxkPTP3alOykb8PmQ/giphy.gif");
+		// background: url("https://media.giphy.com/media/lKaeQAunM3hZaqsOpj/giphy.gif?cid=ecf05e47xuf9z7vq1a8iarlescw065qcad2bri7zfgzgemzh&ep=v1_gifs_search&rid=giphy.gif&ct=g");
 		// background: url("https://media.giphy.com/media/3bc8pP1rVdfgN1uoMV/giphy.gif");
 		// background: url("https://media.giphy.com/media/Qvp6Z2fidQR34IcwQ5/giphy.gif");
 		background-size: cover;
@@ -81,6 +87,176 @@
 	align-items: center;
 	width: 80vw;
 }
+
+$radius:10px;
+
+.gbutton {
+	display: inline-block;
+	position: relative;
+	padding: 0.6em 40px;
+	font-size: 16px;
+	color: var(--accent);
+	border-radius: $radius;
+	letter-spacing: 2px;
+	cursor: url("../../public/assets/files/hand.svg"), pointer;
+	z-index: 1;
+	border: currentColor 0.12em solid;
+	// transition: background-color 1s linear;
+  }
+  
+  .gbutton.is-domain{
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+	padding: auto;
+	width: 20vw;
+  }
+  .gbutton.is-mile {
+	padding: 5px 20px;
+	left: -1px;
+	bottom: 10px;
+  }
+  
+  .gbutton.is-domain.is-burger {
+	display: inline-flex;
+	align-items: center;
+	padding: auto;
+	margin: 10px;
+	height: 70px;
+	width: 40vw;
+  }
+
+  .gbutton.is-burger::before {
+	content: "";
+	opacity: 0.5;
+	z-index: -1;
+  }
+  .gbutton.is-burger:focus::before,
+  .gbutton.is-burger:active::before {
+	content: "";
+	opacity: 1;
+	z-index: -1;
+  }
+
+  .gbutton.is-burger::after {
+	opacity: 1;
+	transition: opacity 1s;
+  }
+  
+  .gbutton-text {
+	color: var(--accent);
+	text-shadow: 0 0 0.1em currentColor, 0 0 0.02em white;
+	transition: color 1s linear;
+  }
+  .gbutton:hover .gbutton-text {
+	color: var(--lighter);
+  }
+  .gbutton:focus,
+  .gbutton:hover {
+	border: currentColor 0.1em solid;
+	text-shadow: 0 0 0.2em currentColor;
+	z-index: 1;
+	opacity: 1;
+  }
+  
+  .gbutton::after {
+	content: "";
+	position: absolute;
+	border-radius: $radius;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+	transition: opacity 1s;
+	z-index: -1;
+	background-color: var(--background-primary);
+	transition: background-color 10ms linear;
+	transition: opacity 10ms linear;
+  }
+  .gbutton:hover::after {
+	opacity: 1;
+  }
+  
+  .gbutton::before {
+	content: "";
+	position: absolute;
+	border-radius: $radius;
+	top: -0.015em;
+	left: -0.02em;
+	right: -0.02em;
+	bottom: -0.015em;
+	opacity: 0.2;
+	transition: opacity 200ms linear;
+	background: linear-gradient(
+	  -45deg,
+	  var(--accent),
+	  var(--lighter),
+	  var(--purple),
+	  var(--accent)
+	);
+	background-size: 200%;
+	filter: blur(20px);
+	animation: glow 3s linear infinite;
+	z-index: -1;
+  }
+  
+  .gbutton:hover::before {
+	opacity: 0.4;
+	border-radius: $radius;
+	z-index: -1;
+  }
+  
+  @keyframes glow {
+	0% {
+	  background-position: 200%;
+	}
+	100% {
+	  background-position: 0%;
+	}
+  }
+
+
+  .linebox {
+	position: relative;
+	--border-size: 2.8px;
+	--border-angle: 0turn;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 60px;
+	padding-right: 60px;
+	margin: 10px 10px 10px 10px;
+	background-image: conic-gradient(
+		from var(--border-angle),
+		var(--background-primary),
+		var(--background-primary) 100%,
+		var(--background-primary),
+	  ),
+		conic-gradient(from var(--border-angle), transparent 40%, var(--accent), rgb(68, 64, 178));
+	background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: background-color 2s ease;
+	border-radius: 2.9px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 0;
+
+	animation: bg-spin 5s linear infinite;
+	animation-iteration-count: 2;
+	@keyframes bg-spin {
+	  to {
+		--border-angle: 1turn;
+	  }
+	}
+	&:hover {
+	  animation-play-state: paused;
+	  --border-size: 2px;
+	}
+}
+
+
 
 .divebox {
 	position: relative;
@@ -217,6 +393,18 @@
 	border: 1px solid hsl(219, 92%, 85%);
 	border-radius: 4px;
 	box-sizing: border-box;
+  }
+
+  .contactname {
+	font-size: 18px;
+	padding: 10px;
+	height: 6vh;
+	color: white;
+	background-color: var(--background-primary);
+	letter-spacing: 2px;
+	:focus {
+		border-color: hsl(233, 100%, 84%);
+	}
   }
   
   .contactmessage {

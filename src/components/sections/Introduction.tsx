@@ -48,14 +48,14 @@ export const Introduction = () => {
 								<motion.div style={{ display: 'inline-flex', justifyContent: 'center' }}
 									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}
 									className="domain-container">
-									<div className={`divebox is-domain ${isMobile ? "divebox is-burger" : ""}`}>
+									<div className={`gbutton is-domain  ${isMobile? "is-burger" : ""}`}>
 									<Link to="software" smooth={true} style={{ textDecoration: 'none' }}> 
 											<p className="reg-text">Software</p>
 										</Link>
 									</div> 
-									<div className={`divebox is-domain ${isMobile ? "divebox is-burger" : ""}`}>
+									<div className={`gbutton is-domain  ${isMobile? "is-burger" : ""}`}>
 									<Link to="machine-learning" smooth={true} style={{ textDecoration: 'none' }}> 
-											<p className="reg-text">Machine Learning</p>
+										<p className="reg-text">Machine Learning</p>
 									</Link>	
 									</div>
 								</motion.div>
@@ -149,11 +149,11 @@ function Playback() {
 			<br/><br/>
 			<IntroText />
 			<br/>
-			{isMobile? <><br/><br/><br/></> : null}
+			<><br/><br/></>
 			<div style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
-				<motion.div initial={{ opacity: 0, }} animate={{ opacity: 1,}} transition={{ease: "linear", duration: 2, delay: 5}}>
-					<div className={`divebox ${isMobile ? "divebox is-burger" : ""}`} style={{width: widthDive}}>
-						<Link className="dive" to="introduction" smooth={true} onClick={() => setDove(true)}>Let's dive in</Link></div>
+				<motion.div initial={{ opacity: 0, }} animate={{ opacity: 1,}} transition={{ease: "linear", duration: 2, delay: 6}}>
+					<div className={`gbutton ${isMobile?'is-burger':'' }`}>
+						<Link to="introduction" smooth={true} onClick={() => setDove(true)}><span className="gbutton-text">Let's dive in</span></Link></div>
 				</motion.div>
 			</div>
 
@@ -284,7 +284,7 @@ function Playback() {
   }
 
   function IntroText() {
-	const roles = ['technologist', 'developer','engineer','problem solver','designer','coder','artist'];
+	const roles = ['technologist', 'developer','engineer','problem solver','lifelong learner', 'designer','coder','artist'];
 	const vowelRegex = '^[aieouAIEOU].*';
 	const [newName, setnewName] = useState("");
     const shuffle = useCallback(() => {

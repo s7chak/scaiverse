@@ -114,14 +114,14 @@ const VennGuffin = () => {
     // type: 'spring',
     // damping: 5,
     // stiffness: 10,
-    duration: vennAnimationTime-1,
+    duration: vennAnimationTime-2,
     ease: [0.3, 0.2, 0.1, 0.5]
   }
   let circDiameter = 150;
   let startAway = 100;
   let meStartAway = 150;
   let overlap = 10;
-  const ylevel = -100;
+  const ylevel = -50;
   let ydiag = 70;
   let closer = 30;
   const [hide, setHide] = useState(false);
@@ -140,7 +140,7 @@ const VennGuffin = () => {
       <motion.div
         className="circle circle-1"
         initial={{ x: -startAway, y: ylevel, ...circleVariants.hidden }}
-        animate={!hide? { x: -(circDiameter/2)-overlap+closer, y: ylevel-closer, ...circleVariants.visible }: {x: 0, scale: 1}}
+        animate={!hide ? {x: -(circDiameter/2+overlap), y:  ylevel-closer, ...circleVariants.visible } : {x: 0, scale: 1} }
         transition={circleTransition}
         whileHover={{scale: 1.1}}
         onClick={() => setHide(!hide)}>
@@ -150,7 +150,7 @@ const VennGuffin = () => {
       <motion.div
         className="circle circle-2"
         initial={{ x: startAway, y: ylevel, ...circleVariants.hidden }}
-        animate={!hide ? {x: circDiameter/2 +overlap-closer, y: ylevel-closer, ...circleVariants.visible } : {x: 0, scale: 1} }
+        animate={!hide ? {x: circDiameter/2 +overlap, y:  ylevel-closer, ...circleVariants.visible } : {x: 0, scale: 1} }
         transition={circleTransition}
         onClick={() => setHide(!hide)}
         whileHover={{scale: 1.1}}
@@ -162,7 +162,7 @@ const VennGuffin = () => {
       <motion.div
         className="circle circle-1"
         initial={{ x: startAway, y: ylevel+ydiag, ...circleVariants.hidden }}
-        animate={!hide ? {x: circDiameter/2 +overlap, y: ylevel+ydiag, ...circleVariants.visible } : {x: 0, scale: 1} }
+        animate={!hide ? {x: circDiameter/2 +overlap-closer-5, y: ylevel+ydiag, ...circleVariants.visible } : {x: 0, scale: 1} }
         transition={circleTransition}
         onClick={() => setHide(!hide)}
         whileHover={{scale: 1.1}}
@@ -172,9 +172,9 @@ const VennGuffin = () => {
       </motion.div>
       <motion.div
         className="circle circle-2"
-        initial={{ x: -startAway, y: ylevel+ydiag, ...circleVariants.hidden }}
-        animate={!hide ? {x: -(circDiameter/2+overlap), y: ylevel+ydiag, ...circleVariants.visible } : {x: 0, scale: 1} }
         transition={circleTransition}
+        initial={{ x: -startAway, y: ylevel+ydiag, ...circleVariants.hidden }}
+        animate={!hide? { x: -(circDiameter/2)-overlap+closer+5, y:ylevel+ydiag, ...circleVariants.visible }: {x: 0, scale: 1}}
         onClick={() => setHide(!hide)}
         whileHover={{scale: 1.1}}
         >
@@ -185,8 +185,8 @@ const VennGuffin = () => {
 
       <motion.div
         className="circle circle-3"
-        initial={{ x: 0, y: ylevel+meStartAway, ...circleVariants.hidden }}
-        animate={!hide?{ x: 0, y: ylevel+startAway, z:100, ...circleVariants.visible } : {x: 0, y: ylevel, scale: 1.3}}
+        initial={{ x: 0, y: ylevel-startAway, ...circleVariants.hidden }}
+        animate={!hide?{ x: 0, y: ylevel-startAway+closer, z:100, ...circleVariants.visible } : {x: 0, y: ylevel, scale: 1.3}}
         transition={circleTransition}
         onClick={() => setHide(!hide)}
         whileHover={{scale: 1.2}}

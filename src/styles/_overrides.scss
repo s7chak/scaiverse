@@ -24,35 +24,33 @@
 }
 .s7logo.is-burger {
 	visibility: visible;
-	position: flex;
-	margin-top: 10px;
+	position: absolute;
+	margin-top: 0px;
 	margin-left: 46%;
 	margin-bottom: 0;
 }
 
 .s7img {
-	position: absolute;
+	position: relative;
 	margin-top: 3px;
-	margin-bottom: 0;
 	margin-left: 0;
-	margin-right: 0;
 	height: 32px;
-	z-index: 100;
+	z-index: 10;
+	cursor: url("../../public/assets/files/hand.svg"), pointer;
 }
-
 
 .s7img.glow {
 	position: absolute;
 	height: 32px;
 	width: 32px;
-	margin-left: 0;
-	margin-right: 0;
+	top: 0;
+	left: 5px;
 	opacity: 0;
 	transform: scale(1);
 	-webkit-transform: scale(1);
 	filter: brightness(0) invert(1) blur(5px);
 	-webkit-filter: brightness(0) invert(1) blur(5px);
-	// z-index: 100;
+	z-index: 8;
 	#light {
 		opacity:0;
 	}
@@ -61,8 +59,8 @@
 	}
 	// filter: drop-shadow(0 0 0.8rem var(--accent));
 }
-.s7img.main:hover ~ .s7img.glow {
-	opacity:1;
+.s7img:hover ~ .s7img.glow {
+	opacity:0.5;
   }
 
 
@@ -182,6 +180,18 @@ ol {
 	overflow: hidden;
 	justify-content: flex-start;
   	align-items: center;
+	  .navbar-item {
+		margin-bottom: 5px;
+		border-bottom: 3px solid transparent;
+		transition: 0.3s ease-in-out;
+		display: flex;
+		align-items: center;
+		&:hover,
+		&:focus {
+			background: none;
+			transform: translateY(-0.1rem);
+		}
+	}
 }
 
 .navbar-phone-menu {
@@ -195,36 +205,42 @@ ol {
 	overflow: hidden;
 	justify-content: flex-start;
   	align-items: center;
-	z-index: 20;
+	z-index: 4;
 }
 .navbar {
 	background-color: var(--background-primary);
 	transition: background-color 2s ease;
 	width: 100%;
-	height: 62px;
 	.navbar-menu,
 	.navbar-burger,
 	.navbar-item {
 		margin: 10px 5px;
 		background-color: var(--background-primary);
 		color: var(--lighter);
-		transition: background-color 2s ease;
-		:hover {
-			cursor: url("../../public/assets/files/hand.svg"), pointer;
+		.mobile {
+			position: absolute;
 		}
 	}
 	.navbar-brand {
+		position: absolute;
+		top: 10px;
+		left: 10px;
 		margin-top: 0;
 		width: 10vw;
 		background-color: var(--background-primary);
 		color: var(--lighter);
 		transition: background-color 2s ease;
-		z-index: 25;
+		z-index: 5;
+	}
+	.menubar {
+		margin-right: 4px;
+		color: var(--lighter);
+		z-index: 10;
 	}
 
 	.navbar-right {
 		align-items: right;
-		margin-right: 22px;
+		margin-right: 20px;
 		.btn-alt {
 			font-weight: bold;
 			background-color: transparent;
@@ -249,12 +265,19 @@ ol {
 	}
 
 	.navbar-start {
+		margin-left: 20px;
 		flex-grow: 0.9;
+		width: 90vw;
+		display: flex;
+		align-items: center;;
 		justify-content: center;
+		z-index: 0;
+		height: 42px;
 	}
 	.navbar-start.is-burger {
-		margin-left: 10px;
+		margin-left: 0;
 		width: 90vw;
+		height: 50px;
 		display: flex;
 		flex-direction: row;
 		z-index: 0;
@@ -265,21 +288,21 @@ ol {
 	.navbar-end {
 		.navbar-item {
 			background: none;
-			margin: 0px px;
+			margin-bottom: 5px;
 			border-bottom: 3px solid transparent;
 			transition: 0.3s ease-in-out;
 			display: flex;
 			align-items: center;
-
 			&:hover,
 			&:focus {
 				color: var(--accent);
 				border-color: var(--accent);
+				transform: translateY(-0.1rem);
 			}
 		}
 
 		.is-icon {
-			margin: 0px 4px !important;
+			margin: 0px 5px !important;
 
 			.is-hidden-desktop {
 				margin: 0px 8px !important;
