@@ -1,0 +1,422 @@
+@import "./variables";
+
+@keyframes scale-in {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('../../public/assets/Consolas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.typewriter-container {
+  position: absolute;
+  top: 0;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter-cursor {
+  position: relative;
+  top: -3px;
+  left: 0;
+  animation: blinkCursor 1s infinite;
+  // animation-iteration-count: 50;
+  width: 10px;
+  height: 20px;
+  background-color: var(--accent);
+  margin-left: 3px;
+  opacity: 0.8;
+}
+
+.typewriter-cursor:hover {
+  animation-play-state: end;
+}
+
+@keyframes fadeOutCursor {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  font-family: "Consolas", monospace;
+  font-size: 24px;
+  color: rgb(143, 163, 187);
+  position: relative;
+  width: auto;
+}
+
+@keyframes blinkCursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.glowball {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: screen;
+
+  width: 5px;
+  height: 5px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 20px 8px #fff,
+    0 0 30px 8px rgb(101, 35, 255),
+    0 0 40px 30px rgb(33, 76, 248);
+  filter: blur(3.5px);
+}
+
+.glowball more{
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 30px 10px #fff,
+    0 0 35px 10px rgb(101, 35, 255),
+    0 0 45px 35px rgb(33, 76, 248);
+  filter: blur(5px);
+}
+
+.milestone-container {
+  position: relative;
+}
+
+.mile-tooltip {
+  position: relative;
+  color: rgb(179, 207, 250);
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  border: 1px solid rgb(134, 180, 255);
+  padding: 5px;
+  width: 180px !important;
+}
+
+.milestone-label {
+  color: rgb(157, 196, 255);
+  font-size: 13;
+  font-weight: bold;
+  background-color: transparent;
+  // border-radius: 3px;
+  // border: 1px solid rgb(134, 180, 255);
+  padding: 5px;
+  width: auto;
+  :hover mile-tooltip {
+    opacity: 1;
+  }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  align-items: left;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+
+.techstack {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+}
+
+
+.threeexp {
+  height: 100vh;
+  margin-top: 0px;
+  width: 100vw;
+  align-items: center;
+}
+
+
+.miniball {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 15px 5px #fff,  /* inner white */
+    0 0 20px 10px rgb(0, 119, 255), /* middle magenta */
+    0 0 30px 20px rgb(33, 76, 248); /* outer cyan */
+  filter: blur(2px);
+  // offset-path: path("M -189 -8 S -31 -220 181 -7");
+  offset-path: path("M -142 -4 S 2 -255 217 1 S 214 289 -1 122");
+  z-index: 5;
+}
+
+
+.ball {
+  position: absolute;
+  margin-bottom: 50vh;
+  width: 5px;
+  height: 5px;
+  border-radius: 80%;
+  background-color: #fff;
+  box-shadow:
+    0 0 20px 8px #fff,
+    0 0 30px 8px rgb(101, 35, 255),
+    0 0 40px 30px rgb(33, 76, 248);
+  filter: blur(3.5px);
+  z-index: 5;
+  offset-path: path("M -140 -40 S 59 -331 433 -88");
+  animation-iteration-count: infinite;
+}
+
+.introtext {
+  margin: 10px 10px;
+  font-size: 18px;
+  word-spacing: 2px;
+  white-space: pre-wrap;
+  text-align: justify;
+  padding: 10px;
+}
+
+
+.definitions {
+  font-family: var(--main-font);
+  font-size: 24px;
+}
+
+
+.play-intro-container {
+  position: relative;
+  top: 10%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .header {
+    position: inherit;
+    font-size: 42px;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+  }
+}
+
+
+$n: 25;
+// $bgColor: rgb(204,207,209);
+$bgColor: var(--background-primary);
+$mountainColor: var(--accent);
+$animLength: 9;
+$mountainHeight: 10%; /* In percent */
+$start_scale: 0.4;
+
+// .old-play-container {
+//   position: absolute;
+//   width: 100%;
+//   height: 0;
+//   padding-top: 100%;
+//   overflow: hidden;
+//   perspective: 800px;
+//   &::after {
+//     content: '';
+//     height: 100%;
+//     width: 100%;
+//     position: absolute;
+//     top: 50%;
+//     background: $bgColor;
+//     opacity: 0.7;
+//     z-index:10;
+//     transition: background-color 2s ease;
+//   }
+// }
+
+
+.mcguffin-container {
+  position: absolute;
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+
+.mcguffin {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  margin-top: 0;
+  padding-top: 0;
+}
+.venn-diagram {
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1.2s ease-in;
+}
+.venn-diagram.hide {
+  opacity: 0;
+}
+
+$circleradius:120px;
+
+.circle {
+  will-change: opacity;
+  position: absolute;
+  width: $circleradius;
+  height: $circleradius;
+  border-radius: 50%;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle-1 {
+  background-color: rgba(0, 100, 255);
+  // transform: translate(-100px, -200px);
+}
+
+.circle-2 {
+  background-color: rgba(0, 0, 200);
+  // transform: translate(100px, -200px);
+}
+
+.circle-3 {
+  background-color: rgb(80, 78, 246);
+  // transform: translate(0, 200px);
+}
+
+.glow {
+  will-change: opacity;
+  position: absolute;
+  width: $circleradius;
+  height: $circleradius;
+  border-radius: 50%;
+  opacity: 0.9;
+  background-color: rgba(39, 35, 35, 0.474);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.3);
+  transition: opacity 1s ease-in-out;
+}
+
+.circle:hover .glow {
+  opacity: 0.1;
+}
+
+.circle-text {
+  font-size: 12px;
+  color: var(--lighter);
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 1s ease-in-out;
+}
+
+.circle-text:hover {
+  color: white;
+  opacity: 1;
+}
+
+
+.play-container {
+  position: relative;
+  overflow: auto;
+  perspective: 400px;
+  width: 100%;
+  height: 100vh;
+  padding: 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.mountain {
+  filter: blur(2.5px);
+  background-color: $mountainColor;
+  width: $mountainHeight;
+  height: $mountainHeight;
+  position: absolute;
+  top: 50% - $mountainHeight / 2;  
+  &:nth-of-type(even) {
+    right: 0;
+  }
+  &::before {
+    content: '';
+    width: 102%;
+    height: 102%;
+    position: absolute;
+    left: -1%;
+    top: -1%;
+    background: $bgColor;
+    animation: opacity ($animLength + s) linear infinite;
+    animation-delay: inherit;
+  }
+}
+
+@for $i from 1 to $n {
+  .mountain:nth-of-type(#{$i}) {
+    animation: mountain#{($i % 6) + 1} ($animLength + s) (-$i / ($n - 3) * $animLength)+s linear infinite;
+  }
+}
+
+
+@keyframes mountain1 {
+  0% { transform: rotate(45deg) translate3d(-130%, 130%, -300px) scale($start_scale); }
+  100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
+}
+@keyframes mountain2 {
+  0% { transform: rotate(45deg) translate3d(120%, -120%, -300px) scale($start_scale); }
+  100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
+}
+@keyframes mountain3 {
+  0% { transform: rotate(45deg) translate3d(-110%, 110%, -300px) scale($start_scale); }
+  100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
+}
+@keyframes mountain4 {
+  0% { transform: rotate(45deg) translate3d(110%, -110%, -300px) scale($start_scale); }
+  100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
+}
+@keyframes mountain5 {
+  0% { transform: rotate(45deg) translate3d(-150%, 150%, -300px) scale($start_scale); }
+  100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
+}
+@keyframes mountain6 {
+  0% { transform: rotate(45deg) translate3d(150%, -150%, -300px) scale($start_scale); }
+  100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
+}
+
+@keyframes opacity { 
+  90%, 100% { opacity: 0.35; } 
+}

@@ -1,0 +1,328 @@
+@import "./variables";
+
+.app {
+	font-family: "Rajdhani", sans-serif !important;
+	font-weight: 300;
+	background-color: var(--background-primary) !important;
+	color: var(--lighter) !important;
+	transition: background-color 2s ease;
+	overflow: hidden;
+}
+
+.blogging {
+	// font-family: "Rajdhani", sans-serif !important;
+	font-weight: 300;
+	background-color: var(--background-primary) !important;
+	color: var(--lighter) !important;
+	height: auto;
+	transition: background-color 2s ease;
+}
+
+.s7logo {
+	visibility: visible;
+	margin-left: 5px;
+}
+.s7logo.is-burger {
+	visibility: visible;
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 46%;
+	margin-bottom: 0;
+}
+
+.s7img {
+	position: relative;
+	margin-top: 3px;
+	margin-left: 0;
+	height: 32px;
+	z-index: 10;
+	cursor: url("../../public/assets/files/hand.svg"), pointer;
+}
+
+.s7img.glow {
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	top: 0;
+	left: 5px;
+	opacity: 0;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	filter: brightness(0) invert(1) blur(5px);
+	-webkit-filter: brightness(0) invert(1) blur(5px);
+	z-index: 8;
+	#light {
+		opacity:0;
+	}
+	#dark {
+		opacity:0;
+	}
+	// filter: drop-shadow(0 0 0.8rem var(--accent));
+}
+.s7img:hover ~ .s7img.glow {
+	opacity:0.5;
+  }
+
+
+a {
+	color: var(--lighter);
+	transition: 0.3s ease-in-out;
+
+	&:hover,
+	&:focus {
+		color: var(--accent) !important;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
+	}
+}
+
+ul,
+ol {
+	list-style: square !important;
+
+	@include breakpoint(extra_small_devices) {
+		list-style: none !important;
+		margin: 0px !important;
+	}
+}
+
+.button {
+	color: var(--lighter);
+	background-color: transparent;
+	border: 2px solid var(--background-secondary-alt);
+
+	margin: 6px !important;
+	transition: 0.4s;
+	width: '200px';
+	span {
+		padding-left: 0.5rem;
+	}
+
+	&:hover,
+	&:focus {
+		border-color: var(--accent);
+		color: inherit;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
+	}
+}
+
+.content {
+	text-align: left;
+	font-size: 18px;
+	width: 100%;
+}
+
+.card {
+	color: var(--lighter);
+	background-color: var(--background-primary);
+	border: 1px transparent;
+	border-radius: 6px;
+	width: 400px;
+	transition: background-color 2s ease, box-shadow 0.3s ease, transform 1s ease;
+	margin: 1rem 0.3rem;
+	z-index: 1;
+
+	@include breakpoint(extra_small_devices) {
+		width: 340px !important;
+	}
+
+	&:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		transform: translateZ(30px);
+	  }
+	// animation: scale-in 0.7s cubic-bezier(0.2, 0.46, 0.45, 0.3) both;
+
+	.card-content {
+		.repo-title {
+			font-weight: bold;
+		}
+
+		.repo-description {
+			font-size: 14px;
+		}
+	}
+}
+
+.blog-card {
+	color: var(--lighter);
+	background-color: var(--background-primary);
+	border-radius: 6px;
+	transition: background-color 2s ease;
+	margin: 1rem 0.3rem;
+	width: 700px;
+
+	@include breakpoint(extra_small_devices) {
+		width: 340px !important;
+	}
+
+	// animation: scale-in 1.8s cubic-bezier(0.1, 0.5, 0.65, 0.1) both;
+
+	.blog-card-content {
+		.blog-title {
+			font-weight: bold;
+		}
+
+		.blog-description {
+			font-size: 16px;
+			white-space: pre-wrap;
+			text-align: justify;
+		}
+	}
+}
+
+.navbar-my-menu {
+	position: absolute;
+	display: flex;
+  	flex-direction: column;
+	top: 10%;
+	right: 22px;
+	width: 25px;
+	height: 100vh;
+	overflow: hidden;
+	justify-content: flex-start;
+  	align-items: center;
+	  .navbar-item {
+		margin-bottom: 5px;
+		border-bottom: 3px solid transparent;
+		transition: 0.3s ease-in-out;
+		display: flex;
+		align-items: center;
+		&:hover,
+		&:focus {
+			background: none;
+			transform: translateY(-0.1rem);
+		}
+	}
+}
+
+.navbar-phone-menu {
+	position: fixed;
+	display: flex;
+  	flex-direction: row;
+	top: 0;
+	left: 0;
+	width: 95vw;
+	height: 10vh;
+	overflow: hidden;
+	justify-content: flex-start;
+  	align-items: center;
+	z-index: 4;
+}
+.navbar {
+	background-color: var(--background-primary);
+	transition: background-color 2s ease;
+	width: 100%;
+	.navbar-menu,
+	.navbar-burger,
+	.navbar-item {
+		margin: 10px 5px;
+		background-color: var(--background-primary);
+		color: var(--lighter);
+		.mobile {
+			position: absolute;
+		}
+	}
+	.navbar-brand {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		margin-top: 0;
+		width: 10vw;
+		background-color: var(--background-primary);
+		color: var(--lighter);
+		transition: background-color 2s ease;
+		z-index: 5;
+	}
+	.menubar {
+		margin-right: 4px;
+		color: var(--lighter);
+		z-index: 10;
+	}
+
+	.navbar-right {
+		align-items: right;
+		margin-right: 20px;
+		.btn-alt {
+			font-weight: bold;
+			background-color: transparent;
+			color: var(--lighter);
+
+			@include breakpoint(extra_small_devices) {
+				border-radius: 4px;
+				background-color: var(--background-primary);
+			}
+
+			@include breakpoint(small_devices) {
+				border: none !important;
+				margin: 3px !important;
+			}
+
+			&:hover,
+			&:focus {
+				color: var(--accent);
+				transform: translateY(-0.2rem);
+			}
+		}
+	}
+
+	.navbar-start {
+		margin-left: 20px;
+		flex-grow: 0.9;
+		width: 90vw;
+		display: flex;
+		align-items: center;;
+		justify-content: center;
+		z-index: 0;
+		height: 42px;
+	}
+	.navbar-start.is-burger {
+		margin-left: 0;
+		width: 90vw;
+		height: 50px;
+		display: flex;
+		flex-direction: row;
+		z-index: 0;
+	}
+
+	.navbar-start,
+	.navbar-center,
+	.navbar-end {
+		.navbar-item {
+			background: none;
+			margin-bottom: 5px;
+			border-bottom: 3px solid transparent;
+			transition: 0.3s ease-in-out;
+			display: flex;
+			align-items: center;
+			&:hover,
+			&:focus {
+				color: var(--accent);
+				border-color: var(--accent);
+				transform: translateY(-0.1rem);
+			}
+		}
+
+		.is-icon {
+			margin: 0px 5px !important;
+
+			.is-hidden-desktop {
+				margin: 0px 8px !important;
+			}
+		}
+	}
+}
+
+.footer {
+	background-color: var(--background-primary);
+	padding: 4rem !important;
+	transition: background-color 2s ease;
+	p {
+		font-size: 16px;
+	}
+}
+
+.footertext {
+	color: var(--lighter);
+	:hover {
+		color: rgb(128, 185, 239);
+	}
+}
