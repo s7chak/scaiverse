@@ -4,12 +4,13 @@ import { Link } from "react-scroll";
 export const Footer = () => {
 	return (
 		<footer id="footer" className="footer">
-			<div className="content has-text-centered footertext">
-				<span>
-					{/* Copyright © 2023-2026 s7chak. All Rights Reserved. */}
-					<Link smooth={true} to="introduction"><h3>Cheers!</h3></Link>
-				</span>
-			</div>
+			<Link smooth={true} to="introduction" duration={3500}><span className="general-header">Cheers!</span></Link>
+			<br/><br/>
+			<span className="footertext">
+				Made with React JS, Fiber, Three, DREI, Framer Motion, HTML5, SCSS.<br/>
+				Copyright © 2023-2026 Subhayu Chakravarty.
+				<p>All Rights Reserved.</p>
+			</span>
 		</footer>
 	);
 };

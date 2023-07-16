@@ -2,12 +2,10 @@
 
 @keyframes scale-in {
 	0% {
-		transform: scale(0);
-		opacity: 1;
+		transform: scale(1);
 	}
 	100% {
-		transform: scale(1);
-		opacity: 1;
+		transform: scale(1.2);
 	}
 }
 
@@ -291,33 +289,226 @@ $start_scale: 0.4;
 
 $circleradius:120px;
 
+// .circle {
+//   will-change: opacity;
+//   position: absolute;
+//   width: $circleradius;
+//   height: $circleradius;
+//   border-radius: 50%;
+//   transition: opacity 1s ease-in-out;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+// }
+
 .circle {
   will-change: opacity;
   position: absolute;
   width: $circleradius;
   height: $circleradius;
   border-radius: 50%;
+  opacity: 0.3;
   transition: opacity 1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  box-shadow: 0 0 20px 10px rgba(64, 64, 245, 0.2);
 }
 
 .circle-1 {
-  background-color: rgba(0, 100, 255);
-  // transform: translate(-100px, -200px);
+  background-color: rgb(0, 0, 165);
+  animation-name: move-circle-1;
 }
 
 .circle-2 {
-  background-color: rgba(0, 0, 200);
-  // transform: translate(100px, -200px);
+  background-color: rgb(2, 68, 166);
+  animation-name: move-circle-2;
 }
 
 .circle-3 {
-  background-color: rgb(80, 78, 246);
-  // transform: translate(0, 200px);
+  background-color: rgb(10, 34, 157);
+  animation-name: move-circle-3;
+  z-index: 10;
 }
+
+.circle-4 {
+  background-color: rgb(2, 68, 166);
+  animation-name: move-circle-4;
+}
+
+.circle-5 {
+  background-color: rgb(0, 0, 165);
+  animation-name: move-circle-5;
+  z-index: 0;
+}
+
+
+$yfar: 100px;
+$ymid: 10px;
+$xfar: 100px;
+$xmid: 60px;
+$low: 0;
+$move: 10px;
+
+.circle-1.reverse {
+  animation-name: move-circle-1-back;
+}
+.circle-2.reverse {
+  animation-name: move-circle-2-back;
+}
+.circle-3.reverse {
+  animation-name: move-circle-3-back;
+}
+.circle-4.reverse {
+  animation-name: move-circle-4-back;
+}
+.circle-5.reverse {
+  animation-name: move-circle-5-back;
+}
+
+@keyframes move-circle-1 {
+  0% {
+    transform: translate(-$xfar + $move, -$yfar + $move);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-$xfar + 2*$move, -$yfar + 1.5*$move);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-2 {
+  0% {
+    transform: translate($xfar - $move, -$yfar + $move);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate($xfar - 2*$move, -$yfar + 1.5*$move);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-4 {
+  0% {
+    transform: translate(-$xmid + $move, -$ymid + $move);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-$xmid + 2*$move, -$ymid + $move);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-5 {
+  0% {
+    transform: translate($xmid - $move, -$ymid + $move);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate($xmid - 2*$move, -$ymid + $move);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-3 {
+  0% {
+    transform: translate(0, -$yfar - 3*$move);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(0, -$yfar - 2*$move);
+  }
+  90% {
+    opacity: 0.6;
+    transform: scale(1.2) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translate(0, 0);
+  }
+}
+
+
+@keyframes move-circle-1-back {
+  100% {
+    transform: translate(-$xfar + $move, -$yfar + $move);
+  }
+  5% {
+    opacity: 0.1;
+    transform: translate(0, 0);
+  }
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-2-back {
+  100% {
+    transform: translate($xfar - $move, -$yfar + $move);
+  }
+  5% {
+    opacity: 0.1;
+    transform: translate(0, 0);
+  }
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-4-back {
+  100% {
+    transform: translate(-$xmid + $move, -$ymid+$move);
+  }
+  5% {
+    opacity: 0.1;
+    transform: translate(0, 0);
+  }
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+@keyframes move-circle-5-back {
+  100% {
+    transform: translate($xmid - $move, -$ymid+$move);
+  }
+  5% {
+    opacity: 0.1;
+    transform: translate(0, 0);
+  }
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move-circle-3-back {
+  0% {
+    opacity: 0;
+    transform: scale(1.4) translate(0, 0);
+  }
+  10% {
+    opacity: 0.4;
+    transform: scale(1.4) translate(0, 0);
+  }
+  100% {
+    transform: scale(1) translate(0, -$yfar - 3*$move);
+  }
+}
+
 
 .glow {
   will-change: opacity;
@@ -325,27 +516,34 @@ $circleradius:120px;
   width: $circleradius;
   height: $circleradius;
   border-radius: 50%;
-  opacity: 0.9;
-  background-color: rgba(39, 35, 35, 0.474);
-  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 0.3);
-  transition: opacity 1s ease-in-out;
+  opacity: 0.2;
+  background-color: transparent;
+  box-shadow: 0 0 20px 10px rgba(64, 64, 245, 0.8);
+  transition: opacity 1.2s linear;
+}
+
+.circle:hover {
+  opacity: 0.4;
+  // animation: scale-in 1s forwards;
 }
 
 .circle:hover .glow {
-  opacity: 0.1;
+  opacity: 0.6;
+  // transform: scale(1.2);
 }
 
 .circle-text {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--lighter);
   font-weight: bold;
   letter-spacing: 2px;
   transition: color 1s ease-in-out;
 }
 
-.circle-text:hover {
+.circle:hover .circle-text {
   color: white;
   opacity: 1;
+  text-shadow: 0 0 0.2em white;
 }
 
 

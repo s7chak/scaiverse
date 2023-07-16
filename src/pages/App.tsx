@@ -8,6 +8,7 @@ import React, { createContext, useState } from "react";
 import ReactSwitch from "react-switch";
 import Sphere3d from "../components/things/3dPlay";
 import ContactForm from "../components/sections/ContactMe";
+import ProgressBar from "../components/things/ProgressBar";
 
 export const ThemeContext = createContext(null);
 
@@ -19,6 +20,7 @@ export const App = () => {
 	return (
 		<div className="app" id={theme}>
 			<Navbar changeTheme={toggleTheme}/>
+			<ProgressBar />
 			<Introduction />
 			<AboutMe />
 			<Projects />

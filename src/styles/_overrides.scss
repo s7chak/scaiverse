@@ -65,12 +65,12 @@
 
 
 a {
-	color: var(--lighter);
+	color: var(--accent);
 	transition: 0.3s ease-in-out;
 
 	&:hover,
 	&:focus {
-		color: var(--accent) !important;
+		color: var(--lighter);
 		cursor: url("../../public/assets/files/hand.svg"), pointer;
 	}
 }
@@ -142,13 +142,41 @@ ol {
 	}
 }
 
+.blog-cards {
+	padding: 3rem 0rem;
+	inline-size: 50vw;
+	margin-inline: auto;
+}
+
+.blog-cards.mobile{
+	inline-size: 98vw;
+}
+
+.blog-slider {
+	display: flex;
+	overflow-x: scroll;
+	gap: 50px;
+}
+
+.snaps {
+	scroll-snap-type: x mandatory;
+	/* scroll-padding: 1rem; */
+  }
+.snaps > * {
+	scroll-snap-align: start;
+}
+
 .blog-card {
+	flex: none;
 	color: var(--lighter);
 	background-color: var(--background-primary);
-	border-radius: 6px;
+	border-radius: 1.2rem;
 	transition: background-color 2s ease;
 	margin: 1rem 0.3rem;
-	width: 700px;
+	padding: 1rem 0rem;
+	width: 50vw;
+	height: auto;
+	// border: 0.5px var(--accent) solid;
 
 	@include breakpoint(extra_small_devices) {
 		width: 340px !important;
@@ -167,6 +195,10 @@ ol {
 			text-align: justify;
 		}
 	}
+}
+
+.blog-card.mobile {
+	width: 90vw !important;
 }
 
 .navbar-my-menu {
@@ -216,9 +248,13 @@ ol {
 	.navbar-item {
 		margin: 10px 5px;
 		background-color: var(--background-primary);
-		color: var(--lighter);
+		color: var(--accent);
 		.mobile {
 			position: absolute;
+		}
+		:focus,
+		:hover {
+			color: var(--lighter);
 		}
 	}
 	.navbar-brand {
@@ -234,13 +270,21 @@ ol {
 	}
 	.menubar {
 		margin-right: 4px;
-		color: var(--lighter);
+		color: var(--accent);
 		z-index: 10;
+		transition: color 500ms linear;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
+		:focus,
+		:hover {
+			color: var(--lighter);
+			transform: translateY(-0.1rem);	
+		}
 	}
 
 	.navbar-right {
 		align-items: right;
 		margin-right: 20px;
+		cursor: url("../../public/assets/files/hand.svg"), pointer;
 		.btn-alt {
 			font-weight: bold;
 			background-color: transparent;
@@ -295,7 +339,7 @@ ol {
 			align-items: center;
 			&:hover,
 			&:focus {
-				color: var(--accent);
+				color: var(--lighter);
 				border-color: var(--accent);
 				transform: translateY(-0.1rem);
 			}
@@ -312,17 +356,16 @@ ol {
 }
 
 .footer {
+	position: relative;
 	background-color: var(--background-primary);
 	padding: 4rem !important;
 	transition: background-color 2s ease;
-	p {
-		font-size: 16px;
-	}
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .footertext {
-	color: var(--lighter);
-	:hover {
-		color: rgb(128, 185, 239);
-	}
+	text-align: center;
 }

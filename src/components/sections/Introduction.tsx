@@ -263,8 +263,6 @@ function Playback() {
   
 	return <span className={className}>{text}</span>;
   };
-  
-  
 
   function FadeInWhenVisible({ children }) {
 	return (

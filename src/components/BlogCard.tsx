@@ -1,6 +1,6 @@
 import { RepoIcon, StarFillIcon, QuestionIcon } from "@primer/octicons-react";
 import blogConfigData from "./blogConfig.json";
-import React from "react";
+import React, { useState } from "react";
 
 const getBlogData = (blog_id: string): any => {
 	let blog = blogConfigData[blog_id];
@@ -15,20 +15,22 @@ const getBlogData = (blog_id: string): any => {
 
 export const BlogCard = ({ id }: { id: string; }) => {
 	const [blog, _hasError, loading] = getBlogData(id);
-
+	const [width, setWidth] = useState<number>(window.innerWidth);
+	const isMobile = width <= 768;
 	if (loading)
 		return (
-			<div className="blog-card">
+			<div className={`blog-card ${isMobile ? "mobile" : ""}`}>
 				<div className="blog-card-content">
 					<div className="blog-description">
-						<p>Loading...</p>
+						<p>Hi there!</p>
+						<p>That is all I have for now. </p>
+						<p>Thanks for reading and do revisit to view more articles and projects<br/>as my journey is always a work in progress.</p>
 					</div>
 				</div>
 			</div>
 		);
-
 	return (
-		<div className="blog-card">
+		<div className={`blog-card ${isMobile ? "mobile" : ""}`}>
 			<div className="blog-card-content">
 				<div className="blog-title">
 					<a href={blog.url} target="_blank">

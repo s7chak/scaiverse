@@ -130,7 +130,7 @@ function TimeLineGraph() {
     <div className='timeline' ref={containerRef} style={{width: widthStack, overflow: 'auto'}}>
             <Canvas camera={{ fov: camerafov, position: cameraposition}}>
               <OrbitControls 
-              enablePan={false} enableZoom={false}/>
+              enablePan={false} enableZoom={false} enableRotate={false}/>
               <ambientLight intensity={0.8} />
                 { generateCandles(numCandles, randomCandleHeights) }
             </Canvas>

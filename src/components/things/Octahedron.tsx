@@ -1,7 +1,7 @@
 
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { delay, motion, useAnimation } from "framer-motion";
+import { delay, motion, spring, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
@@ -94,6 +94,19 @@ const RotatingTechs = () => {
   );
 };
 
+const Circle = ({ className, hide, text, onClick, animated}) => {
+  const handleClick = () => {
+    onClick()
+  }
+
+  return (
+  <div className={`circle ${className} ${hide ? ' reverse' : ''}`} 
+    onClick={handleClick}>
+      <span className="circle-text">{text}</span>
+    <div className="glow" />
+  </div>);
+}
+
 const VennGuffin = () => {
   const [animate, setAnimate] = useState(true);
   const circleAnimationControls = useAnimation();
@@ -106,8 +119,8 @@ const VennGuffin = () => {
   };
 
   const circleVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 0.5, scale: 1 }
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 0.6, scale: 1 }
   }
   const vennAnimationTime = 4;
   const circleTransition = {
@@ -126,64 +139,15 @@ const VennGuffin = () => {
   let closer = 30;
   const [hide, setHide] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setHide(true);
-    }, vennAnimationTime*1000);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
   return (
-    <div className={`venn-diagram ${hide ? 'hide' : ''}`} onClick={toggleAnimation}>
-      <motion.div
-        className="circle circle-1"
-        initial={{ x: -startAway, y: ylevel, ...circleVariants.hidden }}
-        animate={!hide ? {x: -(circDiameter/2+overlap), y:  ylevel-closer, ...circleVariants.visible } : {x: 0, scale: 1} }
-        transition={circleTransition}
-        whileHover={{scale: 1.1}}
-        onClick={() => setHide(!hide)}>
-        <span className="circle-text">Software</span>
-        <div className="glow" />
-      </motion.div>
-      <motion.div
-        className="circle circle-2"
-        initial={{ x: startAway, y: ylevel, ...circleVariants.hidden }}
-        animate={!hide ? {x: circDiameter/2 +overlap, y:  ylevel-closer, ...circleVariants.visible } : {x: 0, scale: 1} }
-        transition={circleTransition}
-        onClick={() => setHide(!hide)}
-        whileHover={{scale: 1.1}}
-        >
-        <span className="circle-text">ML</span>
-        <div className="glow" />
-      </motion.div>
+    <div className={`venn-diagram`} onClick={() => setAnimate(true)}>
+      <Circle className="circle-1" hide={hide} text="Software" onClick={() => setHide(!hide)} animated={animate}/>
+      <Circle className="circle-2" hide={hide} text="ML" onClick={() => setHide(!hide)} animated={animate}/>
+      <Circle className="circle-4" hide={hide} text="Art" onClick={() => setHide(!hide)} animated={animate}/>
+      <Circle className="circle-5" hide={hide} text="Design" onClick={() => setHide(!hide)} animated={animate}/>
+      <Circle className="circle-3" hide={hide} text="Application" onClick={() => setHide(!hide)} animated={animate}/>
 
-      <motion.div
-        className="circle circle-1"
-        initial={{ x: startAway, y: ylevel+ydiag, ...circleVariants.hidden }}
-        animate={!hide ? {x: circDiameter/2 +overlap-closer-5, y: ylevel+ydiag, ...circleVariants.visible } : {x: 0, scale: 1} }
-        transition={circleTransition}
-        onClick={() => setHide(!hide)}
-        whileHover={{scale: 1.1}}
-        >
-        <span className="circle-text">Art</span>
-        <div className="glow" />
-      </motion.div>
-      <motion.div
-        className="circle circle-2"
-        transition={circleTransition}
-        initial={{ x: -startAway, y: ylevel+ydiag, ...circleVariants.hidden }}
-        animate={!hide? { x: -(circDiameter/2)-overlap+closer+5, y:ylevel+ydiag, ...circleVariants.visible }: {x: 0, scale: 1}}
-        onClick={() => setHide(!hide)}
-        whileHover={{scale: 1.1}}
-        >
-        <span className="circle-text">Design</span>
-        <div className="glow" />
-      </motion.div>
-
-
-      <motion.div
+      {/* <motion.div
         className="circle circle-3"
         initial={{ x: 0, y: ylevel-startAway, ...circleVariants.hidden }}
         animate={!hide?{ x: 0, y: ylevel-startAway+closer, z:100, ...circleVariants.visible } : {x: 0, y: ylevel, scale: 1.3}}
@@ -193,7 +157,7 @@ const VennGuffin = () => {
         >
         <span className="circle-text">Application</span>
         <div className="glow" />
-      </motion.div>
+      </motion.div> */}
     </div>
   )
 }

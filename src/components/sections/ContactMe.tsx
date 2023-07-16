@@ -19,10 +19,12 @@ const handleSubmit = (event) => {
       });
   };
   const [width, setWidth] = useState<number>(window.innerWidth);
-	const isMobile = width <= 768;
+  const isMobile = width <= 768;
   let widthStack = isMobile?"90vw" : "50vw";
   return (
 	<div id='contactform' className='form-parent' style={{width: widthStack}}>
+		<br/><br/>
+		<span className={'name-text general-header'}>Say Hello!</span>
 		<br/><br/>
     <form id='messaging' onSubmit={handleSubmit}>
 		<textarea

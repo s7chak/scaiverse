@@ -1,7 +1,7 @@
 import Navbar from "../Navbar";
 import BlogCard from "../BlogCard";
 import Footer from "./Footer";
-import React from "react";
+import React, { useState } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -25,6 +25,8 @@ function FadeInWhenVisible({ children }) {
 
 
 export const Publications = () => {
+	const [width, setWidth] = useState<number>(window.innerWidth);
+	const isMobile = width <= 768;
 	return (
 			<section id="blogging" className="blogging section is-medium">
 				<div className="blogging-container">
@@ -45,16 +47,16 @@ export const Publications = () => {
 							</a>
 							</div>
 						</motion.div>
-					</div><br/><br/><br/><br/>
-					<div className="columns">
-						<div className="column is-multiline is-6">
-						<FadeInWhenVisible>
-								<BlogCard id="Wildfire_Prediction"/><br/><br/>
-								<BlogCard id="Adversarial_Attack"/><br/><br/>
-						</FadeInWhenVisible>
+					</div>
+					<div className={`blog-cards ${isMobile ? "mobile" : ""}`}>
+						<div className="blog-slider snaps">
+							<BlogCard id="Wildfire_Prediction"/>
+							<BlogCard id="Adversarial_Attack"/>
+							<BlogCard id=""/>
+						{/* <FadeInWhenVisible></FadeInWhenVisible> */}
 						</div>
 					</div>
-				</div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				</div>
 			</section>
 	);
 };
