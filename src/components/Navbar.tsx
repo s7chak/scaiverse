@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { Children, useRef, useState } from "react";
-import { FaBars, FaBlog, FaCaretDown, FaCode, FaCompass, FaEllipsisH, FaEllipsisV, FaEnvelope, FaGithub, FaHome, FaICursor, FaInfo, FaLinkedin, FaMoon, FaNewspaper, FaPaperPlane, FaRobot, FaRoute, FaTree } from "react-icons/fa";
+import { FaBars, FaBlog, FaCaretDown, FaCode, FaCompass, FaDochub, FaEllipsisH, FaEllipsisV, FaEnvelope, FaFileDownload, FaGithub, FaHome, FaICursor, FaInfo, FaLinkedin, FaMoon, FaNewspaper, FaPaperPlane, FaRobot, FaRoute, FaTree } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { GrMenu } from 'react-icons/gr';
 
@@ -74,33 +74,35 @@ export const Navbar = (props) => {
 					initial={{ y: "10%", opacity: 0}}
 					animate={{ y: 5, x: 2, opacity: 0.9}}
 					transition={{ ease: "linear", duration: 2, delay: 5  }}>
-					<FaBars className='menubar' onClick={() => {
-							setIsActive(!isActive);}} data-target="navbar-my-menu">
+					<FaBars className='menubar' onClick={() => {setIsActive(!isActive);}} data-target="navbar-my-menu">
 					</FaBars>
 				</motion.div>
 				<motion.div id="navbar-my-menu" className={`navbar-my-menu ${isActive ? "is-active" : ""}`}
 					initial={{ y: "5%", opacity: 0}}
 					animate={{ y: "5%" , opacity: isActive? 1 : 0}}
 					transition={{ ease: "linear", duration: 1, delay: 0.5}}>
-					<Link to="introduction" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+					<Link to="introduction" smooth={true} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Home">
 						<FaHome size={18} style={{ marginRight: '0' }}/>
 					</Link>
+					<a href="/assets/files/Resume.pdf" download="Resume-Subhayu-Chakravarty.pdf" className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Resume">
+						<FaFileDownload size={18} style={{ marginRight: '0' }}/>
+					</a>
 					{/* <div>
 						<FaMoon size={18} style={{ marginRight: '0' }} onClick={props.changeTheme}/>
 					</div> */}
-					<Link to="about" smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+					<Link to="about" smooth={true} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="About">
 						<FaInfo size={18} style={{ marginRight: '0' }}/>
 					</Link>
-					<Link to="projects" smooth={true} duration={1500} className="navbar-item" onClick={() => setIsActive(false)}>
+					<Link to="projects" smooth={true} duration={1500} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Projects">
 						<FaCode size={18} style={{ marginRight: '0' }}/>
 					</Link>
-					<Link to="blogging" duration={1500} smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+					<Link to="blogging" duration={1500} smooth={true} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Articles">
 						<FaNewspaper size={18} style={{ margin: '0' }} /></Link>
-					<Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item">
+					<Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item" data-tooltip="LinkedIn">
 						<FaLinkedin size={18} style={{ margin: '0' }} /></Link>
-					<Link to="https://github.com/s7chak" smooth={true} className="navbar-item">
+					<Link to="https://github.com/s7chak" smooth={true} className="navbar-item" data-tooltip="Github">
 						<FaGithub size={18} style={{ marginRight: '0' }} /></Link>
-					<Link to="contactform" duration={2000} smooth={true} className="navbar-item" onClick={() => setIsActive(false)}>
+					<Link to="contactform" duration={2000} smooth={true} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Contact">
 						<FaPaperPlane size={18} style={{ marginRight: '0' }}/>
 					</Link>
 				</motion.div>
