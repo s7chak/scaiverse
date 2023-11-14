@@ -34,9 +34,12 @@ export const Projects = () => {
 					<FadeInWhenVisible><div><h2>Software Engineering</h2></div></FadeInWhenVisible>
 					<div>
 					<FadeInWhenVisible><ProjectCard username="s7chak" repository="s7chak.github.io" /></FadeInWhenVisible>
-					<FadeInWhenVisible><ProjectCard username="s7chak" repository="soccerhours_phase2_flask" /></FadeInWhenVisible>
+					<FadeInWhenVisible><ProjectCard username="s7chak" repository="folio" /></FadeInWhenVisible>
+					<FadeInWhenVisible><ProjectCard username="s7chak" repository="folioapi" /></FadeInWhenVisible>
+					<FadeInWhenVisible><ProjectCard username="s7chak" repository="prodo" /></FadeInWhenVisible>
+					{/* <FadeInWhenVisible><ProjectCard username="s7chak" repository="soccerhours_phase2_flask" /></FadeInWhenVisible> */}
 					<FadeInWhenVisible><ProjectCard username="s7chak" repository="soccerhours_phase3_app" /></FadeInWhenVisible>
-					<FadeInWhenVisible><ProjectCard username="s7chak" repository="emprewards" /></FadeInWhenVisible>
+					{/* <FadeInWhenVisible><ProjectCard username="s7chak" repository="emprewards" /></FadeInWhenVisible> */}
 					<FadeInWhenVisible><ProjectCard username="s7chak" repository="eLiqSys" /></FadeInWhenVisible>
 					</div>
 					
@@ -44,8 +47,9 @@ export const Projects = () => {
 				<section id="machine-learning" className="projects section is-medium">
 					<FadeInWhenVisible><div><h2>Machine Learning</h2></div></FadeInWhenVisible>
 					<div>
-						<FadeInWhenVisible><ProjectCard username="s7chak" repository="4DByD" /></FadeInWhenVisible>
+						<FadeInWhenVisible><ProjectCard username="s7chak" repository="quizard" /></FadeInWhenVisible>
 						<FadeInWhenVisible><ProjectCard username="s7chak" repository="vision-api-app" /></FadeInWhenVisible>
+						<FadeInWhenVisible><ProjectCard username="s7chak" repository="4DByD" /></FadeInWhenVisible>
 					</div>
 				</section>
 				</div>
