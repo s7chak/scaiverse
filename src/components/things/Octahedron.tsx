@@ -111,13 +111,6 @@ const VennGuffin = () => {
   const [animate, setAnimate] = useState(true);
   const circleAnimationControls = useAnimation();
 
-  const toggleAnimation = async () => {
-    setAnimate(!animate);
-    if (!animate) {
-      await circleAnimationControls.start({ opacity: 0 });
-    }
-  };
-
   const circleVariants = {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 0.6, scale: 1 }

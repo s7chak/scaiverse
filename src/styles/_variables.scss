@@ -8,7 +8,7 @@
 	--main-font: 'Rajdhani';
 	#dark {
 		--lighter: #CBD6F0;
-		--accent: #6484cd;
+		--accent: #6971cd;
 		--background-primary: #0A0D14;
 		--background-secondary: #141A29;
 		--background-secondary-alt: #141A29;
@@ -17,7 +17,7 @@
 	}
 	#light {
 		--lighter: #0A0D14;
-		--accent: #6484cd;
+		--accent: #6971cd;
 		--background-primary: #CBD6F0;
 		--background-secondary: #CBD6F0;
 		--background-secondary-alt: #CBD6F0;
@@ -176,7 +176,7 @@ $radius:10px;
 	transition: opacity 10ms linear;
   }
   .gbutton:hover::after {
-	opacity: 1;
+	opacity: 0.8;
   }
   
   .gbutton::before {

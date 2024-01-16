@@ -1,6 +1,6 @@
 {
-  "short_name": "home.s7chak.cf",
-  "name": "My portfolio and blog website.",
+  "short_name": "scaiverse",
+  "name": "Code Portfolio of s7chak",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#f49898",

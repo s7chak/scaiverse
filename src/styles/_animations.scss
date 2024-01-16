@@ -287,7 +287,7 @@ $start_scale: 0.4;
   opacity: 0;
 }
 
-$circleradius:120px;
+$circleradius:125px;
 
 // .circle {
 //   will-change: opacity;
@@ -308,7 +308,7 @@ $circleradius:120px;
   width: $circleradius;
   height: $circleradius;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.4;
   transition: opacity 1s ease-in-out;
   display: flex;
   align-items: center;
@@ -523,27 +523,28 @@ $move: 10px;
 }
 
 .circle:hover {
-  opacity: 0.4;
+  opacity: 0.6;
   // animation: scale-in 1s forwards;
 }
 
 .circle:hover .glow {
-  opacity: 0.6;
+  opacity: 0.8;
   // transform: scale(1.2);
 }
 
 .circle-text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--lighter);
   font-weight: bold;
   letter-spacing: 2px;
   transition: color 1s ease-in-out;
+  text-shadow: 0 0 0.1em white;
 }
 
 .circle:hover .circle-text {
   color: white;
   opacity: 1;
-  text-shadow: 0 0 0.2em white;
+  text-shadow: 0 0 0;
 }
 
 
