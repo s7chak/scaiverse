@@ -1,3 +1,3 @@
-# s7chak.github.io
+# scaiverse
 
 Project tree at the nexus of software, ML and finance.
