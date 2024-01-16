@@ -1,4 +1,3 @@
-import ScrollAnimation from "react-animate-on-scroll";
 import { Link } from "react-scroll";
 import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from 'react-icons/fa';
 import { AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion"
