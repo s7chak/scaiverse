@@ -49,7 +49,7 @@ const RotatingTechs = () => {
   };
 
   const Particles = () => {
-    const groupRef = useRef<THREE.Group>();
+    const groupRef = useRef<THREE.Group>(null);
 
     useFrame((state) => {
       if (groupRef.current) {
