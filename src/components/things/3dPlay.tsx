@@ -44,10 +44,10 @@ export const RotatingCubes = () => {
   const maxSide = 10;
   const randomPosition = Math.random() * maxSide;
   const cubeNumber = 10;
-
+  const initialColor: Color = new THREE.Color('red');
   const [cubes, setCubes] = useState<Cube[]>([...Array(cubeNumber)].map<Cube>(() => ({
       position: new THREE.Vector3(randomPosition),
-      color: useGenerateRandomColor(),
+      color: initialColor,
       rotationSpeed: Math.random()
   })));
 
