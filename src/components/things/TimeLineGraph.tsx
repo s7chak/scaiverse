@@ -30,7 +30,9 @@ const generateCandles = (num, candleHeights) => {
     let candleColor = currentPrice >= startingPrice ? '#009666' : '#cc0022';
     // const candlePosition = [i * (candleWidth + candleSpacing) + 100 + candleWidth / 2, 450 - currentPrice - candleHeight / 2, 0];
     let z = isMobile?20 : 0;
-    const candlePosition = [startXPosition+ i * (candleWidth + candleSpacing) + candleWidth / 2, prevHeight, 0];
+    // const candlePosition = [startXPosition+ i * (candleWidth + candleSpacing) + candleWidth / 2, prevHeight, 0];
+    const candlePosition = new THREE.Vector3(...[startXPosition + i * (candleWidth + candleSpacing) + candleWidth / 2, prevHeight, 0]);
+
     prevHeight = currentPrice / 2.5;
     var labelposition = [startXPosition+ i * (candleWidth + candleSpacing) + candleWidth / 2, (milestoneLabelUpDown[labelCounter]==0)?prevHeight - 40-z: prevHeight + candleHeight + 30+2*z, 0];
     

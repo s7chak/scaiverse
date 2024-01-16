@@ -110,7 +110,7 @@ const Box = ({ position, color, rotationSpeed, leng}: Cube) => {
           <meshStandardMaterial color={color}
             transparent
             roughness={rotationSpeed}
-            // metalness={clicked? 0.1+rotationSpeed : 0.2+rotationSpeed}
+            metalness={clicked? 0.1+rotationSpeed : 0.2+rotationSpeed}
           />
       </mesh>
   );
