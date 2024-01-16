@@ -2,7 +2,6 @@ import Navbar from "../Navbar";
 import BlogCard from "../BlogCard";
 import Footer from "./Footer";
 import React, { useState } from "react";
-import ScrollAnimation from "react-animate-on-scroll";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
