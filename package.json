@@ -28,7 +28,7 @@
     "bulma": "^0.9.4",
     "webpack": "^5.86.0",
     "file-loader":"^6.2.0",
-    "react": "^16.14.0",
+    "react": ">=18.0",
     "react-animate-on-scroll": "^2.1.0",
     "react-switch":"^7.0.0",
     "react-dom": "^16.14.0",
