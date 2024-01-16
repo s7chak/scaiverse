@@ -42,7 +42,7 @@ export const Publications = () => {
 							initial={{ opacity: 0, scale: 0.8}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 2}}
 							>
 							<div className="gbutton">
-							<a href="https://medium.com/@subhayuchakravarty7" rel="noreferrer"> Medium Blogs
+							<a href="https://medium.com/@scaiverse/list/written-88aabe3d3413" rel="noreferrer"> Medium Blogs
 							</a>
 							</div>
 						</motion.div>
