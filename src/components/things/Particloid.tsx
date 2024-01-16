@@ -108,7 +108,7 @@ class Particloid extends Component<{}, State> {
 
 
 const Particle = ({ position, onClick }) => {
-  const meshRef = React.useRef<THREE.Mesh>();
+  const meshRef = React.useRef<THREE.Mesh>(null);
   const [isHovered, setIsHovered] = React.useState(false);
 
   useFrame(() => {
