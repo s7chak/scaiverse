@@ -48,7 +48,8 @@ const JustBox = ({ techname, position, xrad, zrad, rotationSpeed, leng}: TechImg
   });
   
   let filename = techImages[techname];
-  const texture = useLoader(THREE.TextureLoader, filename);
+  // const texture = useLoader(THREE.TextureLoader, filename);
+  const [texture] = useLoader(THREE.TextureLoader, [filename]);
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
     const x = xrad * Math.sin(t*rotationSpeed);
