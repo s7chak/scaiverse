@@ -99,7 +99,13 @@ function TimeLineGraph() {
 	const isMobile = width <= 768;
   let widthStack = isMobile?"95vw" : "80vw";
   const candleLimit = 35;
-  let cameraposition = isMobile? [-550, 350, 650] : [100, 100, 400];
+  // let cameraposition = isMobile? [-550, 350, 650] : [100, 100, 400];
+  const cameraposition = new THREE.Vector3(
+    isMobile ? -550 : 100,
+    isMobile ? 350 : 100,
+    isMobile ? 650 : 400
+  );
+  
   let camerafov = isMobile? 55 : 50;
   let renderstart = isMobile? 400 : 400;
 
@@ -135,7 +141,7 @@ function TimeLineGraph() {
   
   return (
     <div className='timeline' ref={containerRef} style={{width: widthStack, overflow: 'auto'}}>
-            <Canvas camera={{ fov: camerafov, position: cameraposition}}>
+            <Canvas camera={{ fov: camerafov, position: cameraposition.toArray()}}>
               <OrbitControls 
               enablePan={false} enableZoom={false} enableRotate={false}/>
               <ambientLight intensity={0.8} />
