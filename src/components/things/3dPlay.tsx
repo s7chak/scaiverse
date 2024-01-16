@@ -95,7 +95,7 @@ function Sphere3d(props) {
         color="#6484cd"
         transparent
         roughness={0.02}
-        metalness={hovered?0.3:0.6}
+        // metalness={hovered?0.3:0.6}
       />
     </mesh>
   );
