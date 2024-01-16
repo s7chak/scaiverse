@@ -32,9 +32,9 @@ const Box = ({ color, rotationSpeed, position }: Cube) => {
 };
 
 const useGenerateRandomColor = () => {
-  const [color, setColor] = useState("")
+  const [color, setColor] = useState("blue")
   const generateColor = () => {
-      setColor(Math.random().toString(16).substr(-6));
+      setColor('red');
   };
   return { color, generateColor };
 
