@@ -29,7 +29,7 @@
     // "gh-pages": "^4.0.0",
     "webpack": "^5.86.0",
     "file-loader":"^6.2.0",
-    "react": "^18.2.0",
+    "react": ">=15.4.1 <17.0.0-0",
     "react-animate-on-scroll": "^2.1.7",
     "react-switch":"^7.0.0",
     "react-dom": "^18.2.0",
