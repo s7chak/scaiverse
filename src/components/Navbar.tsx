@@ -45,10 +45,16 @@ export const Navbar = (props) => {
 					</Link>
 					<Link to="blogging" smooth={true} duration={1500} className="navbar-item" onClick={() => setIsActive(false)}>
 						<FaNewspaper size={18} style={{ margin: '0' }} /></Link>
-					<Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item">
+					{/* <Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item">
 						<FaLinkedin size={18} style={{ margin: '0' }} /></Link>
 					<Link to="https://github.com/s7chak" smooth={true} className="navbar-item">
-						<FaGithub size={18} style={{ marginRight: '0' }} /></Link>
+						<FaGithub size={18} style={{ marginRight: '0' }} /></Link> */}
+					<a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" rel="noopener noreferrer" className="navbar-item">
+						<FaLinkedin size={18} style={{ marginRight: '0' }} />
+					</a>
+					<a href="https://github.com/s7chak" target="_blank" rel="noopener noreferrer" className="navbar-item">
+						<FaGithub size={18} style={{ marginRight: '0' }} />
+					</a>
 					<Link to="messaging" smooth={true} duration={2000} className="navbar-item" onClick={() => setIsActive(false)}>
 						<FaPaperPlane size={18} style={{ marginRight: '0' }}/>
 					</Link>
@@ -98,10 +104,16 @@ export const Navbar = (props) => {
 					</Link>
 					<Link to="blogging" duration={1500} smooth={true} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Articles">
 						<FaNewspaper size={18} style={{ margin: '0' }} /></Link>
-					<Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item" data-tooltip="LinkedIn">
-						<FaLinkedin size={18} style={{ margin: '0' }} /></Link>
-					<Link to="https://github.com/s7chak" smooth={true} className="navbar-item" data-tooltip="Github">
-						<FaGithub size={18} style={{ marginRight: '0' }} /></Link>
+					{/* <Link to="https://www.linkedin.com/in/subhayuchakravarty" smooth={true} className="navbar-item" data-tooltip="LinkedIn">
+						<FaLinkedin size={18} style={{ margin: '0' }} /></Link> */}
+					{/* <Link to="https://github.com/s7chak" smooth={true} className="navbar-item" data-tooltip="Github">
+						<FaGithub size={18} style={{ marginRight: '0' }} /></Link> */}
+					<a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" rel="noopener noreferrer" className="navbar-item" data-tooltip="LinkedIn">
+						<FaLinkedin size={18} style={{ marginRight: '0' }} />
+					</a>
+					<a href="https://github.com/s7chak" target="_blank" rel="noopener noreferrer" className="navbar-item" data-tooltip="Github">
+						<FaGithub size={18} style={{ marginRight: '0' }} />
+					</a>
 					<Link to="contactform" duration={2000} smooth={true} className="navbar-item" onClick={() => setIsActive(false)} data-tooltip="Contact">
 						<FaPaperPlane size={18} style={{ marginRight: '0' }}/>
 					</Link>
