@@ -36,12 +36,12 @@ export const Introduction = () => {
       								whileInView={{scale: 1.05, transition: { duration: 2 },}}
       								viewport={{ once: false }}>
 								<span className={`general-header name-text  ${isDove? "name-text colormode" : ""}`} onClick={() => setDove(!isDove)}>
-									This is my digital canvas</span>
+									This is my code canvas</span>
 								</motion.div>
 								<br/>
 								<motion.div initial={{ opacity: 0, y: 10}} animate={{ opacity: 1, y: 0}}>
 									<span>
-									A repository of some of my projects, their source code, how it works, how they were built and the story behind them.</span>
+									A repository of some of my side projects, their source code, how it works, how they were built and the story behind them.</span>
 								</motion.div>
 								<br/><br/><br/><br/>
 								<motion.div style={{ display: 'inline-flex', justifyContent: 'center' }}

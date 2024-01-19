@@ -215,13 +215,15 @@ ol {
 	.navbar-item {
 		margin-bottom: 5px;
 		border-bottom: 3px solid transparent;
+		border-radius: 0.5em;
 		transition: 0.3s ease-in-out;
 		display: flex;
 		align-items: center;
-		background: none;
+		background: transparent;
+		z-index: 100;
 		&:hover,
 		&:focus {
-			background: transparent;
+			background: none;
 			transform: translateY(-0.1rem);
 		}
 	}
@@ -236,7 +238,7 @@ ol {
 		padding: 5px;
 		border-radius: 5px;
 		opacity: 0;
-		transition: opacity 0.4s ease-in-out;
+		transition: opacity 0.2s ease-in-out;
 	  }
 	  .navbar-item:hover::after {
 		opacity: 1;
