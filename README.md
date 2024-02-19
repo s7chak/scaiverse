@@ -1,3 +1,3 @@
-# scaiverse
+# Scaiverse
 
-Project tree at the nexus of software, ML and finance.
+A universe of software and ML side projects, some focused on the financial world, some not so much.
