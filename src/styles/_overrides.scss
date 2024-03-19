@@ -18,6 +18,16 @@
 	transition: background-color 2s ease;
 }
 
+.my-blogger {
+	// font-family: "Rajdhani", sans-serif !important;
+	font-weight: 300;
+	background-color: var(--background-primary) !important;
+	color: var(--lighter) !important;
+	height: auto;
+	transition: background-color 2s ease;
+}
+
+
 .s7logo {
 	visibility: visible;
 	margin-left: 5px;
@@ -142,10 +152,19 @@ ol {
 	}
 }
 
+.my-blog-cards {
+	padding: 3rem 0rem;
+	inline-size: 50vw;
+	margin-inline: auto;
+	width: 70vw;
+}
+
 .blog-cards {
 	padding: 3rem 0rem;
 	inline-size: 50vw;
 	margin-inline: auto;
+	width: 70vw;
+	font-size: 20px;
 }
 
 .blog-cards.mobile{
@@ -165,6 +184,19 @@ ol {
 .snaps > * {
 	scroll-snap-align: start;
 }
+.blog-slider::-webkit-scrollbar {
+    width: 5px;
+}
+.blog-slider::-webkit-scrollbar-track {
+    background: var(--background-secondary-alt);
+}
+.blog-slider::-webkit-scrollbar-thumb {
+    background: var(--lighter);
+    border-radius: 8px;
+}
+.blog-slider::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
 
 .blog-card {
 	flex: none;
@@ -174,7 +206,7 @@ ol {
 	transition: background-color 2s ease;
 	margin: 1rem 0.3rem;
 	padding: 1rem 0rem;
-	width: 50vw;
+	width: 70vw;
 	height: auto;
 	// border: 0.5px var(--accent) solid;
 
@@ -186,11 +218,12 @@ ol {
 
 	.blog-card-content {
 		.blog-title {
+			font-size: 19px;
 			font-weight: bold;
 		}
 
 		.blog-description {
-			font-size: 16px;
+			font-size: 20px;
 			white-space: pre-wrap;
 			text-align: justify;
 		}

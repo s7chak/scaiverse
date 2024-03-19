@@ -1,9 +1,11 @@
-import { RepoIcon, StarFillIcon, QuestionIcon } from "@primer/octicons-react";
 import blogConfigData from "./blogConfig.json";
+import myBlogConfigData from "./scaiBlogConfig.json";
 import React, { useState } from "react";
 
-const getBlogData = (blog_id: string): any => {
-	let blog = blogConfigData[blog_id];
+const getBlogData = (blog_id: string, mine: boolean): any => {
+
+	let config = mine? myBlogConfigData: blogConfigData;
+	let blog = config[blog_id];
 	if (blog!=null){
 		return [blog, false, false];
 	}
@@ -13,8 +15,8 @@ const getBlogData = (blog_id: string): any => {
 };
 
 
-export const BlogCard = ({ id }: { id: string; }) => {
-	const [blog, _hasError, loading] = getBlogData(id);
+export const BlogCard = ({ id, mine}: { id: string; mine: boolean}) => {
+	const [blog, _hasError, loading] = getBlogData(id, mine);
 	const [width, setWidth] = useState<number>(window.innerWidth);
 	const isMobile = width <= 768;
 	if (loading)
@@ -38,7 +40,7 @@ export const BlogCard = ({ id }: { id: string; }) => {
 					</a>
 				</div><br/>
 				<div className="blog-description">
-					<article>{blog.description}</article>
+					<article dangerouslySetInnerHTML={{ __html: blog.description }}></article>
 					<br />
 					<div style={{ display: "flex" }}>
 					</div>

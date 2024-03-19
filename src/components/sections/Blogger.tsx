@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 
 function FadeInWhenVisible({ children }) {
@@ -24,7 +24,7 @@ function FadeInWhenVisible({ children }) {
 }
 
 
-export const Publications = () => {
+export const Blogger = () => {
 	const [width, setWidth] = useState<number>(window.innerWidth);
 	const isMobile = width <= 768;
 	const blogCardsRef = useRef(null);
@@ -37,35 +37,20 @@ export const Publications = () => {
 		}
 	  };
 	return (
-			<section id="blogging" className="blogging section is-medium">
+			<section id="my-blogger" className="blogging section is-medium">
 				<div className="blogging-container">
 					<motion.div whileInView={{ opacity: 1}} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 1.5}}>
-						<span className="general-header">Articles</span>
+						<span className="general-header">Thought Tank</span>
 					</motion.div>
 					<br/>
 					<motion.div initial={{ opacity: 0, scale: 0.99}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 1.5}}>
 						<span>
-							A collection of my thoughts on technology, design and their applications.</span><br/><br/>
+							A collection of my thoughts on anything that piques my interest</span><br/><br/>
 					</motion.div>
-					<div style={{ display: 'flex', justifyContent: 'center', width: '60vw' }}>
-						<motion.div style={{ display: 'flex', alignItems: 'center' }}
-							initial={{ opacity: 0, scale: 0.8}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 2}}
-							>
-							<div className="gbutton">
-							<a href="https://medium.com/@scaiverse/list/written-88aabe3d3413" target="_blank" rel="noopener noreferrer"> Medium Blogs
-							</a>
-							</div>
-							<div className="gbutton" style={{marginRight:'1em'}}>
-								<Link to={"my-blogger"} >Blogs</Link>
-							</div>
-						</motion.div>
-						
-					</div>
-					<div className={`blog-cards ${isMobile ? "mobile" : ""}`} ref={blogCardsRef}>
+					<div className={`my-blog-cards ${isMobile ? "mobile" : ""}`} ref={blogCardsRef}>
 						<div className="blog-slider snaps">
-							<BlogCard id="Wildfire_Prediction" mine={false}/>
-							<BlogCard id="Adversarial_Attack" mine={false}/>
-							<BlogCard id="" mine={false}/>
+							<BlogCard id="Learner_Manifesto" mine={true}/>
+							<BlogCard id="" mine={true}/>
 						</div>
 					</div>
 				</div>
@@ -73,4 +58,4 @@ export const Publications = () => {
 	);
 };
 
-export default Publications;
+export default Blogger;

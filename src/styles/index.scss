@@ -120,6 +120,28 @@
 
 	}
 
+	#my-blogger {
+		background-color: var(--background-primary);
+		padding: 8rem 1rem;
+
+		.blogging-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			h1 {
+				color: var(--foreground-primary);
+				font-size: 36px;
+				font-weight: bold;
+
+				align-items: center;
+				margin-bottom: 1rem;
+			}
+		}
+
+	}
+
 	.nomatch {
 		background-color: var(--background-primary) !important;
 
