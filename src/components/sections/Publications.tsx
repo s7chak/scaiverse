@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 
 function FadeInWhenVisible({ children }) {
@@ -56,7 +56,7 @@ export const Publications = () => {
 							</a>
 							</div>
 							<div className="gbutton" style={{marginRight:'1em'}}>
-								<Link to={"my-blogger"} >Blogs</Link>
+								<Link to={"/blogs"} >Blogs</Link>
 							</div>
 						</motion.div>
 						

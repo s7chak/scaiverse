@@ -9,8 +9,8 @@ import ReactSwitch from "react-switch";
 import Sphere3d from "../components/things/3dPlay";
 import ContactForm from "../components/sections/ContactMe";
 import ProgressBar from "../components/things/ProgressBar";
-import Blogger from "../components/sections/Blogger";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Blogger from "./Blogger";
+import { Routes, Route } from 'react-router-dom';
 
 
 export const ThemeContext = createContext(null);

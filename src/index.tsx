@@ -10,6 +10,7 @@ import "./styles/index.scss";
 import "./styles/_animations.scss";
 import React from "react";
 import { motion } from "framer-motion";
+import Blogger from "./pages/Blogger";
 
 let env = process.env.NODE_ENV
 let baseURL = process.env.PUBLIC_URL;
@@ -21,6 +22,7 @@ ReactDOM.render(
 	<Router basename={baseURL}>
 		<Routes>
 			<Route path="/" element={<App />}  />
+			<Route path="/blogs" element={<Blogger />}></Route>
 			<Route path="*" element={<NoMatch />} />
 		</Routes>
 	</Router>,
@@ -46,7 +48,7 @@ function NoMatch() {
 		<br/><br/><br/><br/>
 		<motion.div initial={{ opacity: 0, scale: 0.9, y: -1100	}} animate={{ opacity: 0.9, scale: 1, y: -800}} transition={{ease: "linear", duration: 5}}>
 			<p>
-			<Link to="/canvas">Way to my canvas...</Link>
+			<Link to="/">Way to my canvas...</Link>
 			</p>
 		</motion.div>
 	  </div>

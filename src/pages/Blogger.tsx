@@ -1,6 +1,6 @@
-import Navbar from "../Navbar";
-import BlogCard from "../BlogCard";
-import Footer from "./Footer";
+import Navbar from "../components/Navbar";
+import BlogCard from "../components/BlogCard";
+import Footer from "../components/sections/Footer";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -25,19 +25,12 @@ function FadeInWhenVisible({ children }) {
 
 
 export const Blogger = () => {
+	const [theme, setTheme] = useState("dark");
 	const [width, setWidth] = useState<number>(window.innerWidth);
 	const isMobile = width <= 768;
 	const blogCardsRef = useRef(null);
-	const scrollToBlogCard = (id) => {
-		const blogCard = document.getElementById(id);
-		if (blogCard && blogCardsRef.current) {
-			const offsetLeft = blogCard.offsetLeft;
-			console.log(offsetLeft);
-			// blogCardsRef.current.scrollLeft = offsetLeft;
-		}
-	  };
 	return (
-			<section id="my-blogger" className="blogging section is-medium">
+			<div id={theme} className="blogging section is-medium">
 				<div className="blogging-container">
 					<motion.div whileInView={{ opacity: 1}} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 1.5}}>
 						<span className="general-header">Thought Tank</span>
@@ -48,13 +41,12 @@ export const Blogger = () => {
 							A collection of my thoughts on anything that piques my interest</span><br/><br/>
 					</motion.div>
 					<div className={`my-blog-cards ${isMobile ? "mobile" : ""}`} ref={blogCardsRef}>
-						<div className="blog-slider snaps">
+						<div className="post-window">
 							<BlogCard id="Learner_Manifesto" mine={true}/>
-							<BlogCard id="" mine={true}/>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 	);
 };
 
