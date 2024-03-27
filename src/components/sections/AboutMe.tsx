@@ -1,6 +1,6 @@
 import React, { RefObject } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import appConfig from "../appConfig.json";
+import appConfig from "../config/appConfig.json";
 import { motion } from "framer-motion";
 import TechStack from "../things/TechStack";
 import TimeLineGraph from "../things/TimeLineGraph";

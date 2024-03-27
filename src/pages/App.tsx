@@ -28,7 +28,6 @@ export const App = () => {
 					<AboutMe />
 					<Projects />
 					<Publications />
-					<Blogger />
 					<ContactForm />
 					<Footer />
 		</div>

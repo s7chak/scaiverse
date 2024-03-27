@@ -1,5 +1,5 @@
-import blogConfigData from "./blogConfig.json";
-import myBlogConfigData from "./scaiBlogConfig.json";
+import blogConfigData from "./config/blogConfig.json";
+import myBlogConfigData from "./config/scaiBlogConfig.json";
 import React, { useState } from "react";
 
 const getBlogData = (blog_id: string, mine: boolean): any => {

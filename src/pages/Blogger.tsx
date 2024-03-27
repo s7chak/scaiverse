@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar";
 import BlogCard from "../components/BlogCard";
 import Footer from "../components/sections/Footer";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-
+import { SCBlogCard, SCBlogPost } from "../components/SCBlogCard";
+import myBlogConfigData from "../components/config/scaiBlogConfig.json";
 
 function FadeInWhenVisible({ children }) {
 	const [ref, inView] = useInView({
@@ -27,25 +28,55 @@ function FadeInWhenVisible({ children }) {
 export const Blogger = () => {
 	const [theme, setTheme] = useState("dark");
 	const [width, setWidth] = useState<number>(window.innerWidth);
+	const [postId, setPostId] = useState<string>('');
+	const [prevPostId, setPrevPostId] = useState('');
 	const isMobile = width <= 768;
 	const blogCardsRef = useRef(null);
+	let config = myBlogConfigData;
+	const getBlogTitles = (): any => {
+		let extractedData = {};
+		for (const blogId in config) {
+			if (Object.hasOwnProperty.call(config, blogId)) {
+				const { title, img } = config[blogId];
+				extractedData[blogId] = { title, img };
+			}
+		}
+		return extractedData;
+	};
+	const [showPostContainer, setShowPostContainer] = useState(false);
+	const scblogcards = getBlogTitles();
+	const setPost = (id, on) => {
+		setShowPostContainer(on);
+		setPostId(id);
+	};
+
 	return (
-			<div id={theme} className="blogging section is-medium">
-				<div className="blogging-container">
-					<motion.div whileInView={{ opacity: 1}} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 1.5}}>
-						<span className="general-header">Thought Tank</span>
-					</motion.div>
-					<br/>
-					<motion.div initial={{ opacity: 0, scale: 0.99}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 1.5}}>
-						<span>
-							A collection of my thoughts on anything that piques my interest</span><br/><br/>
-					</motion.div>
-					<div className={`my-blog-cards ${isMobile ? "mobile" : ""}`} ref={blogCardsRef}>
-						<div className="post-window">
-							<BlogCard id="Learner_Manifesto" mine={true}/>
-						</div>
+			<div id={theme} className="scblogging is-medium">
+				<div className="main-container">
+					<div className="scblogheader">
+						<motion.div whileInView={{ opacity: 1}} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 1.5}}>
+							<span className="general-header" onClick={() => setShowPostContainer(false)}>Insight Room</span>
+						</motion.div>
+						<br/>
+						<motion.div initial={{ opacity: 0, scale: 0.94}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 2.5}}>
+							<span className="scblogheadertagline">
+								Building a repository of thoughts, ideas and insight.</span><br/><br/>
+						</motion.div>
 					</div>
 				</div>
+				<div className={`post-container ${showPostContainer ? 'visible' : ''}`}>
+					<SCBlogPost id={postId} onClick = {() => setShowPostContainer(false)} />
+				</div>
+				<div className={`scblog-cards ${isMobile ? "mobile" : ""}`} ref={blogCardsRef}>
+					{Object.keys(scblogcards).map((key) => (
+						<SCBlogCard id={key} onClick = {() => setPost(key, true)} />
+					))}
+				</div>
+				<Link to={"/"} style={{marginLeft:'1em'}}>
+						<div className="gbutton scblogbutton">
+							Scaiverse
+						</div>
+				</Link>
 			</div>
 	);
 };

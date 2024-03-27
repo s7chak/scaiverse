@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from 'three';
-import timelineConfigData from "../timeLineConfig.json";
+import timelineConfigData from "../config/timeLineConfig.json";
 
 
 

@@ -18,16 +18,25 @@
 	transition: background-color 2s ease;
 }
 
-.my-blogger {
-	// font-family: "Rajdhani", sans-serif !important;
+.scblogging {
+	font-family: "Rajdhani", sans-serif !important;
 	font-weight: 300;
 	background-color: var(--background-primary) !important;
-	color: var(--lighter) !important;
+	color: var(--lighter);
 	height: auto;
 	transition: background-color 2s ease;
+	min-height: 100vh;
 }
-
-
+.scblogheader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 3em;
+	color: var(--lighter);
+}
+.scblogheadertagline {
+	font-size: 20px;
+}
 .s7logo {
 	visibility: visible;
 	margin-left: 5px;
@@ -152,11 +161,110 @@ ol {
 	}
 }
 
-.my-blog-cards {
+.scblog-cards {
+	display: flex;
 	padding: 3rem 0rem;
 	inline-size: 50vw;
 	margin-inline: auto;
-	width: 70vw;
+	width: 90vw;
+}
+.scblog-cards.mobile{
+	inline-size: 98vw;
+}
+
+.scblog-card {
+	background-color: var(--background-primary);
+	border-radius: 0.8rem;
+	margin: 1rem 1rem;
+	padding: 0.2rem 0rem;
+	// border: 0.05em var(--accent) solid;
+	box-shadow: 0 0 0 0.08em var(--accent);
+	transition: background-color 2s ease, box-shadow 0.8s ease;
+
+	@include breakpoint(extra_small_devices) {
+		width: 340px !important;
+	}
+	.scblog-card-content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding-right: 2em;
+		.scblog-card-bar {
+			display: inline-flex;
+			flex-direction: column;
+			padding: 0 0.8em;
+		}
+		.scblog-title {
+			padding: 0.5em;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.scblog-date {
+			padding: 1em;
+			font-size: 12px;
+		}
+		.scblog-img {
+			width: 2em;
+			height: 2em;
+		}
+	}
+}
+
+.scblogbutton {
+	z-index: 0 !important;
+}
+
+.scblog-card:hover {
+	// border: 0.7px var(--lighter) solid;
+	cursor: url("../../public/assets/files/hand.svg"), pointer;
+	box-shadow: 
+        0 0 0 0.08em var(--lighter),
+        0.1em 0.1em 0.5em rgba(0, 0, 0, 0.3);
+}
+
+.scblog-post {
+	border-radius: 1rem;
+	margin: 1rem 1rem;
+	padding: 0.5rem 0.5rem;
+	// border: 0.5px var(--accent) solid;
+	// transition: background-color 2s ease;
+
+	@include breakpoint(extra_small_devices) {
+		width: 340px !important;
+	}
+	.scblog-post-content {
+		.scpost-title {
+			padding: 0 0.3em;
+			font-size: 30px;
+			font-weight: bold;
+		}
+		.scpost-date {
+			padding: 0 0.5em;
+			font-size: 20px;
+			font-weight: 200;
+		}
+		.scpost-description {
+			padding: 1em 0.5em;
+		}
+	}
+}
+
+.post-container {
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0.9;
+	background-color: var(--background-primary);
+	transition: max-height 1.5s linear, opacity 1s linear;
+}
+
+.post-container.visible {
+    opacity: 1;
+	max-height: 100vh;
 }
 
 .blog-cards {
