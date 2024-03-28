@@ -17,7 +17,7 @@ export const Navbar = (props) => {
 			{isMobile && <motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 2, delay: 5}} className="navbar-brand">
+				transition={{ duration: 2, delay: 3}} className="navbar-brand">
 				<FaBars
 					className='btn-alt'
 					onClick={() => {
@@ -62,7 +62,7 @@ export const Navbar = (props) => {
 			</div>}
 			{!isMobile && (
 			<div id="navbar-menu is-fixed-top" className={'navbar-menu'}>
-				<motion.div className={"navbar-start"} initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 5.2}}>
+				<motion.div className={"navbar-start"} initial={{ opacity: 0}} animate={{ opacity: 1 }} transition={{ease: "linear", duration: 1, delay: 4}}>
 					<Link to="playback" smooth={true} className="navbar-item">
 						Home
 					</Link>

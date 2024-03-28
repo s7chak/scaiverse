@@ -115,7 +115,7 @@ const VennGuffin = () => {
     hidden: { opacity: 0, scale: 0.5 },
     visible: { opacity: 0.6, scale: 1 }
   }
-  const vennAnimationTime = 4;
+  const vennAnimationTime = 3;
   const circleTransition = {
     // type: 'spring',
     // damping: 5,
