@@ -1,3 +1,3 @@
 # Scaiverse
 
-A universe of software and ML side projects, some focused on the financial world, some not so much.
+Personal inventory of software and ML side projects and thoughts catalogued as articles.
