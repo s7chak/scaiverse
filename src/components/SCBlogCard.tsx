@@ -33,6 +33,13 @@ export const SCBlogPost = ({ id, onClick }: { id: string; onClick}) => {
 	const [width, setWidth] = useState<number>(window.innerWidth);
 	const isMobile = width <= 768;
 	let blog = config[id];
+	let blogimgs = blog? blog["blogimgs"] : [];
+	if (blogimgs.length>0){
+		let description = blog['description'];
+		const descriptionWithImages: string = description.replace("{img}", blogimgs.map(img => `<img src="${img}">`).join("<br/>"));
+		blog['description'] = descriptionWithImages;
+	}
+	
 	return (
 		<div className={`scblog-post ${isMobile ? "mobile" : ""}`}>
 			<div className="scblog-post-content">
