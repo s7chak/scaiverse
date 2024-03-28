@@ -171,7 +171,9 @@ ol {
 .scblog-cards.mobile{
 	inline-size: 98vw;
 }
-
+.scblogbutton {
+	z-index: 0 !important;
+}
 .scblog-card {
 	background-color: var(--background-primary);
 	border-radius: 0.8rem;
@@ -210,10 +212,6 @@ ol {
 	}
 }
 
-.scblogbutton {
-	z-index: 0 !important;
-}
-
 .scblog-card:hover {
 	// border: 0.7px var(--lighter) solid;
 	cursor: url("../../public/assets/files/hand.svg"), pointer;
@@ -225,7 +223,7 @@ ol {
 .scblog-post {
 	border-radius: 1rem;
 	margin: 1rem 1rem;
-	padding: 0.5rem 0.5rem;
+	padding: 2rem 10rem;
 	// border: 0.5px var(--accent) solid;
 	// transition: background-color 2s ease;
 
@@ -249,7 +247,9 @@ ol {
 	}
 }
 
+
 .post-container {
+	z-index: 100 !important;
 	position: fixed;
     top: 0;
     right: 0;
@@ -257,11 +257,29 @@ ol {
     left: 0;
 	max-height: 0;
 	overflow: hidden;
-	opacity: 0.9;
+	overflow-y: auto;
+	opacity: 0;
 	background-color: var(--background-primary);
 	transition: max-height 1.5s linear, opacity 1s linear;
 }
+.post-container.mobile {
+	padding: 2rem 1rem;
+}
 
+.post-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.post-container::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+}
+.post-container::-webkit-scrollbar-thumb {
+    background: var(--lighter);
+    border-radius: 8px;
+}
+.post-container::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
 .post-container.visible {
     opacity: 1;
 	max-height: 100vh;

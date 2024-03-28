@@ -62,6 +62,13 @@ export const Blogger = () => {
 							<span className="scblogheadertagline">
 								Building a repository of thoughts, ideas and insight.</span><br/><br/>
 						</motion.div>
+						<motion.div className='scblog-scbutton' initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 3}}>
+							<Link to={"/"}>
+								<div className="gbutton">
+									Scaiverse
+								</div>
+							</Link>
+						</motion.div>
 					</div>
 				</div>
 				<div className={`post-container ${showPostContainer ? 'visible' : ''}`}>
@@ -72,11 +79,7 @@ export const Blogger = () => {
 						<SCBlogCard id={key} onClick = {() => setPost(key, true)} />
 					))}
 				</div>
-				<Link to={"/"} style={{marginLeft:'1em'}}>
-						<div className="gbutton scblogbutton">
-							Scaiverse
-						</div>
-				</Link>
+				
 			</div>
 	);
 };

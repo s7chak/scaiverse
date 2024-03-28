@@ -46,8 +46,11 @@ export const SCBlogPost = ({ id, onClick }: { id: string; onClick}) => {
 						</div>
 						<div className="scpost-description" dangerouslySetInnerHTML={{ __html: blog['description'] }}>
 						</div>
-						<div className='gbutton' onClick={onClick}>
-							Back to blogs
+						<p><br/><br/></p>
+						<div className='scblogheader'>
+							<div className='gbutton' onClick={onClick}>
+								Back to blogs
+							</div>
 						</div>
 					</>
 					) : null
