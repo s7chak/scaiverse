@@ -246,7 +246,12 @@ ol {
 		}
 	}
 }
-
+.scblog-post.mobile {
+	padding: 2rem 1rem;
+	.scblog-post-content {
+		width: 85vw;
+	}
+}
 
 .post-container {
 	z-index: 100 !important;
@@ -262,12 +267,9 @@ ol {
 	background-color: var(--background-primary);
 	transition: max-height 1.5s linear, opacity 1s linear;
 }
-.post-container.mobile {
-	padding: 2rem 1rem;
-}
 
 .post-container::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
 }
 
 .post-container::-webkit-scrollbar-track {
