@@ -1,3 +1,3 @@
 # Scaiverse
 
-Personal inventory of software and ML side projects and thoughts catalogued as articles.
+Personal inventory of software and ML side projects and a thought repository catalogued as articles.
