@@ -59,8 +59,8 @@ export const Blogger = () => {
 						</motion.div>
 						<br/>
 						<motion.div initial={{ opacity: 0, scale: 0.94}} animate={{ opacity: 1, scale:1}} transition={{ease: "linear", duration: 2.5}}>
-							<span className="scblogheadertagline">
-								Building a repository of thoughts, ideas and insight.</span><br/><br/>
+							<span className={`scblogheadertagline ${isMobile ? "mobile" : ""}`}>
+								A repository of thoughts, ideas and insight.</span><br/><br/>
 						</motion.div>
 						<motion.div className='scblog-scbutton' initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: 3}}>
 							<Link to={"/"}>
