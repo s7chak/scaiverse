@@ -48,8 +48,14 @@ export const Blogger = () => {
 	const setPost = (id, on) => {
 		setShowPostContainer(on);
 		setPostId(id);
+		scrollToTop();
 	};
-
+	const scrollToTop = () => {
+		const postContainer = document.querySelector('.scblog-post');
+		if (postContainer) {
+			postContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
 	return (
 			<div id={theme} className="scblogging is-medium">
 				<div className="main-container">
@@ -72,11 +78,11 @@ export const Blogger = () => {
 					</div>
 				</div>
 				<div className={`post-container ${showPostContainer ? 'visible' : ''}`}>
-					<SCBlogPost id={postId} onClick = {() => setShowPostContainer(false)} />
+					<SCBlogPost id={postId} onClick={() => { setShowPostContainer(false);}} />
 				</div>
 				<div className={`scblog-cards ${isMobile ? "mobile" : ""}`} ref={blogCardsRef}>
 					{Object.keys(scblogcards).map((key) => (
-						<SCBlogCard id={key} onClick = {() => setPost(key, true)} />
+						<SCBlogCard id={key} onClick = {() => {setPost(key, true);}} />
 					))}
 				</div>
 				
