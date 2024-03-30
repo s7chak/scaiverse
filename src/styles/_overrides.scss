@@ -231,7 +231,7 @@ ol {
     width: 340px !important;
   }
   .scblog-post-content {
-    font-family: Helvetica;
+    font-family: Helvetica, sans-serif;
     .scpost-title {
       padding: 0 0.3em;
       font-size: 30px;
@@ -243,7 +243,6 @@ ol {
       font-weight: 200;
     }
     .scpost-description {
-      font-family: Helvetica;
       font-size: 19px;
       padding: 1em 0.5em;
       text-align: justify;
