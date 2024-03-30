@@ -1,0 +1,87 @@
+#scpost {
+  --lighter: #cbd6f0;
+  --accent: #6971cd;
+  --background-primary: #0a0d14;
+  --background-secondary: #141a29;
+  --background-secondary-alt: #101628;
+  --foreground-primary: #a8b5c3;
+  --purple: #492dd5ec;
+}
+
+.scblog-post {
+  border-radius: 1rem;
+  margin: 1rem 1rem;
+  padding: 2rem 10rem;
+  background-color: var(--background-primary);
+  transition: background-color 2s ease;
+
+  @include breakpoint(extra_small_devices) {
+    width: 340px !important;
+  }
+  .scblog-post-content {
+    font-family: Helvetica;
+    .scpost-title {
+      padding: 0 0.3em;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .scpost-date {
+      font-family: "Trebuchet MS";
+      padding: 0 0.5em;
+      font-size: 16px;
+      font-weight: 200;
+    }
+    .scpost-description {
+      font-family: Helvetica;
+      font-size: 19px;
+      padding: 1em 0.5em;
+      text-align: justify;
+    }
+    .scpost-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.scblog-post.mobile {
+  padding: 2rem 1rem;
+  .scblog-post-content {
+    width: 85vw;
+    text-align: justify;
+  }
+}
+
+.post-container {
+  z-index: 100 !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  opacity: 0;
+  background-color: var(--background-primary);
+  transition: max-height 1.5s linear, opacity 1s linear;
+}
+
+.post-container::-webkit-scrollbar {
+  width: 7px;
+}
+
+.post-container::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+.post-container::-webkit-scrollbar-thumb {
+  background: var(--lighter);
+  border-radius: 8px;
+}
+.post-container::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+.post-container.visible {
+  opacity: 1;
+  max-height: 100vh;
+}

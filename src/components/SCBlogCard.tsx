@@ -5,10 +5,10 @@ import React, { useState } from "react";
 
 export const SCBlogCard = ({
   id,
-  onClick,
-}: {
+}: // onClick,
+{
   id: string;
-  onClick: () => void;
+  // onClick: () => void;
 }) => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
@@ -16,13 +16,13 @@ export const SCBlogCard = ({
   const title = blog.title;
   const date = blog.date;
   const img = blog.img;
-  const handleClick = () => {
-    onClick();
-  };
+  // const handleClick = () => {
+  //   onClick();
+  // };
   return (
     <div
       className={`scblog-card ${isMobile ? "mobile" : ""}`}
-      onClick={handleClick}
+      // onClick={handleClick}
     >
       <div className="scblog-card-content">
         <div className="scblog-card-bar">
@@ -58,7 +58,9 @@ export const SCBlogPost = ({ id, onClick }: { id: string; onClick }) => {
     let description = blog["description"];
     const descriptionWithImages: string = description.replace(
       "{img}",
-      blogimgs.map((img) => `<img src="${img}">`).join("<br/>")
+      blogimgs
+        .map((img) => `<img className='scpost-img' src="${img}">`)
+        .join("<br/>")
     );
     blog["description"] = descriptionWithImages;
   }
