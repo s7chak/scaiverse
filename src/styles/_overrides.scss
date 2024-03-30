@@ -223,15 +223,12 @@ ol {
 .scblog-post {
   border-radius: 1rem;
   margin: 1rem 1rem;
-  padding: 2rem 10rem;
+  padding: 2rem 20rem;
   // border: 0.5px var(--accent) solid;
   // transition: background-color 2s ease;
 
-  @include breakpoint(extra_small_devices) {
-    width: 340px !important;
-  }
   .scblog-post-content {
-    font-family: Helvetica, sans-serif;
+    // font-family: Helvetica, sans-serif;
     .scpost-title {
       padding: 0 0.3em;
       font-size: 30px;
@@ -247,13 +244,9 @@ ol {
       padding: 1em 0.5em;
       text-align: justify;
     }
-    .scpost-img {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 }
+
 .scblog-post.mobile {
   padding: 2rem 1rem;
   .scblog-post-content {
