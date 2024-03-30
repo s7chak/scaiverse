@@ -51,8 +51,7 @@ export const SCBlogPosting = () => {
     fetchBlogContent();
   }, [id]);
   const handleClick = () => {
-    // navigate("/blogs");
-    console.log("Go Back");
+    navigate("/blogs");
   };
 
   return (
