@@ -147,6 +147,7 @@ const TechBox = ({
   const ref = useRef<THREE.Mesh>(null!);
   const [clicked, setClicked] = useState(false);
   const [hovered, hover] = useState(false);
+  const [geometry, setGeometry] = useState(null);
   // useFrame((_, delta) => {
   //     ref.current.rotation.x += delta * rotationSpeed/20;
   // });
@@ -166,7 +167,7 @@ const TechBox = ({
       size: 0.8 * leng,
       height: 0.2,
     };
-    const geometry = new TextGeometry(techname, textOptions);
+    setGeometry(new TextGeometry(techname, textOptions));
   });
   return (
     <mesh
