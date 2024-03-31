@@ -172,28 +172,28 @@ const TechBox = ({
   //   height: 0.2,
   // };
   return <></>;
-  if (geometry !== "x") {
-    return (
-      <mesh
-        ref={ref}
-        position={position}
-        scale={1.1}
-        onClick={() => setClicked(!clicked)}
-        onPointerOver={(event) => hover(true)}
-        onPointerOut={(event) => hover(false)}
-        castShadow={true}
-        geometry={geometry}
-      >
-        <meshBasicMaterial
-          attach="material"
-          color={"#6484cd"}
-          // metalness={clicked ? 0.5 + rotationSpeed : 0.6 + rotationSpeed}
-        />
-      </mesh>
-    );
-  } else {
-    return <></>;
-  }
+  // if (geometry !== "x") {
+  //   return (
+  //     <mesh
+  //       ref={ref}
+  //       position={position}
+  //       scale={1.1}
+  //       onClick={() => setClicked(!clicked)}
+  //       onPointerOver={(event) => hover(true)}
+  //       onPointerOut={(event) => hover(false)}
+  //       castShadow={true}
+  //       geometry={geometry}
+  //     >
+  //       <meshBasicMaterial
+  //         attach="material"
+  //         color={"#6484cd"}
+  //         // metalness={clicked ? 0.5 + rotationSpeed : 0.6 + rotationSpeed}
+  //       />
+  //     </mesh>
+  //   );
+  // } else {
+  //   return <></>;
+  // }
 };
 
 export const RotatingTechs = () => {
