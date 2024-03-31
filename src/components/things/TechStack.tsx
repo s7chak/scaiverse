@@ -158,14 +158,16 @@ const TechBox = ({
     ref.current.position.x = x;
     ref.current.position.z = z;
   });
-
-  // const font = new FontLoader().parse(codeFont);
-  const textOptions = {
-    font: "Roboto",
-    size: 0.8 * leng,
-    height: 0.2,
-  };
-  let geometry = new TextGeometry(techname, textOptions);
+  let fontFile = "./code_font.json";
+  const loader = new FontLoader();
+  loader.load(fontFile, (font) => {
+    const textOptions = {
+      font: font,
+      size: 0.8 * leng,
+      height: 0.2,
+    };
+    const geometry = new TextGeometry(techname, textOptions);
+  });
   return (
     <mesh
       ref={ref}
