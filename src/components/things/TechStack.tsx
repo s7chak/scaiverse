@@ -62,7 +62,7 @@ const JustBox = ({
   const [clicked, setClicked] = useState(false);
   const [hovered, hover] = useState(false);
   useFrame((_, delta) => {
-    ref.current.rotation.x += (delta * rotationSpeed) / 5;
+    ref.current.rotation.x += (delta * rotationSpeed) / 3;
     ref.current.rotation.z += (delta * rotationSpeed) / 5;
   });
 
@@ -115,6 +115,7 @@ const Box = ({ position, color, rotationSpeed, leng }: Cube) => {
   useFrame((_, delta) => {
     ref.current.rotation.x += delta * rotationSpeed;
     ref.current.rotation.y += delta * rotationSpeed;
+    ref.current.rotation.y += (delta * rotationSpeed) / 10;
   });
   return (
     <mesh
@@ -147,46 +148,52 @@ const TechBox = ({
   const ref = useRef<THREE.Mesh>(null!);
   const [clicked, setClicked] = useState(false);
   const [hovered, hover] = useState(false);
-  const [geometry, setGeometry] = useState(null);
-  // useFrame((_, delta) => {
-  //     ref.current.rotation.x += delta * rotationSpeed/20;
-  // });
-  // const texture = useLoader(THREE.TextureLoader, pyimg);
   useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-    const x = xrad * Math.sin(t * rotationSpeed);
-    const z = zrad * Math.cos(t * rotationSpeed);
-    ref.current.position.x = x;
-    ref.current.position.z = z;
+    if (!!ref.current) {
+      const t = clock.getElapsedTime();
+      const x = xrad * Math.sin(t * rotationSpeed);
+      const z = zrad * Math.cos(t * rotationSpeed);
+      ref.current.position.x = x;
+      ref.current.position.z = z;
+    }
   });
-  let fontFile = "./code_font.json";
-  const loader = new FontLoader();
-  loader.load(fontFile, (font) => {
-    const textOptions = {
-      font: font,
-      size: 0.8 * leng,
-      height: 0.2,
-    };
-    setGeometry(new TextGeometry(techname, textOptions));
-  });
-  return (
-    <mesh
-      ref={ref}
-      position={position}
-      scale={1.1}
-      onClick={() => setClicked(!clicked)}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}
-      castShadow={true}
-      geometry={geometry}
-    >
-      <meshBasicMaterial
-        attach="material"
-        color={"#6484cd"}
-        // metalness={clicked? 0.5+rotationSpeed : 0.6+rotationSpeed}
-      />
-    </mesh>
-  );
+  let geometry = "x";
+  // const loader = new FontLoader();
+  // loader.load("./code_font.json", function (font) {
+  //   geometry = new TextGeometry(techname, {
+  //     font: font,
+  //     size: 0.8 * leng,
+  //     height: 0.2,
+  //   });
+  // });
+  // const textOptions = {
+  //   font: font,
+  //   size: 0.8 * leng,
+  //   height: 0.2,
+  // };
+  return <></>;
+  if (geometry !== "x") {
+    return (
+      <mesh
+        ref={ref}
+        position={position}
+        scale={1.1}
+        onClick={() => setClicked(!clicked)}
+        onPointerOver={(event) => hover(true)}
+        onPointerOut={(event) => hover(false)}
+        castShadow={true}
+        geometry={geometry}
+      >
+        <meshBasicMaterial
+          attach="material"
+          color={"#6484cd"}
+          // metalness={clicked ? 0.5 + rotationSpeed : 0.6 + rotationSpeed}
+        />
+      </mesh>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export const RotatingTechs = () => {
