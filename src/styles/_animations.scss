@@ -9,12 +9,12 @@
   }
 }
 
-// @font-face {
-//   font-family: 'Consolas';
-//   src: url('../../public/assets/Consolas.ttf') format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Consolas";
+  src: url("../../public/assets/Consolas.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .typewriter-container {
   position: absolute;
@@ -52,7 +52,7 @@
 }
 
 .typewriter {
-  // font-family: "Consolas", monospace;
+  font-family: "Consolas", monospace;
   font-size: 24px;
   color: rgb(143, 163, 187);
   position: relative;
