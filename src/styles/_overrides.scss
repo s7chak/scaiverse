@@ -176,7 +176,7 @@ ol {
   inline-size: 98vw;
 }
 .scblogbutton {
-  z-index: 0 !important;
+  color: var(--lighter) !important;
 }
 .scblog-card {
   background-color: var(--background-primary);
@@ -186,7 +186,7 @@ ol {
   // border: 0.05em var(--accent) solid;
   box-shadow: 0 0 0 0.09em var(--accent);
   transition: background-color 2s ease, box-shadow 0.8s ease;
-  height: 8em;
+  height: auto;
   // @include breakpoint(extra_small_devices) {
   //   width: 340px !important;
   // }

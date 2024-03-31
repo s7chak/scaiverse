@@ -80,13 +80,12 @@ export const Blogger = () => {
             <br />
           </motion.div>
           <motion.div
-            className="scblog-scbutton"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "linear", duration: 3 }}
           >
             <Link to={"/"}>
-              <div className="gbutton">Scaiverse</div>
+              <div className="gbutton scblogbutton">Scaiverse</div>
             </Link>
           </motion.div>
         </div>
