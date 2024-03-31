@@ -1,21 +1,20 @@
 @import "./variables";
 
 @keyframes scale-in {
-	0% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1.2);
-	}
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
 
-@font-face {
-  font-family: 'Consolas';
-  src: url('../../public/assets/Consolas.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+// @font-face {
+//   font-family: 'Consolas';
+//   src: url('../../public/assets/Consolas.ttf') format('truetype');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 .typewriter-container {
   position: absolute;
@@ -53,7 +52,7 @@
 }
 
 .typewriter {
-  font-family: "Consolas", monospace;
+  // font-family: "Consolas", monospace;
   font-size: 24px;
   color: rgb(143, 163, 187);
   position: relative;
@@ -72,8 +71,6 @@
   }
 }
 
-
-
 .glowball {
   position: fixed;
   z-index: 9999;
@@ -84,21 +81,17 @@
   height: 5px;
   border-radius: 80%;
   background-color: #fff;
-  box-shadow:
-    0 0 20px 8px #fff,
-    0 0 30px 8px rgb(101, 35, 255),
+  box-shadow: 0 0 20px 8px #fff, 0 0 30px 8px rgb(101, 35, 255),
     0 0 40px 30px rgb(33, 76, 248);
   filter: blur(3.5px);
 }
 
-.glowball more{
+.glowball more {
   width: 10px;
   height: 10px;
   border-radius: 80%;
   background-color: #fff;
-  box-shadow:
-    0 0 30px 10px #fff,
-    0 0 35px 10px rgb(101, 35, 255),
+  box-shadow: 0 0 30px 10px #fff, 0 0 35px 10px rgb(101, 35, 255),
     0 0 45px 35px rgb(33, 76, 248);
   filter: blur(5px);
 }
@@ -142,14 +135,12 @@
   margin-left: 0;
 }
 
-
 .techstack {
   position: relative;
   height: 100vh;
   width: 100vw;
   align-items: center;
 }
-
 
 .threeexp {
   height: 100vh;
@@ -158,23 +149,20 @@
   align-items: center;
 }
 
-
 .miniball {
   position: absolute;
   width: 2px;
   height: 2px;
   border-radius: 80%;
   background-color: #fff;
-  box-shadow:
-    0 0 15px 5px #fff,  /* inner white */
-    0 0 20px 10px rgb(0, 119, 255), /* middle magenta */
-    0 0 30px 20px rgb(33, 76, 248); /* outer cyan */
+  box-shadow: 0 0 15px 5px #fff,
+    /* inner white */ 0 0 20px 10px rgb(0, 119, 255),
+    /* middle magenta */ 0 0 30px 20px rgb(33, 76, 248); /* outer cyan */
   filter: blur(2px);
   // offset-path: path("M -189 -8 S -31 -220 181 -7");
   offset-path: path("M -142 -4 S 2 -255 217 1 S 214 289 -1 122");
   z-index: 5;
 }
-
 
 .ball {
   position: absolute;
@@ -183,9 +171,7 @@
   height: 5px;
   border-radius: 80%;
   background-color: #fff;
-  box-shadow:
-    0 0 20px 8px #fff,
-    0 0 30px 8px rgb(101, 35, 255),
+  box-shadow: 0 0 20px 8px #fff, 0 0 30px 8px rgb(101, 35, 255),
     0 0 40px 30px rgb(33, 76, 248);
   filter: blur(3.5px);
   z-index: 5;
@@ -202,12 +188,10 @@
   padding: 10px;
 }
 
-
 .definitions {
   font-family: var(--main-font);
   font-size: 24px;
 }
-
 
 .play-intro-container {
   position: relative;
@@ -224,7 +208,6 @@
     letter-spacing: 2px;
   }
 }
-
 
 $n: 25;
 // $bgColor: rgb(204,207,209);
@@ -254,7 +237,6 @@ $start_scale: 0.4;
 //   }
 // }
 
-
 .mcguffin-container {
   position: absolute;
   margin-top: 0;
@@ -264,7 +246,6 @@ $start_scale: 0.4;
   justify-content: center;
   background-color: transparent;
 }
-
 
 .mcguffin {
   position: relative;
@@ -287,7 +268,7 @@ $start_scale: 0.4;
   opacity: 0;
 }
 
-$circleradius:125px;
+$circleradius: 125px;
 
 // .circle {
 //   will-change: opacity;
@@ -347,7 +328,6 @@ $circleradius:125px;
   z-index: 0;
 }
 
-
 $yfar: 100px;
 $ymid: 10px;
 $xfar: 100px;
@@ -377,7 +357,7 @@ $move: 10px;
   }
   50% {
     opacity: 0.5;
-    transform: translate(-$xfar + 2*$move, -$yfar + 1.5*$move);
+    transform: translate(-$xfar + 2 * $move, -$yfar + 1.5 * $move);
   }
   100% {
     opacity: 0;
@@ -390,7 +370,7 @@ $move: 10px;
   }
   50% {
     opacity: 0.5;
-    transform: translate($xfar - 2*$move, -$yfar + 1.5*$move);
+    transform: translate($xfar - 2 * $move, -$yfar + 1.5 * $move);
   }
   100% {
     opacity: 0;
@@ -403,7 +383,7 @@ $move: 10px;
   }
   50% {
     opacity: 0.5;
-    transform: translate(-$xmid + 2*$move, -$ymid + $move);
+    transform: translate(-$xmid + 2 * $move, -$ymid + $move);
   }
   100% {
     opacity: 0;
@@ -416,7 +396,7 @@ $move: 10px;
   }
   50% {
     opacity: 0.5;
-    transform: translate($xmid - 2*$move, -$ymid + $move);
+    transform: translate($xmid - 2 * $move, -$ymid + $move);
   }
   100% {
     opacity: 0;
@@ -425,11 +405,11 @@ $move: 10px;
 }
 @keyframes move-circle-3 {
   0% {
-    transform: translate(0, -$yfar - 3*$move);
+    transform: translate(0, -$yfar - 3 * $move);
   }
   50% {
     opacity: 0.5;
-    transform: translate(0, -$yfar - 2*$move);
+    transform: translate(0, -$yfar - 2 * $move);
   }
   90% {
     opacity: 0.6;
@@ -440,7 +420,6 @@ $move: 10px;
     transform: scale(1.5) translate(0, 0);
   }
 }
-
 
 @keyframes move-circle-1-back {
   100% {
@@ -470,7 +449,7 @@ $move: 10px;
 }
 @keyframes move-circle-4-back {
   100% {
-    transform: translate(-$xmid + $move, -$ymid+$move);
+    transform: translate(-$xmid + $move, -$ymid + $move);
   }
   5% {
     opacity: 0.1;
@@ -483,7 +462,7 @@ $move: 10px;
 }
 @keyframes move-circle-5-back {
   100% {
-    transform: translate($xmid - $move, -$ymid+$move);
+    transform: translate($xmid - $move, -$ymid + $move);
   }
   5% {
     opacity: 0.1;
@@ -505,10 +484,9 @@ $move: 10px;
     transform: scale(1.4) translate(0, 0);
   }
   100% {
-    transform: scale(1) translate(0, -$yfar - 3*$move);
+    transform: scale(1) translate(0, -$yfar - 3 * $move);
   }
 }
-
 
 .glow {
   will-change: opacity;
@@ -547,7 +525,6 @@ $move: 10px;
   text-shadow: 0 0 0;
 }
 
-
 .play-container {
   position: relative;
   overflow: auto;
@@ -567,12 +544,12 @@ $move: 10px;
   width: $mountainHeight;
   height: $mountainHeight;
   position: absolute;
-  top: 50% - $mountainHeight / 2;  
+  top: 50% - $mountainHeight / 2;
   &:nth-of-type(even) {
     right: 0;
   }
   &::before {
-    content: '';
+    content: "";
     width: 102%;
     height: 102%;
     position: absolute;
@@ -586,36 +563,74 @@ $move: 10px;
 
 @for $i from 1 to $n {
   .mountain:nth-of-type(#{$i}) {
-    animation: mountain#{($i % 6) + 1} ($animLength + s) (-$i / ($n - 3) * $animLength)+s linear infinite;
+    animation: mountain#{($i % 6) +
+      1}
+      ($animLength + s)
+      (-$i / ($n - 3) * $animLength) +
+      s
+      linear
+      infinite;
   }
 }
 
-
 @keyframes mountain1 {
-  0% { transform: rotate(45deg) translate3d(-130%, 130%, -300px) scale($start_scale); }
-  100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
+  0% {
+    transform: rotate(45deg) translate3d(-130%, 130%, -300px)
+      scale($start_scale);
+  }
+  100% {
+    transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1);
+  }
 }
 @keyframes mountain2 {
-  0% { transform: rotate(45deg) translate3d(120%, -120%, -300px) scale($start_scale); }
-  100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
+  0% {
+    transform: rotate(45deg) translate3d(120%, -120%, -300px)
+      scale($start_scale);
+  }
+  100% {
+    transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1);
+  }
 }
 @keyframes mountain3 {
-  0% { transform: rotate(45deg) translate3d(-110%, 110%, -300px) scale($start_scale); }
-  100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
+  0% {
+    transform: rotate(45deg) translate3d(-110%, 110%, -300px)
+      scale($start_scale);
+  }
+  100% {
+    transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1);
+  }
 }
 @keyframes mountain4 {
-  0% { transform: rotate(45deg) translate3d(110%, -110%, -300px) scale($start_scale); }
-  100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
+  0% {
+    transform: rotate(45deg) translate3d(110%, -110%, -300px)
+      scale($start_scale);
+  }
+  100% {
+    transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1);
+  }
 }
 @keyframes mountain5 {
-  0% { transform: rotate(45deg) translate3d(-150%, 150%, -300px) scale($start_scale); }
-  100% { transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1); }
+  0% {
+    transform: rotate(45deg) translate3d(-150%, 150%, -300px)
+      scale($start_scale);
+  }
+  100% {
+    transform: rotate(45deg) translate3d(100%, -100%, 0) scale(1);
+  }
 }
 @keyframes mountain6 {
-  0% { transform: rotate(45deg) translate3d(150%, -150%, -300px) scale($start_scale); }
-  100% { transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1); }
+  0% {
+    transform: rotate(45deg) translate3d(150%, -150%, -300px)
+      scale($start_scale);
+  }
+  100% {
+    transform: rotate(45deg) translate3d(-100%, 100%, 0) scale(1);
+  }
 }
 
-@keyframes opacity { 
-  90%, 100% { opacity: 0.35; } 
+@keyframes opacity {
+  90%,
+  100% {
+    opacity: 0.35;
+  }
 }
