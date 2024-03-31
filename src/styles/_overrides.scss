@@ -185,9 +185,9 @@ ol {
   box-shadow: 0 0 0 0.08em var(--accent);
   transition: background-color 2s ease, box-shadow 0.8s ease;
 
-  @include breakpoint(extra_small_devices) {
-    width: 340px !important;
-  }
+  // @include breakpoint(extra_small_devices) {
+  //   width: 340px !important;
+  // }
   .scblog-card-content {
     display: flex;
     flex-direction: row;
@@ -213,7 +213,6 @@ ol {
     }
   }
 }
-
 .scblog-card:hover {
   // border: 0.7px var(--lighter) solid;
   cursor: url("../../public/assets/files/hand.svg"), pointer;

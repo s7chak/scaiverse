@@ -59,19 +59,14 @@ export const Blogger = () => {
     <div id={theme} className="scblogging is-medium">
       <div className="main-container">
         <div className="scblogheader">
-          <motion.div
-            whileInView={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "linear", duration: 1.5 }}
-          >
+        <FadeInWhenVisible>
             <span
               className="general-header"
               onClick={() => setShowPostContainer(false)}
             >
               Insight Room
             </span>
-          </motion.div>
+          </FadeInWhenVisible>
           <br />
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
@@ -96,14 +91,14 @@ export const Blogger = () => {
           </motion.div>
         </div>
       </div>
-      <div className={`post-container ${showPostContainer ? "visible" : ""}`}>
+      {/* <div className={`post-container ${showPostContainer ? "visible" : ""}`}>
         <SCBlogPost
           id={postId}
           onClick={() => {
             setShowPostContainer(false);
           }}
         />
-      </div>
+      </div> */}
       <div
         className={`scblog-cards ${isMobile ? "mobile" : ""}`}
         ref={blogCardsRef}
@@ -119,7 +114,7 @@ export const Blogger = () => {
               onClick={() => {
                 setPost(key, true);
               }} 
-            />*/}
+            /> */}
           </>
         ))}
       </div>
