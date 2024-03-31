@@ -1,4 +1,3 @@
-
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { delay, motion, spring, useAnimation } from "framer-motion";
@@ -37,9 +36,17 @@ const RotatingTechs = () => {
   const handleClickCube = (index: number) => {
     const cube = cubes[index];
     let factor = 20;
-    let away = (Math.random() - 0.5)*factor;
+    let away = (Math.random() - 0.5) * factor;
     const particle: Particle = {
-      position: cube.position.clone().add(new THREE.Vector3().setFromSphericalCoords(away, away * Math.PI * 2 / factor, away * Math.PI * 2 / factor)),
+      position: cube.position
+        .clone()
+        .add(
+          new THREE.Vector3().setFromSphericalCoords(
+            away,
+            (away * Math.PI * 2) / factor,
+            (away * Math.PI * 2) / factor
+          )
+        ),
       orbitRadius: 5,
       orbitSpeed: Math.random() * 2,
       size: Math.random() * 0.2 + 0.1,
@@ -71,41 +78,44 @@ const RotatingTechs = () => {
   };
 
   return (
-      <Canvas camera={{ fov: 50, position: [-40, 30, 50] }}>
-        <OrbitControls enablePan={false} enableZoom={false} rotateSpeed={0.8} />
-        <ambientLight intensity={0.6} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={0.8} />
-        <pointLight position={[10, 10, 10]} />
-        <group name="cubesGroup">
-          {cubes.map((cube, index) => (
-            <mesh
-              position={cube.position}
-              rotation={cube.rotation}
-              key={index}
-              onClick={() => handleClickCube(index)}
-            >
-              <boxGeometry args={[cube.size, cube.size, cube.size]} />
-              <meshPhongMaterial color={cube.color} />
-            </mesh>
-          ))}
-        </group>
-        <Particles />
-      </Canvas>
+    <Canvas camera={{ fov: 50, position: [-40, 30, 50] }}>
+      <OrbitControls enablePan={false} enableZoom={false} rotateSpeed={0.8} />
+      <ambientLight intensity={0.6} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={0.8} />
+      <pointLight position={[10, 10, 10]} />
+      <group name="cubesGroup">
+        {cubes.map((cube, index) => (
+          <mesh
+            position={cube.position}
+            rotation={cube.rotation}
+            key={index}
+            onClick={() => handleClickCube(index)}
+          >
+            <boxGeometry args={[cube.size, cube.size, cube.size]} />
+            <meshPhongMaterial color={cube.color} />
+          </mesh>
+        ))}
+      </group>
+      <Particles />
+    </Canvas>
   );
 };
 
-const Circle = ({ className, hide, text, onClick, animated}) => {
+const Circle = ({ className, hide, text, onClick, animated }) => {
   const handleClick = () => {
-    onClick()
-  }
+    onClick();
+  };
 
   return (
-  <div className={`circle ${className} ${hide ? ' reverse' : ''}`} 
-    onClick={handleClick}>
+    <div
+      className={`circle ${className} ${hide ? " reverse" : ""}`}
+      onClick={handleClick}
+    >
       <span className="circle-text">{text}</span>
-    <div className="glow" />
-  </div>);
-}
+      <div className="glow" />
+    </div>
+  );
+};
 
 const VennGuffin = () => {
   const [animate, setAnimate] = useState(true);
@@ -113,16 +123,16 @@ const VennGuffin = () => {
 
   const circleVariants = {
     hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 0.6, scale: 1 }
-  }
-  const vennAnimationTime = 3;
+    visible: { opacity: 0.6, scale: 1 },
+  };
+  const vennAnimationTime = 2.8;
   const circleTransition = {
     // type: 'spring',
     // damping: 5,
     // stiffness: 10,
-    duration: vennAnimationTime-2,
-    ease: [0.3, 0.2, 0.1, 0.5]
-  }
+    duration: vennAnimationTime - 2,
+    ease: [0.3, 0.2, 0.1, 0.5],
+  };
   let circDiameter = 150;
   let startAway = 100;
   let meStartAway = 150;
@@ -134,11 +144,41 @@ const VennGuffin = () => {
 
   return (
     <div className={`venn-diagram`} onClick={() => setAnimate(true)}>
-      <Circle className="circle-1" hide={hide} text="Software" onClick={() => setHide(!hide)} animated={animate}/>
-      <Circle className="circle-2" hide={hide} text="ML" onClick={() => setHide(!hide)} animated={animate}/>
-      <Circle className="circle-4" hide={hide} text="Art" onClick={() => setHide(!hide)} animated={animate}/>
-      <Circle className="circle-5" hide={hide} text="Design" onClick={() => setHide(!hide)} animated={animate}/>
-      <Circle className="circle-3" hide={hide} text="Application" onClick={() => setHide(!hide)} animated={animate}/>
+      <Circle
+        className="circle-1"
+        hide={hide}
+        text="Software"
+        onClick={() => setHide(!hide)}
+        animated={animate}
+      />
+      <Circle
+        className="circle-2"
+        hide={hide}
+        text="ML"
+        onClick={() => setHide(!hide)}
+        animated={animate}
+      />
+      <Circle
+        className="circle-4"
+        hide={hide}
+        text="Art"
+        onClick={() => setHide(!hide)}
+        animated={animate}
+      />
+      <Circle
+        className="circle-5"
+        hide={hide}
+        text="Design"
+        onClick={() => setHide(!hide)}
+        animated={animate}
+      />
+      <Circle
+        className="circle-3"
+        hide={hide}
+        text="Application"
+        onClick={() => setHide(!hide)}
+        animated={animate}
+      />
 
       {/* <motion.div
         className="circle circle-3"
@@ -152,14 +192,14 @@ const VennGuffin = () => {
         <div className="glow" />
       </motion.div> */}
     </div>
-  )
-}
+  );
+};
 
 function McGuffin() {
   return (
-      <div className="mcguffin">
-        <VennGuffin />
-      </div>
+    <div className="mcguffin">
+      <VennGuffin />
+    </div>
   );
 }
 

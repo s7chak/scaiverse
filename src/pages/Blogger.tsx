@@ -16,8 +16,8 @@ function FadeInWhenVisible({ children }) {
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-      transition={{ duration: 2 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 29 }}
+      transition={{ duration: 1.2 }}
     >
       {children}
     </motion.div>
@@ -59,7 +59,7 @@ export const Blogger = () => {
     <div id={theme} className="scblogging is-medium">
       <div className="main-container">
         <div className="scblogheader">
-        <FadeInWhenVisible>
+          <FadeInWhenVisible>
             <span
               className="general-header"
               onClick={() => setShowPostContainer(false)}

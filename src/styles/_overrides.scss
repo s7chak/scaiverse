@@ -165,6 +165,8 @@ ol {
 
 .scblog-cards {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 3rem 0rem;
   inline-size: 50vw;
   margin-inline: auto;
@@ -182,9 +184,9 @@ ol {
   margin: 1rem 1rem;
   padding: 0.2rem 0rem;
   // border: 0.05em var(--accent) solid;
-  box-shadow: 0 0 0 0.08em var(--accent);
+  box-shadow: 0 0 0 0.09em var(--accent);
   transition: background-color 2s ease, box-shadow 0.8s ease;
-
+  height: 8em;
   // @include breakpoint(extra_small_devices) {
   //   width: 340px !important;
   // }
@@ -216,13 +218,13 @@ ol {
 .scblog-card:hover {
   // border: 0.7px var(--lighter) solid;
   cursor: url("../../public/assets/files/hand.svg"), pointer;
-  box-shadow: 0 0 0 0.08em var(--lighter), 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 0.09em var(--lighter), 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.3);
 }
 
 .scblog-post {
   border-radius: 1rem;
   margin: 1rem 1rem;
-  padding: 2rem 20rem;
+  padding: 2rem 16rem;
   // border: 0.5px var(--accent) solid;
   // transition: background-color 2s ease;
 
@@ -234,7 +236,7 @@ ol {
       font-weight: bold;
     }
     .scpost-date {
-      font-family: 'Trebuchet MS', sans-serif;
+      font-family: "Trebuchet MS", sans-serif;
       padding: 0 0.5em;
       font-size: 16px;
       font-weight: 200;

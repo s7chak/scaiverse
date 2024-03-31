@@ -1,6 +1,11 @@
 import { Link } from "react-scroll";
-import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from 'react-icons/fa';
-import { AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion"
+import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from "react-icons/fa";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import React, { useCallback, useEffect, useState } from "react";
 import Playthree from "../things/3dPlay";
 import GlowBall from "../things/GlowBall";
@@ -11,157 +16,209 @@ import McGuffin from "../things/Octahedron";
 import Particloid from "../things/Particloid";
 
 export const Introduction = () => {
-	// const x = useMotionValue(0)
-	// const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0])
-	const delays = [2,3.5,5.5,6];
-	const [width, setWidth] = useState<number>(window.innerWidth);
-	const isMobile = width <= 768;
-	const [isDove, setDove] = useState(false);
-	return (
-		<div>
-			<Playback />
-			{/* <Playthree /> */}
-			<section id="introduction" className="introduction section is-medium">
-				<div className="introduction-container container">
-					<div className="columns">
-						<div className="column is-12">
-							<br/><br/><br/>
-							<div className="content" style={{ textAlign: "center" }}>
-								<FadeInWhenVisible>
-								<motion.div 
-									// initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }} 
-									transition={{ease: "linear", duration: delays[0]}}
-									whileHover={{scale: 1.2, transition: { duration: 2 },}}
-									initial="hidden"
-      								whileInView={{scale: 1.05, transition: { duration: 2 },}}
-      								viewport={{ once: false }}>
-								<span className={`general-header name-text  ${isDove? "name-text colormode" : ""}`} onClick={() => setDove(!isDove)}>
-									This is my code canvas</span>
-								</motion.div>
-								<br/>
-								<motion.div initial={{ opacity: 0, y: 10}} animate={{ opacity: 1, y: 0}}>
-									<span>
-									A repository of some of my side projects, their source code, how it works, how they were built and the story behind them.</span>
-								</motion.div>
-								<br/><br/><br/><br/>
-								<motion.div style={{ display: 'inline-flex', justifyContent: 'center' }}
-									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}
-									className="domain-container">
-									<div className={`gbutton is-domain  ${isMobile? "is-burger" : ""}`}>
-									<Link to="software" smooth={true} style={{ textDecoration: 'none' }}> 
-											<p className="reg-text">Software</p>
-										</Link>
-									</div> 
-									<div className={`gbutton is-domain  ${isMobile? "is-burger" : ""}`}>
-									<Link to="machine-learning" smooth={true} style={{ textDecoration: 'none' }}> 
-										<p className="reg-text">Machine Learning</p>
-									</Link>	
-									</div>
-								</motion.div>
-								</FadeInWhenVisible>
-								{/* <FadeInWhenVisible>
-								<motion.div style={{ display: 'flex', justifyContent: 'center' }}
-									initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ease: "linear", duration: delays[3] - delays[2], delay: delays[3]}}>
-									<div style={{ display: 'flex', alignItems: 'center' }}>
-										<div className="button" style={{"width":"141px"}}>
-										<a href="assets/files/Resume.pdf" rel="noreferrer" download="Resume_Subhayu_Chakravarty.pdf">
-										<FaCloudDownloadAlt size={20} style={{ marginRight: '7px'}} /> Résumé
-										</a>
-										</div>
-									</div>
-									
-									<div style={{ display: 'flex', alignItems: 'center' }}>
-										<div className="button" style={{"width":"141px"}}>
-										<FaLinkedin size={20} style={{ marginRight: '7px' }} />
-										<a href="https://www.linkedin.com/in/subhayuchakravarty" target="_blank" rel="noopener noreferrer"> LinkedIn
-										</a>
-										</div>
-									</div>
-									<div style={{ display: 'flex', alignItems: 'center' }}>
-										<div className="button" style={{"width":"142px"}}>
-										<FaGithub size={20} style={{ marginRight: '7px' }} />
-										<a href="https://github.com/s7chak" rel="noopener noreferrer">
-											GitHub
-										</a>
-										</div>
-									</div>
-								</motion.div>
-								</FadeInWhenVisible> */}
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-	);
+  // const x = useMotionValue(0)
+  // const opacity = useTransform(x, [-100, 0, 100], [0, 1, 0])
+  const delays = [2, 3.5, 5.5, 6];
+  const [width, setWidth] = useState<number>(window.innerWidth);
+  const isMobile = width <= 768;
+  const [isDove, setDove] = useState(false);
+  return (
+    <div>
+      <Playback />
+      {/* <Playthree /> */}
+      <section id="introduction" className="introduction section is-medium">
+        <div className="introduction-container container">
+          <div className="columns">
+            <div className="column is-12">
+              <br />
+              <br />
+              <br />
+              <div className="content" style={{ textAlign: "center" }}>
+                <FadeInWhenVisible>
+                  <motion.div
+                    // initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }}
+                    transition={{ ease: "linear", duration: delays[0] }}
+                    whileHover={{ scale: 1.2, transition: { duration: 2 } }}
+                    initial="hidden"
+                    whileInView={{ scale: 1.05, transition: { duration: 2 } }}
+                    viewport={{ once: false }}
+                  >
+                    <span
+                      className={`general-header name-text  ${
+                        isDove ? "name-text colormode" : ""
+                      }`}
+                      onClick={() => setDove(!isDove)}
+                    >
+                      This is my code canvas
+                    </span>
+                  </motion.div>
+                  <br />
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <span>
+                      A repository of some of my side projects, their source
+                      code, how it works, how they were built and the story
+                      behind them.
+                    </span>
+                  </motion.div>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <motion.div
+                    style={{ display: "inline-flex", justifyContent: "center" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      ease: "linear",
+                      duration: delays[3] - delays[2],
+                      delay: delays[3],
+                    }}
+                    className="domain-container"
+                  >
+                    <div
+                      className={`gbutton is-domain  ${
+                        isMobile ? "is-burger" : ""
+                      }`}
+                    >
+                      <Link
+                        to="software"
+                        smooth={true}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <p className="reg-text">Software</p>
+                      </Link>
+                    </div>
+                    <div
+                      className={`gbutton is-domain  ${
+                        isMobile ? "is-burger" : ""
+                      }`}
+                    >
+                      <Link
+                        to="machine-learning"
+                        smooth={true}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <p className="reg-text">Machine Learning</p>
+                      </Link>
+                    </div>
+                  </motion.div>
+                </FadeInWhenVisible>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 function multiply(no: number) {
-	console.log(no.toString())
-	return <motion.div className="miniball"
-			animate={{ opacity:1, x: 0, y: 0, '--rotate': '60deg'} as any} 
-			transition={{ease: "linear", duration: 4, delay: 1}}
-			></motion.div>
+  console.log(no.toString());
+  return (
+    <motion.div
+      className="miniball"
+      animate={{ opacity: 1, x: 0, y: 0, "--rotate": "60deg" } as any}
+      transition={{ ease: "linear", duration: 4, delay: 1 }}
+    ></motion.div>
+  );
 }
 
-
 function Playback() {
-	const [isActive, setIsActive] = React.useState(false);
-	const mountainCount = 24;
-	// const mountains = Array.from({ length: mountainCount }, (_, index) => (
-	// 	<div key={index} className="mountain" />
-	// ));
-	// const [showDefinition, setShow] = useState(false);
-	const [isWelcome, setIsWelcome] = useState(false);
-	const [isDove, setDove] = useState(false);
-	// const transition = { duration: 6, yoyo: Infinity, ease: "easeInOut" };
-	const miniTransition = { duration: 9, yoyo: Infinity, ease: "easeInOut" };
-	var date = new Date();
-	const percentDay = (date.getHours()*100 / 24).toString();
-	const [width, setWidth] = useState<number>(window.innerWidth);
-	const isMobile = width <= 768;
-	let widthDive = isMobile? '80vw' : 'auto';
-	// setTimeout(() => {
-	// 	setIsWelcome(false);
-	// 	}, 5000);
+  const [isActive, setIsActive] = React.useState(false);
+  const mountainCount = 24;
+  // const mountains = Array.from({ length: mountainCount }, (_, index) => (
+  // 	<div key={index} className="mountain" />
+  // ));
+  // const [showDefinition, setShow] = useState(false);
+  const [isWelcome, setIsWelcome] = useState(false);
+  const [isDove, setDove] = useState(false);
+  const miniTransition = { duration: 9, yoyo: Infinity, ease: "easeInOut" };
+  var date = new Date();
+  const percentDay = ((date.getHours() * 100) / 24).toString();
+  const [width, setWidth] = useState<number>(window.innerWidth);
+  const isMobile = width <= 768;
+  let widthDive = isMobile ? "80vw" : "auto";
 
-	return (
-	  <section className="playback" id="play_home">
-		{/* <div className="play-container">
+  return (
+    <section className="playback" id="play_home">
+      {/* <div className="play-container">
 			{mountains}
 		</div> */}
-		<div className="mcguffin-container">
-			<McGuffin />
-		</div>
-		<br/>
-		<div className="play-intro-container">
-			<div className="typewriter-container">
-				<EraseTyping className="typewriter" eraseTimeout={2} eraseTill={6}>Hello World!</EraseTyping>
-				<motion.div
-					className="typewriter-cursor"
-					onMouseEnter={() => setDove(true)}
-					></motion.div>
-			</div>
-			<motion.div initial={{ opacity: 0, y: 50}} animate={{ opacity: 0.9, y: 40}} transition={{ease: "linear", duration: 2, delay: 4.2}}>
-				<span className="header">I am <span className={`name-text  ${isDove? "name-text colormode" : ""}`} onClick={() => setDove(!isDove)}>Subhayu</span></span>
-			</motion.div>
-			<br/><br/>
-			<IntroText />
-			<br/>
-			<><br/><br/></>
-			<div style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
-				<motion.div initial={{ opacity: 0, }} animate={{ opacity: 1,}} transition={{ease: "linear", duration: 2, delay: 6}}>
-					<div className={`gbutton ${isMobile?'is-burger':'' }`}>
-						<Link to="introduction" smooth={true} onClick={() => setDove(true)}><span className="gbutton-text">Let's dive in</span></Link></div>
-				</motion.div>
-			</div>
+      <div className="mcguffin-container">
+        <McGuffin />
+      </div>
+      <br />
+      <div className="play-intro-container">
+        <div className="typewriter-container">
+          <EraseTyping className="typewriter" eraseTimeout={2} eraseTill={6}>
+            Hello World!
+          </EraseTyping>
+          <motion.div
+            className="typewriter-cursor"
+            onMouseEnter={() => setDove(true)}
+          ></motion.div>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 0.9, y: 40 }}
+          transition={{ ease: "linear", duration: 2, delay: 4 }}
+        >
+          <span className="header">
+            I am{" "}
+            <span
+              className={`name-text  ${isDove ? "name-text colormode" : ""}`}
+              onClick={() => setDove(!isDove)}
+            >
+              Subhayu
+            </span>
+          </span>
+        </motion.div>
+        <br />
+        <br />
+        <IntroText />
+        <br />
+        <>
+          <br />
+          <br />
+        </>
+        <div
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "linear", duration: 2, delay: 6 }}
+          >
+            <div className={`gbutton ${isMobile ? "is-burger" : ""}`}>
+              <Link
+                to="introduction"
+                smooth={true}
+                onClick={() => setDove(true)}
+              >
+                <span className="gbutton-text">Let's dive in</span>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
 
-			{isDove ? (
-				<motion.div initial={{ opacity: 0, y: 0	}} animate={{ opacity: 1, y: 0}} transition={{ease: "linear", duration: 1}}><GlowBall /></motion.div>
-				) 
-			: null}
+        {isDove ? (
+          <motion.div
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ease: "linear", duration: 1 }}
+          >
+            <GlowBall />
+          </motion.div>
+        ) : null}
 
-			{/* <motion.div 
+        {/* <motion.div 
 				initial={{ opacity: 0, x:0, y: 0, offsetDistance: "0%" }}
         		animate={{ opacity: 1, offsetDistance: percentDay+"%"}}
 				transition={transition}
@@ -170,10 +227,8 @@ function Playback() {
 				className="ball"
 				onClick={() => setDove(true)}
 			/> */}
-
-
-		</div>
-		{/* <div>{ showDefinition ? 
+      </div>
+      {/* <div>{ showDefinition ? 
 		<motion.div
 				initial={{ opacity: 0, offsetDistance: "0%" }}
         		animate={{ offsetDistance: "100%", opacity: 0.9}}
@@ -184,150 +239,174 @@ function Playback() {
 		<div>
 			{ showDefinition ? <MyDefinition /> : null }
 		</div> */}
-	  </section>
-	);
-  }
+    </section>
+  );
+}
 
-  const OnlyTyping = ({ className, children }) => {
-	const [text, setText] = useState("");
-  
-	useEffect(() => {
-	  let currentIndex = 0;
-	  const timeout = setInterval(() => {
-		if (currentIndex < children.length) {
-		  setText((prevText) => prevText + children[currentIndex]);
-		  currentIndex++;
-		} else {
-		  clearInterval(timeout);
-		}
-	  }, 100);
-  
-	  return () => clearInterval(timeout);
-	}, [children]);
-  
-	return <span className={className}>{text}</span>;
-  };
+const OnlyTyping = ({ className, children }) => {
+  const [text, setText] = useState("");
 
+  useEffect(() => {
+    let currentIndex = 0;
+    const timeout = setInterval(() => {
+      if (currentIndex < children.length) {
+        setText((prevText) => prevText + children[currentIndex]);
+        currentIndex++;
+      } else {
+        clearInterval(timeout);
+      }
+    }, 100);
 
+    return () => clearInterval(timeout);
+  }, [children]);
 
-  
-  const EraseTyping = ({ className, children, eraseTimeout, eraseTill }) => {
-	const [text, setText] = useState("");
-  
-	useEffect(() => {
-	  let currentIndex = 0;
-	  let eraseTimer;
-	  let typeTimeout;
-    
-      const startTyping = () => {
-		typeTimeout = setInterval(() => {
-			if (currentIndex < children.length) {
-			setText((prevText) => prevText + children[currentIndex]);
-			currentIndex++;
-			} else {
-			clearInterval(typeTimeout);
-			if (eraseTimeout) {
-				eraseTimer = setTimeout(() => {
-				eraseText();
-				}, eraseTimeout * 1000);
-			}
-			}
-		}, 100);
-		};
+  return <span className={className}>{text}</span>;
+};
 
-	  const eraseText = () => {
-		clearInterval(eraseTimer);
-		let eraseIndex = eraseTill >= children.length ? children.length - 1 : eraseTill;
-		// let eraseIndex = children.length - 1;
-		const eraseTimeout = setInterval(() => {
-		  if (eraseIndex >= 0) {
-			setText((prevText) => prevText.slice(0, -1));
-			eraseIndex--;
-		  } else {
-			clearInterval(eraseTimeout);
-		  }
-		}, 100);
-	  };
-  
-	  const typingTimeout = setTimeout(() => {
-		startTyping();
-	  }, 4200);
-  
-	  return () => {
-		clearTimeout(typingTimeout);
-		clearInterval(typeTimeout);
-		clearTimeout(eraseTimer);
-	  };
-	}, [children, eraseTimeout, eraseTill]);
-  
-	return <span className={className}>{text}</span>;
-  };
+const EraseTyping = ({ className, children, eraseTimeout, eraseTill }) => {
+  const [text, setText] = useState("");
 
-  function FadeInWhenVisible({ children }) {
-	return (
-	  <motion.div
-		initial="hidden"
-		whileInView="visible"
-		viewport={{ once: true }}
-		transition={{ duration: 2 }}
-		variants={{
-		  visible: { opacity: 1, scale: 1 },
-		  hidden: { opacity: 0, scale: 1 }
-		}}
-	  >
-		{children}
-	  </motion.div>
-	);
-  }
+  useEffect(() => {
+    let currentIndex = 0;
+    let eraseTimer;
+    let typeTimeout;
 
-  function IntroText() {
-	const roles = ['technologist', 'developer','engineer','problem solver','lifelong learner', 'designer','coder','artist'];
-	const vowelRegex = '^[aieouAIEOU].*';
-	const [newName, setnewName] = useState("");
-    const shuffle = useCallback(() => {
-        const index = Math.floor(Math.random() * roles.length);
-		let prefix = roles[index].match(vowelRegex)?'An' : 'A';
-        setnewName(prefix+' '+roles[index]);
-    }, []);
+    const startTyping = () => {
+      typeTimeout = setInterval(() => {
+        if (currentIndex < children.length) {
+          setText((prevText) => prevText + children[currentIndex]);
+          currentIndex++;
+        } else {
+          clearInterval(typeTimeout);
+          if (eraseTimeout) {
+            eraseTimer = setTimeout(() => {
+              eraseText();
+            }, eraseTimeout * 1000);
+          }
+        }
+      }, 100);
+    };
 
-    useEffect(() => {
-        const intervalID = setInterval(shuffle, 4000);
-        return () => clearInterval(intervalID);
-    }, [shuffle])
+    const eraseText = () => {
+      clearInterval(eraseTimer);
+      let eraseIndex =
+        eraseTill >= children.length ? children.length - 1 : eraseTill;
+      // let eraseIndex = children.length - 1;
+      const eraseTimeout = setInterval(() => {
+        if (eraseIndex >= 0) {
+          setText((prevText) => prevText.slice(0, -1));
+          eraseIndex--;
+        } else {
+          clearInterval(eraseTimeout);
+        }
+      }, 100);
+    };
 
+    const typingTimeout = setTimeout(() => {
+      startTyping();
+    }, 4200);
 
-	return (
-		<FadeInWhenVisible>
-			<motion.div className="introtext" initial={{opacity:0}} animate={{opacity:1}} transition={{delay: 4.5}}>
-					<motion.span className={"acc-text"}>{newName}</motion.span> at the nexus of big data, machine learning, software and finance, making sense of the dataverse one line of code at a time.
-			</motion.div>
-		</FadeInWhenVisible>);
-  }
+    return () => {
+      clearTimeout(typingTimeout);
+      clearInterval(typeTimeout);
+      clearTimeout(eraseTimer);
+    };
+  }, [children, eraseTimeout, eraseTill]);
 
+  return <span className={className}>{text}</span>;
+};
 
+function FadeInWhenVisible({ children }) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 2 }}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 1 },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
-  function MyDefinition() {
-	const roles = ['developer','engineer','problem solver','designer','coder','artist'];
-	const vowelRegex = '^[aieouAIEOU].*';
-	const [newName, setnewName] = useState("");
-    const shuffle = useCallback(() => {
-        const index = Math.floor(Math.random() * roles.length);
-		let prefix = roles[index].match(vowelRegex)?'an' : 'a';
-        setnewName(prefix+' '+roles[index]);
-    }, []);
+function IntroText() {
+  const roles = [
+    "technologist",
+    "developer",
+    "engineer",
+    "problem solver",
+    "lifelong learner",
+    "designer",
+    "coder",
+    "artist",
+  ];
+  const vowelRegex = "^[aieouAIEOU].*";
+  const [newName, setnewName] = useState("");
+  const shuffle = useCallback(() => {
+    const index = Math.floor(Math.random() * roles.length);
+    let prefix = roles[index].match(vowelRegex) ? "An" : "A";
+    setnewName(prefix + " " + roles[index]);
+  }, []);
 
-    useEffect(() => {
-        const intervalID = setInterval(shuffle, 3000);
-        return () => clearInterval(intervalID);
-    }, [shuffle])
+  useEffect(() => {
+    const intervalID = setInterval(shuffle, 4000);
+    return () => clearInterval(intervalID);
+  }, [shuffle]);
 
+  return (
+    <FadeInWhenVisible>
+      <motion.div
+        className="introtext"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 4.5 }}
+      >
+        <motion.span className={"acc-text"}>{newName}</motion.span> at the nexus
+        of big data, machine learning, software and finance, making sense of the
+        dataverse one line of code at a time.
+      </motion.div>
+    </FadeInWhenVisible>
+  );
+}
 
+function MyDefinition() {
+  const roles = [
+    "developer",
+    "engineer",
+    "problem solver",
+    "designer",
+    "coder",
+    "artist",
+  ];
+  const vowelRegex = "^[aieouAIEOU].*";
+  const [newName, setnewName] = useState("");
+  const shuffle = useCallback(() => {
+    const index = Math.floor(Math.random() * roles.length);
+    let prefix = roles[index].match(vowelRegex) ? "an" : "a";
+    setnewName(prefix + " " + roles[index]);
+  }, []);
 
-	return <FadeInWhenVisible>
-		<motion.div initial={{y:240}} transition={{ease: "linear", duration: 2}}>
-			<div className="definitions">I am <span className="blue-text">{newName}</span></div>
-		</motion.div>
-	</FadeInWhenVisible>
-  }
-  
+  useEffect(() => {
+    const intervalID = setInterval(shuffle, 3000);
+    return () => clearInterval(intervalID);
+  }, [shuffle]);
+
+  return (
+    <FadeInWhenVisible>
+      <motion.div
+        initial={{ y: 240 }}
+        transition={{ ease: "linear", duration: 2 }}
+      >
+        <div className="definitions">
+          I am <span className="blue-text">{newName}</span>
+        </div>
+      </motion.div>
+    </FadeInWhenVisible>
+  );
+}
+
 export default Introduction;
