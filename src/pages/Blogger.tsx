@@ -110,16 +110,16 @@ export const Blogger = () => {
       >
         {Object.keys(scblogcards).map((key) => (
           <>
-            {/* <Link to={`/blogs/${key}`}>
+            <Link to={`/blogs/${key}`}>
               <SCBlogCard id={key} />
-            </Link> */}
-            {/* <Link to={`/blogs/${key}`}>View Blog Post</Link> */}
+            </Link>
+            {/* <Link to={`/blogs/${key}`}>View Blog Post</Link>
             <SCBlogCard
               id={key}
               onClick={() => {
                 setPost(key, true);
-              }}
-            />
+              }} 
+            />*/}
           </>
         ))}
       </div>
