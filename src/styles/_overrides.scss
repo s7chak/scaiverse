@@ -228,13 +228,14 @@ ol {
   // transition: background-color 2s ease;
 
   .scblog-post-content {
-    // font-family: Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     .scpost-title {
       padding: 0 0.3em;
       font-size: 30px;
       font-weight: bold;
     }
     .scpost-date {
+      font-family: 'Trebuchet MS', sans-serif;
       padding: 0 0.5em;
       font-size: 16px;
       font-weight: 200;
@@ -246,7 +247,6 @@ ol {
     }
   }
 }
-
 .scblog-post.mobile {
   padding: 2rem 1rem;
   .scblog-post-content {
