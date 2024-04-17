@@ -173,6 +173,7 @@ ol {
   width: 90vw;
 }
 .scblog-cards.mobile {
+  flex-direction: column;
   inline-size: 98vw;
 }
 .scblogbutton {
@@ -214,6 +215,9 @@ ol {
       height: 2em;
     }
   }
+}
+.scblog-card.mobile {
+  width: 70vw;
 }
 .scblog-card:hover {
   // border: 0.7px var(--lighter) solid;

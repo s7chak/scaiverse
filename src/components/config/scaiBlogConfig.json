@@ -2,18 +2,21 @@
   "Time_Series": {
     "title": "Time Series Glossary",
     "url": "",
+    "img": "https://cdn.pixabay.com/photo/2016/03/31/14/48/clock-1292829_960_720.png",
     "date": "April 15, 2024",
     "others": [""]
   },
   "Levels_Thinking": {
     "title": "Integrated Thinking",
     "url": "",
+    "img": "https://cdn.pixabay.com/photo/2012/04/28/19/06/stairs-44071_1280.png",
     "date": "March 28, 2024",
     "others": [""]
   },
   "Learners_Manifesto": {
     "title": "The Learner's Manifesto",
     "url": "",
+    "img": "https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927_1280.png",
     "date": "March 20, 2024",
     "others": [""]
   }
