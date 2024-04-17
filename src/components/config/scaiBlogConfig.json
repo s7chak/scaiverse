@@ -1,14 +1,20 @@
 {
-  "Learners_Manifesto": {
-    "title": "The Learner's Manifesto",
+  "Time_Series": {
+    "title": "Time Series Glossary",
     "url": "",
-    "date": "March 20, 2024",
+    "date": "April 15, 2024",
     "others": [""]
   },
   "Levels_Thinking": {
     "title": "Integrated Thinking",
     "url": "",
     "date": "March 28, 2024",
+    "others": [""]
+  },
+  "Learners_Manifesto": {
+    "title": "The Learner's Manifesto",
+    "url": "",
+    "date": "March 20, 2024",
     "others": [""]
   }
 }
