@@ -1,4 +1,18 @@
 {
+  "AI_Two_Ways": {
+    "title": "AI This, AI That",
+    "url": "",
+    "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2017%2F03%2F31%2F23%2F11%2Frobot-2192617_1280.png&f=1&nofb=1&ipt=f96e83b1f525990c1355d36e6d0b3609d2102cfbfef11e803dfe7644d8765e17&ipo=images",
+    "date": "May 10, 2024",
+    "others": [""]
+  },
+  "AI_Definitions": {
+    "title": "AI Definitions",
+    "url": "",
+    "img": "https://png.pngtree.com/png-vector/20191003/ourlarge/pngtree-robot-icon-isolated-on-abstract-background-png-image_1778885.jpg",
+    "date": "May 1, 2024",
+    "others": [""]
+  },
   "Time_Series": {
     "title": "Time Series Glossary",
     "url": "",
