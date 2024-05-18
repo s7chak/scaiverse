@@ -5,10 +5,10 @@ import React, { useState } from "react";
 
 export const SCBlogCard = ({
   id,
-  // onClick,
-}: {
+}: // onClick,
+{
   id: string;
-//   onClick: () => void;
+  //   onClick: () => void;
 }) => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
@@ -29,7 +29,6 @@ export const SCBlogCard = ({
           <div className="scblog-title">{title}</div>
           <div className="scblog-date">{date}</div>
         </div>
-        {/* <div className="scblog-img">{img}</div> */}
         {img && <img src={img} alt={title} className="scblog-img" />}
       </div>
     </div>

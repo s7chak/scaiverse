@@ -184,16 +184,13 @@ ol {
   border-radius: 0.8rem;
   margin: 1rem 1rem;
   padding: 0.2rem 0rem;
-  // border: 0.05em var(--accent) solid;
   box-shadow: 0 0 0 0.09em var(--accent);
   transition: background-color 2s ease, box-shadow 0.8s ease;
   height: auto;
-  // @include breakpoint(extra_small_devices) {
-  //   width: 340px !important;
-  // }
   .scblog-card-content {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding-right: 2em;
     .scblog-card-bar {
@@ -213,6 +210,7 @@ ol {
     .scblog-img {
       width: 2em;
       height: 2em;
+      padding: 2px;
     }
   }
 }
