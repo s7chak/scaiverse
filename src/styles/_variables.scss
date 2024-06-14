@@ -392,8 +392,9 @@ $radius: 10px;
 }
 .recombuttonpanel {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
+  padding-left: 20px;
 }
 .recominput {
   width: 40%;
@@ -419,7 +420,7 @@ $radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0rem;
+  padding: 3rem;
   inline-size: 50vw;
   margin-inline: auto;
   width: 90vw;
@@ -432,7 +433,7 @@ $radius: 10px;
   color: var(--lighter) !important;
 }
 .recom-card {
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
   border-radius: 0.8rem;
   margin: 1rem 1rem;
   padding: 1rem 1rem;
@@ -470,7 +471,7 @@ $radius: 10px;
   width: 70vw;
 }
 .recom-card:hover {
-  background-color: var(--background-secondary-alt);
+  background-color: var(--background-primary);
 }
 
 .description {

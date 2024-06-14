@@ -24,6 +24,11 @@ function FadeInWhenVisible({ children }) {
     </motion.div>
   );
 }
+let envs = {
+  local: "http://127.0.0.1:5000",
+  prod: "http://127.0.0.1:5000",
+};
+let activeEnv = "prod";
 
 export const Recoms = () => {
   const [theme, setTheme] = useState("dark");
@@ -39,14 +44,13 @@ export const Recoms = () => {
   };
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:5000/search`, {
+      const response = await axios.get(envs[activeEnv] + `/search`, {
         params: {
           type: type,
           keywords: keywords,
           people: people,
         },
       });
-      console.log(response.data);
       setRecommendations(response.data);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
