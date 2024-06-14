@@ -375,6 +375,110 @@ $radius: 10px;
   }
 }
 
+.recompanel {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+.recom-count {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.recomsearchpanel {
+  display: flex;
+  flex-direction: row;
+  margin: 1em;
+}
+.recombuttonpanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recominput {
+  width: 40%;
+  border: 1px solid hsl(219, 92%, 85%);
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.recomselect {
+  width: 20%;
+  font-size: 15px;
+  padding-top: 20px;
+  margin-left: 1em;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid hsl(219, 92%, 85%);
+  box-sizing: border-box;
+}
+
+.recom-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0rem;
+  inline-size: 50vw;
+  margin-inline: auto;
+  width: 90vw;
+}
+.recom-cards.mobile {
+  flex-direction: column;
+  inline-size: 98vw;
+}
+.recom {
+  color: var(--lighter) !important;
+}
+.recom-card {
+  background-color: var(--background-primary);
+  border-radius: 0.8rem;
+  margin: 1rem 1rem;
+  padding: 1rem 1rem;
+  box-shadow: 0 0 0 0.09em var(--accent);
+  transition: background-color 2s ease, box-shadow 0.8s ease;
+  height: auto;
+  .recom-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2em;
+    .recom-card-bar {
+      display: inline-flex;
+      flex-direction: column;
+      padding: 0 0.8em;
+    }
+    .recom-title {
+      padding: 0.5em;
+      font-size: 19px;
+      font-weight: bold;
+    }
+    .recom-date {
+      padding: 1em;
+      font-size: 12px;
+    }
+    .recom-img {
+      width: 2em;
+      height: 2em;
+      padding: 2px;
+    }
+  }
+}
+.recom-card.mobile {
+  width: 70vw;
+}
+.recom-card:hover {
+  background-color: var(--background-secondary-alt);
+}
+
+.description {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
 .form-parent {
   display: flex;
   flex-direction: column;

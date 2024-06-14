@@ -12,6 +12,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Blogger from "./pages/Blogger";
 import { SCBlogPosting } from "./components/SCBlogPosting";
+import Recoms from "./pages/Recoms";
 let env = process.env.NODE_ENV;
 let baseURL = process.env.PUBLIC_URL;
 console.log(env);
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path="/" element={<App />} />
       <Route path="/blogs" element={<Blogger />}></Route>
       <Route path="/blogs/:id" element={<SCBlogPosting />}></Route>
+      <Route path="/recoms" element={<Recoms />}></Route>
       <Route path="*" element={<NoMatch />} />
     </Routes>
   </Router>,
