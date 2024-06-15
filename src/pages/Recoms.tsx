@@ -26,7 +26,7 @@ function FadeInWhenVisible({ children }) {
 }
 let envs = {
   local: "http://127.0.0.1:5000",
-  prod: "http://127.0.0.1:5000",
+  prod: "https://recomapi-auoic2h3pa-uc.a.run.app",
 };
 let activeEnv = "prod";
 
