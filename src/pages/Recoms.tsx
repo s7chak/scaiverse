@@ -39,11 +39,15 @@ export const Recoms = () => {
   const [people, setPeople] = useState("");
   const [recommendations, setRecommendations] = useState([]);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [searchDone, setSearchDone] = useState(false);
+
   const toggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index); // Toggle expanded state
   };
   const handleSearch = async () => {
     try {
+      setLoading(true);
       const response = await axios.get(envs[activeEnv] + `/search`, {
         params: {
           type: type,
@@ -52,8 +56,11 @@ export const Recoms = () => {
         },
       });
       setRecommendations(response.data);
+      setSearchDone(true);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -136,7 +143,9 @@ export const Recoms = () => {
         {recommendations.length > 0 && <h2>Books: {recommendations.length}</h2>}
       </div>
       <div className="recompanel">
-        {recommendations.length > 0 ? (
+        {loading ? (
+          <div className="loading-indicator">...Loading...</div>
+        ) : recommendations.length > 0 ? (
           recommendations.map((rec, index) => (
             <div
               key={index}
@@ -153,6 +162,8 @@ export const Recoms = () => {
               )}
             </div>
           ))
+        ) : searchDone ? (
+          <p>No recommendations found.</p>
         ) : (
           <p>...</p>
         )}
