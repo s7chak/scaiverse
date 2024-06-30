@@ -378,7 +378,6 @@ $radius: 10px;
 .recompanel {
   display: flex;
   flex-direction: column;
-  margin: 1em;
 }
 .recom-count {
   text-align: center;
@@ -392,17 +391,38 @@ $radius: 10px;
 }
 .recombuttonpanel {
   display: flex;
+  flex-direction: column;
   align-items: left;
   justify-content: left;
   padding-left: 20px;
 }
+.recombutton {
+  width: 200px;
+  color: var(--ligter);
+  margin-right: 1em;
+  margin-top: 10px;
+  border: var(--lighter) 0.12em solid;
+}
 .recominput {
+  font-size: 15px;
   width: 40%;
   border: 1px solid hsl(219, 92%, 85%);
   border-radius: 3px;
   box-sizing: border-box;
   padding: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+.recomchangeinput {
+  font-size: 16px;
+  width: 50vw;
+  color: white;
+  background-color: var(--background-secondary);
+  border: 1px solid hsl(219, 92%, 85%);
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 2px;
   margin-bottom: 10px;
 }
 .recomselect {
@@ -423,7 +443,6 @@ $radius: 10px;
   padding: 3rem;
   inline-size: 50vw;
   margin-inline: auto;
-  width: 90vw;
 }
 .recom-cards.mobile {
   flex-direction: column;
@@ -433,19 +452,19 @@ $radius: 10px;
   color: var(--lighter) !important;
 }
 .recom-card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-secondary);
   border-radius: 0.8rem;
   margin: 1rem 1rem;
   padding: 1rem 1rem;
   box-shadow: 0 0 0 0.09em var(--accent);
   transition: background-color 2s ease, box-shadow 0.8s ease;
-  height: auto;
   .recom-card-content {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-right: 2em;
+    height: auto;
     .recom-card-bar {
       display: inline-flex;
       flex-direction: column;
@@ -473,8 +492,24 @@ $radius: 10px;
 .recom-card:hover {
   background-color: var(--background-primary);
 }
+.recomdesctext {
+  font-size: 17px;
+  padding: 10px;
+  color: white;
+  background-color: var(--background-secondary);
+  letter-spacing: 2px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-color: var(--lighter);
+  height: auto;
+  min-height: 100px;
+  :focus {
+    border-color: hsl(233, 100%, 84%);
+  }
+}
 
-.description {
+.recomdescfield {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
