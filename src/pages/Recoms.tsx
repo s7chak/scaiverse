@@ -284,6 +284,10 @@ export const Recoms = () => {
     }
   };
 
+  useEffect(() => {
+    clearAddFields();
+  }, [type]);
+
   const clearAddFields = () => {
     setNewTitle("");
     setNewPeople("");
@@ -291,6 +295,8 @@ export const Recoms = () => {
     setNewSummary("");
     setNewDate("");
     setSaveStatus("");
+    setTotalCount(0);
+    setPeople("");
     setRecommendations([]);
     setNewList([]);
   };
@@ -336,9 +342,6 @@ export const Recoms = () => {
           <option value="papers">Papers</option>
           <option value="movies" disabled>
             Movies
-          </option>
-          <option value="tvshows" disabled>
-            TV Shows
           </option>
         </select>
         <div className="recomsearchpanel">
@@ -393,27 +396,32 @@ export const Recoms = () => {
         </div>
       </div>
 
-      <div
-        className="recom-count"
-        style={{ textAlign: "center", margin: "20px 0" }}
-      >
-        {totalCount > 0 && <h2>Total Books: {totalCount}</h2>}
-        {saveStatus != "" && (
-          <div
-            className="recom-count"
-            style={{ textAlign: "center", margin: "20px 0" }}
-          >
-            {<h2>{saveStatus}</h2>}
-          </div>
-        )}
-      </div>
-
-      <div
-        className="recom-count"
-        style={{ textAlign: "center", margin: "20px 0" }}
-      >
-        {recommendations.length > 0 && <h2>Books: {recommendations.length}</h2>}
-      </div>
+      {type == "books" && (
+        <div
+          className="recom-count"
+          style={{ textAlign: "center", margin: "20px 0" }}
+        >
+          {totalCount > 0 && <h2>Total Books: {totalCount}</h2>}
+          {saveStatus != "" && (
+            <div
+              className="recom-count"
+              style={{ textAlign: "center", margin: "20px 0" }}
+            >
+              {<h2>{saveStatus}</h2>}
+            </div>
+          )}
+        </div>
+      )}
+      {type == "books" && (
+        <div
+          className="recom-count"
+          style={{ textAlign: "center", margin: "20px 0" }}
+        >
+          {recommendations.length > 0 && (
+            <h2>Books: {recommendations.length}</h2>
+          )}
+        </div>
+      )}
       {type == "papers" && !!respapers && (
         <div
           className="recom-count"
@@ -432,14 +440,16 @@ export const Recoms = () => {
             onClick={() => toggleExpand(index)}
           >
             <h3>{rec["Title"]}</h3>
-            <h4>{rec["Link"]}</h4>
-            <button
+            <a href={rec.Link} target="_blank" rel="noopener noreferrer">
+              {rec.Link}
+            </a>
+            {/* <button
               className="gbutton recombutton"
               onClick={() => handlePaperClick(index)}
             >
-              {doubleClickIndex === index ? "Check Paper" : "DoubleClick"}
-            </button>
-            {expandedIndex === index && (
+              {doubleClickIndex === index ? "Check Paper" : "Double Click"}
+            </button> */}
+            {/* {expandedIndex === index && (
               <div className="recomdescfield">
                 <textarea
                   id="desc"
@@ -451,7 +461,7 @@ export const Recoms = () => {
                   style={{ width: "100%", height: "100%" }}
                 ></textarea>
               </div>
-            )}
+            )} */}
           </div>
         ))}
 
