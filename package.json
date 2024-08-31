@@ -23,7 +23,7 @@
   "dependencies": {
     "@primer/octicons-react": "^16.1.1",
     "bulma": "^0.9.4",
-    "webpack": "^5.86.0",
+    "webpack": "^5.94.0",
     "file-loader": "^6.2.0",
     "react": ">=18.0",
     "react-switch": "^7.0.0",
