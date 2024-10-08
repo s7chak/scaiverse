@@ -13,6 +13,7 @@
   #introduction {
     flex-direction: column;
     height: 100vh;
+    min-height: 800px;
     .introduction-container {
       .content {
         margin: 3rem auto 2rem auto;
@@ -78,14 +79,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
       transform: skewY(-2deg);
-
       h1 {
         color: inherit !important;
         font-size: 36px;
         font-weight: bold;
-
         align-items: center;
         margin-bottom: 1rem;
       }

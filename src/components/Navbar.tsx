@@ -5,6 +5,8 @@ import {
   FaBlog,
   FaCaretDown,
   FaCode,
+  FaCog,
+  FaCogs,
   FaCompass,
   FaDochub,
   FaEllipsisH,
@@ -268,6 +270,16 @@ export const Navbar = (props) => {
             >
               <FaPaperPlane size={18} style={{ marginRight: "0" }} />
             </Link>
+            {/* <Link
+              to={"/recoms"}
+              duration={2000}
+              smooth={true}
+              className="navbar-item"
+              onClick={() => setIsActive(false)}
+              data-tooltip="Tools"
+            >
+              <FaCog size={18} style={{ marginRight: "0" }} />
+            </Link> */}
           </motion.div>
         </div>
       )}

@@ -79,7 +79,7 @@ export const Introduction = () => {
                     className="domain-container"
                   >
                     <div
-                      className={`gbutton is-domain  ${
+                      className={`gbutton is-domain ${
                         isMobile ? "is-burger" : ""
                       }`}
                     >
@@ -88,11 +88,11 @@ export const Introduction = () => {
                         smooth={true}
                         style={{ textDecoration: "none" }}
                       >
-                        <p className="reg-text">Software</p>
+                        <p className="gbutton-text">Software</p>
                       </Link>
                     </div>
                     <div
-                      className={`gbutton is-domain  ${
+                      className={`gbutton is-domain ${
                         isMobile ? "is-burger" : ""
                       }`}
                     >
@@ -101,7 +101,7 @@ export const Introduction = () => {
                         smooth={true}
                         style={{ textDecoration: "none" }}
                       >
-                        <p className="reg-text">Machine Learning</p>
+                        <p className="gbutton-text">Machine Learning</p>
                       </Link>
                     </div>
                   </motion.div>

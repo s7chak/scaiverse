@@ -101,64 +101,31 @@ $radius: 10px;
   cursor: url("../../public/assets/files/hand.svg"), pointer;
   z-index: 1;
   border: currentColor 0.12em solid;
-  // transition: background-color 1s linear;
+}
+
+.gbutton.is-domain,
+.gbutton.is-domain.is-burger {
+  // align-items: center;
+  // justify-content: center;
+  margin: 10px;
 }
 
 .gbutton.is-domain {
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: auto;
   width: 20vw;
 }
+.gbutton.is-domain.is-burger {
+  display: inline-flex;
+  height: 70px;
+  width: 40vw;
+}
+
 .gbutton.is-mile {
   padding: 5px 20px;
   left: -1px;
   bottom: 10px;
 }
 
-.gbutton.is-domain.is-burger {
-  display: inline-flex;
-  align-items: center;
-  padding: auto;
-  margin: 10px;
-  height: 70px;
-  width: 40vw;
-}
-
-.gbutton.is-burger::before {
-  content: "";
-  opacity: 0.5;
-  z-index: -1;
-}
-.gbutton.is-burger:focus::before,
-.gbutton.is-burger:active::before {
-  content: "";
-  opacity: 1;
-  z-index: -1;
-}
-
-.gbutton.is-burger::after {
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-.gbutton-text {
-  color: var(--accent);
-  text-shadow: 0 0 0.1em currentColor, 0 0 0.02em white;
-  transition: color 1s linear;
-}
-.gbutton:hover .gbutton-text {
-  color: var(--lighter);
-}
-.gbutton:focus,
-.gbutton:hover {
-  border: currentColor 0.1em solid;
-  text-shadow: 0 0 0.2em currentColor;
-  z-index: 1;
-  opacity: 1;
-}
-
+.gbutton::before,
 .gbutton::after {
   content: "";
   position: absolute;
@@ -167,27 +134,15 @@ $radius: 10px;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 1;
-  transition: opacity 1s;
   z-index: -1;
-  background-color: var(--background-primary);
-  transition: background-color 10ms linear;
-  transition: opacity 10ms linear;
-}
-.gbutton:hover::after {
-  opacity: 0.8;
 }
 
 .gbutton::before {
-  content: "";
-  position: absolute;
-  border-radius: $radius;
   top: -0.015em;
   left: -0.02em;
   right: -0.02em;
   bottom: -0.015em;
   opacity: 0.3;
-  transition: opacity 200ms linear;
   background: linear-gradient(
     -45deg,
     var(--accent),
@@ -198,13 +153,47 @@ $radius: 10px;
   background-size: 200%;
   filter: blur(20px);
   animation: glow 3s linear infinite;
-  z-index: -1;
+  transition: opacity 200ms linear;
 }
 
 .gbutton:hover::before {
   opacity: 0.4;
-  border-radius: $radius;
-  z-index: -1;
+}
+
+.gbutton::after {
+  opacity: 1;
+  background-color: var(--background-primary);
+  transition: opacity 10ms linear, background-color 10ms linear;
+}
+
+.gbutton:hover::after {
+  opacity: 0.8;
+}
+
+.gbutton.is-burger::before {
+  opacity: 0.5;
+}
+.gbutton.is-burger:focus::before,
+.gbutton.is-burger:active::before {
+  opacity: 1;
+}
+
+.gbutton-text {
+  color: var(--accent);
+  text-shadow: 0 0 0.1em currentColor, 0 0 0.02em white;
+  transition: color 1s linear;
+}
+
+.gbutton:hover .gbutton-text {
+  color: var(--lighter);
+}
+
+.gbutton:focus,
+.gbutton:hover {
+  border: currentColor 0.1em solid;
+  text-shadow: 0 0 0.2em currentColor;
+  z-index: 1;
+  opacity: 1;
 }
 
 @keyframes glow {
