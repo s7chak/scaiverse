@@ -59,7 +59,7 @@ export const Introduction = () => {
                   >
                     <span>
                       A repository of some of my side projects, their source
-                      code, how it works, how they were built and the story
+                      code, how they work, how they were built and the story
                       behind them.
                     </span>
                   </motion.div>
@@ -84,11 +84,11 @@ export const Introduction = () => {
                       }`}
                     >
                       <Link
-                        to="software"
+                        to="projects"
                         smooth={true}
                         style={{ textDecoration: "none" }}
                       >
-                        <p className="gbutton-text">Software</p>
+                        <p className="gbutton-text">Projects</p>
                       </Link>
                     </div>
                     <div
@@ -97,11 +97,24 @@ export const Introduction = () => {
                       }`}
                     >
                       <Link
-                        to="machine-learning"
+                        to="blogging"
                         smooth={true}
                         style={{ textDecoration: "none" }}
                       >
-                        <p className="gbutton-text">Machine Learning</p>
+                        <p className="gbutton-text">Tools</p>
+                      </Link>
+                    </div>
+                    <div
+                      className={`gbutton is-domain ${
+                        isMobile ? "is-burger" : ""
+                      }`}
+                    >
+                      <Link
+                        to="blogging"
+                        smooth={true}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <p className="gbutton-text">Blogs</p>
                       </Link>
                     </div>
                   </motion.div>

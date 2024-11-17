@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Gredo",
+    "type": "Software",
+    "image": "/assets/files/projects/gredo.png",
+    "description": "Quick and easy check for harmful ingredients in the nutrition list for any product using OCR and matching with researched red list of chemicals.",
+    "stack": "React, TesseractJS OCR",
+    "github": "https://github.com/s7chak/gredo",
+    "demo": "https://s7chak.github.io/gredo/",
+    "show": true
+  },
+  {
+    "name": "Scaiverse",
+    "type": "Software",
+    "image": "/assets/files/projects/scaiverse.gif",
+    "description": "Personal portfolio website hosting information, links, blogs and other resources.",
+    "stack": "React Javascript",
+    "github": "https://github.com/s7chak/folio",
+    "demo": "https://scaiverse.com",
+    "show": true
+  },
+  {
+    "name": "Vision API App",
+    "type": "Machine Learning",
+    "image": "/assets/files/pic.jpg",
+    "description": "Threat and dangerous object detection using pre-trained resnet vision models.",
+    "stack": "Python, Resnet",
+    "github": "https://github.com/s7chak/vision-api-app",
+    "demo": "https://github.com/s7chak/vision-api-app",
+    "show": false
+  },
+  {
+    "name": "Quizard",
+    "type": "Machine Learning",
+    "image": "/images/4dbyd.png",
+    "description": "Quiz generating application based on any text material uploaded or fetched from links.",
+    "github": "https://github.com/s7chak/4DByD",
+    "demo": "https://your-demo-link.com",
+    "show": false
+  },
+  {
+    "name": "Folio",
+    "type": "Software",
+    "image": "/assets/files/vids/scaiverse.gif",
+    "description": "IOS App for managing portfolio and analysing watchlists and other stocks based on custom scoring metrics.",
+    "github": "https://github.com/s7chak/Folio",
+    "demo": "",
+    "show": false
+  },
+  {
+    "name": "Eliqsys",
+    "type": "Sofwtare",
+    "image": "/images/4dbyd.png",
+    "description": "Personal finance one-stop for expense and income tracking, budgeting, reporting and portfolio management. ",
+    "github": "https://github.com/s7chak/eLiqSys/",
+    "demo": "",
+    "show": false
+  },
+  {
+    "name": "ScaiLibs - ML",
+    "type": "Machine Learning",
+    "image": "/images/4dbyd.png",
+    "description": "Machine learning one-stop library for time series, regression and classification problems.",
+    "github": "https://github.com/s7chak/4DByD",
+    "demo": "https://your-demo-link.com",
+    "show": false
+  }
+]

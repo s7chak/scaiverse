@@ -147,9 +147,6 @@ export const Navbar = (props) => {
             <Link to="playback" smooth={true} className="navbar-item">
               Home
             </Link>
-            <Link to="about" smooth={true} className="navbar-item">
-              About
-            </Link>
             <Link
               to="projects"
               smooth={true}
@@ -165,6 +162,9 @@ export const Navbar = (props) => {
               className="navbar-item"
             >
               Articles
+            </Link>
+            <Link to="about" smooth={true} className="navbar-item">
+              About
             </Link>
           </motion.div>
           <motion.div
