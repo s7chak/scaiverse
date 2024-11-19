@@ -1,5 +1,15 @@
 [
   {
+    "name": "Quizard",
+    "type": "Machine Learning",
+    "image": "/assets/files/projects/quizard.png",
+    "description": "Quiz generating application based on RAG architecture and LLM models from any text material uploaded or fetched from links.",
+    "stack": "Python, Plotly-Dash, Langchain, ChromaDb, Open AI",
+    "github": "https://github.com/s7chak/quizard",
+    "demo": "https://github.com/s7chak/quizard",
+    "show": true
+  },
+  {
     "name": "Gredo",
     "type": "Software",
     "image": "/assets/files/projects/gredo.png",
@@ -30,29 +40,11 @@
     "show": false
   },
   {
-    "name": "Quizard",
-    "type": "Machine Learning",
-    "image": "/images/4dbyd.png",
-    "description": "Quiz generating application based on any text material uploaded or fetched from links.",
-    "github": "https://github.com/s7chak/4DByD",
-    "demo": "https://your-demo-link.com",
-    "show": false
-  },
-  {
     "name": "Folio",
     "type": "Software",
     "image": "/assets/files/vids/scaiverse.gif",
-    "description": "IOS App for managing portfolio and analysing watchlists and other stocks based on custom scoring metrics.",
+    "description": "IOS App available in Expo for managing portfolio and analysing watchlists and other stocks based on custom scoring metrics.",
     "github": "https://github.com/s7chak/Folio",
-    "demo": "",
-    "show": false
-  },
-  {
-    "name": "Eliqsys",
-    "type": "Sofwtare",
-    "image": "/images/4dbyd.png",
-    "description": "Personal finance one-stop for expense and income tracking, budgeting, reporting and portfolio management. ",
-    "github": "https://github.com/s7chak/eLiqSys/",
     "demo": "",
     "show": false
   },
@@ -63,6 +55,15 @@
     "description": "Machine learning one-stop library for time series, regression and classification problems.",
     "github": "https://github.com/s7chak/4DByD",
     "demo": "https://your-demo-link.com",
+    "show": false
+  },
+  {
+    "name": "Eliqsys",
+    "type": "Sofwtare",
+    "image": "/images/4dbyd.png",
+    "description": "Personal finance one-stop for expense and income tracking, budgeting, reporting and portfolio management. ",
+    "github": "https://github.com/s7chak/eLiqSys/",
+    "demo": "",
     "show": false
   }
 ]
