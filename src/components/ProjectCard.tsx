@@ -122,9 +122,15 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           onClick={toggleDescription}
         />
         {showDescription && (
-          <div className="project-description">
-            <p>{project.description}</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: 1.2 }}
+          >
+            <div className="project-description">
+              <p>{project.description}</p>
+            </div>
+          </motion.div>
         )}
       </div>
       {showDescription && (
@@ -151,7 +157,7 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
             rel="noopener noreferrer"
             className="button demo-button"
           >
-            Live Demo
+            Demo
           </a>
         )}
       </div>

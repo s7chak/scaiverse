@@ -132,7 +132,7 @@
       text-align: left;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      min-width: 85vw;
+      min-width: 80vw;
       // min-height: 70vh;
       display: flex;
       flex-direction: column;
@@ -182,13 +182,12 @@
     .project-description {
       flex: 1;
       opacity: 0;
-      transition: opacity 0.5s ease;
     }
 
     .project-stack {
-      flex: 1;
-      opacity: 1;
-      transition: opacity 0.5s ease;
+      opacity: 0;
+      margin: 0.5em;
+      transition: opacity 1s ease;
     }
 
     .project-card.expanded .project-description {
@@ -201,18 +200,17 @@
     .project-buttons {
       display: flex;
       justify-content: left;
-      gap: 1em;
-      margin-top: 16px;
-      margin-bottom: 0;
+      gap: 0.6em;
+      margin: 0;
     }
 
     .button {
       text-decoration: none;
       padding: 8px 16px;
       font-size: 1em;
-      border-radius: 4px;
+      border-radius: 6px;
       color: white;
-      background-color: #007bff;
+      background-color: var(--background-secondary-altlight);
       transition: background-color 0.2s ease;
     }
 
@@ -220,16 +218,12 @@
     //   background-color: #0056b3;
     // }
 
-    .github-button {
-      background-color: #6c757d;
-    }
-
     .github-button:hover {
       background-color: #5a6268;
     }
 
     .demo-button {
-      background-color: #28a745;
+      background-color: var(--accgreen);
     }
 
     .demo-button:hover {
@@ -316,7 +310,7 @@
 .resources-page {
   background-color: var(--background-primary);
   color: var(--text-primary);
-  padding: 0;
+  padding: 0.5em;
   min-height: 100vh;
 }
 
@@ -357,6 +351,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  padding: 1em;
+  margin: 1em;
 }
 
 /* Resource card styling */
@@ -367,6 +363,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
 }
 
 .resource-card:hover {
@@ -381,9 +378,8 @@
   overflow: hidden;
 }
 
-/* Hide image by default */
 .resource-image {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
   width: 100%;
   height: 100%;
@@ -393,7 +389,6 @@
   left: 0;
 }
 
-/* Show image on hover */
 .resource-card:hover .resource-image {
   opacity: 1;
 }
@@ -411,7 +406,7 @@
 
 .resource-description {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--greylight);
   margin-bottom: 0.5rem;
 }
 

@@ -80,50 +80,50 @@ export const Introduction = () => {
                     }}
                     className="domain-container"
                   >
-                    <div
-                      className={`nbutton is-domain ${
-                        isMobile ? "is-burger" : ""
-                      }`}
+                    <SLink
+                      to="projects"
+                      smooth={true}
+                      style={{ textDecoration: "none" }}
                     >
-                      <SLink
-                        to="projects"
-                        smooth={true}
-                        style={{ textDecoration: "none" }}
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
                       >
                         <p className="nbutton-text">Projects</p>
-                      </SLink>
-                    </div>
-                    <div
-                      className={`nbutton is-domain ${
-                        isMobile ? "is-burger" : ""
-                      }`}
+                      </div>
+                    </SLink>
+                    <SLink
+                      to="blogging"
+                      smooth={true}
+                      style={{ textDecoration: "none" }}
                     >
-                      <SLink
-                        to="blogging"
-                        smooth={true}
-                        style={{ textDecoration: "none" }}
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
                       >
                         <p className="nbutton-text">Blogs</p>
-                      </SLink>
-                    </div>
-                    <div
-                      className={`nbutton is-domain ${
-                        isMobile ? "is-burger" : ""
-                      }`}
-                    >
-                      <Link to="/tools" style={{ textDecoration: "none" }}>
+                      </div>
+                    </SLink>
+                    <Link to="/tools" style={{ textDecoration: "none" }}>
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
+                      >
                         <p className="nbutton-text">Tools</p>
-                      </Link>
-                    </div>
-                    <div
-                      className={`nbutton is-domain ${
-                        isMobile ? "is-burger" : ""
-                      }`}
-                    >
-                      <Link to="/resources" style={{ textDecoration: "none" }}>
+                      </div>
+                    </Link>
+                    <Link to="/resources" style={{ textDecoration: "none" }}>
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
+                      >
                         <p className="nbutton-text">Resources</p>
-                      </Link>
-                    </div>
+                      </div>
+                    </Link>
                   </motion.div>
                 </FadeInWhenVisible>
               </div>
