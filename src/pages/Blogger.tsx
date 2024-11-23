@@ -85,7 +85,7 @@ export const Blogger = () => {
             transition={{ ease: "linear", duration: 3 }}
           >
             <Link to={"/"}>
-              <div className="gbutton scblogbutton">Scaiverse</div>
+              <div className="nbutton scblogbutton">Scaiverse</div>
             </Link>
           </motion.div>
         </div>

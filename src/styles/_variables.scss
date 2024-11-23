@@ -207,6 +207,85 @@ $radius: 10px;
   }
 }
 
+.nbutton {
+  display: inline-block;
+  position: relative;
+  padding: 0.6em 40px;
+  font-size: 16px;
+  color: var(--accent);
+  border-radius: $radius;
+  letter-spacing: 2px;
+  cursor: url("../../public/assets/files/hand.svg"), pointer;
+  z-index: 1;
+  margin: 0.5em;
+  border: currentColor 0.12em solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nbutton::before,
+.nbutton::after {
+  content: "";
+  position: absolute;
+  border-radius: $radius;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.nbutton::before {
+  top: -0.015em;
+  left: -0.02em;
+  right: -0.02em;
+  bottom: -0.015em;
+  opacity: 0;
+  background: linear-gradient(
+    -45deg,
+    var(--accent),
+    var(--lighter),
+    var(--purple),
+    var(--accent)
+  );
+  background-size: 200%;
+}
+
+.nbutton::after {
+  opacity: 1;
+  background-color: var(--background-primary);
+}
+
+.nbutton:hover::before {
+  opacity: 0.3;
+  filter: blur(10px);
+  animation: glow 10s linear infinite;
+}
+
+.nbutton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 12px rgba(51, 54, 112, 0.477);
+  .nbutton-text {
+    color: var(--lighter);
+    transition: color 1.5s ease;
+  }
+}
+
+.nbutton-text {
+  color: var(--accent);
+  text-shadow: 0 0 0.1em currentColor, 0 0 0.02em white;
+  cursor: url("../../public/assets/files/hand.svg"), pointer;
+}
+// .nbutton-text:hover {
+//   color: var(--lighter);
+//   transition: color 1s ease;
+// }
+
+.nbutton.is-mile {
+  padding: 5px 20px;
+  left: -1px;
+  bottom: 10px;
+}
+
 .linebox {
   position: relative;
   --border-size: 2.8px;

@@ -368,7 +368,7 @@ export const Recoms = () => {
         </div>
         <div className="recombuttonpanel">
           <div>
-            <button className="gbutton recombutton" onClick={handleSearch}>
+            <button className="nbutton recombutton" onClick={handleSearch}>
               Search
             </button>
           </div>

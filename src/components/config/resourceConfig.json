@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Deep Learning",
+    "description": "A comprehensive book on deep learning concepts and applications.",
+    "author": "Ian Goodfellow",
+    "link": "https://github.com/janishar/mit-deep-learning-book-pdf",
+    "image": "",
+    "category": "Books"
+  },
+  {
+    "name": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+    "description": "A practical guide to machine learning using Python libraries.",
+    "author": "Aurélien Géron",
+    "link": "https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-T/dp/1492032646",
+    "category": "Books"
+  },
+  {
+    "name": "Attention is All You Need",
+    "description": "The seminal paper introducing the Transformer architecture.",
+    "author": "",
+    "link": "https://arxiv.org/abs/1706.03762",
+    "category": "Papers and Articles"
+  },
+  {
+    "name": "Andrew Ng's Machine Learning Specialization",
+    "description": "A foundational course series on machine learning, hosted on Coursera.",
+    "author": "Andrew Ng",
+    "link": "https://www.coursera.org/specializations/machine-learning-introduction",
+    "category": "Courses and Tutorials"
+  },
+  {
+    "name": "Python Libraries Cheat Sheet",
+    "description": "A handy cheat sheet covering NumPy, Pandas, and Matplotlib.",
+    "author": "",
+    "link": "https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf",
+    "category": "Cheat Sheets"
+  }
+]

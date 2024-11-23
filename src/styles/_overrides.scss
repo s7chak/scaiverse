@@ -539,6 +539,17 @@ ol {
   }
 }
 
+.nav-logo-bar {
+  margin: 0;
+  padding: 0.5em;
+  width: 100%;
+  max-height: 10px;
+}
+.nav-logo-bar img {
+  text-align: left;
+  height: 40px;
+}
+
 .footer {
   position: relative;
   background-color: var(--background-primary);

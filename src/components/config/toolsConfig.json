@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Gredo",
+    "description": "Detector of harmful ingredients in any products' ingredient list.",
+    "category": "Health and Wellness",
+    "setup_instruction": "Clone the repository and install dependencies using npm install. Run npm start to launch.",
+    "status": "out",
+    "github_url": "https://github.com/s7chak/gredo",
+    "link": "https://s7chak.github.io/gredo/",
+    "image": "/assets/files/projects/gredo.png"
+  },
+  {
+    "name": "Folio",
+    "description": "Portfolio manager and market/stock analysis tool.",
+    "category": "Finance",
+    "setup_instruction": "Install dependencies using pip install -r requirements.txt. Run the script using python app.py.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/folio",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "TSEDA",
+    "description": "Exploratory analysis for any time series offered with a UI and exportable report.",
+    "category": "Data Analysis",
+    "setup_instruction": "Run the main script in a Jupyter Notebook or as a standalone Python application.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/tseda",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "ML-Modeler",
+    "description": "AutoML agent for any ML problem: time series, regressor, or classification.",
+    "category": "Machine Learning",
+    "setup_instruction": "Install dependencies and use the CLI or API for AutoML workflows.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/ml-modeler",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "Quizard",
+    "description": "Quiz generator on uploading any articles with links or txt files.",
+    "category": "Education",
+    "setup_instruction": "Install required libraries using pip. Run the app using python app.py.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/quizard",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "FinCal",
+    "description": "All finance-related calculators for compound interest, annuities, and loan payments.",
+    "category": "Finance",
+    "setup_instruction": "Run the application locally using npm start after dependency installation.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/fincal",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "NewsApp",
+    "description": "News aggregator from different sources that finds common topics and variety.",
+    "category": "News and Media",
+    "setup_instruction": "Install dependencies and run the application server locally.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/newsapp",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "LocalEats",
+    "description": "Local eatery recommender for zip codes in the USA or India.",
+    "category": "Food and Lifestyle",
+    "setup_instruction": "Run npm install followed by npm start to host the service locally.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/localeats",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "ResumeCheck",
+    "description": "LLM-based resume proofreader and recommender for better phrasing.",
+    "category": "Career Development",
+    "setup_instruction": "Set up OpenAI API keys and run the application.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/resumecheck",
+    "link": "",
+    "image": ""
+  },
+  {
+    "name": "Project Templates",
+    "description": "Starter templates for ML and software projects available on GitHub.",
+    "category": "Development Tools",
+    "setup_instruction": "Clone the desired template repository and follow the setup instructions.",
+    "status": "init",
+    "github_url": "https://github.com/s7chak/project-templates",
+    "link": "",
+    "image": ""
+  }
+]

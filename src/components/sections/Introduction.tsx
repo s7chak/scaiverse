@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+import { Link as SLink } from "react-scroll";
 import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from "react-icons/fa";
 import {
   AnimatePresence,
@@ -22,6 +23,7 @@ export const Introduction = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
   const [isDove, setDove] = useState(false);
+  const [isGlow, setGlow] = useState(false);
   return (
     <div>
       <Playback />
@@ -74,47 +76,52 @@ export const Introduction = () => {
                     transition={{
                       ease: "linear",
                       duration: delays[3] - delays[2],
-                      delay: delays[3],
+                      delay: delays[0],
                     }}
                     className="domain-container"
                   >
                     <div
-                      className={`gbutton is-domain ${
+                      className={`nbutton is-domain ${
                         isMobile ? "is-burger" : ""
                       }`}
                     >
-                      <Link
+                      <SLink
                         to="projects"
                         smooth={true}
                         style={{ textDecoration: "none" }}
                       >
-                        <p className="gbutton-text">Projects</p>
-                      </Link>
+                        <p className="nbutton-text">Projects</p>
+                      </SLink>
                     </div>
                     <div
-                      className={`gbutton is-domain ${
+                      className={`nbutton is-domain ${
                         isMobile ? "is-burger" : ""
                       }`}
                     >
-                      <Link
+                      <SLink
                         to="blogging"
                         smooth={true}
                         style={{ textDecoration: "none" }}
                       >
-                        <p className="gbutton-text">Tools</p>
-                      </Link>
+                        <p className="nbutton-text">Blogs</p>
+                      </SLink>
                     </div>
                     <div
-                      className={`gbutton is-domain ${
+                      className={`nbutton is-domain ${
                         isMobile ? "is-burger" : ""
                       }`}
                     >
-                      <Link
-                        to="blogging"
-                        smooth={true}
-                        style={{ textDecoration: "none" }}
-                      >
-                        <p className="gbutton-text">Blogs</p>
+                      <Link to="/tools" style={{ textDecoration: "none" }}>
+                        <p className="nbutton-text">Tools</p>
+                      </Link>
+                    </div>
+                    <div
+                      className={`nbutton is-domain ${
+                        isMobile ? "is-burger" : ""
+                      }`}
+                    >
+                      <Link to="/resources" style={{ textDecoration: "none" }}>
+                        <p className="nbutton-text">Resources</p>
                       </Link>
                     </div>
                   </motion.div>
@@ -209,19 +216,20 @@ function Playback() {
             animate={{ opacity: 1 }}
             transition={{ ease: "linear", duration: 2, delay: 6 }}
           >
-            <div className={`gbutton ${isMobile ? "is-burger" : ""}`}>
-              <Link
+            <div className={`nbutton ${isMobile ? "is-burger" : ""}`}>
+              <SLink
                 to="introduction"
                 smooth={true}
                 onClick={() => setDove(true)}
               >
-                <span className="gbutton-text">Let's dive in</span>
-              </Link>
+                <span className="nbutton-text">Let's dive in</span>
+              </SLink>
             </div>
           </motion.div>
         </div>
 
-        {isDove ? (
+        {/* Glow for Let's dive in */}
+        {/* {isDove ? (
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
@@ -229,7 +237,7 @@ function Playback() {
           >
             <GlowBall />
           </motion.div>
-        ) : null}
+        ) : null} */}
 
         {/* <motion.div 
 				initial={{ opacity: 0, x:0, y: 0, offsetDistance: "0%" }}
@@ -379,8 +387,8 @@ function IntroText() {
         transition={{ delay: 4.5 }}
       >
         <motion.span className={"acc-text"}>{newName}</motion.span> at the nexus
-        of big data, machine learning, software and finance, making sense of the
-        dataverse one line of code at a time.
+        of software, machine learning and finance making sense of the dataverse
+        one line of code at a time.
       </motion.div>
     </FadeInWhenVisible>
   );

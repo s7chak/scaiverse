@@ -65,10 +65,10 @@ export const Publications = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="gbutton">Medium Blogs</div>
+              <div className="nbutton">Medium</div>
             </a>
             <Link to={"/blogs"} style={{ marginLeft: "1em" }}>
-              <div className="gbutton">SC Blogs</div>
+              <div className="nbutton">SC Blogs</div>
             </Link>
           </motion.div>
         </div>

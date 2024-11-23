@@ -34,7 +34,7 @@ export const ProjectsOld = () => {
           <span className="general-header">Projects</span>
           <br />
           <div className="header-container">
-            <Link to={"/finance"} style={{ marginLeft: "1em" }}>
+            <Link to={"/tools"} style={{ marginLeft: "1em" }}>
               <div className="gbutton">
                 <span className="gbutton-text">Tools</span>
               </div>
