@@ -10,6 +10,16 @@
     "image": "/assets/files/projects/gredo.png"
   },
   {
+    "name": "Quizard",
+    "description": "Quiz generator on uploading any articles with links or txt files.",
+    "category": "Education",
+    "setup_instruction": "Install required libraries using pip. Run the app using python app.py.",
+    "status": "out",
+    "github_url": "https://github.com/s7chak/quizardweb",
+    "link": "https://s7chak.github.io/QuizardWeb",
+    "image": "/assets/files/projects/quizweb.png"
+  },
+  {
     "name": "Folio",
     "description": "Portfolio manager and market/stock analysis tool.",
     "category": "Finance",
@@ -36,16 +46,6 @@
     "setup_instruction": "Install dependencies and use the CLI or API for AutoML workflows.",
     "status": "init",
     "github_url": "https://github.com/s7chak/ml-modeler",
-    "link": "",
-    "image": ""
-  },
-  {
-    "name": "Quizard",
-    "description": "Quiz generator on uploading any articles with links or txt files.",
-    "category": "Education",
-    "setup_instruction": "Install required libraries using pip. Run the app using python app.py.",
-    "status": "init",
-    "github_url": "https://github.com/s7chak/quizard",
     "link": "",
     "image": ""
   },

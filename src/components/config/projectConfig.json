@@ -2,10 +2,11 @@
   {
     "name": "Quizard",
     "type": "Machine Learning",
-    "image": "/assets/files/projects/quizard.png",
+    "image": "/assets/files/projects/quizweb.png",
     "description": "Quiz generating application based on RAG architecture and LLM models from any text material uploaded or fetched from links.",
     "stack": "Python, Plotly-Dash, Langchain, ChromaDb, Open AI",
-    "github": "https://github.com/s7chak/quizard",
+    "github": "https://github.com/s7chak/quizardweb",
+    "demo": "https://s7chak.github.io/QuizardWeb/",
     "show": true
   },
   {
