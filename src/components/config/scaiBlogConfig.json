@@ -1,6 +1,7 @@
 {
   "AI_Two_Ways": {
     "title": "AI This, AI That",
+    "description": "A potential panacea to all our troubles and unlimited progress, versus the ultimate doom of humanity. So, AI bliss or Skynet?",
     "url": "",
     "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2017%2F03%2F31%2F23%2F11%2Frobot-2192617_1280.png&f=1&nofb=1&ipt=f96e83b1f525990c1355d36e6d0b3609d2102cfbfef11e803dfe7644d8765e17&ipo=images",
     "date": "May 10, 2024",
@@ -8,6 +9,7 @@
   },
   "AI_Definitions": {
     "title": "AI Definitions",
+    "description": "Past the hype, what it is and what it can do.",
     "url": "",
     "img": "https://png.pngtree.com/png-vector/20191003/ourlarge/pngtree-robot-icon-isolated-on-abstract-background-png-image_1778885.jpg",
     "date": "May 1, 2024",
@@ -15,6 +17,7 @@
   },
   "Time_Series": {
     "title": "Time Series Glossary",
+    "description": "The business of predicting the future, by observing the past.",
     "url": "",
     "img": "https://cdn.pixabay.com/photo/2016/03/31/14/48/clock-1292829_960_720.png",
     "date": "April 15, 2024",
@@ -22,6 +25,7 @@
   },
   "Levels_Thinking": {
     "title": "Integrated Thinking",
+    "description": "We live in a society, a true rainbow of every shade of human being.",
     "url": "",
     "img": "https://cdn.pixabay.com/photo/2012/04/28/19/06/stairs-44071_1280.png",
     "date": "March 28, 2024",
@@ -29,6 +33,7 @@
   },
   "Learners_Manifesto": {
     "title": "The Learner's Manifesto",
+    "description": "I love to learn and I simply would not stop.",
     "url": "",
     "img": "https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927_1280.png",
     "date": "March 20, 2024",

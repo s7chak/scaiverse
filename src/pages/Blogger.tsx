@@ -55,6 +55,11 @@ export const Blogger = () => {
       postContainer.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+  const [searchQuery, setSearchQuery] = useState("");
+  const filteredBlogs = Object.keys(scblogcards).filter((key) =>
+    key.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div id={theme} className="scblogging is-medium">
       <div className="main-container">
@@ -77,7 +82,6 @@ export const Blogger = () => {
               A repository of thoughts, ideas and insight.
             </span>
             <br />
-            <br />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -88,34 +92,27 @@ export const Blogger = () => {
               <div className="nbutton scblogbutton">Scaiverse</div>
             </Link>
           </motion.div>
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input"
+            />
+          </div>
         </div>
       </div>
-      {/* <div className={`post-container ${showPostContainer ? "visible" : ""}`}>
-        <SCBlogPost
-          id={postId}
-          onClick={() => {
-            setShowPostContainer(false);
-          }}
-        />
-      </div> */}
-      <div
-        className={`scblog-cards ${isMobile ? "mobile" : ""}`}
-        ref={blogCardsRef}
-      >
-        {Object.keys(scblogcards).map((key) => (
-          <>
-            <Link to={`/blogs/${key}`}>
+      <div className={`scblog-cards ${isMobile ? "mobile" : ""}`}>
+        {filteredBlogs.length > 0 ? (
+          filteredBlogs.map((key) => (
+            <Link key={key} to={`/blogs/${key}`}>
               <SCBlogCard id={key} />
             </Link>
-            {/* <Link to={`/blogs/${key}`}>View Blog Post</Link>
-            <SCBlogCard
-              id={key}
-              onClick={() => {
-                setPost(key, true);
-              }} 
-            /> */}
-          </>
-        ))}
+          ))
+        ) : (
+          <p className="no-results">No blogs found.</p>
+        )}
       </div>
     </div>
   );

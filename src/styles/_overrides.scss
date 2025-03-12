@@ -40,6 +40,40 @@
 .scblogheadertagline.mobile {
   font-size: 18px;
 }
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+.search-input {
+  width: 20vw;
+  padding: 10px 0;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1.8px solid #aabbee;
+  outline: none;
+  background: transparent;
+  color: var(--lighter);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-input::placeholder {
+  font-size: 12px;
+  color: white;
+  opacity: 0.8;
+}
+
+.search-input:focus {
+  border-bottom: 2px solid #ddbbaa;
+}
+
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #aabbee;
+  margin-top: 20px;
+}
+
 .s7logo {
   visibility: visible;
   margin-left: 5px;
@@ -164,13 +198,21 @@ ol {
 }
 
 .scblog-cards {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
   justify-content: center;
-  padding: 3rem 0rem;
-  inline-size: 50vw;
-  margin-inline: auto;
+  align-items: stretch;
+  padding: 3rem 2rem;
   width: 90vw;
+  max-width: 1300px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .scblog-cards {
+    grid-template-columns: 1fr; /* Stacks tiles vertically on smaller screens */
+  }
 }
 .scblog-cards.mobile {
   flex-direction: column;
@@ -180,19 +222,23 @@ ol {
   color: var(--lighter) !important;
 }
 .scblog-card {
+  width: 25rem;
+  height: 15rem;
   background-color: var(--background-primary);
   border-radius: 0.8rem;
   margin: 1rem 1rem;
   padding: 0.2rem 0rem;
   box-shadow: 0 0 0 0.09em var(--accent);
-  transition: background-color 2s ease, box-shadow 0.8s ease;
-  height: auto;
+  transition: background-color 2s ease, box-shadow 1s ease, transform 1.5s ease;
+
   .scblog-card-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-right: 2em;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
     .scblog-card-bar {
       display: inline-flex;
       flex-direction: column;
@@ -219,6 +265,8 @@ ol {
 }
 .scblog-card:hover {
   // border: 0.7px var(--lighter) solid;
+  background-color: var(--background-secondary-alt);
+  transform: scale(1.02);
   cursor: url("../../public/assets/files/hand.svg"), pointer;
   box-shadow: 0 0 0 0.09em var(--lighter), 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.3);
 }

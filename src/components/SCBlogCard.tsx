@@ -27,7 +27,8 @@ export const SCBlogCard = ({
       <div className="scblog-card-content">
         <div className="scblog-card-bar">
           <div className="scblog-title">{title}</div>
-          <div className="scblog-date">{date}</div>
+          <div className="scblog-description">{blog.description}</div>
+          {/* <div className="scblog-date">{date}</div> */}
         </div>
         {img && <img src={img} alt={title} className="scblog-img" />}
       </div>
