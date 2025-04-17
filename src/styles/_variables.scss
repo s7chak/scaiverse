@@ -50,6 +50,7 @@
   font-size: 42px;
   letter-spacing: 2px;
   color: var(--lighter);
+  padding: 0.5 em;
   &:focus,
   &:hover {
     color: transparent !important;
@@ -59,6 +60,7 @@
     background-size: cover !important;
     background-position: center !important;
     -webkit-background-clip: text !important;
+    padding: 0.5rem 1rem;
   }
 }
 

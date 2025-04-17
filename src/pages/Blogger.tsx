@@ -59,7 +59,10 @@ export const Blogger = () => {
   const filteredBlogs = Object.keys(scblogcards).filter((key) =>
     key.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+  const blogName = " //ScaiBlogs";
+  const blogSubtext =
+    "A repository of thoughts, ideas, insights and perspective";
+  //"A 100% human-generated repository of words";
   return (
     <div id={theme} className="scblogging is-medium">
       <div className="main-container">
@@ -69,7 +72,7 @@ export const Blogger = () => {
               className="general-header"
               onClick={() => setShowPostContainer(false)}
             >
-              Insight Room
+              {blogName}
             </span>
           </FadeInWhenVisible>
           <br />
@@ -79,18 +82,10 @@ export const Blogger = () => {
             transition={{ ease: "linear", duration: 2.5 }}
           >
             <span className={`scblogheadertagline ${isMobile ? "mobile" : ""}`}>
-              A repository of thoughts, ideas and insight.
+              {/* A repository of thoughts, ideas and insight. */}
+              {blogSubtext}
             </span>
             <br />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "linear", duration: 3 }}
-          >
-            <Link to={"/"}>
-              <div className="nbutton scblogbutton">Scaiverse</div>
-            </Link>
           </motion.div>
           <div className="search-container">
             <input
@@ -113,6 +108,17 @@ export const Blogger = () => {
         ) : (
           <p className="no-results">No blogs found.</p>
         )}
+      </div>
+      <div className="back-buttonbar">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "linear", duration: 2 }}
+        >
+          <Link to={"/"}>
+            <div className="nbutton scblogbutton">Scaiverse</div>
+          </Link>
+        </motion.div>
       </div>
     </div>
   );
