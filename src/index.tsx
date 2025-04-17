@@ -15,6 +15,7 @@ import { SCBlogPosting } from "./components/SCBlogPosting";
 import Recoms from "./pages/Recoms";
 import { Resources } from "./pages/Resources";
 import Tools from "./pages/Tools";
+import VisualPlanes from "./pages/Playground";
 let env = process.env.NODE_ENV;
 let baseURL = process.env.PUBLIC_URL;
 console.log(env);
@@ -28,6 +29,7 @@ ReactDOM.render(
       <Route path="/tools" element={<Tools />}></Route>
       <Route path="/resources" element={<Resources />}></Route>
       <Route path="/recoms" element={<Recoms />}></Route>
+      <Route path="/planes" element={<VisualPlanes />}></Route>
       <Route path="*" element={<NoMatch />} />
     </Routes>
   </Router>,
