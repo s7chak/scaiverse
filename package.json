@@ -41,7 +41,6 @@
     "axios": "0.21.1",
     "react-use": "^17.4.0",
     "react-merge-refs": "^1.1.0",
-    "leva": "^0.9.37",
     "tone": "^14.8.39",
     "use-sound": "^4.0.1",
     "web-audio-beat-detector": "^1.0.0"
