@@ -1,6 +1,3 @@
-import Navbar from "../components/Navbar";
-import BlogCard from "../components/BlogCard";
-import Footer from "../components/sections/Footer";
 import React, { useState, useRef, useEffect } from "react";
 import BoidCanvas from "../components/things/Visualization";
 import McGuffin from "../components/things/Octahedron";
@@ -10,7 +7,7 @@ export const VisualPlanes = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [showSettings, setShowSettings] = useState(false);
   const [selectedViz, setSelectedViz] = useState("particles"); // default
-
+  const [musicEnabled, setMusicEnabled] = useState(false);
   const isMobile = width <= 768;
 
   useEffect(() => {
@@ -22,7 +19,7 @@ export const VisualPlanes = () => {
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const clickY = e.clientY;
     const height = window.innerHeight;
-    if (clickY > height * 0.8) {
+    if (clickY > height * 0.92) {
       setShowSettings((prev) => !prev);
     }
   };
@@ -30,11 +27,11 @@ export const VisualPlanes = () => {
   const renderVisualization = () => {
     switch (selectedViz) {
       case "boids":
-        return <BoidCanvas />;
+        return <BoidCanvas musicEnabled={musicEnabled} />;
       case "other":
         return <McGuffin />;
       default:
-        return <BoidCanvas />;
+        return <BoidCanvas musicEnabled={musicEnabled} />;
     }
   };
 
@@ -73,6 +70,14 @@ export const VisualPlanes = () => {
               {/* <option value="other">Other Visualization</option> */}
               {/* Add more options here */}
             </select>
+          </div>
+          <div>
+            <label style={{ marginRight: "0.5rem" }}>Music:</label>
+            <input
+              type="checkbox"
+              checked={musicEnabled}
+              onChange={(e) => setMusicEnabled(e.target.checked)}
+            />
           </div>
         </div>
       )}
