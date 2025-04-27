@@ -109,17 +109,15 @@ export const Blogger = () => {
           <p className="no-results">No blogs found.</p>
         )}
       </div>
-      <div className="back-buttonbar">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ ease: "linear", duration: 2 }}
-        >
-          <Link to={"/"}>
-            <div className="nbutton scblogbutton">Scaiverse</div>
-          </Link>
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ ease: "linear", duration: 2 }}
+      >
+        <Link to={"/"} className="back-buttonbar">
+          <div className="nbutton scblogbutton">Scaiverse</div>
+        </Link>
+      </motion.div>
     </div>
   );
 };
