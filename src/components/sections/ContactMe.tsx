@@ -70,7 +70,7 @@ const ContactForm = () => {
           }}
         >
           <div className={`nbutton ${isMobile ? "is-burger" : ""}`}>
-            <span className="dive" onClick={handleSubmit}>
+            <span className="nbutton-text" onClick={handleSubmit}>
               Leave a message
             </span>
           </div>

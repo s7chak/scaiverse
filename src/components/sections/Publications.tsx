@@ -60,16 +60,20 @@ export const Publications = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ ease: "linear", duration: 2 }}
           >
+            <Link to={"/blogs"} style={{ marginLeft: "1em" }}>
+              <div className="nbutton">
+                <span className="nbutton-text">ScaiBlogs</span>
+              </div>
+            </Link>
             <a
               href="https://medium.com/@scaiverse/list/written-88aabe3d3413"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="nbutton">Medium</div>
+              <div className="nbutton">
+                <span className="nbutton-text">Medium</span>
+              </div>
             </a>
-            <Link to={"/blogs"} style={{ marginLeft: "1em" }}>
-              <div className="nbutton">SC Blogs</div>
-            </Link>
           </motion.div>
         </div>
         <div

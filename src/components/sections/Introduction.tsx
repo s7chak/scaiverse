@@ -68,7 +68,6 @@ export const Introduction = () => {
                   <br />
                   <br />
                   <br />
-                  <br />
                   <motion.div
                     style={{ display: "inline-flex", justifyContent: "center" }}
                     initial={{ opacity: 0 }}
@@ -222,7 +221,7 @@ function Playback() {
                 smooth={true}
                 onClick={() => setDove(true)}
               >
-                <span className="nbutton-text">Let's dive in</span>
+                <span className="nbutton-text">Explore</span>
               </SLink>
             </div>
           </motion.div>

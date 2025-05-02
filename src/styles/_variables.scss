@@ -93,7 +93,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 80vw;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 $radius: 10px;
@@ -275,6 +278,10 @@ $radius: 10px;
     color: var(--lighter);
     transition: color 1.5s ease;
   }
+}
+
+.nbutton.is-domain {
+  width: 180px;
 }
 
 .nbutton-text {
