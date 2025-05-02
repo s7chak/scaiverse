@@ -19,10 +19,30 @@ export const SCBlogCard = ({
   // const handleClick = () => {
   //   onClick();
   // };
+  const handleCardClick = async () => {
+    try {
+      const url = `${apis[env]}/api/views/${id}`;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        console.log(`View count for blog ${id} incremented.`);
+      } else {
+        console.error(`Failed to increment view count for blog ${id}`);
+      }
+    } catch (error) {
+      console.error("Error updating view count:", error);
+    }
+  };
+
   return (
     <div
       className={`scblog-card ${isMobile ? "mobile" : ""}`}
       // onClick={handleClick}
+      onClick={handleCardClick}
     >
       <div className="scblog-card-content">
         <div className="scblog-card-bar">
@@ -93,5 +113,9 @@ export const SCBlogPost = ({ id, onClick }: { id: string; onClick }) => {
     </div>
   );
 };
-
+var apis = {
+  local: "https://scaiblog-viewcount.s7chak.workers.dev",
+  prod: "https://scaiblog-viewcount.s7chak.workers.dev",
+};
+const env = "prod";
 export default SCBlogCard;

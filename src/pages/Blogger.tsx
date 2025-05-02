@@ -24,6 +24,16 @@ function FadeInWhenVisible({ children }) {
   );
 }
 
+type BlogEntry = {
+  title: string;
+  description: string;
+  url: string;
+  img: string;
+  date: string;
+  others: string[];
+  views: number;
+};
+
 export const Blogger = () => {
   const [theme, setTheme] = useState("dark");
   const [width, setWidth] = useState<number>(window.innerWidth);
@@ -63,6 +73,45 @@ export const Blogger = () => {
   const blogSubtext =
     "A repository of thoughts, ideas, insights and perspective";
   //"A 100% human-generated repository of words";
+
+  const [enrichedConfig, setEnrichedConfig] = useState<
+    Record<string, BlogEntry>
+  >({});
+  var apis = {
+    local: "https://scaiblog-viewcount.s7chak.workers.dev",
+    prod: "https://scaiblog-viewcount.s7chak.workers.dev",
+  };
+  const env = "prod";
+  useEffect(() => {
+    const fetchViewsAndEnrichConfig = async () => {
+      try {
+        const url = `${apis[env]}/api/views`;
+        const res = await fetch(url);
+        const viewCounts = await res.json();
+        const enriched = Object.keys(myBlogConfigData).reduce((acc, blogId) => {
+          acc[blogId] = {
+            ...myBlogConfigData[blogId],
+            views: viewCounts[blogId] || 0,
+          };
+          return acc;
+        }, {});
+        setEnrichedConfig(enriched);
+      } catch (err) {
+        console.error("Failed to fetch view counts", err);
+        setEnrichedConfig(myBlogConfigData);
+      }
+    };
+
+    fetchViewsAndEnrichConfig();
+  }, []);
+
+  const sortedBlogs = Object.entries(enrichedConfig)
+    .sort(([, a], [, b]) => b.views - a.views)
+    .map(([key]) => key);
+  const filteredSorted = sortedBlogs.filter((key) =>
+    enrichedConfig[key].title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div id={theme} className="scblogging is-medium">
       <div className="main-container">
@@ -99,8 +148,10 @@ export const Blogger = () => {
         </div>
       </div>
       <div className={`scblog-cards ${isMobile ? "mobile" : ""}`}>
-        {filteredBlogs.length > 0 ? (
-          filteredBlogs.map((key) => (
+        {!enrichedConfig ? (
+          <p className="no-results">Loading...</p>
+        ) : filteredSorted.length > 0 ? (
+          filteredSorted.map((key) => (
             <Link key={key} to={`/blogs/${key}`}>
               <SCBlogCard id={key} />
             </Link>

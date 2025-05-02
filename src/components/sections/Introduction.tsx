@@ -51,7 +51,7 @@ export const Introduction = () => {
                       }`}
                       onClick={() => setDove(!isDove)}
                     >
-                      This is my code canvas
+                      This is my canvas
                     </span>
                   </motion.div>
                   <br />
@@ -61,7 +61,7 @@ export const Introduction = () => {
                   >
                     <span>
                       A repository of some of my side projects, their source
-                      code, how they work, how they were built and the story
+                      code, how they work, how they were built and the stories
                       behind them.
                     </span>
                   </motion.div>
