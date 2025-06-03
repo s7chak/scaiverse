@@ -363,6 +363,8 @@ function IntroText() {
     "designer",
     "coder",
     "artist",
+    "clarity curator",
+    "system sculptor",
   ];
   const vowelRegex = "^[aieouAIEOU].*";
   const [newName, setnewName] = useState("");
