@@ -123,6 +123,24 @@ export const Introduction = () => {
                         <p className="nbutton-text">Resources</p>
                       </div>
                     </Link>
+                    {/* <Link to="/fin" style={{ textDecoration: "none" }}>
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
+                      >
+                        <p className="nbutton-text">Finance</p>
+                      </div>
+                    </Link> */}
+                    <Link to="/planes" style={{ textDecoration: "none" }}>
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
+                      >
+                        <p className="nbutton-text">Planes</p>
+                      </div>
+                    </Link>
                   </motion.div>
                 </FadeInWhenVisible>
               </div>
