@@ -20,6 +20,16 @@
     "image": "/assets/files/projects/quizweb.png"
   },
   {
+    "name": "Planes",
+    "description": "Visual worlds.",
+    "category": "Entertainment",
+    "setup_instruction": "React page for visualizations simulating nature.",
+    "status": "out",
+    "github_url": "https://github.com/s7chak/scaiverse",
+    "link": "https://scaiverse.com/planes",
+    "image": "/assets/files/projects/boids.gif"
+  },
+  {
     "name": "Folio",
     "description": "Portfolio manager and market/stock analysis tool.",
     "category": "Finance",

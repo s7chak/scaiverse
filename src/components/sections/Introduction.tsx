@@ -132,13 +132,13 @@ export const Introduction = () => {
                         <p className="nbutton-text">Finance</p>
                       </div>
                     </Link> */}
-                    <Link to="/planes" style={{ textDecoration: "none" }}>
+                    <Link to="/fin" style={{ textDecoration: "none" }}>
                       <div
                         className={`nbutton is-domain ${
                           isMobile ? "is-burger" : ""
                         }`}
                       >
-                        <p className="nbutton-text">Planes</p>
+                        <p className="nbutton-text">Fin</p>
                       </div>
                     </Link>
                   </motion.div>

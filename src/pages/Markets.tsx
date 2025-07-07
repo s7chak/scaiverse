@@ -22,10 +22,9 @@ function FadeInWhenVisible({ children }) {
 }
 let envs = {
   local: "http://127.0.0.1:8091",
-  prod: "https://recomapi-auoic2h3pa-uc.a.run.app",
+  prod: "https://finapi-78191548528.us-west3.run.app",
 };
-let activeEnv = "local";
-//127.0.0.1:8091/api/market-lines
+let activeEnv = "prod";
 
 export const Fin = () => {
   const [theme, setTheme] = useState("dark");
@@ -34,6 +33,7 @@ export const Fin = () => {
   const [plotData, setPlotData] = useState<{ data: any[]; layout: any } | null>(
     null
   );
+  const [selectedType, setSelectedType] = useState("US Equities");
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -44,14 +44,17 @@ export const Fin = () => {
   useEffect(() => {
     const fetchMarketLines = async () => {
       try {
-        const response = await axios.get(`${envs[activeEnv]}/api/market-lines`);
+        const response = await axios.get(
+          `${envs[activeEnv]}/api/market-lines`,
+          { params: { type: selectedType } }
+        );
         setPlotData(response.data["plot"]);
       } catch (error) {
         console.error("Error fetching market lines:", error);
       }
     };
     fetchMarketLines();
-  }, []);
+  }, [selectedType]);
 
   return (
     <div id={theme} className="fin-page">
@@ -62,6 +65,21 @@ export const Fin = () => {
         </FadeInWhenVisible>
       </div>
       <div className="fin-hero-graph">
+        <div>
+          <select
+            className="fin-type-dropdown"
+            value={selectedType}
+            onChange={(e) => setSelectedType(e.target.value)}
+          >
+            <option value="US Equities">US Equities</option>
+            {/* <option value="US Macro">US Macro</option> */}
+            <option value="International Equities">
+              International Equities
+            </option>
+            <option value="Emerging Markets">Emerging Markets</option>
+            <option value="FX">Forex</option>
+          </select>
+        </div>
         {plotData ? (
           <Plot
             data={plotData.data}
