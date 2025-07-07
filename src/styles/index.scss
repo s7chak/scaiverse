@@ -536,12 +536,12 @@
 
 .tool-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 80px 2px var(--background-secondary-alt);
+  box-shadow: 0 8px 50px 2px var(--background-secondary-alt);
 }
 
 .tool-card img {
   width: auto;
-  max-width: 400px;
+  max-width: 50vw;
   height: auto;
   border-radius: 8px;
   transition: all 1s ease;
@@ -550,14 +550,14 @@
 .tool-card.expanded {
   grid-column: 1 / span 3;
   grid-row: 1;
-  min-height: 50vh;
+  min-height: 40vh;
   transform: translate(0, 0);
   box-shadow: 0 8px 80px 2px var(--background-secondary-alt);
 }
 
 .tool-card.expanded img {
-  max-width: 80vw;
-  height: auto;
+  width: 50vw;
+  min-height: 40vh;
   margin: 1rem auto;
 }
 
