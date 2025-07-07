@@ -3,14 +3,14 @@
 @import "./variables";
 @import "./overrides";
 
-html,
-body {
-  background-color: #000;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  z-index: -100;
-}
+// html,
+// body {
+//   background-color: #000;
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   z-index: -100;
+// }
 
 #root {
   background-color: red;
@@ -564,13 +564,18 @@ body {
 .tool-card .tool-content {
   margin-top: 1em;
   color: var(--lighter);
+  display: flex;
+  flex-direction: column;
 }
 
 .tool-name {
   font-size: 1.2em;
   font-weight: bold;
 }
-
+.tool-description-sm {
+  margin-top: 1em;
+  font-size: 14px;
+}
 .tool-description,
 .tool-setup,
 .tool-category {

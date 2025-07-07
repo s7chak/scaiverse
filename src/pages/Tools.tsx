@@ -83,7 +83,7 @@ export const Tools = () => {
                 <img src={tool.image} alt={tool.name} className="tool-image" />
               )}
               {!!tool.description && expandedTool != tool.name && (
-                <span className="tool-description">{tool.description}</span>
+                <span className="tool-description-sm">{tool.description}</span>
               )}
               {expandedTool === tool.name && (
                 <>
