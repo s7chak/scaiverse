@@ -2,7 +2,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-// import Plot from "react-plotly.js";
+import Plot from "react-plotly.js";
 import MyLogoBar from "../components/things/LogoNavBar";
 
 function FadeInWhenVisible({ children }) {
@@ -81,14 +81,13 @@ export const Fin = () => {
           </select>
         </div>
         {plotData ? (
-          <></>
+          <Plot
+            data={plotData.data}
+            layout={{ ...plotData.layout }}
+            config={{ responsive: true }}
+            className="fin-hero-plot"
+          />
         ) : (
-          // <Plot
-          //   data={plotData.data}
-          //   layout={{ ...plotData.layout }}
-          //   config={{ responsive: true }}
-          //   className="fin-hero-plot"
-          // />
           <p>Loading market data…</p>
         )}
       </div>

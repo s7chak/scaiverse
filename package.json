@@ -43,7 +43,9 @@
     "react-merge-refs": "^1.1.0",
     "tone": "^14.8.39",
     "use-sound": "^4.0.1",
-    "web-audio-beat-detector": "^1.0.0"
+    "web-audio-beat-detector": "^1.0.0",
+    "plotly.js":"^3.0.1",
+    "react-plotly.js": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.0.0",

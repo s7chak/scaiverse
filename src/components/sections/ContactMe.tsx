@@ -97,7 +97,6 @@ const ContactForm = () => {
 
 const EraseTyping = ({ className, children, eraseTimeout }) => {
   const [text, setText] = useState("");
-
   useEffect(() => {
     let currentIndex = 0;
     let eraseTimer;

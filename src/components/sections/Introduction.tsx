@@ -166,7 +166,7 @@ function Playback() {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
   let widthDive = isMobile ? "80vw" : "auto";
-
+  const hwrldText = "";
   return (
     <section className="playback" id="play_home">
       {/* <div className="play-container">
@@ -178,13 +178,13 @@ function Playback() {
       <br />
       <div className="play-intro-container">
         <div className="typewriter-container">
-          <EraseTyping className="typewriter" eraseTimeout={2} eraseTill={6}>
-            Hello World!
+          <EraseTyping className="typewriter" eraseTimeout={4} eraseTill={6}>
+            {hwrldText}
           </EraseTyping>
-          <motion.div
+          {/* <motion.div
             className="typewriter-cursor"
             onMouseEnter={() => setDove(true)}
-          ></motion.div>
+          ></motion.div> */}
         </div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -293,14 +293,19 @@ const EraseTyping = ({ className, children, eraseTimeout, eraseTill }) => {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    let currentIndex = 0;
-    let eraseTimer;
-    let typeTimeout;
-
+    const str: string =
+      typeof children === "string" ? children : String(children);
+    let currentIndex: number = 0;
+    let eraseTimer: ReturnType<typeof setTimeout>;
+    let typeTimeout: ReturnType<typeof setInterval>;
     const startTyping = () => {
       typeTimeout = setInterval(() => {
-        if (currentIndex < children.length) {
-          setText((prevText) => prevText + children[currentIndex]);
+        if (currentIndex < str.length) {
+          // Only append if character is defined and within bounds
+          if (typeof str[currentIndex] !== "undefined") {
+            setText((prevText: string) => prevText + str[currentIndex]);
+            console.log("Typing: ", currentIndex, str[currentIndex]);
+          }
           currentIndex++;
         } else {
           clearInterval(typeTimeout);
@@ -310,25 +315,26 @@ const EraseTyping = ({ className, children, eraseTimeout, eraseTill }) => {
             }, eraseTimeout * 1000);
           }
         }
-      }, 100);
+      }, 150);
     };
 
     const eraseText = () => {
-      clearInterval(eraseTimer);
-      let eraseIndex =
-        eraseTill >= children.length ? children.length - 1 : eraseTill;
-      // let eraseIndex = children.length - 1;
-      const eraseTimeout = setInterval(() => {
-        if (eraseIndex >= 0) {
-          setText((prevText) => prevText.slice(0, -1));
+      clearTimeout(eraseTimer);
+      let eraseIndex: number =
+        typeof eraseTill === "number"
+          ? Math.min(eraseTill, str.length)
+          : str.length;
+      const eraseInterval = setInterval(() => {
+        if (eraseIndex > 0) {
+          setText((prevText: string) => prevText.slice(0, -1));
           eraseIndex--;
         } else {
-          clearInterval(eraseTimeout);
+          clearInterval(eraseInterval);
         }
       }, 100);
     };
 
-    const typingTimeout = setTimeout(() => {
+    const typingTimeout: ReturnType<typeof setTimeout> = setTimeout(() => {
       startTyping();
     }, 4200);
 
