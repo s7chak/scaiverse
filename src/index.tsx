@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-
+import { createRoot } from "react-dom/client";
 // PAGES
 import App from "./pages/App";
 
@@ -20,8 +20,8 @@ import Markets from "./pages/Markets";
 let env = process.env.NODE_ENV;
 let baseURL = process.env.PUBLIC_URL;
 console.log(env);
-
-ReactDOM.render(
+const root = createRoot(document.getElementById("root"));
+root.render(
   <Router basename={baseURL}>
     <Routes>
       <Route path="/" element={<App />} />
