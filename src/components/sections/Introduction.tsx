@@ -166,7 +166,7 @@ function Playback() {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const isMobile = width <= 768;
   let widthDive = isMobile ? "80vw" : "auto";
-  const hwrldText = "";
+  const hwrldText = "Hello world!";
   return (
     <section className="playback" id="play_home">
       {/* <div className="play-container">
@@ -178,10 +178,10 @@ function Playback() {
       <br />
       <div className="play-intro-container">
         <div className="typewriter-container">
-          <EraseTyping className="typewriter" eraseTimeout={4} eraseTill={6}>
+          {/* <EraseTyping className="typewriter" eraseTimeout={null} eraseTill={6}>
             {hwrldText}
           </EraseTyping>
-          {/* <motion.div
+          <motion.div
             className="typewriter-cursor"
             onMouseEnter={() => setDove(true)}
           ></motion.div> */}
@@ -189,7 +189,7 @@ function Playback() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 0.9, y: 40 }}
-          transition={{ ease: "linear", duration: 2, delay: 4 }}
+          transition={{ ease: "linear", duration: 1.8, delay: 3 }}
         >
           <span className="header">
             I am{" "}
@@ -206,7 +206,6 @@ function Playback() {
         <IntroText />
         <br />
         <>
-          <br />
           <br />
         </>
         <div
