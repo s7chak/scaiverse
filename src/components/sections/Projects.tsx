@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import ProjectCard from "../ProjectCard";
-import type { Project } from "../ProjectCard";
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import projectConfig from "../config/projectConfig.json";
+import type { Project } from "../ProjectCard";
+import ProjectCard from "../ProjectCard";
 
 function FadeInWhenVisible({ children }) {
   const [ref, inView] = useInView({

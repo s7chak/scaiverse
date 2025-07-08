@@ -1,20 +1,8 @@
+import { motion } from "framer-motion";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as SLink } from "react-scroll";
-import { FaLinkedin, FaGithub, FaCloudDownloadAlt } from "react-icons/fa";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
-import React, { useCallback, useEffect, useState } from "react";
-import Playthree from "../things/3dPlay";
-import GlowBall from "../things/GlowBall";
-import Typewriter from "../things/TypeWriting";
-import Octahedron from "../things/Octahedron";
-import RotatingBox from "../things/Octahedron";
 import McGuffin from "../things/Octahedron";
-import Particloid from "../things/Particloid";
 
 export const Introduction = () => {
   // const x = useMotionValue(0)

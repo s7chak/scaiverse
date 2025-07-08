@@ -1,15 +1,7 @@
-import {
-  Loader,
-  OrbitControls,
-  ScrollControls,
-  Scroll,
-  Text,
-  Html,
-  Line,
-} from "@react-three/drei";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Html, Line, OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import timelineConfigData from "../config/timeLineConfig.json";
 

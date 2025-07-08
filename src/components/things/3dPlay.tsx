@@ -1,12 +1,6 @@
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import {
-  Canvas,
-  Color,
-  Vector3,
-  useFrame,
-  useLoader,
-} from "@react-three/fiber";
-import React, { useRef, useState } from "react";
+import { OrbitControls } from "@react-three/drei";
+import { Canvas, Color, Vector3, useFrame } from "@react-three/fiber";
+import { useRef, useState } from "react";
 import * as THREE from "three";
 // import limg from "assets/files/s2.png";
 

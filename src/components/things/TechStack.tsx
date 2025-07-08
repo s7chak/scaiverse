@@ -1,24 +1,15 @@
-import {
-  FlyControls,
-  Loader,
-  OrbitControls,
-  PerspectiveCamera,
-  RoundedBox,
-} from "@react-three/drei";
+import { Loader, OrbitControls, RoundedBox } from "@react-three/drei";
 import {
   Canvas,
   Color,
   Vector3,
+  extend,
   useFrame,
   useLoader,
-  extend,
 } from "@react-three/fiber";
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
-import codeFont from "./code_font.json";
-import { FaJsSquare } from "react-icons/fa";
 
 extend({ TextGeometry });
 

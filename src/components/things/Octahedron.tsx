@@ -1,7 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { delay, motion, spring, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useAnimation } from "framer-motion";
+import { useRef, useState } from "react";
 import * as THREE from "three";
 
 type Cube = {

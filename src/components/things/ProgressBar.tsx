@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const ProgressBar = () => {
   const filledRef = useRef<HTMLDivElement>(null);
@@ -8,7 +8,8 @@ const ProgressBar = () => {
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+    const scrollPercentage =
+      (scrollTop / (documentHeight - windowHeight)) * 100;
 
     if (scrollPercentage >= 25) {
       setShowProgressBar(true);
@@ -21,14 +22,14 @@ const ProgressBar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div className={`progress-bar ${showProgressBar ? '' : 'hid'}`}>
+    <div className={`progress-bar ${showProgressBar ? "" : "hid"}`}>
       <div ref={filledRef} className="filled"></div>
     </div>
   );

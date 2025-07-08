@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import MyLogoBar from "../components/things/LogoNavBar";
-import Plot from "react-plotly.js";
 import axios from "axios";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import Plot from "react-plotly.js";
+import MyLogoBar from "../components/things/LogoNavBar";
 
 function FadeInWhenVisible({ children }) {
   const [ref, inView] = useInView({

@@ -1,13 +1,7 @@
-import Navbar from "../components/Navbar";
-import BlogCard from "../components/BlogCard";
-import Footer from "../components/sections/Footer";
-import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { Link } from "react-router-dom";
-import { SCBlogCard, SCBlogPost } from "../components/SCBlogCard";
-import myBlogConfigData from "../components/config/scaiBlogConfig.json";
 import axios from "axios";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 function FadeInWhenVisible({ children }) {
   const [ref, inView] = useInView({

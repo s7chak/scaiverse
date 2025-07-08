@@ -1,32 +1,17 @@
 import { motion } from "framer-motion";
-import { Children, useRef, useState } from "react";
+import { useState } from "react";
 import {
   FaBars,
-  FaBlog,
-  FaCaretDown,
   FaCode,
-  FaCog,
-  FaCogs,
-  FaCompass,
-  FaDochub,
-  FaEllipsisH,
-  FaEllipsisV,
-  FaEnvelope,
   FaFileDownload,
   FaGithub,
   FaHome,
-  FaICursor,
   FaInfo,
   FaLinkedin,
-  FaMoon,
   FaNewspaper,
   FaPaperPlane,
-  FaRobot,
-  FaRoute,
-  FaTree,
 } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { GrMenu } from "react-icons/gr";
 
 export const Navbar = (props) => {
   const [isActive, setIsActive] = useState(false);

@@ -1,10 +1,8 @@
-import Navbar from "../Navbar";
-import BlogCard from "../BlogCard";
-import Footer from "./Footer";
-import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+import BlogCard from "../BlogCard";
 
 function FadeInWhenVisible({ children }) {
   const [ref, inView] = useInView({

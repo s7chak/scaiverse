@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
-import BoidCanvas from "../components/things/Visualization";
+import React, { useEffect, useState } from "react";
 import McGuffin from "../components/things/Octahedron";
+import BoidCanvas from "../components/things/Visualization";
 
 export const VisualPlanes = () => {
   const [theme, setTheme] = useState("dark");

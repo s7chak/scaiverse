@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Typewriter = ({ text }) => {
   const [displayText, setDisplayText] = useState("");
@@ -36,9 +36,9 @@ const Typewriter = ({ text }) => {
     };
   }, [text]);
 
-  return <h1 className={`typewriter ${isTyping ? "typing" : ""}`}>{displayText}</h1>;
+  return (
+    <h1 className={`typewriter ${isTyping ? "typing" : ""}`}>{displayText}</h1>
+  );
 };
-
-
 
 export default Typewriter;

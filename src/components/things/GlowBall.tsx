@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const GlowBall = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });

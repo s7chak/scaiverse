@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import resourceConfig from "../components/config/resourceConfig.json";
 import MyLogoBar from "../components/things/LogoNavBar";
