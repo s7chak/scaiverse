@@ -23,6 +23,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .typewriter-cursor {
@@ -34,7 +36,7 @@
   width: 10px;
   height: 20px;
   background-color: var(--accent);
-  margin-left: 3px;
+  margin-left: 0;
   opacity: 0.8;
 }
 
@@ -67,6 +69,64 @@
     opacity: 1;
   }
   100% {
+    opacity: 0;
+  }
+}
+
+.typewritten {
+  font-family: "IBM Plex Mono", "Fira Mono", "Source Code Pro", "Courier New",
+    Courier, monospace;
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(143, 163, 197);
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+}
+
+.typewritten-text {
+  display: inline-block;
+  animation: typing 3.5s steps(14) forwards, erase 3s steps(6) forwards 5s;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 0.35em;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 0.35em;
+  height: 1em;
+  background-color: rgb(143, 163, 197);
+  animation: blink-caret 1s step-end infinite;
+  cursor: pointer;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14ch;
+  }
+}
+
+@keyframes erase {
+  from {
+    width: 14ch;
+  }
+  to {
+    width: 6ch;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
     opacity: 0;
   }
 }
@@ -207,6 +267,9 @@
     word-spacing: 3px;
     letter-spacing: 2px;
   }
+}
+.sc-header-container {
+  margin-top: 3em;
 }
 
 $n: 25;

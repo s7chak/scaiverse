@@ -151,6 +151,73 @@ function multiply(no: number) {
   );
 }
 
+const EraseTyping = ({
+  className,
+  children,
+  eraseTimeout = 2,
+  eraseTill = 0,
+}) => {
+  const [text, setText] = React.useState("");
+  const str = typeof children === "string" ? children : String(children);
+
+  React.useEffect(() => {
+    let index = 0;
+    let interval: NodeJS.Timeout;
+    let eraseTimer: NodeJS.Timeout;
+
+    const typeNext = () => {
+      interval = setInterval(() => {
+        if (index < str.length) {
+          setText((prev) => prev + str[index]);
+          index++;
+        } else {
+          clearInterval(interval);
+          if (eraseTimeout != null) {
+            eraseTimer = setTimeout(() => eraseText(), eraseTimeout * 1000);
+          }
+        }
+      }, 150);
+    };
+
+    const eraseText = () => {
+      let eraseIndex = str.length;
+      interval = setInterval(() => {
+        if (eraseIndex > eraseTill) {
+          setText((prev) => prev.slice(0, -1));
+          eraseIndex--;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100);
+    };
+    setText("");
+    typeNext();
+    return () => {
+      clearInterval(interval);
+      clearTimeout(eraseTimer);
+    };
+  }, [str, eraseTimeout, eraseTill]);
+
+  return <span className={className}>{text}</span>;
+};
+
+function FadeInWhenVisible({ children }) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 2 }}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 1 },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 function Playback() {
   const [isActive, setIsActive] = React.useState(false);
   const mountainCount = 24;
@@ -178,10 +245,14 @@ function Playback() {
       <br />
       <div className="play-intro-container">
         <div className="typewriter-container">
-          {/* <EraseTyping className="typewriter" eraseTimeout={null} eraseTill={6}>
-            {hwrldText}
-          </EraseTyping>
-          <motion.div
+          {/* <EraseTyping className="typewriter" eraseTimeout={2} eraseTill={5}>
+            123456
+          </EraseTyping> */}
+          <div className="typewritten">
+            <span className="typewritten-text">Hello World!</span>
+            <div className="blinking-cursor"></div>
+          </div>
+          {/* <motion.div
             className="typewriter-cursor"
             onMouseEnter={() => setDove(true)}
           ></motion.div> */}
@@ -189,7 +260,8 @@ function Playback() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 0.9, y: 40 }}
-          transition={{ ease: "linear", duration: 1.8, delay: 3 }}
+          transition={{ ease: "linear", duration: 1.5, delay: 4 }}
+          className="sc-header-container"
         >
           <span className="header">
             I am{" "}
@@ -287,82 +359,6 @@ const OnlyTyping = ({ className, children }) => {
 
   return <span className={className}>{text}</span>;
 };
-
-const EraseTyping = ({ className, children, eraseTimeout, eraseTill }) => {
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    const str: string =
-      typeof children === "string" ? children : String(children);
-    let currentIndex: number = 0;
-    let eraseTimer: ReturnType<typeof setTimeout>;
-    let typeTimeout: ReturnType<typeof setInterval>;
-    const startTyping = () => {
-      typeTimeout = setInterval(() => {
-        if (currentIndex < str.length) {
-          // Only append if character is defined and within bounds
-          if (typeof str[currentIndex] !== "undefined") {
-            setText((prevText: string) => prevText + str[currentIndex]);
-            console.log("Typing: ", currentIndex, str[currentIndex]);
-          }
-          currentIndex++;
-        } else {
-          clearInterval(typeTimeout);
-          if (eraseTimeout) {
-            eraseTimer = setTimeout(() => {
-              eraseText();
-            }, eraseTimeout * 1000);
-          }
-        }
-      }, 150);
-    };
-
-    const eraseText = () => {
-      clearTimeout(eraseTimer);
-      let eraseIndex: number =
-        typeof eraseTill === "number"
-          ? Math.min(eraseTill, str.length)
-          : str.length;
-      const eraseInterval = setInterval(() => {
-        if (eraseIndex > 0) {
-          setText((prevText: string) => prevText.slice(0, -1));
-          eraseIndex--;
-        } else {
-          clearInterval(eraseInterval);
-        }
-      }, 100);
-    };
-
-    const typingTimeout: ReturnType<typeof setTimeout> = setTimeout(() => {
-      startTyping();
-    }, 4200);
-
-    return () => {
-      clearTimeout(typingTimeout);
-      clearInterval(typeTimeout);
-      clearTimeout(eraseTimer);
-    };
-  }, [children, eraseTimeout, eraseTill]);
-
-  return <span className={className}>{text}</span>;
-};
-
-function FadeInWhenVisible({ children }) {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      transition={{ duration: 2 }}
-      variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 1 },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 function IntroText() {
   const roles = [
