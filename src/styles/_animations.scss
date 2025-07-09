@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 1em;
-  margin-bottom: 2em;
+  margin: 4em 0 2em 0;
 }
 
 .typewriter-cursor {
@@ -83,24 +83,38 @@
   align-items: center;
   overflow: hidden;
   white-space: nowrap;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .typewritten-text {
-  display: inline-block;
-  animation: typing 3.5s steps(14) forwards, erase 3s steps(6) forwards 5s;
+  opacity: 0;
+  width: 0;
+  animation: fadein 0s forwards 4s, typing 1.5s steps(14) forwards 4s,
+    erase 1s steps(5) forwards 7s;
   overflow: hidden;
   white-space: nowrap;
-  padding-top: 0.35em;
+  padding-top: 0.2em;
+}
+@keyframes fadein {
+  to {
+    width: auto;
+    opacity: 1;
+  }
 }
 
 .blinking-cursor {
+  opacity: 0;
   display: inline-block;
-  width: 0.35em;
-  height: 1em;
+  width: 0.38em;
+  height: 0.75em;
   background-color: rgb(143, 163, 197);
-  animation: blink-caret 1s step-end infinite;
+  animation: curfadein 0s forwards 2s, blink-caret 1s step-end infinite 2s;
   cursor: pointer;
+}
+@keyframes curfadein {
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes typing {
@@ -255,7 +269,7 @@
 
 .play-intro-container {
   position: relative;
-  top: 10%;
+  top: 15%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -269,7 +283,7 @@
   }
 }
 .sc-header-container {
-  margin-top: 3em;
+  margin-top: 5em;
 }
 
 $n: 25;

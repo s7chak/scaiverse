@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as SLink } from "react-scroll";
 import McGuffin from "../things/Octahedron";
+import GlowBall from "../things/GlowBall";
 
 export const Introduction = () => {
   // const x = useMotionValue(0)
@@ -242,7 +243,6 @@ function Playback() {
       <div className="mcguffin-container">
         <McGuffin />
       </div>
-      <br />
       <div className="play-intro-container">
         <div className="typewriter-container">
           {/* <EraseTyping className="typewriter" eraseTimeout={2} eraseTill={5}>
@@ -260,7 +260,7 @@ function Playback() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 0.9, y: 40 }}
-          transition={{ ease: "linear", duration: 1.5, delay: 4 }}
+          transition={{ ease: "linear", duration: 1.3, delay: 4.5 }}
           className="sc-header-container"
         >
           <span className="header">
@@ -305,7 +305,7 @@ function Playback() {
         </div>
 
         {/* Glow for Let's dive in */}
-        {/* {isDove ? (
+        {isDove ? (
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
@@ -313,7 +313,7 @@ function Playback() {
           >
             <GlowBall />
           </motion.div>
-        ) : null} */}
+        ) : null}
 
         {/* <motion.div 
 				initial={{ opacity: 0, x:0, y: 0, offsetDistance: "0%" }}
