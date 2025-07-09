@@ -29,7 +29,7 @@ export const Introduction = () => {
                   <motion.div
                     // initial={{ opacity: 0, scale: 0.9}} animate={{ opacity: 1, scale: 1 }}
                     transition={{ ease: "linear", duration: delays[0] }}
-                    whileHover={{ scale: 1.2, transition: { duration: 2 } }}
+                    whileHover={{ scale: 1.25, transition: { duration: 2.8 } }}
                     initial="hidden"
                     whileInView={{ scale: 1.05, transition: { duration: 2 } }}
                     viewport={{ once: false }}
@@ -38,9 +38,8 @@ export const Introduction = () => {
                       className={`general-header name-text  ${
                         isDove ? "name-text colormode" : ""
                       }`}
-                      onClick={() => setDove(!isDove)}
                     >
-                      This is my canvas
+                      This is Scaiverse
                     </span>
                   </motion.div>
                   <br />
@@ -49,9 +48,8 @@ export const Introduction = () => {
                     animate={{ opacity: 1, y: 0 }}
                   >
                     <span>
-                      A repository of some of my side projects, their source
-                      code, how they work, how they were built and the stories
-                      behind them.
+                      My curated repository of side projects and code, tools and
+                      resources, thoughts and insight.
                     </span>
                   </motion.div>
                   <br />
@@ -81,19 +79,6 @@ export const Introduction = () => {
                         <p className="nbutton-text">Projects</p>
                       </div>
                     </SLink>
-                    <SLink
-                      to="blogging"
-                      smooth={true}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <div
-                        className={`nbutton is-domain ${
-                          isMobile ? "is-burger" : ""
-                        }`}
-                      >
-                        <p className="nbutton-text">Blogs</p>
-                      </div>
-                    </SLink>
                     <Link to="/tools" style={{ textDecoration: "none" }}>
                       <div
                         className={`nbutton is-domain ${
@@ -112,15 +97,6 @@ export const Introduction = () => {
                         <p className="nbutton-text">Resources</p>
                       </div>
                     </Link>
-                    {/* <Link to="/fin" style={{ textDecoration: "none" }}>
-                      <div
-                        className={`nbutton is-domain ${
-                          isMobile ? "is-burger" : ""
-                        }`}
-                      >
-                        <p className="nbutton-text">Finance</p>
-                      </div>
-                    </Link> */}
                     <Link to="/fin" style={{ textDecoration: "none" }}>
                       <div
                         className={`nbutton is-domain ${
@@ -130,6 +106,19 @@ export const Introduction = () => {
                         <p className="nbutton-text">Fin</p>
                       </div>
                     </Link>
+                    <SLink
+                      to="blogging"
+                      smooth={true}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <div
+                        className={`nbutton is-domain ${
+                          isMobile ? "is-burger" : ""
+                        }`}
+                      >
+                        <p className="nbutton-text">Blogs</p>
+                      </div>
+                    </SLink>
                   </motion.div>
                 </FadeInWhenVisible>
               </div>
@@ -293,11 +282,7 @@ function Playback() {
             transition={{ ease: "linear", duration: 2, delay: 6 }}
           >
             <div className={`nbutton ${isMobile ? "is-burger" : ""}`}>
-              <SLink
-                to="introduction"
-                smooth={true}
-                onClick={() => setDove(true)}
-              >
+              <SLink to="introduction" smooth={true}>
                 <span className="nbutton-text">Explore</span>
               </SLink>
             </div>
@@ -392,7 +377,7 @@ function IntroText() {
         className="introtext"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 4.5 }}
+        transition={{ delay: 4.5, duration: 2, ease: "linear" }}
       >
         <motion.span className={"acc-text"}>{newName}</motion.span> at the nexus
         of software, machine learning and finance making sense of the dataverse
