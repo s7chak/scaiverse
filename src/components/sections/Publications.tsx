@@ -81,6 +81,7 @@ export const Publications = () => {
           <div className="blog-slider snaps">
             <BlogCard id="Wildfire_Prediction" mine={false} />
             <BlogCard id="Adversarial_Attack" mine={false} />
+            <BlogCard id="Introduction" mine={true} />
           </div>
         </div>
       </div>

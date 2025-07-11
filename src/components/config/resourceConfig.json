@@ -3,8 +3,8 @@
     "name": "Deep Learning",
     "description": "A comprehensive book on deep learning concepts and applications.",
     "author": "Ian Goodfellow",
-    "link": "https://github.com/janishar/mit-deep-learning-book-pdf",
-    "image": "/assets/files/projects/gredo.png",
+    "link": "https://github.com/janishar/mit-deep-learning-book-pdf/blob/master/complete-book-pdf/Ian%20Goodfellow%2C%20Yoshua%20Bengio%2C%20Aaron%20Courville%20-%20Deep%20Learning%20(2017%2C%20MIT).pdf",
+    "image": "assets/files/res/dl-book.png",
     "category": "Books"
   },
   {
@@ -12,6 +12,7 @@
     "description": "A practical guide to machine learning using Python libraries.",
     "author": "Aurélien Géron",
     "link": "https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-T/dp/1492032646",
+    "image": "assets/files/res/ml-book.jpg",
     "category": "Books"
   },
   {
@@ -22,10 +23,11 @@
     "category": "Papers and Articles"
   },
   {
-    "name": "Andrew Ng's Machine Learning Specialization",
+    "name": "Andrew Ng Collection",
     "description": "A foundational course series on machine learning, hosted on Coursera.",
     "author": "Andrew Ng",
-    "link": "https://www.coursera.org/specializations/machine-learning-introduction",
+    "link": "https://www.coursera.org/collections/machine-learning",
+    "image": "assets/files/res/ng-course.png",
     "category": "Courses and Tutorials"
   },
   {
@@ -34,5 +36,26 @@
     "author": "",
     "link": "https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf",
     "category": "Cheat Sheets"
+  },
+  {
+    "name": "Intro to Large Language Models (Andrej Karpathy)",
+    "description": "A popular, accessible one-hour YouTube talk by Andrej Karpathy introducing the core concepts and practicalities of large language models. Highly recommended for both newcomers and practitioners.",
+    "author": "Andrej Karpathy",
+    "link": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+    "category": "Talks and Lectures"
+  },
+  {
+    "name": "What is a Knowledge Graph?",
+    "description": "A concise YouTube tutorial covering the fundamentals of knowledge graphs, their applications, and key metrics, with practical insights for ML and AI practitioners.",
+    "author": "IBM",
+    "link": "https://www.youtube.com/watch?v=y7sXDpffzQQ",
+    "category": "Talks and Lectures"
+  },
+  {
+    "name": "Welcome to the AI Agents Course",
+    "description": "A free, in-depth course from Hugging Face that takes you from beginner to expert in designing, building, and evaluating AI agents. Covers leading agent frameworks and includes hands-on assignments and community challenges.",
+    "author": "Hugging Face",
+    "link": "https://huggingface.co/learn/agents-course/en/unit0/introduction",
+    "category": "Courses and Tutorials"
   }
 ]

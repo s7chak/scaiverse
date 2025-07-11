@@ -22,83 +22,6 @@ function FadeInWhenVisible({ children }) {
   );
 }
 
-export const ProjectsOld = () => {
-  return (
-    <section id="projects" className="projects section is-medium">
-      <div className="projects-container">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        >
-          <span className="general-header">Projects</span>
-          <br />
-          <div className="header-container">
-            <Link to={"/tools"} style={{ marginLeft: "1em" }}>
-              <div className="gbutton">
-                <span className="gbutton-text">Tools</span>
-              </div>
-            </Link>
-          </div>
-        </motion.div>
-        <div className="columns">
-          <section id="software" className="projects section is-medium">
-            <FadeInWhenVisible>
-              <div>
-                <h2>Software Engineering</h2>
-              </div>
-            </FadeInWhenVisible>
-            <div>
-              {/* <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="s7chak.github.io" />
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="folio" />
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="folioapi" />
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="prodo" />
-              </FadeInWhenVisible>
-              {/* <FadeInWhenVisible><ProjectCard username="s7chak" repository="soccerhours_phase2_flask" /></FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard
-                  username="s7chak"
-                  repository="soccerhours_phase3_app"
-                />
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="eLiqSys" />
-              </FadeInWhenVisible>  */}
-            </div>
-          </section>
-          <section id="machine-learning" className="projects section is-medium">
-            <FadeInWhenVisible>
-              <div>
-                <h2>Machine Learning</h2>
-              </div>
-            </FadeInWhenVisible>
-            <div>
-              {/* <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="quizard" />
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="vision-api-app" />
-              </FadeInWhenVisible>
-              <FadeInWhenVisible>
-                <ProjectCard username="s7chak" repository="4DByD" />
-              </FadeInWhenVisible> */}
-            </div>
-          </section>
-        </div>
-      </div>
-      <br />
-      <br />
-    </section>
-  );
-};
-
 export const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
@@ -114,7 +37,9 @@ export const Projects: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
         >
-          <span className="general-header">Projects</span>
+          <div className="scblogheader">
+            <span className="general-header">Projects</span>
+          </div>
           <div className="project-sections snaps">
             {projects
               .filter((project) => project.show)
