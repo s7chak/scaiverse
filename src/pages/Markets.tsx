@@ -65,20 +65,23 @@ export const Fin = () => {
         </FadeInWhenVisible>
       </div>
       <div className="fin-hero-graph">
-        <div>
-          <select
-            className="fin-type-dropdown"
-            value={selectedType}
-            onChange={(e) => setSelectedType(e.target.value)}
-          >
-            <option value="US Equities">US Equities</option>
-            {/* <option value="US Macro">US Macro</option> */}
-            <option value="International Equities">
-              International Equities
-            </option>
-            <option value="Emerging Markets">Emerging Markets</option>
-            <option value="FX">Forex</option>
-          </select>
+        <div className="fin-vitals">
+          <h2>Vitals</h2>
+          <div>
+            <select
+              className="fin-type-dropdown"
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+            >
+              <option value="US Equities">US Equities</option>
+              {/* <option value="US Macro">US Macro</option> */}
+              <option value="International Equities">
+                International Equities
+              </option>
+              <option value="Emerging Markets">Emerging Markets</option>
+              <option value="FX">Forex</option>
+            </select>
+          </div>
         </div>
         {plotData ? (
           <Plot

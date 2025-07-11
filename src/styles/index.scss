@@ -470,6 +470,25 @@
   height: 50vh;
 }
 
+.fin-vitals {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 1rem 0 1em;
+}
+.fin-vitals h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accgreenlight);
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(153, 173, 197, 0.15);
+  margin-right: 1rem;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
 .fin-type-dropdown {
   background-color: transparent;
   color: inherit;
