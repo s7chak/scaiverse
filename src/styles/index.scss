@@ -479,7 +479,7 @@
   margin: 1rem 1rem 0 1em;
 }
 .fin-vitals h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--accgreenlight);
   letter-spacing: 0.1em;
@@ -491,7 +491,7 @@
 
 .fin-type-dropdown {
   background-color: transparent;
-  color: inherit;
+  color: var(--lighter);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   padding: 6px 10px;
@@ -508,6 +508,94 @@
 .fin-type-dropdown option {
   background-color: #222;
   color: #fff;
+}
+
+.fin-ticker-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.fin-ticker-panel h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accgreenlight);
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(153, 173, 197, 0.15);
+  margin-right: 1rem;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.fin-ticker-input-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.fin-ticker-input {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: var(--lighter);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.fin-ticker-btn {
+  padding: 0.2rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background: var(--accgreenlight); //#4a90e2;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fin-ticker-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.fin-ticker-details {
+  margin: 1rem;
+  padding: 5rem;
+  background: var(--background-secondary-alt);
+  border-radius: 0.5rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.fin-ticker-details h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(153, 173, 197, 0.15);
+  margin-bottom: 1rem;
+}
+
+.fin-ticker-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem 0;
+}
+
+.fin-ticker-label {
+  font-weight: 500;
+}
+
+.fin-ticker-value {
+  font-weight: 300;
+}
+.stock-error {
+  margin: 1rem;
+  color: var(--lighter);
 }
 
 .tools-page {
