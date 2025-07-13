@@ -151,19 +151,25 @@ export const QuizFlashCard = ({
   const [score, setScore] = useState(0);
   const [showFeedback, setShowFeedback] = useState(true);
 
-  const handleSubmit = () => {
-    const normalizedAnswer = userInput.trim().toLowerCase();
+  const handleSubmit = (inputValue?: string) => {
+    const answerToCheck = (inputValue ?? userInput).trim().toLowerCase();
+
     const correctAnswers = Array.isArray(question.answer)
       ? question.answer.map((a: string) => a.trim().toLowerCase())
       : [String(question.answer).trim().toLowerCase()];
-    const isCorrect = correctAnswers.includes(normalizedAnswer);
+
+    const isCorrect = correctAnswers.includes(answerToCheck);
+    console.log(
+      `User Input: ${answerToCheck}, Correct Answers: ${correctAnswers}, Is Correct: ${isCorrect}`
+    );
+
     setFeedback(isCorrect);
     onAnswer(isCorrect);
   };
 
   const handleOptionClick = (opt: string) => {
     setUserInput(opt);
-    handleSubmit();
+    handleSubmit(opt);
   };
 
   useEffect(() => {
@@ -220,7 +226,9 @@ export const QuizFlashCard = ({
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="Your answer"
         />
-        <button onClick={handleSubmit}>Submit</button>
+        {!showOptions && (
+          <button onClick={() => handleSubmit(userInput)}>Submit</button>
+        )}
       </div>
 
       {feedback !== null && showFeedback && (
