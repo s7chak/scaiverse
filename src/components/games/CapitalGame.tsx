@@ -322,7 +322,7 @@ export const QuizWin = ({
     <div className="quiz-win">
       {isWinner && <Confetti width={width} height={height} />}
 
-      <h2>Quiz Results</h2>
+      <h2>The Results Are In!</h2>
       <p>
         You scored <strong>{score}</strong> out of <strong>{total}</strong>
       </p>
@@ -330,7 +330,7 @@ export const QuizWin = ({
       {isWinner ? (
         <p className="celebration">🎉 Amazing! You know your geography!</p>
       ) : (
-        <p className="try-again">👍 Keep practicing and try again!</p>
+        <p className="try-again">👍 Great job!</p>
       )}
 
       <button onClick={onBack} className="quiz-back-btn">
