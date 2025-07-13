@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
+import gameConfig from "../config/gameConfig.json";
 let envs = {
   local: "http://127.0.0.1:8091",
   prod: "https://gameapi-78191548528.us-west3.run.app",
@@ -22,6 +23,9 @@ export const CapitalQuizGame = () => {
   const [userAnswers, setUserAnswers] = useState<{ [index: number]: string }>(
     {}
   );
+  const desc =
+    gameConfig.find((game) => game.id === "CapQuiz")?.description ||
+    "Test your knowledge of world capitals and flags.";
   const handleStart = async () => {
     setLoading(true);
     try {
@@ -55,17 +59,30 @@ export const CapitalQuizGame = () => {
   };
 
   const handleAnswer = (index: number, answer: string, isCorrect: boolean) => {
-    setUserAnswers((prev) => ({ ...prev, [index]: answer }));
-    if (isCorrect) {
-      setScore((prev) => prev + 1);
-    }
+    setUserAnswers((prev) => {
+      const updated = { ...prev, [index]: answer };
+      const correctCount = Object.entries(updated).reduce((acc, [i, ans]) => {
+        const q = quizData[Number(i)];
+        const correctAnswers = Array.isArray(q.answer)
+          ? q.answer.map((a: string) => a.trim().toLowerCase())
+          : [String(q.answer).trim().toLowerCase()];
+        if (correctAnswers.includes(ans.trim().toLowerCase())) {
+          return acc + 1;
+        }
+        return acc;
+      }, 0);
+
+      setScore(correctCount);
+
+      return updated;
+    });
   };
 
   if (!started) {
     return (
       <div id={theme} className="capital-quiz-welcome">
         <h2>Capital Quiz</h2>
-        <p>Test your knowledge of world capitals, countries, and flags!</p>
+        <p>{desc}</p>
         <div className="quiz-settings">
           <label>
             Mode:
@@ -77,7 +94,7 @@ export const CapitalQuizGame = () => {
             </select>
           </label>
           <label>
-            Number of Questions:
+            Questions:
             <select
               value={numQuestions}
               onChange={(e) => setNumQuestions(Number(e.target.value))}
@@ -147,10 +164,10 @@ export const QuizScore = ({
     >
       {visible ? (
         <>
-          Score: {score} / {total}
+          Live Score: {score} / {total}
         </>
       ) : (
-        <>Score: </>
+        <>Live Score: </>
       )}
     </span>
   );
@@ -186,7 +203,6 @@ export const QuizFlashCard = ({
 
   const handleSubmit = (inputOverride?: string) => {
     if (isReviewMode || !onAnswer) return;
-
     const answerToCheck = (inputOverride ?? userInput).trim().toLowerCase();
     const correctAnswers = Array.isArray(question.answer)
       ? question.answer.map((a: string) => a.trim().toLowerCase())
