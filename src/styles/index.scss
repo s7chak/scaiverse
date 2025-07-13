@@ -307,7 +307,6 @@
       color: #0049f4 !important;
     }
   }
-  background-color: red;
 }
 
 .resources-page {
@@ -714,4 +713,55 @@
 
 :root::-webkit-scrollbar {
   display: none;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.game-tile {
+  color: var(--lighter);
+  background: var(--background-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.game-tile:hover {
+  transform: scale(1.03);
+}
+
+.game-image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.game-play-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.game-play-btn:hover {
+  background: #357ab7;
+}
+
+.game-runner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--background-primary);
 }

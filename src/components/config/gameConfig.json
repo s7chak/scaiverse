@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Capital Quiz",
+    "description": "Test your knowledge of world capitals.",
+    "link": "",
+    "image": "assets/files/games/cap-game.png",
+    "category": "Quiz",
+    "id": "CapQuiz"
+  }
+]

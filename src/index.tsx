@@ -8,6 +8,7 @@ import App from "./pages/App";
 import "bulma/css/bulma.css";
 import "./styles/index.scss";
 import "./styles/_animations.scss";
+import "./styles/_games.scss";
 import React from "react";
 import { motion } from "framer-motion";
 import Blogger from "./pages/Blogger";
@@ -17,6 +18,7 @@ import { Resources } from "./pages/Resources";
 import Tools from "./pages/Tools";
 import VisualPlanes from "./pages/Planes";
 import Markets from "./pages/Markets";
+import { GameRunner, Games } from "./pages/Games";
 let env = process.env.NODE_ENV;
 let baseURL = process.env.PUBLIC_URL;
 console.log(env);
@@ -32,6 +34,8 @@ root.render(
       <Route path="/fin" element={<Markets />}></Route>
       <Route path="/recoms" element={<Recoms />}></Route>
       <Route path="/planes" element={<VisualPlanes />}></Route>
+      <Route path="/games" element={<Games />}></Route>
+      <Route path="/games/:gameName" element={<GameRunner />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
   </Router>,
