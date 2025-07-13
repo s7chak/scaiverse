@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 let envs = {
   local: "http://127.0.0.1:8091",
   prod: "https://gameapi-78191548528.us-west3.run.app",
 };
-let activeEnv = "prod";
+let activeEnv = "local";
 
 export const CapitalQuizGame = () => {
   const [theme, setTheme] = useState("dark");
@@ -16,12 +17,18 @@ export const CapitalQuizGame = () => {
   const [numQuestions, setNumQuestions] = useState(10);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+  const [isReviewMode, setIsReviewMode] = useState(false);
+  const [userAnswers, setUserAnswers] = useState<{ [index: number]: string }>(
+    {}
+  );
   const handleStart = async () => {
     setLoading(true);
     try {
       const res = await axios.get(`${envs[activeEnv]}/api/quiz`, {
         params: {
           mode,
+          numQuestions,
         },
       });
       setQuizData(res.data.questions);
@@ -34,8 +41,10 @@ export const CapitalQuizGame = () => {
   };
 
   const handleNext = () => {
-    if (currentIndex < quizData.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex >= quizData.length - 1) {
+      setShowResults(true);
+    } else {
+      setCurrentIndex((prev) => prev + 1);
     }
   };
 
@@ -45,9 +54,10 @@ export const CapitalQuizGame = () => {
     }
   };
 
-  const handleAnswer = (isCorrect: boolean) => {
+  const handleAnswer = (index: number, answer: string, isCorrect: boolean) => {
+    setUserAnswers((prev) => ({ ...prev, [index]: answer }));
     if (isCorrect) {
-      setScore(score + 1);
+      setScore((prev) => prev + 1);
     }
   };
 
@@ -88,6 +98,19 @@ export const CapitalQuizGame = () => {
     );
   }
 
+  if (showResults) {
+    return (
+      <QuizWin
+        score={score}
+        total={quizData.length}
+        onBack={() => {
+          setShowResults(false);
+          setIsReviewMode(true);
+        }}
+      />
+    );
+  }
+
   return (
     <div className="capital-quiz-questions">
       <QuizScore score={score} total={quizData.length} />
@@ -97,7 +120,11 @@ export const CapitalQuizGame = () => {
         total={quizData.length}
         onNext={handleNext}
         onPrev={handlePrev}
-        onAnswer={handleAnswer}
+        onAnswer={(idx, ans, correct) => {
+          if (!showResults) handleAnswer(idx, ans, correct);
+        }}
+        isReviewMode={isReviewMode}
+        savedAnswer={userAnswers[currentIndex] || ""}
       />
     </div>
   );
@@ -136,38 +163,45 @@ export const QuizFlashCard = ({
   onNext,
   onPrev,
   onAnswer,
+  isReviewMode,
+  savedAnswer,
 }: {
   question: any;
   index: number;
   total: number;
   onNext: () => void;
   onPrev: () => void;
-  onAnswer: (isCorrect: boolean) => void;
+  onAnswer?: (index: number, answer: string, isCorrect: boolean) => void;
+  isReviewMode: boolean;
+  savedAnswer: string;
 }) => {
   const [userInput, setUserInput] = useState("");
   const [showOptions, setShowOptions] = useState(true);
-  const [feedback, setFeedback] = useState<null | boolean>(null);
+  const [feedback, setFeedback] = useState<null | boolean>(
+    question.feedback ?? null
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [showFeedback, setShowFeedback] = useState(true);
+  const [showFeedback, setShowFeedback] = useState(false);
 
-  const handleSubmit = (inputValue?: string) => {
-    const answerToCheck = (inputValue ?? userInput).trim().toLowerCase();
+  const handleSubmit = (inputOverride?: string) => {
+    if (isReviewMode || !onAnswer) return;
 
+    const answerToCheck = (inputOverride ?? userInput).trim().toLowerCase();
     const correctAnswers = Array.isArray(question.answer)
       ? question.answer.map((a: string) => a.trim().toLowerCase())
       : [String(question.answer).trim().toLowerCase()];
 
     const isCorrect = correctAnswers.includes(answerToCheck);
-    // console.log(
-    //   `User Input: ${answerToCheck}, Correct Answers: ${correctAnswers}, Is Correct: ${isCorrect}`
-    // );
-
     setFeedback(isCorrect);
-    onAnswer(isCorrect);
+    setShowFeedback(false);
+    onAnswer?.(index, inputOverride ?? userInput, isCorrect);
+    question.userInput = inputOverride ?? userInput;
+    question.feedback = isCorrect;
   };
 
   const handleOptionClick = (opt: string) => {
+    if (isReviewMode) return;
     setUserInput(opt);
     handleSubmit(opt);
   };
@@ -177,7 +211,6 @@ export const QuizFlashCard = ({
     setFeedback(null);
     setShowFeedback(false);
   }, [index]);
-
   return (
     <div className="quiz-flashcard">
       <div className="quiz-header">
@@ -210,8 +243,10 @@ export const QuizFlashCard = ({
           {question.options.map((opt: string) => (
             <div
               key={opt}
-              className="quiz-option-tile"
-              onClick={() => handleOptionClick(opt)}
+              className={`quiz-option-tile ${
+                userInput === opt || savedAnswer === opt ? "selected" : ""
+              }`}
+              onClick={() => !isReviewMode && handleOptionClick(opt)}
             >
               {opt}
             </div>
@@ -222,9 +257,10 @@ export const QuizFlashCard = ({
       <div className="quiz-answer">
         <input
           type="text"
-          value={userInput}
+          value={userInput || savedAnswer}
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="Your answer"
+          readOnly={isReviewMode}
         />
         {!showOptions && (
           <button onClick={() => handleSubmit(userInput)}>Submit</button>
@@ -241,10 +277,49 @@ export const QuizFlashCard = ({
         <button onClick={onPrev} disabled={index === 0}>
           Previous
         </button>
-        <button onClick={onNext} disabled={index === total - 1}>
-          Next
-        </button>
+        {index === total - 1 ? (
+          <button onClick={onNext}>Results</button>
+        ) : (
+          <button onClick={onNext} disabled={index >= total - 1}>
+            Next
+          </button>
+        )}
       </div>
+    </div>
+  );
+};
+
+export const QuizWin = ({
+  score,
+  total,
+  onBack,
+}: {
+  score: number;
+  total: number;
+  onBack: () => void;
+}) => {
+  const percentage = (score / total) * 100;
+  const isWinner = percentage >= 80;
+  const { width, height } = useWindowSize();
+
+  return (
+    <div className="quiz-win">
+      {isWinner && <Confetti width={width} height={height} />}
+
+      <h2>Quiz Results</h2>
+      <p>
+        You scored <strong>{score}</strong> out of <strong>{total}</strong>
+      </p>
+
+      {isWinner ? (
+        <p className="celebration">🎉 Amazing! You know your geography!</p>
+      ) : (
+        <p className="try-again">👍 Keep practicing and try again!</p>
+      )}
+
+      <button onClick={onBack} className="quiz-back-btn">
+        Review Questions
+      </button>
     </div>
   );
 };

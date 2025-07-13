@@ -132,6 +132,8 @@ export const Introduction = () => {
                 </FadeInWhenVisible>
               </div>
             </div>
+            <br />
+            <br />
           </div>
         </div>
       </section>
