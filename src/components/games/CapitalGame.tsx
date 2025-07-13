@@ -159,9 +159,9 @@ export const QuizFlashCard = ({
       : [String(question.answer).trim().toLowerCase()];
 
     const isCorrect = correctAnswers.includes(answerToCheck);
-    console.log(
-      `User Input: ${answerToCheck}, Correct Answers: ${correctAnswers}, Is Correct: ${isCorrect}`
-    );
+    // console.log(
+    //   `User Input: ${answerToCheck}, Correct Answers: ${correctAnswers}, Is Correct: ${isCorrect}`
+    // );
 
     setFeedback(isCorrect);
     onAnswer(isCorrect);
@@ -201,7 +201,7 @@ export const QuizFlashCard = ({
           style={{ marginLeft: "0.5rem" }}
           onClick={() => setShowFeedback(!showFeedback)}
         >
-          {showFeedback ? "Hide Feedback" : "Show Feedback"}
+          {showFeedback ? "Hide Answer" : "Show Answer"}
         </button>
       </div>
 
