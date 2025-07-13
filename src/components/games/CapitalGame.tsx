@@ -7,7 +7,7 @@ let envs = {
   local: "http://127.0.0.1:8091",
   prod: "https://gameapi-78191548528.us-west3.run.app",
 };
-let activeEnv = "local";
+let activeEnv = "prod";
 
 export const CapitalQuizGame = () => {
   const [theme, setTheme] = useState("dark");
