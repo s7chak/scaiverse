@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import toolsConfig from "../components/config/toolsConfig.json";
 import MyLogoBar from "../components/things/LogoNavBar";
+import { Link } from "react-router-dom";
 
 function FadeInWhenVisible({ children }) {
   const [ref, inView] = useInView({
@@ -66,6 +67,20 @@ export const Tools = () => {
           className="resources-search"
         />
       </div>
+      <FadeInWhenVisible>
+        <div className="tools-buttons">
+          <Link to="/fin" style={{ textDecoration: "none" }}>
+            <div className={`nbutton is-domain ${isMobile ? "is-burger" : ""}`}>
+              <p className="nbutton-text">Fin</p>
+            </div>
+          </Link>
+          <Link to="/games" style={{ textDecoration: "none" }}>
+            <div className={`nbutton is-domain ${isMobile ? "is-burger" : ""}`}>
+              <p className="nbutton-text">Games</p>
+            </div>
+          </Link>
+        </div>
+      </FadeInWhenVisible>
       <div className="tools-grid">
         {filteredTools.map((tool) => (
           <div

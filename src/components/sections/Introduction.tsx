@@ -97,15 +97,6 @@ export const Introduction = () => {
                         <p className="nbutton-text">Resources</p>
                       </div>
                     </Link>
-                    <Link to="/fin" style={{ textDecoration: "none" }}>
-                      <div
-                        className={`nbutton is-domain ${
-                          isMobile ? "is-burger" : ""
-                        }`}
-                      >
-                        <p className="nbutton-text">Fin</p>
-                      </div>
-                    </Link>
                     <SLink
                       to="blogging"
                       smooth={true}
@@ -119,15 +110,6 @@ export const Introduction = () => {
                         <p className="nbutton-text">Blogs</p>
                       </div>
                     </SLink>
-                    <Link to="/games" style={{ textDecoration: "none" }}>
-                      <div
-                        className={`nbutton is-domain ${
-                          isMobile ? "is-burger" : ""
-                        }`}
-                      >
-                        <p className="nbutton-text">Games</p>
-                      </div>
-                    </Link>
                   </motion.div>
                 </FadeInWhenVisible>
               </div>

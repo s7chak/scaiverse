@@ -286,6 +286,7 @@ $radius: 10px;
 }
 
 .nbutton-text {
+  text-align: center;
   color: var(--accent);
   text-shadow: 0 0 0.1em currentColor, 0 0 0.02em white;
   cursor: url("../../public/assets/files/hand.svg"), pointer;
