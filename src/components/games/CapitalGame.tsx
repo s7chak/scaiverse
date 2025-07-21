@@ -3,13 +3,18 @@ import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import gameConfig from "../config/gameConfig.json";
+import { submitGameResult, useGame } from "../../pages/Games";
+import appConfig from "../config/appConfig.json";
+
 let envs = {
   local: "http://127.0.0.1:8091",
   prod: "https://gameapi-78191548528.us-west3.run.app",
 };
-let activeEnv = "prod";
+let activeEnv = appConfig?.Games?.Env || "prod";
 
 export const CapitalQuizGame = () => {
+  const { gameState, startGame, endGame } = useGame();
+  const [resultSubmitted, setResultSubmitted] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [started, setStarted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -23,20 +28,25 @@ export const CapitalQuizGame = () => {
   const [userAnswers, setUserAnswers] = useState<{ [index: number]: string }>(
     {}
   );
+  const thisGame = gameConfig.find((game) => game.id === "CapQuiz");
   const desc =
-    gameConfig.find((game) => game.id === "CapQuiz")?.description ||
-    "Test your knowledge of world capitals and flags.";
+    thisGame?.description || "Test your knowledge of world capitals and flags.";
+  const gameName = thisGame?.name || "Capital Quiz";
   const handleStart = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${envs[activeEnv]}/api/quiz`, {
-        params: {
-          mode,
-          numQuestions,
-        },
-      });
+      const res = await axios.get(
+        `${envs[activeEnv]}/api/${thisGame?.id.toLowerCase()}`,
+        {
+          params: {
+            mode,
+            numQuestions,
+          },
+        }
+      );
       setQuizData(res.data.questions);
       setStarted(true);
+      startGame();
     } catch (err) {
       console.log(err);
     } finally {
@@ -47,6 +57,22 @@ export const CapitalQuizGame = () => {
   const handleNext = () => {
     if (currentIndex >= quizData.length - 1) {
       setShowResults(true);
+
+      if (!resultSubmitted || true) {
+        let finalState;
+        if (score >= quizData.length * 0.8) {
+          finalState = endGame({ didWin: true });
+        } else {
+          finalState = endGame({ didLose: true });
+        }
+
+        submitGameResult({
+          gameId: "CapQuiz",
+          ...finalState,
+        });
+
+        setResultSubmitted(true);
+      }
     } else {
       setCurrentIndex((prev) => prev + 1);
     }
@@ -81,7 +107,7 @@ export const CapitalQuizGame = () => {
   if (!started) {
     return (
       <div id={theme} className="capital-quiz-welcome">
-        <h2>Capital Quiz</h2>
+        <h2>{gameName}</h2>
         <p>{desc}</p>
         <div className="quiz-settings">
           <label>
@@ -291,7 +317,7 @@ export const QuizFlashCard = ({
 
       <div className="quiz-navigation">
         <button onClick={onPrev} disabled={index === 0}>
-          Previous
+          Back
         </button>
         {index === total - 1 ? (
           <button onClick={onNext}>Results</button>

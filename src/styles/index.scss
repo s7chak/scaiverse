@@ -745,16 +745,20 @@
 
 .game-play-btn {
   margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #4a90e2;
-  color: white;
+  padding: 0.6rem 1.5rem;
+  background: var(--lighter);
+  color: var(--background-primary);
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.8s, color 0.8s;
+  font-size: 17px;
 }
 
 .game-play-btn:hover {
-  background: #357ab7;
+  font-weight: bold;
+  color: var(--lighter);
+  background: var(--background-primary);
 }
 
 .game-runner {
