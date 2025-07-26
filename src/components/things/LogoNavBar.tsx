@@ -9,11 +9,16 @@ function MyLogoBar() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 1, delay: 1 }}
       className="nav-logo-bar"
     >
-      <nav className="logo-bar">
-        <img src="assets/files/s2.png" alt="Logo" onClick={handleClick} />
+      <nav>
+        <img
+          className="s7img main"
+          src="assets/files/s2.png"
+          alt="Scaiverse"
+          onClick={handleClick}
+        />
       </nav>
     </motion.div>
   );

@@ -109,7 +109,7 @@
   height: 0.75em;
   background-color: rgb(143, 163, 197);
   animation: curfadein 0s forwards 2s, blink-caret 1s step-end infinite 2s;
-  cursor: pointer;
+  cursor: url("../../public/assets/files/hand.svg"), pointer;
 }
 @keyframes curfadein {
   to {
@@ -269,7 +269,7 @@
 
 .play-intro-container {
   position: relative;
-  top: 15%;
+  top: 8%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -316,8 +316,6 @@ $start_scale: 0.4;
 
 .mcguffin-container {
   position: absolute;
-  margin-top: 0;
-  padding-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
