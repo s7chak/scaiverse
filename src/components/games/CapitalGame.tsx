@@ -20,7 +20,7 @@ export const CapitalQuizGame = () => {
   const [loading, setLoading] = useState(false);
   const [quizData, setQuizData] = useState<any[]>([]);
   const [mode, setMode] = useState("mix");
-  const [numQuestions, setNumQuestions] = useState(10);
+  const [numQuestions, setNumQuestions] = useState(2);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
@@ -28,6 +28,7 @@ export const CapitalQuizGame = () => {
   const [userAnswers, setUserAnswers] = useState<{ [index: number]: string }>(
     {}
   );
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
   const thisGame = gameConfig.find((game) => game.id === "CapQuiz");
   const desc =
     thisGame?.description || "Test your knowledge of world capitals and flags.";
@@ -119,12 +120,13 @@ export const CapitalQuizGame = () => {
               <option value="mix">Mix</option>
             </select>
           </label>
-          <label>
+          {/* <label>
             Questions:
             <select
               value={numQuestions}
               onChange={(e) => setNumQuestions(Number(e.target.value))}
             >
+              <option value={2}>2</option>
               <option value={5}>5</option>
               <option value={10}>10</option>
               <option value={20}>20</option>
@@ -132,7 +134,7 @@ export const CapitalQuizGame = () => {
               <option value={40}>40</option>
               <option value={50}>50</option>
             </select>
-          </label>
+          </label> */}
         </div>
         <button onClick={handleStart} disabled={loading}>
           {loading ? "Loading…" : "Start Quiz"}
@@ -331,6 +333,44 @@ export const QuizFlashCard = ({
   );
 };
 
+export const Leaderboard = ({
+  gameId,
+  onBack,
+}: {
+  gameId: string;
+  onBack: () => void;
+}) => {
+  const [data, setData] = useState<any>(null);
+
+  useEffect(() => {
+    fetch(`/leaderboard/${gameId}`)
+      .then((res) => res.json())
+      .then(setData);
+  }, [gameId]);
+
+  return (
+    <div className="leaderboard">
+      <h2>{gameId} Leaderboard</h2>
+      {data?.scorers?.length ? (
+        <ul>
+          {data.scorers
+            .sort((a, b) => b.score - a.score)
+            .map((entry, idx) => (
+              <li key={idx}>
+                {entry.user}: {entry.score}
+              </li>
+            ))}
+        </ul>
+      ) : (
+        <p>No scores yet</p>
+      )}
+      <button onClick={onBack} className="quiz-back-btn">
+        Back to Results
+      </button>
+    </div>
+  );
+};
+
 export const QuizWin = ({
   score,
   total,
@@ -344,24 +384,77 @@ export const QuizWin = ({
   const isWinner = percentage >= 80;
   const { width, height } = useWindowSize();
 
+  const [username, setUsername] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async () => {
+    if (!username.trim()) {
+      setError("Please enter a valid username.");
+      return;
+    }
+
+    try {
+      const res = await axios.post(`${envs[activeEnv]}/api/game_counter`, {
+        game_id: "CapQuiz",
+        result: isWinner ? "won" : "lost",
+        duration_seconds: Math.floor(
+          (Date.now() - performance.timing.navigationStart) / 1000
+        ), // or your custom duration
+        started_at: Date.now() - 1000 * 180, // simulate 3 mins ago or use actual
+        ended_at: Date.now(),
+        username,
+        score,
+      });
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Failed to submit score", err);
+      setError("Error submitting score. Try again later.");
+    }
+  };
+
   return (
     <div className="quiz-win">
       {isWinner && <Confetti width={width} height={height} />}
-
       <h2>The Results Are In!</h2>
       <p>
         You scored <strong>{score}</strong> out of <strong>{total}</strong>
       </p>
 
       {isWinner ? (
-        <p className="celebration">🎉 Amazing! You know your geography!</p>
+        <p className="celebration">🎉 You know your geography! 🎉</p>
       ) : (
         <p className="try-again">👍 Great job!</p>
       )}
 
-      <button onClick={onBack} className="quiz-back-btn">
-        Review Questions
-      </button>
+      {!submitted ? (
+        <div className="leaderboard-entry">
+          <p>Want to save your score to the leaderboard?</p>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="username-input"
+          />
+          {error && <p className="error-msg">{error}</p>}
+          <button className="submit-score-btn" onClick={handleSubmit}>
+            Submit Score
+          </button>
+        </div>
+      ) : (
+        <p className="thank-you">✅ Your score has been saved!</p>
+      )}
+
+      <div className="quiz-buttons">
+        <button onClick={onBack} className="quiz-back-btn">
+          Review Questions
+        </button>
+        {/* <button onClick={onViewLeaderboard} className="leaderboard-btn">
+          View Leaderboard
+        </button> */}
+      </div>
     </div>
   );
 };

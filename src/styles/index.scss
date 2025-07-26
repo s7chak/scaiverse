@@ -753,12 +753,12 @@
   cursor: pointer;
   transition: background 0.8s, color 0.8s;
   font-size: 17px;
+  font-weight: bold;
 }
 
 .game-play-btn:hover {
-  font-weight: bold;
   color: var(--lighter);
-  background: var(--background-primary);
+  background: var(--accent);
 }
 
 .game-runner {
