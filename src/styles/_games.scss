@@ -391,3 +391,68 @@
 .submit-score-btn:hover {
   background-color: #1565c0;
 }
+
+// Worduzzle Styles
+.worduzzle-welcome {
+  padding: 2rem;
+  text-align: center;
+}
+
+.worduzzle-welcome button {
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.worduzzle-board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+  padding: 2rem;
+  align-items: center;
+}
+
+.worduzzle-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.worduzzle-cell {
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 19px;
+  color: #000;
+  border: 1px solid #333;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.worduzzle-cell.empty {
+  background-color: transparent;
+  background-color: #fff;
+  border: none;
+  pointer-events: none;
+}
+
+.worduzzle-cell.correct {
+  background-color: green;
+}
+
+.worduzzle-cell.present {
+  background-color: orange;
+}
+
+.worduzzle-cell.absent {
+  background-color: #555;
+}
+
+.worduzzle-cell.selected {
+  outline: 2px solid #000;
+}

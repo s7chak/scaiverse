@@ -6,6 +6,7 @@ import gameConfig from "../components/config/gameConfig.json";
 import CapitalQuizGame from "../components/games/CapitalGame";
 import MyLogoBar from "../components/things/LogoNavBar";
 import appConfig from "../components/config/appConfig.json";
+import { WorduzzleGame } from "../components/games/Worduzzle";
 export const Games = () => {
   const [theme, setTheme] = useState("dark");
   const navigate = useNavigate();
@@ -64,8 +65,10 @@ export const GameRunner = () => {
   const { gameName } = useParams<{ gameName: string }>();
   const renderGame = () => {
     switch (gameName) {
-      case "World Cap Quiz":
+      case "Cap Quiz":
         return <CapitalQuizGame />;
+      case "Worduzzle":
+        return <WorduzzleGame />;
       default:
         return <p>Unknown game: {gameName}</p>;
     }

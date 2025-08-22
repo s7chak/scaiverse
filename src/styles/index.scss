@@ -770,3 +770,88 @@
   min-height: 100vh;
   background-color: var(--background-primary);
 }
+
+.fin-wisdom-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.fin-wisdom-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Glass pane */
+.wisdom-pane {
+  position: fixed;
+  top: 0;
+  right: -495px;
+  width: 485px;
+  height: 100vh;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(12px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 2000;
+}
+
+.wisdom-pane.open {
+  right: 0;
+}
+
+.wisdom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.wisdom-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.wisdom-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vote-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.vote-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.wisdom-header h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.finwis-close-btn {
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  line-height: 1;
+}

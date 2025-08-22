@@ -1,10 +1,18 @@
 [
   {
-    "name": "World Cap Quiz",
+    "name": "Cap Quiz",
     "description": "Countries, capitals and flags!",
     "link": "",
     "image": "assets/files/games/cap-game.png",
     "category": "Quiz",
     "id": "CapQuiz"
+  },
+  {
+    "name": "Worduzzle",
+    "description": "A puzzle of words!",
+    "link": "",
+    "image": "assets/files/games/cap-game.png",
+    "category": "Vocabulary",
+    "id": "Worduzzle"
   }
 ]

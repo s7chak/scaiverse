@@ -25,6 +25,7 @@ export const Fin = () => {
   );
   const [loading, setLoading] = useState(false);
   const [stockError, setStockError] = useState(null);
+  const [wisdomOpen, setWisdomOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -85,6 +86,12 @@ export const Fin = () => {
         <FadeInWhenVisible>
           <span className="general-header">Fin</span>
         </FadeInWhenVisible>
+        <button
+          className="fin-wisdom-btn"
+          onClick={() => setWisdomOpen(!wisdomOpen)}
+        >
+          💡
+        </button>
       </div>
       <div className="fin-hero-graph">
         <div className="fin-vitals">
@@ -148,9 +155,83 @@ export const Fin = () => {
           </div>
         ) : null}
       </>
+      <WisdomPane wisdomOpen={wisdomOpen} setWisdomOpen={setWisdomOpen} />
     </div>
   );
 };
+
+export function WisdomPane({ wisdomOpen, setWisdomOpen }) {
+  const [quotes, setQuotes] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchQuotes = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await axios.get(`${envs[activeEnv]}/api/finwisdom/quotes`);
+      setQuotes(res.data.quotes || []);
+    } catch (err: any) {
+      setError(err.response?.data?.message || err.message || "Unknown error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const castVote = async (id: number) => {
+    const today = new Date().toISOString().split("T")[0];
+    const voteHistoryRaw = localStorage.getItem("voteHistory");
+    const voteHistory = voteHistoryRaw ? JSON.parse(voteHistoryRaw) : {};
+    if (voteHistory[id] === today) {
+      alert("You already upvoted this quote today! ;)");
+      return;
+    }
+
+    try {
+      await axios.post(`${envs[activeEnv]}/api/finwisdom/cast_vote`, {
+        ID: id,
+      });
+      voteHistory[id] = today;
+      localStorage.setItem("voteHistory", JSON.stringify(voteHistory));
+
+      fetchQuotes();
+    } catch (err: any) {
+      console.error("Vote error:", err);
+    }
+  };
+
+  useEffect(() => {
+    if (wisdomOpen) fetchQuotes();
+  }, [wisdomOpen]);
+
+  return (
+    <div className={`wisdom-pane ${wisdomOpen ? "open" : ""}`}>
+      <div className="wisdom-header">
+        <h3>Finance Wisdom Leaderboard</h3>
+        <button
+          className="finwis-close-btn"
+          onClick={() => setWisdomOpen(false)}
+        >
+          ✖
+        </button>
+      </div>
+      <div className="wisdom-list">
+        {loading && <p>Loading...</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {!loading &&
+          !error &&
+          quotes.map((q) => (
+            <div className="wisdom-item" key={q.ID}>
+              <p>{q.Quote}</p>
+              <button className="vote-btn" onClick={() => castVote(q.ID)}>
+                ⬆ {q.Upvotes}
+              </button>
+            </div>
+          ))}
+      </div>
+    </div>
+  );
+}
 
 function FadeInWhenVisible({ children }) {
   const [ref, inView] = useInView({
