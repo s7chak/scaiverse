@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import blogConfigData from "./config/blogConfig.json";
+import { useState } from "react";
 import myBlogConfigData from "./config/scaiBlogConfig.json";
-import React, { useState } from "react";
 
 export const SCBlogCard = ({
   id,
@@ -48,6 +46,7 @@ export const SCBlogCard = ({
         <div className="scblog-card-bar">
           <div className="scblog-title">{title}</div>
           <div className="scblog-description">{blog.description}</div>
+          <div className="scblog-description">{blog.series}</div>
           {/* <div className="scblog-date">{date}</div> */}
         </div>
         {img && <img src={img} alt={title} className="scblog-img" />}

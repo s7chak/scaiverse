@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import myBlogConfigData from "./config/scaiBlogConfig.json";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import myBlogConfigData from "./config/scaiBlogConfig.json";
 
 function FadeInWhenVisible({ children, fdelay }) {
   return (

@@ -22,6 +22,7 @@ function FadeInWhenVisible({ children }) {
 }
 
 type BlogEntry = {
+  active: boolean;
   title: string;
   description: string;
   url: string;
@@ -29,6 +30,7 @@ type BlogEntry = {
   date: string;
   others: string[];
   views: number;
+  series: string;
 };
 
 export const Blogger = () => {
@@ -67,8 +69,8 @@ export const Blogger = () => {
     key.toLowerCase().includes(searchQuery.toLowerCase())
   );
   const blogName = " //ScaiBlogs";
-  const blogSubtext =
-    "A repository of thoughts, ideas, insights and perspective";
+  const blogSubtext = "A repository of thoughts, ideas and insight.";
+  // const blogSubtext = "My thoughts, ideas, insights and perspective";
   //"A 100% human-generated repository of words";
 
   const [enrichedConfig, setEnrichedConfig] = useState<
@@ -105,8 +107,11 @@ export const Blogger = () => {
   const sortedBlogs = Object.entries(enrichedConfig)
     .sort(([, a], [, b]) => b.views - a.views)
     .map(([key]) => key);
-  const filteredSorted = sortedBlogs.filter((key) =>
-    enrichedConfig[key].title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredSorted = sortedBlogs.filter(
+    (key) =>
+      enrichedConfig[key].title
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase()) && enrichedConfig[key].active
   );
 
   return (
