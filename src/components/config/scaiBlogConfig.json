@@ -5,9 +5,7 @@
     "url": "",
     "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2017%2F03%2F31%2F23%2F11%2Frobot-2192617_1280.png&f=1&nofb=1&ipt=f96e83b1f525990c1355d36e6d0b3609d2102cfbfef11e803dfe7644d8765e17&ipo=images",
     "date": "May 10, 2024",
-    "others": [
-      ""
-    ],
+    "others": [""],
     "views": 0,
     "series": "",
     "active": false
@@ -18,9 +16,7 @@
     "url": "",
     "img": "https://png.pngtree.com/png-vector/20191003/ourlarge/pngtree-robot-icon-isolated-on-abstract-background-png-image_1778885.jpg",
     "date": "May 1, 2024",
-    "others": [
-      ""
-    ],
+    "others": [""],
     "views": 0,
     "series": "",
     "active": false
@@ -31,9 +27,7 @@
     "url": "",
     "img": "https://cdn.pixabay.com/photo/2016/03/31/14/48/clock-1292829_960_720.png",
     "date": "April 15, 2024",
-    "others": [
-      ""
-    ],
+    "others": [""],
     "views": 0,
     "series": "",
     "active": true
@@ -44,9 +38,7 @@
     "url": "",
     "img": "https://cdn.pixabay.com/photo/2012/04/28/19/06/stairs-44071_1280.png",
     "date": "March 28, 2024",
-    "others": [
-      ""
-    ],
+    "others": [""],
     "views": 0,
     "series": "",
     "active": false
@@ -57,22 +49,7 @@
     "url": "",
     "img": "https://cdn.pixabay.com/photo/2014/04/02/10/35/book-303927_1280.png",
     "date": "March 20, 2024",
-    "others": [
-      ""
-    ],
-    "views": 0,
-    "series": "",
-    "active": true
-  },
-  "Writ_Test": {
-    "title": "Writ Test",
-    "description": "Some text here for testing purposes of the writ pipeline to publish workflow.",
-    "url": "",
-    "img": "",
-    "date": "May 25, 2026",
-    "others": [
-      ""
-    ],
+    "others": [""],
     "views": 0,
     "series": "",
     "active": true
